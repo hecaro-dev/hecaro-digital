@@ -1,6 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="9" fill="#020617"/>
-  <circle cx="16" cy="16" r="10.5" stroke="#10b981" stroke-width="1.75" stroke-opacity="0.85"/>
-  <line x1="5.5" y1="16" x2="26.5" y2="16" stroke="#10b981" stroke-width="1.1" stroke-opacity="0.42" stroke-linecap="round"/>
-  <circle cx="16" cy="5.5" r="2.6" fill="#10b981"/>
+  <rect width="32" height="32" rx="8.5" fill="#020617"/>
+
+  <!-- Hexagon: center (16,16), radius 12, pointy-top -->
+  <!-- Vertices:
+    0°  top:          (16, 4)
+    60° upper-right:  (26.392, 10)
+    120° lower-right: (26.392, 22)
+    180° bottom:      (16, 28)
+    240° lower-left:  (5.608, 22)
+    300° upper-left:  (5.608, 10)
+  -->
+
+  <!-- Spokes (hairline) -->
+  <line x1="16" y1="16" x2="16" y2="4"       stroke="#10b981" stroke-width="0.6" stroke-opacity="0.28"/>
+  <line x1="16" y1="16" x2="26.392" y2="10"  stroke="#10b981" stroke-width="0.6" stroke-opacity="0.28"/>
+  <line x1="16" y1="16" x2="26.392" y2="22"  stroke="#10b981" stroke-width="0.6" stroke-opacity="0.28"/>
+  <line x1="16" y1="16" x2="16" y2="28"      stroke="#10b981" stroke-width="0.6" stroke-opacity="0.28"/>
+  <line x1="16" y1="16" x2="5.608" y2="22"   stroke="#10b981" stroke-width="0.6" stroke-opacity="0.28"/>
+  <line x1="16" y1="16" x2="5.608" y2="10"   stroke="#10b981" stroke-width="0.6" stroke-opacity="0.28"/>
+
+  <!-- Hexagon outline -->
+  <polygon
+    points="16,4 26.392,10 26.392,22 16,28 5.608,22 5.608,10"
+    stroke="#10b981" stroke-width="1.1" stroke-opacity="0.65"
+    stroke-linejoin="miter" fill="none"/>
+
+  <!-- Glow -->
+  <circle cx="16" cy="16" r="4.8" fill="#10b981" fill-opacity="0.11"/>
+
+  <!-- Node dot -->
+  <circle cx="16" cy="16" r="2.4" fill="#10b981"/>
 </svg>

@@ -83,34 +83,69 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
               against the dark hero background. drop-shadow adds the green glow.
               opacity: 0.18 on the wrapper keeps it as a subtle watermark.
             */}
-            {/* Mobile: 260px wide */}
-            <img
-              src="/hecaro-watermark.png"
-              alt=""
-              aria-hidden="true"
+            {/*
+              Image is 500×500px (square). HECAROOO text sits at ~76–94% height.
+              STRATEGY: filter + opacity sit on the WRAPPER div. The wrapper
+              overflow:hidden clips the raw img FIRST, then the filter processes
+              only the cropped result (no drop-shadow leaking from hidden pixels).
+
+              Scale factors (500×500 original):
+                Screenshots reveal text starts at ~y=325px in original (65% height).
+                H mark ends at ~y=260px. We crop at 55% to safely clear the text.
+
+                Desktop 700px: img 700×700, wrapper h=385 → cutoff at 385/700×500=275px ✓
+                Mobile  300px: img 300×300, wrapper h=165 → cutoff at 165/300×500=275px ✓
+            */}
+            {/* Mobile */}
+            <div
               className="block md:hidden select-none pointer-events-none"
               style={{
-                width: 260,
-                height: "auto",
-                objectFit: "contain",
+                width: 300,
+                height: 165,
+                overflow: "hidden",
+                flexShrink: 0,
                 opacity: 0.18,
-                filter: "brightness(0) invert(1) drop-shadow(0 0 45px rgba(34, 197, 94, 0.5))",
+                filter: "brightness(0) invert(1) drop-shadow(0 0 35px rgba(34, 197, 94, 0.5))",
               }}
-            />
-            {/* Desktop: 550px wide */}
-            <img
-              src="/hecaro-watermark.png"
-              alt=""
-              aria-hidden="true"
+            >
+              <img
+                src="/hecaro-watermark.png"
+                alt=""
+                aria-hidden="true"
+                style={{
+                  width: 300,
+                  height: 300,
+                  display: "block",
+                  objectFit: "cover",
+                  objectPosition: "center top",
+                }}
+              />
+            </div>
+            {/* Desktop */}
+            <div
               className="hidden md:block select-none pointer-events-none"
               style={{
-                width: 550,
-                height: "auto",
-                objectFit: "contain",
+                width: 700,
+                height: 385,
+                overflow: "hidden",
+                flexShrink: 0,
                 opacity: 0.18,
-                filter: "brightness(0) invert(1) drop-shadow(0 0 45px rgba(34, 197, 94, 0.5))",
+                filter: "brightness(0) invert(1) drop-shadow(0 0 55px rgba(34, 197, 94, 0.5))",
               }}
-            />
+            >
+              <img
+                src="/hecaro-watermark.png"
+                alt=""
+                aria-hidden="true"
+                style={{
+                  width: 700,
+                  height: 700,
+                  display: "block",
+                  objectFit: "cover",
+                  objectPosition: "center top",
+                }}
+              />
+            </div>
           </motion.div>
 
           {/* RIGHT COLUMN: Headline + Sub + CTAs */}

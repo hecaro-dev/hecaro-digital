@@ -22,7 +22,7 @@ export const es: Translations = {
   },
   hero: {
     badge: "Disponible mundialmente · DE · EN · ES",
-    headline: "Soluciones digitales.\nQue convencen.",
+    headline: "Soluciones digitales\nque convencen.",
     sub: "Landing pages rápidas, resultados SEO medibles y consultoría digital profesional — de un solo proveedor, para mercados internacionales.",
     cta: "Iniciar proyecto",
     cta2: "Ver servicios",
@@ -120,7 +120,7 @@ export const es: Translations = {
       {
         tag: "Consultoría",
         title: "Setup de Video & Streaming",
-        description: "Home studio profesional para un emprendedor con más de 10k seguidores.",
+        description: "Home studio profesional para un creador de contenido & empresario consolidado.",
       },
     ],
     cta: "Ver todos los proyectos",
@@ -139,7 +139,7 @@ export const es: Translations = {
   techstack: {
     label: "Tech Stack",
     headline: "Tecnologías de vanguardia",
-    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Vercel"],
+    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Cloud Deployments"],
   },
   process: {
     label: "Proceso",
@@ -180,22 +180,22 @@ export const es: Translations = {
       {
         question: "¿Cómo funciona un proyecto típico?",
         answer:
-          "Análisis & Briefing → Estrategia & Concepto → Diseño & Desarrollo → Lanzamiento & Entrega. Duración media del proyecto: 1–3 semanas según el alcance.",
+          "Un proyecto se desarrolla en cuatro fases claras: Consulta inicial & briefing → Concepto & estrategia → Diseño & desarrollo → Lanzamiento & entrega. Tras la consulta inicial gratuita, recibirá una propuesta concreta. Duración media del proyecto: 1–3 semanas según el alcance.",
       },
       {
         question: "¿Ofrece SEO para mercados internacionales?",
         answer:
-          "Sí, el SEO internacional es una de mis áreas principales. Implemento etiquetas hreflang correctas, sitemaps multilingües y estrategias de contenido para DE, EN y ES.",
+          "Sí, el SEO internacional es una de mis áreas principales. Implemento etiquetas hreflang correctas para DE, EN y ES, creo metadatos localizados y datos estructurados (JSON-LD) así como sitemaps multilingües — para la máxima visibilidad en todos los mercados objetivo.",
       },
       {
         question: "¿En qué idiomas se puede crear el sitio web?",
         answer:
-          "Alemán, inglés y español. Los tres idiomas son gestionados profesionalmente por mí — sin herramientas de traducción automática.",
+          "Alemán, inglés y español de forma estándar. Los tres idiomas son gestionados profesionalmente por mí — sin herramientas de traducción automática. Idiomas adicionales disponibles bajo solicitud.",
       },
       {
         question: "¿Qué significa consultoría digital para usted?",
         answer:
-          "Le ayudo a configurar su home office o estudio de streaming de forma profesional: OBS Studio, iluminación, micrófono, flujo de trabajo de software. Ideal para emprendedores, creadores y equipos remotos.",
+          "La consultoría digital abarca la optimización profesional de su configuración de hardware para una presencia digital convincente: conceptos de iluminación, optimización de audio, configuración de OBS Studio y flujos de trabajo de software. Ideal para emprendedores, creadores de contenido y equipos remotos.",
       },
     ],
   },
@@ -218,10 +218,10 @@ export const es: Translations = {
   legal: {
     imprintTitle: "Aviso Legal",
     imprintText:
-      "Información según § 5 TMG\n\n[Su nombre]\n[Su dirección]\n[Código postal Ciudad]\n\nContacto:\nCorreo: [su@correo.com]\n\nNúmero de identificación fiscal:\n[Su NIF/CIF]\n\nResponsable del contenido:\n[Su nombre]\n[Su dirección]",
+      "El contenido se finalizará con el registro de la actividad económica.\n\nInformación según § 5 TMG\n\n[Su nombre]\n[Su dirección]\n[Código postal Ciudad]\n\nContacto:\nCorreo: [su@correo.com]\n\nNúmero de identificación fiscal:\n[Su NIF/CIF]\n\nResponsable del contenido:\n[Su nombre]\n[Su dirección]",
     privacyTitle: "Política de Privacidad",
     privacyText:
-      "1. Privacidad de un vistazo\n\nInformación general\nLa siguiente información proporciona una descripción general de lo que sucede con sus datos personales cuando visita este sitio web.\n\n2. Recopilación de datos\n\nFormulario de contacto\nSus datos del formulario de consulta se almacenarán para el propósito de procesar la consulta.\n\n[Política de privacidad completa se insertará aquí]",
+      "El contenido se finalizará con el registro de la actividad económica.\n\n1. Privacidad de un vistazo\n\nInformación general\nLa siguiente información proporciona una descripción general de lo que sucede con sus datos personales cuando visita este sitio web.\n\n2. Recopilación de datos\n\nFormulario de contacto\nSus datos del formulario de consulta se almacenarán para el propósito de procesar la consulta.",
   },
   footer: {
     tagline: "Soluciones web internacionales de un solo proveedor.",

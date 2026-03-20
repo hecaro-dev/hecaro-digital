@@ -22,7 +22,7 @@ export const en: Translations = {
   },
   hero: {
     badge: "Available worldwide · DE · EN · ES",
-    headline: "Digital solutions.\nThat convert.",
+    headline: "Digital solutions\nthat convert.",
     sub: "Fast landing pages, measurable SEO results and professional digital consulting — from one source, for international markets.",
     cta: "Start a Project",
     cta2: "View Services",
@@ -120,7 +120,7 @@ export const en: Translations = {
       {
         tag: "Consulting",
         title: "Video & Streaming Setup",
-        description: "Professional home studio for an entrepreneur with 10k+ followers.",
+        description: "Professional home studio for an established content creator & entrepreneur.",
       },
     ],
     cta: "View all projects",
@@ -139,7 +139,7 @@ export const en: Translations = {
   techstack: {
     label: "Tech Stack",
     headline: "State-of-the-Art Technologies",
-    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Vercel"],
+    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Cloud Deployments"],
   },
   process: {
     label: "Process",
@@ -180,22 +180,22 @@ export const en: Translations = {
       {
         question: "How does a typical project run?",
         answer:
-          "Analysis & Briefing → Strategy & Concept → Design & Development → Launch & Handover. Average project duration: 1–3 weeks depending on scope.",
+          "A project runs in four clear phases: Initial consultation & briefing → Concept & strategy → Design & development → Launch & handover. After a free initial consultation you receive a concrete proposal. Average project duration: 1–3 weeks depending on scope.",
       },
       {
         question: "Do you offer SEO for international markets?",
         answer:
-          "Yes, international SEO is one of my core areas. I implement correct hreflang tags, multilingual sitemaps and content strategies for DE, EN and ES.",
+          "Yes, international SEO is one of my core areas. I implement correct hreflang tags for DE, EN and ES, create localized metadata and structured data (JSON-LD) as well as multilingual sitemaps — for maximum visibility in all target markets.",
       },
       {
         question: "In which languages can the website be created?",
         answer:
-          "German, English and Spanish. All three languages are professionally managed by me — no automatic translation tools.",
+          "German, English and Spanish by default. All three languages are professionally managed by me — no automatic translation tools. Additional languages are available on request.",
       },
       {
         question: "What does Digital Consulting mean for you?",
         answer:
-          "I help you set up your home office or streaming setup professionally: OBS Studio, lighting, microphone, software workflow. Ideal for entrepreneurs, creators and remote teams.",
+          "Digital Consulting covers the professional optimization of your hardware setup for a compelling digital presence: lighting concepts, audio optimization, OBS Studio configuration and software workflows. Ideal for entrepreneurs, content creators and remote teams.",
       },
     ],
   },
@@ -218,10 +218,10 @@ export const en: Translations = {
   legal: {
     imprintTitle: "Legal Notice",
     imprintText:
-      "Information pursuant to § 5 TMG\n\n[Your Name]\n[Your Address]\n[Postal Code City]\n\nContact:\nEmail: [your@email.com]\n\nVAT Identification Number pursuant to § 27 a of the Value Added Tax Act:\n[Your VAT ID]\n\nResponsible for content pursuant to § 55 para. 2 RStV:\n[Your Name]\n[Your Address]",
+      "Content will be finalized upon business registration.\n\nInformation pursuant to § 5 TMG\n\n[Your Name]\n[Your Address]\n[Postal Code City]\n\nContact:\nEmail: [your@email.com]\n\nVAT Identification Number pursuant to § 27 a of the Value Added Tax Act:\n[Your VAT ID]\n\nResponsible for content pursuant to § 55 para. 2 RStV:\n[Your Name]\n[Your Address]",
     privacyTitle: "Privacy Policy",
     privacyText:
-      "1. Privacy at a Glance\n\nGeneral Information\nThe following information provides a simple overview of what happens to your personal data when you visit this website.\n\n2. Data Collection on This Website\n\nContact Form\nIf you submit inquiries to us via our contact form, your details from the inquiry form will be stored for the purpose of processing the inquiry.\n\n[Full privacy policy will be inserted here]",
+      "Content will be finalized upon business registration.\n\n1. Privacy at a Glance\n\nGeneral Information\nThe following information provides a simple overview of what happens to your personal data when you visit this website.\n\n2. Data Collection on This Website\n\nContact Form\nIf you submit inquiries to us via our contact form, your details from the inquiry form will be stored for the purpose of processing the inquiry.",
   },
   footer: {
     tagline: "International web solutions from one source.",

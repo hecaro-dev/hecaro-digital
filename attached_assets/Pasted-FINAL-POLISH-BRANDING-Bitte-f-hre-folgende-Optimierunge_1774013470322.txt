@@ -1,0 +1,30 @@
+FINAL POLISH & BRANDING:
+Bitte führe folgende Optimierungen an der Next.js App durch, um das Design auf Agentur-Niveau zu heben:
+
+1. LOGO-ERSTELLUNG (SVG):
+- Erstelle ein minimalistisches SVG-Logo: Ein stilisiertes "DS" Monogramm in einem "Squircle" (abgerundetes Quadrat wie bei Apple-Icons).
+- Farben: Emerald-Grün (#10b981) auf Midnight-Black (#020617) oder als eleganter Outline-Stil.
+- Integriere dieses Logo im Header (links neben dem Text "Digital Solutions") und im Footer.
+
+2. TEXT- & TYPOGRAFIE-FIXES:
+- Hero-Headline: Ändere "Digitale Lösungen.Die überzeugen." in "Digitale Lösungen, die überzeugen." (mit Komma und Leerzeichen).
+- Portfolio: Ändere "für einen Unternehmer mit 10k+ Followern" in "für einen etablierten Content Creator & Unternehmer" (seriöser ohne unbelegbare Zahlen).
+- Tech-Stack: Ersetze "Vercel" durch "Cloud Deployments" (neutraler, da wir auf Replit hosten).
+
+3. FAQ-VERVOLLSTÄNDIGUNG (Inhaltlich füllen):
+Bitte schreibe für alle FAQ-Fragen professionelle Antworten (DE/EN/ES):
+- "Wie läuft ein Projekt ab?": Erstgespräch -> Konzept -> Design -> Entwicklung -> Launch.
+- "Internationales SEO?": Ja, wir nutzen Hreflang-Tags und lokalisierte Metadaten für DE, EN und ES.
+- "Sprachen?": Standardmäßig DE, EN, ES. Weitere Sprachen auf Anfrage möglich.
+- "Digital Consulting?": Optimierung von Hardware-Setups (Licht, Audio, OBS) für professionelle Video-Präsenz.
+
+4. LEGAL & FOOTER:
+- Stelle sicher, dass die Links für Impressum und Datenschutz im Footer auf die entsprechenden Seiten/Modals führen. 
+- Füge dort einen Standard-Platzhaltertext ein: "Inhalt wird im Rahmen der Gewerbeanmeldung finalisiert."
+
+5. DESIGN-FEINSCHLIFF:
+- Header: Entferne das doppelte "Kontakt"-Label oben links, falls es redundant zur Navigation ist.
+- Buttons: Mache den "Leistungen ansehen"-Button im Hero zu einem "Outline-Button" (nur Rahmen), damit der "Projekt starten"-Button als Haupt-CTA stärker hervorsticht.
+
+ÜBERPRÜFUNG:
+Stelle sicher, dass alle Änderungen in allen drei Sprachen (/de, /en, /es) übernommen werden. Der Build muss weiterhin fehlerfrei durchlaufen.

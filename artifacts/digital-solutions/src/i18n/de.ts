@@ -21,7 +21,7 @@ export const de = {
   },
   hero: {
     badge: "Verfügbar weltweit · DE · EN · ES",
-    headline: "Digitale Lösungen.\nDie überzeugen.",
+    headline: "Digitale Lösungen,\ndie überzeugen.",
     sub: "Schnelle Landing Pages, messbare SEO-Ergebnisse und professionelle digitale Beratung – aus einer Hand, für internationale Märkte.",
     cta: "Projekt starten",
     cta2: "Leistungen ansehen",
@@ -119,7 +119,7 @@ export const de = {
       {
         tag: "Consulting",
         title: "Video & Streaming Setup",
-        description: "Professionelles Home-Studio für einen Unternehmer mit 10k+ Followern.",
+        description: "Professionelles Home-Studio für einen etablierten Content Creator & Unternehmer.",
       },
     ],
     cta: "Alle Projekte ansehen",
@@ -138,7 +138,7 @@ export const de = {
   techstack: {
     label: "Tech Stack",
     headline: "Modernste Technologien",
-    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Vercel"],
+    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Cloud Deployments"],
   },
   process: {
     label: "Prozess",
@@ -179,22 +179,22 @@ export const de = {
       {
         question: "Wie läuft ein Projekt typisch ab?",
         answer:
-          "Analyse & Briefing → Strategie & Konzept → Design & Entwicklung → Launch & Übergabe. Durchschnittliche Projektdauer: 1–3 Wochen je nach Umfang.",
+          "Ein Projekt läuft in vier klaren Phasen ab: Erstgespräch & Briefing → Konzept & Strategie → Design & Entwicklung → Launch & Übergabe. Nach einem kostenlosen Erstgespräch erhalten Sie ein konkretes Angebot. Die durchschnittliche Projektdauer beträgt 1–3 Wochen je nach Umfang.",
       },
       {
         question: "Bieten Sie auch SEO für internationale Märkte an?",
         answer:
-          "Ja, internationale SEO ist einer meiner Schwerpunkte. Ich implementiere korrekte Hreflang-Tags, mehrsprachige Sitemaps und Content-Strategien für DE, EN und ES.",
+          "Ja, internationale SEO ist einer meiner Schwerpunkte. Ich implementiere korrekte Hreflang-Tags für DE, EN und ES, erstelle lokalisierte Metadaten und strukturierte Daten (JSON-LD) sowie mehrsprachige Sitemaps – für maximale Sichtbarkeit in allen Zielmärkten.",
       },
       {
         question: "In welchen Sprachen kann die Website erstellt werden?",
         answer:
-          "Deutsch, Englisch und Spanisch. Alle drei Sprachen werden professionell von mir betreut – keine automatischen Übersetzungstools.",
+          "Standardmäßig Deutsch, Englisch und Spanisch. Alle drei Sprachen werden professionell von mir betreut – ohne automatische Übersetzungstools. Weitere Sprachen sind auf Anfrage möglich.",
       },
       {
         question: "Was bedeutet Digital Consulting bei Ihnen?",
         answer:
-          "Ich helfe Ihnen, Ihr Home-Office oder Streaming-Setup professionell aufzusetzen: OBS Studio, Beleuchtung, Mikrofon, Software-Workflow. Ideal für Unternehmer, Creator und Remote-Teams.",
+          "Digital Consulting umfasst die professionelle Optimierung Ihres Hardware-Setups für eine überzeugende digitale Präsenz: Beleuchtungskonzepte, Audiooptimierung, OBS Studio-Konfiguration und Software-Workflows. Ideal für Unternehmer, Content Creator und Remote-Teams.",
       },
     ],
   },
@@ -217,10 +217,10 @@ export const de = {
   legal: {
     imprintTitle: "Impressum",
     imprintText:
-      "Angaben gemäß § 5 TMG\n\n[Ihr Name]\n[Ihre Adresse]\n[PLZ Ort]\n\nKontakt:\nE-Mail: [ihre@email.de]\n\nUmsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:\n[Ihre USt-IdNr.]\n\nVerantwortlich für den Inhalt nach § 55 Abs. 2 RStV:\n[Ihr Name]\n[Ihre Adresse]",
+      "Inhalt wird im Rahmen der Gewerbeanmeldung finalisiert.\n\nAngaben gemäß § 5 TMG\n\n[Ihr Name]\n[Ihre Adresse]\n[PLZ Ort]\n\nKontakt:\nE-Mail: [ihre@email.de]\n\nUmsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:\n[Ihre USt-IdNr.]\n\nVerantwortlich für den Inhalt nach § 55 Abs. 2 RStV:\n[Ihr Name]\n[Ihre Adresse]",
     privacyTitle: "Datenschutzerklärung",
     privacyText:
-      "1. Datenschutz auf einen Blick\n\nAllgemeine Hinweise\nDie folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.\n\n2. Datenerfassung auf dieser Website\n\nKontaktformular\nWenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage bei uns gespeichert.\n\n[Vollständige Datenschutzerklärung wird hier eingefügt]",
+      "Inhalt wird im Rahmen der Gewerbeanmeldung finalisiert.\n\n1. Datenschutz auf einen Blick\n\nAllgemeine Hinweise\nDie folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.\n\n2. Datenerfassung auf dieser Website\n\nKontaktformular\nWenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage bei uns gespeichert.",
   },
   footer: {
     tagline: "Internationale Web-Lösungen aus einer Hand.",

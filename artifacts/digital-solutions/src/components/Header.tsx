@@ -9,24 +9,40 @@ interface HeaderProps {
   onNav: (section: string) => void;
 }
 
-function DSLogo() {
+export function DSLogo({ size = 36 }: { size?: number }) {
   return (
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 36 36"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
       <rect width="36" height="36" rx="10" fill="#020617" />
+      <rect
+        x="0.75"
+        y="0.75"
+        width="34.5"
+        height="34.5"
+        rx="9.25"
+        stroke="#10b981"
+        strokeWidth="0.75"
+        strokeOpacity="0.4"
+      />
       <path
-        d="M8 10h7.5c4.142 0 7.5 3.358 7.5 7.5v1C23 22.642 19.642 26 15.5 26H8V10z"
+        d="M5 10L5 26L10 26C16.627 26 18 21.627 18 18C18 14.373 16.627 10 10 10Z"
         fill="none"
         stroke="#10b981"
-        strokeWidth="2.2"
+        strokeWidth="1.8"
         strokeLinejoin="round"
       />
       <path
-        d="M21 13.5c2.485 0 4.5 2.015 4.5 4.5s-2.015 4.5-4.5 4.5"
-        stroke="#6366f1"
-        strokeWidth="2.2"
+        d="M31 12C31 10 29.5 9 28 9C26.5 9 25 10 25 12C25 14 26 15 28 15.5C30 16 31 17 31 19C31 21 29.5 22 28 22C26.5 22 25 21 25 19"
+        stroke="#10b981"
+        strokeWidth="1.8"
         strokeLinecap="round"
       />
-      <circle cx="25.5" cy="18" r="1.5" fill="#10b981" />
     </svg>
   );
 }
@@ -110,13 +126,6 @@ export default function Header({ onNav }: HeaderProps) {
                 </button>
               ))}
             </div>
-
-            <button
-              onClick={() => handleNav("contact")}
-              className="hidden md:inline-flex items-center px-5 py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black text-sm font-bold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 shadow-lg shadow-emerald-500/25"
-            >
-              {t.nav.contact}
-            </button>
 
             <button
               onClick={() => setMenuOpen(!menuOpen)}

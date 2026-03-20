@@ -60,7 +60,7 @@ export default function Header({ onNav }: HeaderProps) {
                 fontWeight: 700,
                 color: "#ffffff",
                 letterSpacing: "0.08em",
-                fontFamily: "'Syne', sans-serif",
+                fontFamily: "var(--font-syne), sans-serif",
                 whiteSpace: "nowrap",
               }}
             >

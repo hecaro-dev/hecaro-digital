@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useI18n } from "../i18n";
-import { Logo } from "./brand/Logo";
+import { LogoMark } from "./brand/Logo";
 
 interface HeroSectionProps {
   onNav: (section: string) => void;
@@ -63,7 +63,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             transition={glowAnim.transition}
             style={{ display: "inline-flex" }}
           >
-            <Logo size={64} theme="dark" />
+            <LogoMark size={80} theme="dark" />
           </motion.div>
         </motion.div>
 

@@ -137,7 +137,7 @@ export function Logo({
               marginTop: 2,
             }}
           >
-            International Webdesign &amp; SEO
+            International Web Design &amp; SEO
           </span>
         </div>
       )}

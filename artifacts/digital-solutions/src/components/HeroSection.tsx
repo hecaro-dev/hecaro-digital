@@ -166,7 +166,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 onMouseMove={onCtaMove}
                 onMouseLeave={onCtaLeave}
                 onClick={() => onNav("contact")}
-                className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold transition-colors duration-300 shadow-lg shadow-emerald-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-xs tracking-widest uppercase transition-colors duration-300 shadow-lg shadow-emerald-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
               >
                 {t.hero.cta}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
@@ -175,7 +175,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
               {/* Secondary CTA */}
               <button
                 onClick={() => onNav("services")}
-                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-3.5 rounded-full border border-white/20 hover:border-white/40 text-slate-300 hover:text-white font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-3.5 rounded-full border border-white/20 hover:border-white/40 text-slate-300 hover:text-white font-semibold text-xs tracking-widest uppercase transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50"
               >
                 {t.hero.cta2}
               </button>

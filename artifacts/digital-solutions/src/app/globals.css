@@ -58,7 +58,7 @@
 
 @layer base {
   * {
-    @apply border-border tracking-[-0.02em];
+    @apply border-border;
   }
 
   html {
@@ -68,6 +68,13 @@
   body {
     @apply font-sans antialiased text-foreground min-h-screen;
     background-color: #05070a;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+    letter-spacing: -0.03em;
   }
 
   body::before {

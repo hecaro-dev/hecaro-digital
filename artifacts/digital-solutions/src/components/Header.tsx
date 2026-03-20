@@ -74,7 +74,7 @@ export default function Header({ onNav }: HeaderProps) {
               <button
                 key={item.key}
                 onClick={() => handleNav(item.key)}
-                className="text-sm font-medium text-slate-400 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded px-1"
+                className="text-[11px] font-semibold tracking-widest uppercase text-slate-400 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded px-1"
               >
                 {item.label}
               </button>
@@ -128,7 +128,7 @@ export default function Header({ onNav }: HeaderProps) {
                 <button
                   key={item.key}
                   onClick={() => handleNav(item.key)}
-                  className="text-left text-slate-300 hover:text-white py-2.5 text-base font-medium transition-colors border-b border-white/[0.04] last:border-0"
+                  className="text-left text-slate-300 hover:text-white py-2.5 text-xs font-semibold uppercase tracking-widest transition-colors border-b border-white/[0.04] last:border-0"
                 >
                   {item.label}
                 </button>
@@ -154,7 +154,7 @@ export default function Header({ onNav }: HeaderProps) {
 
               <button
                 onClick={() => handleNav("contact")}
-                className="mt-1 px-4 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold transition-all duration-200 text-center text-sm"
+                className="mt-1 px-4 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold uppercase tracking-widest transition-all duration-200 text-center text-xs"
               >
                 {t.nav.contact}
               </button>

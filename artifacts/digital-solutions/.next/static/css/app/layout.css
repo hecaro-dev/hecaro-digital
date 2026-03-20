@@ -1,12 +1,12 @@
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ../../node_modules/.pnpm/next@15.5.13_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[2].use[1]!../../node_modules/.pnpm/next@15.5.13_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[2].use[2]!../../node_modules/.pnpm/next@15.5.13_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/font/google/target.css?{"path":"src/app/layout.tsx","import":"Syne","arguments":[{"subsets":["latin"],"weight":["400","500","600","700","800"],"variable":"--font-syne","display":"swap"}],"variableName":"syne"} ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../../node_modules/.pnpm/next@15.5.13_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[2].use[1]!../../node_modules/.pnpm/next@15.5.13_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[2].use[2]!../../node_modules/.pnpm/next@15.5.13_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/font/google/target.css?{"path":"src/app/layout.tsx","import":"Syne","arguments":[{"subsets":["latin"],"weight":["400","500","600","700","800"],"variable":"--font-syne","display":"block"}],"variableName":"syne"} ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* greek */
 @font-face {
   font-family: 'Syne';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src: url(/_next/static/media/0da54fcd0470ea43-s.woff2) format('woff2');
   unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
@@ -15,7 +15,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src: url(/_next/static/media/680a7121f7a85e3f-s.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -24,7 +24,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src: url(/_next/static/media/8a1d8947e5852e30-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -33,7 +33,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
+  font-display: block;
   src: url(/_next/static/media/0da54fcd0470ea43-s.woff2) format('woff2');
   unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
@@ -42,7 +42,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
+  font-display: block;
   src: url(/_next/static/media/680a7121f7a85e3f-s.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -51,7 +51,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
+  font-display: block;
   src: url(/_next/static/media/8a1d8947e5852e30-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -60,7 +60,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 600;
-  font-display: swap;
+  font-display: block;
   src: url(/_next/static/media/0da54fcd0470ea43-s.woff2) format('woff2');
   unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
@@ -69,7 +69,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 600;
-  font-display: swap;
+  font-display: block;
   src: url(/_next/static/media/680a7121f7a85e3f-s.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -78,7 +78,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 600;
-  font-display: swap;
+  font-display: block;
   src: url(/_next/static/media/8a1d8947e5852e30-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -87,7 +87,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
   src: url(/_next/static/media/0da54fcd0470ea43-s.woff2) format('woff2');
   unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
@@ -96,7 +96,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
   src: url(/_next/static/media/680a7121f7a85e3f-s.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -105,7 +105,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
   src: url(/_next/static/media/8a1d8947e5852e30-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -114,7 +114,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 800;
-  font-display: swap;
+  font-display: block;
   src: url(/_next/static/media/0da54fcd0470ea43-s.woff2) format('woff2');
   unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
@@ -123,7 +123,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 800;
-  font-display: swap;
+  font-display: block;
   src: url(/_next/static/media/680a7121f7a85e3f-s.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -132,12 +132,12 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 800;
-  font-display: swap;
+  font-display: block;
   src: url(/_next/static/media/8a1d8947e5852e30-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }@font-face {font-family: 'Syne Fallback';src: local("Arial");ascent-override: 93.93%;descent-override: 27.93%;line-gap-override: 0.00%;size-adjust: 98.47%
-}.__className_c1a642 {font-family: 'Syne', 'Syne Fallback';font-style: normal
-}.__variable_c1a642 {--font-syne: 'Syne', 'Syne Fallback'
+}.__className_699187 {font-family: 'Syne', 'Syne Fallback';font-style: normal
+}.__variable_699187 {--font-syne: 'Syne', 'Syne Fallback'
 }
 
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -1289,6 +1289,9 @@
   .max-w-xl {
     max-width: var(--container-xl);
   }
+  .min-w-0 {
+    min-width: calc(var(--spacing) * 0);
+  }
   .flex-1 {
     flex: 1;
   }
@@ -1365,9 +1368,6 @@
   }
   .gap-16 {
     gap: calc(var(--spacing) * 16);
-  }
-  .gap-20 {
-    gap: calc(var(--spacing) * 20);
   }
   .gap-24 {
     gap: calc(var(--spacing) * 24);
@@ -2449,11 +2449,6 @@
       grid-template-columns: repeat(12, minmax(0, 1fr));
     }
   }
-  .md\:grid-cols-\[1fr_1\.2fr\] {
-    @media (width >= 48rem) {
-      grid-template-columns: 1fr 1.2fr;
-    }
-  }
   .md\:flex-row {
     @media (width >= 48rem) {
       flex-direction: row;
@@ -2518,19 +2513,9 @@
       grid-column: span 5 / span 5;
     }
   }
-  .lg\:block {
-    @media (width >= 64rem) {
-      display: block;
-    }
-  }
   .lg\:flex {
     @media (width >= 64rem) {
       display: flex;
-    }
-  }
-  .lg\:hidden {
-    @media (width >= 64rem) {
-      display: none;
     }
   }
   .lg\:grid-cols-2 {
@@ -2541,16 +2526,6 @@
   .lg\:grid-cols-4 {
     @media (width >= 64rem) {
       grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-  }
-  .lg\:grid-cols-\[45\%_55\%\] {
-    @media (width >= 64rem) {
-      grid-template-columns: 45% 55%;
-    }
-  }
-  .lg\:gap-0 {
-    @media (width >= 64rem) {
-      gap: calc(var(--spacing) * 0);
     }
   }
   .lg\:gap-8 {
@@ -2694,7 +2669,7 @@
   }
   html {
     scroll-behavior: smooth;
-    font-family: var(--font-syne), system-ui, sans-serif;
+    font-family: 'Syne', var(--font-syne), system-ui, sans-serif;
   }
   body {
     min-height: 100vh;
@@ -2702,12 +2677,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #05070a;
-    font-family: var(--font-syne), system-ui, sans-serif;
+    font-family: 'Syne', var(--font-syne), system-ui, sans-serif;
     font-weight: 400;
     letter-spacing: 0em;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-syne), system-ui, sans-serif;
+    font-family: 'Syne', var(--font-syne), system-ui, sans-serif;
     font-weight: 800;
     letter-spacing: -0.03em;
   }

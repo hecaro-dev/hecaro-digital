@@ -4,10 +4,30 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useI18n } from "../i18n";
-import { Logo } from "./brand/Logo";
 
 interface HeaderProps {
   onNav: (section: string) => void;
+}
+
+const LOGO_FILTER = "brightness(0) invert(1)";
+
+function HLogo({ height, flip = false }: { height: number; flip?: boolean }) {
+  return (
+    <img
+      src="/hecaro-logo.png"
+      alt=""
+      aria-hidden="true"
+      style={{
+        height,
+        width: "auto",
+        display: "block",
+        flexShrink: 0,
+        filter: LOGO_FILTER,
+        transform: flip ? "scaleX(-1)" : undefined,
+        userSelect: "none",
+      }}
+    />
+  );
 }
 
 export default function Header({ onNav }: HeaderProps) {
@@ -46,21 +66,79 @@ export default function Header({ onNav }: HeaderProps) {
       role="banner"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-20 sm:h-24">
 
+          {/* ── Brand lockup ────────────────────────────────────────── */}
           <button
             onClick={() => handleNav("top")}
             className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-xl"
             aria-label="HECARO Digital – Home"
           >
-            <span className="flex sm:hidden">
-              <Logo size={28} theme="dark" showWordmark={false} />
+            {/* Desktop: [H logo] | name + subline | [H logo mirrored] */}
+            <span className="hidden sm:flex items-center gap-4">
+              <HLogo height={60} />
+              <span className="flex flex-col items-center leading-tight">
+                <span
+                  style={{
+                    fontSize: 18,
+                    fontWeight: 700,
+                    color: "#ffffff",
+                    letterSpacing: "0.06em",
+                    fontFamily: "inherit",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  HECARO Digital
+                </span>
+                <span
+                  style={{
+                    fontSize: 10,
+                    fontWeight: 300,
+                    color: "rgba(255,255,255,0.46)",
+                    letterSpacing: "0.09em",
+                    fontFamily: "inherit",
+                    whiteSpace: "nowrap",
+                    marginTop: 3,
+                  }}
+                >
+                  International Web Design &amp; SEO
+                </span>
+              </span>
+              <HLogo height={60} flip />
             </span>
-            <span className="hidden sm:flex">
-              <Logo size={40} theme="dark" />
+
+            {/* Mobile: [H logo] | name + subline */}
+            <span className="flex sm:hidden items-center gap-3">
+              <HLogo height={40} />
+              <span className="flex flex-col leading-tight">
+                <span
+                  style={{
+                    fontSize: 14,
+                    fontWeight: 700,
+                    color: "#ffffff",
+                    letterSpacing: "0.05em",
+                    fontFamily: "inherit",
+                  }}
+                >
+                  HECARO Digital
+                </span>
+                <span
+                  style={{
+                    fontSize: 8,
+                    fontWeight: 300,
+                    color: "rgba(255,255,255,0.46)",
+                    letterSpacing: "0.07em",
+                    fontFamily: "inherit",
+                    marginTop: 2,
+                  }}
+                >
+                  International Web Design &amp; SEO
+                </span>
+              </span>
             </span>
           </button>
 
+          {/* ── Desktop nav ─────────────────────────────────────────── */}
           <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
             {navItems.map((item) => (
               <button
@@ -73,6 +151,7 @@ export default function Header({ onNav }: HeaderProps) {
             ))}
           </nav>
 
+          {/* ── Language switcher + hamburger ───────────────────────── */}
           <div className="flex items-center gap-4">
             <div className="hidden sm:flex items-center bg-white/[0.05] border border-white/[0.08] rounded-full p-0.5 backdrop-blur-sm">
               {langs.map((l) => (
@@ -104,6 +183,7 @@ export default function Header({ onNav }: HeaderProps) {
         </div>
       </div>
 
+      {/* ── Mobile menu ─────────────────────────────────────────────── */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div

@@ -1,7 +1,6 @@
 "use client";
 
 import { useI18n } from "../i18n";
-import { Logo } from "./brand/Logo";
 
 interface FooterProps {
   onLegal: (type: "imprint" | "privacy") => void;
@@ -16,8 +15,26 @@ export default function Footer({ onLegal, onNav = () => {} }: FooterProps) {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
           <div className="md:col-span-4 lg:col-span-5">
-            <div className="mb-6">
-              <Logo size={32} theme="dark" />
+            <div className="mb-4 flex items-center gap-3">
+              <img
+                src="/hecaro-logo.png"
+                alt="HECARO Digital"
+                style={{
+                  height: 40,
+                  width: "auto",
+                  display: "block",
+                  flexShrink: 0,
+                  filter: "brightness(0) invert(1)",
+                }}
+              />
+              <span className="flex flex-col leading-tight">
+                <span style={{ fontSize: 15, fontWeight: 700, color: "#ffffff", letterSpacing: "0.05em" }}>
+                  HECARO Digital
+                </span>
+                <span style={{ fontSize: 9, fontWeight: 300, color: "rgba(255,255,255,0.42)", letterSpacing: "0.07em", marginTop: 2 }}>
+                  International Web Design &amp; SEO
+                </span>
+              </span>
             </div>
             <p className="text-slate-400 max-w-sm leading-relaxed text-sm">{t.footer.tagline}</p>
           </div>

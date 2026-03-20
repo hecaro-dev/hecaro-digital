@@ -54,30 +54,18 @@ export default function Header({ onNav }: HeaderProps) {
             className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg"
             aria-label="HECARO Digital – Home"
           >
-            <span style={{ display: "inline-flex", alignItems: "baseline", gap: "0.3em", whiteSpace: "nowrap", lineHeight: 1 }}>
-              <span
-                style={{
-                  fontFamily: "var(--font-syne), sans-serif",
-                  fontWeight: 800,
-                  fontSize: 17,
-                  letterSpacing: "0.05em",
-                  color: "#ffffff",
-                  textTransform: "uppercase",
-                }}
-              >
-                HECARO
-              </span>
-              <span
-                style={{
-                  fontFamily: "var(--font-syne), sans-serif",
-                  fontWeight: 600,
-                  fontSize: 16,
-                  letterSpacing: "0.02em",
-                  color: "rgba(255,255,255,0.65)",
-                }}
-              >
-                Digital
-              </span>
+            <span
+              style={{
+                fontFamily: "var(--font-syne), sans-serif",
+                fontWeight: 800,
+                fontSize: 17,
+                letterSpacing: "0.05em",
+                color: "#ffffff",
+                whiteSpace: "nowrap",
+                lineHeight: 1,
+              }}
+            >
+              HECARO Digital
             </span>
           </button>
 

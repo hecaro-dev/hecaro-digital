@@ -19,57 +19,6 @@ function anim(delay: number) {
   };
 }
 
-/*
- * HMark — vector SVG of the HECARO "H" brand glyph.
- * Pure SVG path: 100% sharp on Retina/4K, zero blur, no image loading.
- *
- * viewBox 0 0 300 380
- *   Left stem  : x 0–88   (full height)
- *   Right stem : x 212–300 (full height)
- *   Crossbar   : diagonal, left y 190–245 → right y 138–193
- *   Upper-right accent: subtle cubic curve gives the branded "ear" detail
- */
-function HMark({ size }: { size: number }) {
-  return (
-    <svg
-      viewBox="0 0 300 380"
-      width={size}
-      height={size}
-      aria-hidden="true"
-      fill="white"
-      xmlns="http://www.w3.org/2000/svg"
-      style={{ display: "block", flexShrink: 0 }}
-    >
-      {/*
-        Main H body — single closed path.
-        Crossbar slopes from (left y=190/245) up to (right y=138/193).
-        The top-right corner of the right stem uses a cubic bezier that
-        creates the characteristic concave "ear" curve visible in the logo.
-      */}
-      <path d="
-        M 0,0
-        L 88,0
-        L 88,190
-        L 212,138
-        L 212,0
-        C 212,0 270,-4 290,36
-        C 308,72 294,110 258,128
-        L 212,148
-        L 212,193
-        L 88,245
-        L 88,380
-        L 0,380
-        Z
-      " />
-      {/*
-        Right stem body — separate rectangle so the upper-right accent
-        (encoded in the path above) blends seamlessly at the top.
-      */}
-      <rect x="212" y="128" width="88" height="252" />
-    </svg>
-  );
-}
-
 export default function HeroSection({ onNav }: HeroSectionProps) {
   const { t } = useI18n();
   const headlineParts = t.hero.headline.split("\n");
@@ -114,31 +63,50 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020617]/60 to-[#020617]" />
       </div>
 
-      {/* ── 2-column layout ─────────────────────────────────────────── */}
+      {/* ── 2-column grid ────────────────────────────────────────────── */}
       <div className="relative z-10 max-w-6xl w-full mx-auto">
-        {/*
-          flex-col on mobile → H centered above text.
-          md:flex-row on desktop → H left, text right, vertically centered.
-          gap-20 = 80px desktop gutter.
-        */}
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
 
-          {/* LEFT: SVG H watermark — 100% vector sharp */}
+          {/*
+            LEFT COLUMN: /public/hecaro-icon.svg
+            ─ opacity: 0.18 (premium watermark)
+            ─ filter: drop-shadow for the branded green glow
+            ─ Mobile: 250px · Desktop: 500px height
+            The img height drives the size; width is auto (aspect-correct).
+          */}
           <motion.div
             {...anim(0)}
-            className="shrink-0 self-center"
-            style={{ opacity: 0.15 }}
+            className="shrink-0 self-center flex items-center justify-center"
           >
-            {/* Mobile: 200px · Desktop: 480px */}
-            <div className="block md:hidden">
-              <HMark size={200} />
-            </div>
-            <div className="hidden md:block">
-              <HMark size={480} />
-            </div>
+            {/* Mobile */}
+            <img
+              src="/hecaro-icon.svg"
+              alt=""
+              aria-hidden="true"
+              className="block md:hidden select-none pointer-events-none"
+              style={{
+                height: 250,
+                width: "auto",
+                opacity: 0.18,
+                filter: "drop-shadow(0 0 40px rgba(34, 197, 94, 0.3))",
+              }}
+            />
+            {/* Desktop */}
+            <img
+              src="/hecaro-icon.svg"
+              alt=""
+              aria-hidden="true"
+              className="hidden md:block select-none pointer-events-none"
+              style={{
+                height: 500,
+                width: "auto",
+                opacity: 0.18,
+                filter: "drop-shadow(0 0 40px rgba(34, 197, 94, 0.3))",
+              }}
+            />
           </motion.div>
 
-          {/* RIGHT: Text block */}
+          {/* RIGHT COLUMN: Headline + Sub + CTAs */}
           <div className="flex-1 min-w-0">
             <motion.h1
               {...anim(0.15)}
@@ -169,6 +137,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
               {...anim(0.42)}
               className="flex flex-col sm:flex-row items-start gap-4"
             >
+              {/* Primary CTA — magnetic */}
               <motion.button
                 ref={ctaRef}
                 style={{ x: sx, y: sy }}
@@ -181,6 +150,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </motion.button>
 
+              {/* Secondary CTA */}
               <button
                 onClick={() => onNav("services")}
                 className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full border border-emerald-500/30 hover:border-emerald-500/60 text-slate-300 hover:text-emerald-300 font-semibold transition-all duration-300 backdrop-blur-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50"

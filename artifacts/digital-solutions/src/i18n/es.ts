@@ -7,7 +7,7 @@ export const es: Translations = {
   lang: "es",
   langName: "Español",
   meta: {
-    title: "Digital Solutions – Diseño Web Internacional & SEO",
+    title: "Digital Solutions – International Web Design & SEO",
     description:
       "Landing pages profesionales con Next.js, estrategia SEO internacional y consultoría digital. Hecho a medida para empresas con ambiciones globales.",
   },

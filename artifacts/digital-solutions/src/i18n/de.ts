@@ -6,7 +6,7 @@ export const de = {
   lang: "de",
   langName: "Deutsch",
   meta: {
-    title: "Digital Solutions – Internationales Webdesign & SEO",
+    title: "Digital Solutions – International Web Design & SEO",
     description:
       "Professionelle Next.js Landing Pages, internationale SEO-Strategie und digitale Beratung. Maßgeschneidert für Unternehmen mit globalen Ambitionen.",
   },
@@ -219,7 +219,7 @@ export const de = {
       "Inhalt wird im Rahmen der Gewerbeanmeldung finalisiert.\n\n1. Datenschutz auf einen Blick\n\nAllgemeine Hinweise\nDie folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.\n\n2. Datenerfassung auf dieser Website\n\nKontaktformular\nWenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage bei uns gespeichert.",
   },
   footer: {
-    tagline: "Internationale Web-Lösungen aus einer Hand.",
+    tagline: "International Web Design & SEO",
     rights: "Alle Rechte vorbehalten.",
     navTitle: "Navigation",
     links: {

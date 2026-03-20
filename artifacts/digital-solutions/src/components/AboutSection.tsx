@@ -16,9 +16,9 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
           >
             <span className="inline-flex px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-bold text-emerald-400 uppercase tracking-widest mb-8">
               {t.quality.label}
@@ -40,16 +40,12 @@ export default function AboutSection() {
               <p>{t.quality.p1}</p>
               <p>{t.quality.p2}</p>
             </div>
-
-            <blockquote className="mt-10 border-l-2 border-emerald-500 pl-6 italic text-slate-300 text-lg">
-              „{t.quality.blockquote}"
-            </blockquote>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.15 }}
             className="space-y-6"
           >
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">

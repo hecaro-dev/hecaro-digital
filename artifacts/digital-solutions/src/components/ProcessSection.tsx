@@ -41,9 +41,9 @@ export default function ProcessSection() {
           {t.process.steps.map((step, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.55, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.5, delay: i * 0.09, ease: [0.22, 1, 0.36, 1] }}
               className="relative group bg-[#020617] p-8 sm:p-10 hover:bg-white/[0.02] transition-colors duration-300 flex flex-col"
             >
               <div className="text-5xl font-black tracking-tighter mb-6 leading-none select-none">

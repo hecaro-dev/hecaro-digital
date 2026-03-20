@@ -46,9 +46,9 @@ export default function ServicesSection() {
             return (
               <motion.article
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.5, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
                 className={`relative group bg-[rgba(255,255,255,0.03)] backdrop-blur-md border border-[rgba(255,255,255,0.08)] rounded-3xl p-8 sm:p-12 hover:border-emerald-500/30 transition-all duration-500 overflow-hidden ${
                   isLarge ? "md:col-span-2" : "col-span-1"
                 }`}

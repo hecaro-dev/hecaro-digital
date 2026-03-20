@@ -7,17 +7,15 @@ export default function CustomCursor() {
   const [mounted, setMounted] = useState(false);
   const [hovered, setHovered] = useState(false);
 
-  const rawX = useMotionValue(-100);
-  const rawY = useMotionValue(-100);
+  const rawX = useMotionValue(-200);
+  const rawY = useMotionValue(-200);
 
-  const x = useSpring(rawX, { stiffness: 500, damping: 40, mass: 0.4 });
-  const y = useSpring(rawY, { stiffness: 500, damping: 40, mass: 0.4 });
+  const x = useSpring(rawX, { stiffness: 180, damping: 28, mass: 0.6 });
+  const y = useSpring(rawY, { stiffness: 180, damping: 28, mass: 0.6 });
 
   useEffect(() => {
     if (window.matchMedia("(pointer: coarse)").matches) return;
-
     setMounted(true);
-    document.body.style.cursor = "none";
 
     const onMove = (e: MouseEvent) => {
       rawX.set(e.clientX);
@@ -25,7 +23,9 @@ export default function CustomCursor() {
     };
 
     const onOver = (e: MouseEvent) => {
-      const el = (e.target as Element).closest("button, a, [role='button'], input, textarea, select, label");
+      const el = (e.target as Element).closest(
+        "button, a, [role='button'], input, textarea, select, label, [data-halo]"
+      );
       setHovered(!!el);
     };
 
@@ -33,7 +33,6 @@ export default function CustomCursor() {
     document.addEventListener("mouseover", onOver);
 
     return () => {
-      document.body.style.cursor = "";
       window.removeEventListener("mousemove", onMove);
       document.removeEventListener("mouseover", onOver);
     };
@@ -42,27 +41,21 @@ export default function CustomCursor() {
   if (!mounted) return null;
 
   return (
-    <>
-      {/* Lagging outer ring */}
-      <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full border border-emerald-400/50"
-        style={{ x, y, translateX: "-50%", translateY: "-50%" }}
-        animate={{ width: hovered ? 42 : 26, height: hovered ? 42 : 26 }}
-        transition={{ duration: 0.18, ease: "easeOut" }}
-      />
-      {/* Snappy inner dot */}
-      <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full bg-emerald-400"
-        style={{
-          x: rawX,
-          y: rawY,
-          translateX: "-50%",
-          translateY: "-50%",
-          boxShadow: "0 0 8px 2px rgba(16,185,129,0.55)",
-        }}
-        animate={{ width: hovered ? 8 : 5, height: hovered ? 8 : 5 }}
-        transition={{ duration: 0.12, ease: "easeOut" }}
-      />
-    </>
+    <motion.div
+      className="fixed top-0 left-0 pointer-events-none z-[9998] rounded-full"
+      style={{
+        x,
+        y,
+        translateX: "-50%",
+        translateY: "-50%",
+        width: 96,
+        height: 96,
+        background:
+          "radial-gradient(circle, rgba(16,185,129,0.22) 0%, rgba(16,185,129,0.06) 50%, transparent 70%)",
+        filter: "blur(12px)",
+      }}
+      animate={{ opacity: hovered ? 1 : 0, scale: hovered ? 1 : 0.6 }}
+      transition={{ duration: 0.22, ease: "easeOut" }}
+    />
   );
 }

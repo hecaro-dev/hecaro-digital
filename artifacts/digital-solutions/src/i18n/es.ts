@@ -130,7 +130,6 @@ export const es: Translations = {
     headline: "Precisión.\nFiabilidad.\nEsmero.",
     p1: "Más de 20 años de experiencia en el entorno laboral alemán y una absoluta fiabilidad en los procesos son la base de mi trabajo. El dominio nativo del alemán y del español permite una comunicación directa en cada mercado — sin intermediarios, sin malentendidos.",
     p2: "Sin externalización. Sin gastos de agencia. Trabajará directamente conmigo — el experto que acompaña su proyecto de principio a fin.",
-    blockquote: "Sin subcontratación. Sin estructuras de agencia costosas. Resultados directos, honestos y medibles.",
     foundationTitle: "Los Pilares",
     stats: [
       { value: "100%", label: "Comunicación directa" },

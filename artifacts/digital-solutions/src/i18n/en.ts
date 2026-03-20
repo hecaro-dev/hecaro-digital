@@ -130,7 +130,6 @@ export const en: Translations = {
     headline: "Precision.\nReliability.\nDiligence.",
     p1: "Over 20 years of experience in the German working environment and absolute process reliability are the foundation of my work. Native proficiency in German and Spanish enables direct communication in every market — without detours, without misunderstandings.",
     p2: "No outsourcing. No agency overhead. You work directly with me — the expert who accompanies your project from start to finish.",
-    blockquote: "No outsourcing. No agency overhead. Just direct, honest and measurable results.",
     foundationTitle: "The Foundation",
     stats: [
       { value: "100%", label: "Direct Communication" },

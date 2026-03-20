@@ -129,7 +129,6 @@ export const de = {
     headline: "Präzision.\nZuverlässigkeit.\nSorgfalt.",
     p1: "Über 20 Jahre Erfahrung im deutschen Arbeitsumfeld und absolute Prozess-Sicherheit sind das Fundament meiner Arbeit. Muttersprachliche Kompetenz in Deutsch und Spanisch ermöglicht direkte Kommunikation auf jedem Markt – ohne Umwege, ohne Missverständnisse.",
     p2: "Kein Outsourcing. Kein Agentur-Overhead. Sie arbeiten direkt mit mir – dem Experten, der Ihr Projekt von Anfang bis Ende begleitet.",
-    blockquote: "Kein Outsourcing. Kein Agentur-Overhead. Nur direkte, ehrliche und messbare Ergebnisse.",
     foundationTitle: "Das Fundament",
     stats: [
       { value: "100%", label: "Direktkommunikation" },

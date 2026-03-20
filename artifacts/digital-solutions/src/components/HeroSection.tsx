@@ -8,14 +8,15 @@ interface HeroSectionProps {
   onNav: (section: string) => void;
 }
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (delay: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
+const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
+
+function anim(delay: number) {
+  return {
+    initial: { opacity: 0, y: 24 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, delay, ease },
+  };
+}
 
 export default function HeroSection({ onNav }: HeroSectionProps) {
   const { t } = useI18n();
@@ -42,10 +43,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
 
       <div className="relative z-10 max-w-5xl mx-auto text-center mt-12">
         <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0}
+          {...anim(0)}
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-300 text-xs font-semibold tracking-wide mb-10 backdrop-blur-sm"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
@@ -53,10 +51,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         </motion.div>
 
         <motion.h1
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0.1}
+          {...anim(0.1)}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8"
         >
           {headlineParts.map((line, i) => (
@@ -73,20 +68,14 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         </motion.h1>
 
         <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0.2}
+          {...anim(0.2)}
           className="text-lg sm:text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-12"
         >
           {t.hero.sub}
         </motion.p>
 
         <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0.3}
+          {...anim(0.3)}
           className="flex flex-col sm:flex-row items-center justify-center gap-5"
         >
           <button

@@ -9,6 +9,8 @@ id = "artifacts/mockup-sandbox"
 [deployment]
 router = "application"
 deploymentTarget = "autoscale"
+build = ["sh", "-c", "pnpm install && pnpm build"]
+run = ["sh", "-c", "node .next/standalone/server.js"]
 
 [deployment.postBuild]
 args = ["pnpm", "store", "prune"]

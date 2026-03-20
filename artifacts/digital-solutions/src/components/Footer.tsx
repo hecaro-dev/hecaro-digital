@@ -15,25 +15,30 @@ export default function Footer({ onLegal, onNav = () => {} }: FooterProps) {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
           <div className="md:col-span-4 lg:col-span-5">
-            <div className="mb-4 flex items-center gap-3">
-              <img
-                src="/hecaro-logo.png"
-                alt="HECARO"
+            <div className="mb-5">
+              <span
                 style={{
-                  height: 40,
-                  width: "auto",
+                  fontFamily: "'Syne', sans-serif",
+                  fontSize: 22,
+                  fontWeight: 700,
+                  color: "#ffffff",
+                  letterSpacing: "0.08em",
                   display: "block",
-                  flexShrink: 0,
-                  filter: "brightness(0) invert(1)",
                 }}
-              />
-              <span className="flex flex-col leading-tight">
-                <span style={{ fontSize: 15, fontWeight: 700, color: "#ffffff", letterSpacing: "0.05em" }}>
-                  HECARO
-                </span>
-                <span style={{ fontSize: 9, fontWeight: 300, color: "rgba(255,255,255,0.42)", letterSpacing: "0.07em", marginTop: 2 }}>
-                  International Web Design &amp; SEO
-                </span>
+              >
+                HECARO Digital
+              </span>
+              <span
+                style={{
+                  fontSize: 10,
+                  fontWeight: 300,
+                  color: "rgba(255,255,255,0.38)",
+                  letterSpacing: "0.09em",
+                  display: "block",
+                  marginTop: 4,
+                }}
+              >
+                International Web Design &amp; SEO
               </span>
             </div>
             <p className="text-slate-400 max-w-sm leading-relaxed text-sm">{t.footer.tagline}</p>
@@ -60,7 +65,7 @@ export default function Footer({ onLegal, onNav = () => {} }: FooterProps) {
 
         <div className="pt-8 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} HECARO. {t.footer.rights}
+            © {new Date().getFullYear()} HECARO Digital. {t.footer.rights}
           </p>
           <div className="flex gap-4 text-sm text-slate-500">
             <span className="flex items-center gap-1.5">

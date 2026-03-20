@@ -63,85 +63,99 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020617]/60 to-[#020617]" />
       </div>
 
-      {/* Decorative large H mark — left watermark (H symbol only, text cropped off) */}
-      <div
-        aria-hidden="true"
-        className="absolute pointer-events-none overflow-hidden h-[200px] sm:h-[320px] lg:h-[450px]"
-        style={{
-          left: "2%",
-          top: "50%",
-          transform: "translateY(-50%)",
-          opacity: 0.17,
-          zIndex: 0,
-        }}
-      >
-        {/* Image is rendered at 2.22× the container height so only the top 45% (the H symbol) shows */}
-        <img
-          src="/hecaro-brand.png"
-          alt=""
-          className="h-[444px] sm:h-[711px] lg:h-[1000px] w-auto"
-          style={{
-            display: "block",
-            filter: "brightness(0) invert(1)",
-            userSelect: "none",
-          }}
-        />
-      </div>
+      {/* ── 2-column layout ─────────────────────────────────────────── */}
+      <div className="relative z-10 max-w-6xl w-full mx-auto">
+        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-12 lg:gap-16">
 
-      <div className="relative z-10 max-w-5xl w-full mx-auto mt-8">
+          {/*
+            LEFT: Large H icon — watermark.
+            The image is square (roughly 1:1). We display it at a fixed WIDTH
+            and let height be auto (also same width, since square).
+            overflow:hidden on the container clips the bottom portion so that
+            the HECAROOO text (starting at ~62% of image height) is never shown.
+            Container height = 56% of image width = 56% of displayed height → safe crop.
 
-        {/* Headline */}
-        <motion.h1
-          {...anim(0.1)}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8"
-        >
-          {headlineParts.map((line, i) => (
-            <span key={i} className="block leading-[1.1]">
-              {i === 1 ? (
-                <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
-                  {line}
+            Breakpoints:
+              mobile:  w=250px → container h=140px  (250×0.56)
+              sm:      w=300px → container h=168px  (300×0.56)
+              md:      w=420px → container h=235px  (420×0.56)
+              lg:      w=480px → container h=269px  (480×0.56)
+          */}
+          <motion.div
+            {...anim(0)}
+            className="shrink-0 order-first overflow-hidden"
+            style={{ opacity: 0.22 }}
+          >
+            {/* Outer div sizes the CROP WINDOW (container) */}
+            <div className="w-[250px] h-[140px] sm:w-[300px] sm:h-[168px] md:w-[420px] md:h-[235px] lg:w-[480px] lg:h-[269px] overflow-hidden">
+              {/* Image width = container width (w-full), height = auto (square → same as width). */}
+              <img
+                src="/hecaro-source.png"
+                alt=""
+                aria-hidden="true"
+                className="w-full h-auto block pointer-events-none select-none"
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
+            </div>
+          </motion.div>
+
+          {/* RIGHT: Text block */}
+          <div className="flex-1 min-w-0">
+
+            {/* Headline */}
+            <motion.h1
+              {...anim(0.15)}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight"
+            >
+              {headlineParts.map((line, i) => (
+                <span key={i} className="block leading-[1.1]">
+                  {i === 1 ? (
+                    <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
+                      {line}
+                    </span>
+                  ) : (
+                    line
+                  )}
                 </span>
-              ) : (
-                line
-              )}
-            </span>
-          ))}
-        </motion.h1>
+              ))}
+            </motion.h1>
 
-        {/* Sub-headline */}
-        <motion.p
-          {...anim(0.25)}
-          className="text-lg sm:text-xl md:text-2xl text-slate-400 max-w-2xl leading-relaxed mb-12"
-        >
-          {t.hero.sub}
-        </motion.p>
+            {/* Sub-headline */}
+            <motion.p
+              {...anim(0.28)}
+              className="text-base sm:text-lg md:text-xl text-slate-400 leading-relaxed mb-10"
+            >
+              {t.hero.sub}
+            </motion.p>
 
-        {/* CTAs */}
-        <motion.div
-          {...anim(0.4)}
-          className="flex flex-col sm:flex-row items-start gap-4"
-        >
-          {/* Primary CTA — magnetic */}
-          <motion.button
-            ref={ctaRef}
-            style={{ x: sx, y: sy }}
-            onMouseMove={onCtaMove}
-            onMouseLeave={onCtaLeave}
-            onClick={() => onNav("contact")}
-            className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold transition-colors duration-300 shadow-lg shadow-emerald-500/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
-          >
-            {t.hero.cta}
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-          </motion.button>
+            {/* CTAs */}
+            <motion.div
+              {...anim(0.42)}
+              className="flex flex-col sm:flex-row items-start gap-4"
+            >
+              {/* Primary CTA — magnetic */}
+              <motion.button
+                ref={ctaRef}
+                style={{ x: sx, y: sy }}
+                onMouseMove={onCtaMove}
+                onMouseLeave={onCtaLeave}
+                onClick={() => onNav("contact")}
+                className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold transition-colors duration-300 shadow-lg shadow-emerald-500/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+              >
+                {t.hero.cta}
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </motion.button>
 
-          {/* Secondary CTA */}
-          <button
-            onClick={() => onNav("services")}
-            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full border border-emerald-500/30 hover:border-emerald-500/60 text-slate-300 hover:text-emerald-300 font-semibold transition-all duration-300 backdrop-blur-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50"
-          >
-            {t.hero.cta2}
-          </button>
-        </motion.div>
+              {/* Secondary CTA */}
+              <button
+                onClick={() => onNav("services")}
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full border border-emerald-500/30 hover:border-emerald-500/60 text-slate-300 hover:text-emerald-300 font-semibold transition-all duration-300 backdrop-blur-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50"
+              >
+                {t.hero.cta2}
+              </button>
+            </motion.div>
+          </div>
+        </div>
       </div>
 
       {/* Scroll indicator */}

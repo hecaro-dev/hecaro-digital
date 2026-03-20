@@ -52,19 +52,19 @@ export default function Header({ onNav }: HeaderProps) {
           <button
             onClick={() => handleNav("top")}
             className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg"
-            aria-label="HECARO – Home"
+            aria-label="HECARO Digital – Home"
           >
             <span
               style={{
-                fontSize: 15,
+                fontSize: 16,
                 fontWeight: 700,
                 color: "#ffffff",
-                letterSpacing: "0.06em",
-                fontFamily: "inherit",
+                letterSpacing: "0.08em",
+                fontFamily: "'Syne', sans-serif",
                 whiteSpace: "nowrap",
               }}
             >
-              HECARO
+              HECARO Digital
             </span>
           </button>
 

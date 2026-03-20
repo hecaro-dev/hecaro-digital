@@ -22,7 +22,7 @@ export const en: Translations = {
   },
   hero: {
     badge: "Available worldwide · DE · EN · ES",
-    headline: "Digital solutions\nthat convert",
+    headline: "Digital solutions \nthat convert",
     sub: "Fast landing pages, measurable SEO results and professional digital consulting — from one source, for international markets.",
     cta: "Start a Project",
     cta2: "View Services",

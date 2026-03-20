@@ -22,7 +22,7 @@ export const es: Translations = {
   },
   hero: {
     badge: "Disponible mundialmente · DE · EN · ES",
-    headline: "Soluciones digitales\nque convencen",
+    headline: "Soluciones digitales \nque convencen",
     sub: "Landing pages rápidas, resultados SEO medibles y consultoría digital profesional — de un solo proveedor, para mercados internacionales.",
     cta: "Iniciar proyecto",
     cta2: "Ver servicios",

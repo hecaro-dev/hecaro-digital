@@ -23,7 +23,7 @@ export const en: Translations = {
   hero: {
     badge: "Available worldwide · DE · EN · ES",
     headline: "Digital solutions \nthat convert",
-    sub: "Fast landing pages, measurable SEO results and professional digital consulting — from one source, for international markets.",
+    sub: "Fast landing pages, measurable SEO, and professional digital consulting — end-to-end, for international markets.",
     cta: "Start a Project",
     cta2: "View Services",
   },
@@ -127,7 +127,7 @@ export const en: Translations = {
   },
   quality: {
     label: "Quality Promise",
-    headline: "Precision.\nReliability.\nDiligence.",
+    headline: "Precision.\nReliability.\nAttention to Detail.",
     p1: "Over 20 years of experience in the German working environment and absolute process reliability are the foundation of my work. Native proficiency in German and Spanish enables direct communication in every market — without detours, without misunderstandings.",
     p2: "No outsourcing. No agency overhead. You work directly with me — the expert who accompanies your project from start to finish.",
     foundationTitle: "The Foundation",

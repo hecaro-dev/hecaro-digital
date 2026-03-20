@@ -23,7 +23,7 @@ export const es: Translations = {
   hero: {
     badge: "Disponible mundialmente · DE · EN · ES",
     headline: "Soluciones digitales \nque convencen",
-    sub: "Landing pages rápidas, resultados SEO medibles y consultoría digital profesional — de un solo proveedor, para mercados internacionales.",
+    sub: "Landing pages rápidas, SEO medible y consultoría digital profesional — todo en un solo servicio, para mercados internacionales.",
     cta: "Iniciar proyecto",
     cta2: "Ver servicios",
   },
@@ -39,8 +39,8 @@ export const es: Translations = {
   ],
   services: {
     label: "Servicios",
-    headline: "Lo que hago por usted",
-    sub: "Cada solución está concebida individualmente — para el máximo impacto.",
+    headline: "En qué puedo ayudarle",
+    sub: "Cada solución se diseña a medida — para maximizar el impacto.",
     items: [
       {
         tag: "Velocidad & Conversión",
@@ -67,7 +67,7 @@ export const es: Translations = {
         ],
       },
       {
-        tag: "Setup & Flujo de trabajo",
+        tag: "Configuración & Flujo de trabajo",
         title: "Consultoría Digital",
         description:
           "Configuraciones profesionales de home office y streaming. OBS, iluminación, audio — su presencia digital al más alto nivel.",
@@ -127,7 +127,7 @@ export const es: Translations = {
   },
   quality: {
     label: "Promesa de calidad",
-    headline: "Precisión.\nFiabilidad.\nEsmero.",
+    headline: "Precisión.\nFiabilidad.\nAtención al detalle.",
     p1: "Más de 20 años de experiencia en el entorno laboral alemán y una absoluta fiabilidad en los procesos son la base de mi trabajo. El dominio nativo del alemán y del español permite una comunicación directa en cada mercado — sin intermediarios, sin malentendidos.",
     p2: "Sin externalización. Sin gastos de agencia. Trabajará directamente conmigo — el experto que acompaña su proyecto de principio a fin.",
     foundationTitle: "Los Pilares",

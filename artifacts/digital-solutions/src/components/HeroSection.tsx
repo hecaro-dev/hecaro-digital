@@ -88,15 +88,6 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
           </motion.div>
         </motion.div>
 
-        {/* Badge */}
-        <motion.div
-          {...anim(0.1)}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-300 text-xs font-semibold tracking-wide mb-8 backdrop-blur-sm"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
-          {t.hero.badge}
-        </motion.div>
-
         {/* Headline */}
         <motion.h1
           {...anim(0.2)}

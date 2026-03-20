@@ -1,98 +1,84 @@
-/* =============================================
-   About Section
-   Change content in: src/i18n/de.ts (about key)
-   ============================================= */
 import { motion } from "framer-motion";
 import { useInView } from "../hooks/useInView";
-import { ShieldCheck, BarChart2, Star } from "lucide-react";
 import { useI18n } from "../i18n";
-
-const VALUE_ICONS = [ShieldCheck, BarChart2, Star];
+import { CheckCircle2 } from "lucide-react";
 
 export default function AboutSection() {
   const { t } = useI18n();
   const { ref, inView } = useInView();
 
-  const headlineParts = t.about.headline.split("\n");
+  const lines = t.quality.headline.split("\n");
 
   return (
-    <section
-      id="about"
-      ref={ref}
-      className="py-24 px-4 bg-white/[0.01]"
-      aria-labelledby="about-heading"
-    >
+    <section className="py-32 px-4 bg-black border-y border-white/[0.04]" ref={ref}>
       <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Text */}
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          
+          {/* Left: Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7 }}
           >
-            <span className="text-indigo-400 text-sm font-semibold tracking-widest uppercase">
-              {t.about.label}
+            <span className="inline-flex px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-bold text-indigo-400 uppercase tracking-widest mb-8">
+              {t.quality.label}
             </span>
-            <h2
-              id="about-heading"
-              className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight"
-            >
-              {headlineParts[0]}
-              <br />
-              <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
-                {headlineParts[1]}
-              </span>
+            
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8">
+              {lines.map((line, i) => (
+                <span key={i} className="block leading-[1.15] mb-2">
+                  {i === 1 ? (
+                    <span className="bg-gradient-to-r from-indigo-400 to-violet-500 bg-clip-text text-transparent">{line}</span>
+                  ) : i === 2 ? (
+                    <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">{line}</span>
+                  ) : (
+                    <span className="text-white">{line}</span>
+                  )}
+                </span>
+              ))}
             </h2>
 
-            <p className="mt-6 text-slate-400 leading-relaxed">{t.about.p1}</p>
-            <p className="mt-4 text-slate-400 leading-relaxed">{t.about.p2}</p>
-
-            {/* Divider with quote */}
-            <blockquote className="mt-8 border-l-2 border-indigo-500 pl-5 italic text-slate-300">
-              „Verlässlichkeit ist keine Eigenschaft – sie ist mein Standard."
+            <div className="space-y-6 text-slate-400 text-lg leading-relaxed">
+              <p>{t.quality.p1}</p>
+              <p>{t.quality.p2}</p>
+            </div>
+            
+            <blockquote className="mt-10 border-l-2 border-indigo-500 pl-6 italic text-slate-300 text-lg">
+              „Kein Outsourcing. Kein Agentur-Overhead. Nur direkte, ehrliche und messbare Ergebnisse.“
             </blockquote>
           </motion.div>
 
-          {/* Right: Values */}
+          {/* Right: Stats and extra */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="space-y-4"
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="space-y-6"
           >
-            {t.about.values.map((value, i) => {
-              const Icon = VALUE_ICONS[i];
-              return (
-                <div
-                  key={i}
-                  className="flex items-start gap-5 bg-[rgba(15,20,40,0.6)] backdrop-blur-md border border-[rgba(255,255,255,0.06)] rounded-xl p-5"
-                >
-                  <div className="shrink-0 w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-indigo-400" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">{value.title}</h3>
-                    <p className="text-slate-400 text-sm mt-1">{value.desc}</p>
-                  </div>
+            {/* Stats grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+              {t.quality.stats.map((stat, i) => (
+                <div key={i} className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-2xl p-6 flex flex-col items-center text-center justify-center backdrop-blur-md">
+                  <div className="text-3xl font-bold text-indigo-400 mb-2">{stat.value}</div>
+                  <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">{stat.label}</div>
                 </div>
-              );
-            })}
+              ))}
+            </div>
 
-            {/* Profile placeholder card */}
-            <div className="mt-6 flex items-center gap-5 bg-[rgba(15,20,40,0.6)] backdrop-blur-md border border-[rgba(255,255,255,0.06)] rounded-xl p-5 shadow-[0_0_20px_rgba(99,102,241,0.05)] relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white font-bold text-xl shrink-0 shadow-lg shadow-indigo-500/20 border-2 border-white/10 relative z-10">
-                DS
-              </div>
-              <div className="relative z-10">
-                <p className="font-semibold text-white text-lg tracking-tight">Digital Solutions</p>
-                <p className="text-indigo-300 text-xs uppercase tracking-wider font-medium mt-1">
-                  Inhaber
-                </p>
-                <p className="text-slate-400 text-xs mt-1.5 italic">
-                  Profi-Foto folgt
-                </p>
-              </div>
+            {/* Profile / Values wrap */}
+            <div className="bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] rounded-3xl p-8 backdrop-blur-md">
+              <h3 className="text-xl font-bold text-white mb-6">Das Fundament</h3>
+              <ul className="space-y-5">
+                {t.values.items.map((val, i) => (
+                  <li key={i} className="flex items-start gap-4">
+                    <CheckCircle2 className="w-6 h-6 text-emerald-400 shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="text-white font-semibold mb-1">{val.title}</h4>
+                      <p className="text-slate-400 text-sm">{val.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </motion.div>
         </div>

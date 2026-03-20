@@ -66,10 +66,6 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* =============================================
-   DARK MODE COLORS (Premium Dark Slate)
-   Blue accent: #3B82F6 (blue-500)
-   ============================================= */
 :root {
   --button-outline: rgba(0,0,0, .10);
   --badge-outline: rgba(0,0,0, .05);
@@ -77,35 +73,34 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  /* Light mode (mostly unused since we force dark) */
-  --background: 222 47% 2%;
-  --foreground: 0 0% 100%;
-  --border: 215 25% 15%;
-  --card: 222 47% 5%;
-  --card-foreground: 0 0% 100%;
-  --card-border: 215 25% 15%;
-  --sidebar: 222 47% 2%;
-  --sidebar-foreground: 0 0% 100%;
-  --sidebar-border: 215 25% 15%;
+  --background: 0 0% 0%;
+  --foreground: 0 0% 97%;
+  --border: 0 0% 10%;
+  --card: 0 0% 4%;
+  --card-foreground: 0 0% 97%;
+  --card-border: 0 0% 10%;
+  --sidebar: 0 0% 4%;
+  --sidebar-foreground: 0 0% 97%;
+  --sidebar-border: 0 0% 10%;
   --sidebar-primary: 239 84% 67%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 222 47% 8%;
-  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-accent: 0 0% 8%;
+  --sidebar-accent-foreground: 0 0% 97%;
   --sidebar-ring: 239 84% 67%;
-  --popover: 222 47% 5%;
-  --popover-foreground: 0 0% 100%;
-  --popover-border: 215 25% 15%;
+  --popover: 0 0% 4%;
+  --popover-foreground: 0 0% 97%;
+  --popover-border: 0 0% 10%;
   --primary: 239 84% 67%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 222 47% 10%;
-  --secondary-foreground: 0 0% 100%;
-  --muted: 222 47% 8%;
-  --muted-foreground: 215 20% 55%;
+  --secondary: 0 0% 10%;
+  --secondary-foreground: 0 0% 97%;
+  --muted: 0 0% 8%;
+  --muted-foreground: 215 16% 47%;
   --accent: 239 84% 67%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 55%;
   --destructive-foreground: 0 0% 100%;
-  --input: 215 25% 15%;
+  --input: 0 0% 10%;
   --ring: 239 84% 67%;
   --chart-1: 239 84% 67%;
   --chart-2: 160 60% 50%;
@@ -126,7 +121,7 @@
   --shadow-lg: 0px 10px 15px 0px rgba(0,0,0,0.4);
   --shadow-xl: 0px 20px 25px 0px rgba(0,0,0,0.4);
   --shadow-2xl: 0px 25px 50px 0px rgba(0,0,0,0.5);
-  --tracking-normal: 0em;
+  --tracking-normal: -0.02em;
   --spacing: 0.25rem;
 
   --sidebar-primary-border: hsl(var(--sidebar-primary));
@@ -138,7 +133,6 @@
   --destructive-border: hsl(var(--destructive));
 }
 
-/* Dark mode overrides – same as root since we force dark */
 .dark {
   --button-outline: rgba(255,255,255, .10);
   --badge-outline: rgba(255,255,255, .05);
@@ -146,34 +140,34 @@
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
 
-  --background: 222 47% 2%;
-  --foreground: 0 0% 100%;
-  --border: 215 25% 15%;
-  --card: 222 47% 5%;
-  --card-foreground: 0 0% 100%;
-  --card-border: 215 25% 15%;
-  --sidebar: 222 47% 2%;
-  --sidebar-foreground: 0 0% 100%;
-  --sidebar-border: 215 25% 15%;
+  --background: 0 0% 0%;
+  --foreground: 0 0% 97%;
+  --border: 0 0% 10%;
+  --card: 0 0% 4%;
+  --card-foreground: 0 0% 97%;
+  --card-border: 0 0% 10%;
+  --sidebar: 0 0% 4%;
+  --sidebar-foreground: 0 0% 97%;
+  --sidebar-border: 0 0% 10%;
   --sidebar-primary: 239 84% 67%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 222 47% 8%;
-  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-accent: 0 0% 8%;
+  --sidebar-accent-foreground: 0 0% 97%;
   --sidebar-ring: 239 84% 67%;
-  --popover: 222 47% 5%;
-  --popover-foreground: 0 0% 100%;
-  --popover-border: 215 25% 15%;
+  --popover: 0 0% 4%;
+  --popover-foreground: 0 0% 97%;
+  --popover-border: 0 0% 10%;
   --primary: 239 84% 67%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 222 47% 10%;
-  --secondary-foreground: 0 0% 100%;
-  --muted: 222 47% 8%;
-  --muted-foreground: 215 20% 55%;
+  --secondary: 0 0% 10%;
+  --secondary-foreground: 0 0% 97%;
+  --muted: 0 0% 8%;
+  --muted-foreground: 215 16% 47%;
   --accent: 239 84% 67%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 55%;
   --destructive-foreground: 0 0% 100%;
-  --input: 215 25% 15%;
+  --input: 0 0% 10%;
   --ring: 239 84% 67%;
   --chart-1: 239 84% 67%;
   --chart-2: 160 60% 50%;
@@ -193,7 +187,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border tracking-[-0.02em];
   }
 
   html {
@@ -201,19 +195,34 @@
   }
 
   body {
-    @apply font-sans antialiased text-foreground;
-    background-color: hsl(222, 47%, 2%);
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 60px 60px;
-    background-attachment: fixed;
+    @apply font-sans antialiased text-foreground bg-black min-h-screen relative;
+  }
+
+  .dark body::before {
+    content: "";
+    position: fixed;
+    top: -20%;
+    left: -10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .dark body::after {
+    content: "";
+    position: fixed;
+    bottom: -20%;
+    right: -10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(16,185,129,0.04) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
   }
 }
 
-/* =============================================
-   Utility: Elevation system
-   ============================================= */
 @layer utilities {
   input[type="search"]::-webkit-search-cancel-button {
     @apply hidden;

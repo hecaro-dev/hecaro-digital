@@ -7,9 +7,9 @@ export const es: Translations = {
   lang: "es",
   langName: "Español",
   meta: {
-    title: "Digital Solutions – Diseño Web Premium & SEO",
+    title: "Digital Solutions – Diseño Web Internacional & SEO",
     description:
-      "Desarrollo web profesional con Next.js, resultados de SEO medibles y consultoría digital para su negocio. Su socio para una presencia online sólida.",
+      "Landing pages profesionales con Next.js, estrategia SEO internacional y consultoría digital. Hecho a medida para empresas con ambiciones globales.",
   },
   nav: {
     services: "Servicios",
@@ -17,82 +17,172 @@ export const es: Translations = {
     contact: "Contacto",
     imprint: "Aviso legal",
     privacy: "Privacidad",
+    portfolio: "Portfolio",
+    faq: "FAQ",
   },
   hero: {
-    badge: "Empresa Individual · Disponible Mundialmente",
-    headline: "Diseño Web Premium\n& Soluciones SEO",
-    sub: "Resultados medibles para su negocio. Soluciones digitales personalizadas que posicionan su marca profesionalmente en internet.",
-    cta: "Iniciar Proyecto",
-    cta2: "Ver Servicios",
+    badge: "Disponible mundialmente · DE · EN · ES",
+    headline: "Soluciones digitales.\nQue convencen.",
+    sub: "Landing pages rápidas, resultados SEO medibles y consultoría digital profesional — de un solo proveedor, para mercados internacionales.",
+    cta: "Iniciar proyecto",
+    cta2: "Ver servicios",
   },
-  stats: [
-    { value: "100%", label: "Satisfacción del Cliente" },
-    { value: "Top 10", label: "Rankings en Google" },
-    { value: "< 1s", label: "Tiempo de Carga (LCP)" },
-    { value: "3", label: "Idiomas Soportados" },
+  marquee: [
+    "DISEÑO WEB",
+    "SEO",
+    "LANDING PAGES",
+    "PERFORMANCE",
+    "NEXT.JS",
+    "TYPESCRIPT",
+    "CONSULTORÍA",
+    "INTERNACIONAL",
   ],
   services: {
     label: "Servicios",
     headline: "Lo que hago por usted",
-    sub: "Cada solución se desarrolla individualmente – para el máximo rendimiento y éxito medible.",
+    sub: "Cada solución está concebida individualmente — para el máximo impacto.",
     items: [
       {
-        title: "Landing Pages con Next.js",
+        tag: "Velocidad & Conversión",
+        title: "Landing Pages",
         description:
-          "Landing pages ultrarrápidas y orientadas a la conversión, construidas con Next.js y TypeScript. Optimizadas para Core Web Vitals – puntuaciones perfectas en Lighthouse garantizadas.",
+          "Landing pages ultrarrápidas con Next.js que convierten visitantes en clientes. Optimizadas para el rendimiento y la conversión máxima.",
         bullets: [
-          "Renderizado en el servidor (SSR) y generación estática",
+          "Server-Side Rendering & Static Generation",
           "Mobile-first, completamente responsivo",
-          "Optimizado para conversión y listo para A/B testing",
-          "Lighthouse Score 95+",
+          "Optimizado para máximo rendimiento",
+          "Diseño UI/UX orientado a la conversión",
         ],
       },
       {
-        title: "Estrategia SEO",
+        tag: "Internacional",
+        title: "SEO & Visibilidad",
         description:
-          "Visibilidad sostenible en Google a nivel mundial. SEO técnico, estrategia de palabras clave y datos estructurados – para que sus clientes le encuentren.",
+          "Visibilidad sostenible en Google — en Alemania, España y en todo el mundo. SEO técnico que funciona a largo plazo.",
         bullets: [
           "Auditoría SEO técnica y optimización on-page",
           "Implementación internacional de hreflang",
-          "Datos estructurados JSON-LD",
-          "Gestión de Google Search Console",
+          "JSON-LD Structured Data & Rich Snippets",
+          "Google Search Console & Analytics",
         ],
       },
       {
+        tag: "Setup & Flujo de trabajo",
         title: "Consultoría Digital",
         description:
-          "Configuraciones profesionales de home office y streaming. OBS, iluminación, audio – para que aparezca tan profesional en línea como lo es en la realidad.",
+          "Configuraciones profesionales de home office y streaming. OBS, iluminación, audio — su presencia digital al más alto nivel.",
         bullets: [
           "Configuración de OBS Studio y escenas",
-          "Concepto de iluminación para videollamadas",
-          "Optimización de audio (micrófono, cancelación de ruido)",
-          "Flujo de trabajo para creadores y empresarios",
+          "Concepto de iluminación para video y llamadas",
+          "Optimización de audio y cancelación de ruido",
+          "Flujo de trabajo para creadores y empresas",
         ],
       },
     ],
   },
-  about: {
-    label: "Sobre mí",
-    headline: "Base Comercial.\nExcelencia Digital.",
-    p1: "Digital Solutions es mi empresa individual – construida sobre una sólida formación comercial en logística de carga y retail. Esta base me da una profunda comprensión de los procesos, la fiabilidad y la gestión estructurada de proyectos.",
-    p2: "Lo que hago, lo hago de forma completa: comunicación clara, entrega a tiempo, resultados medibles. Sin externalización, sin compromisos. Trabaja directamente conmigo.",
-    values: [
-      { title: "Fiabilidad", desc: "Entrega según lo acordado – a tiempo y completa." },
-      { title: "Transparencia", desc: "Procesos claros, resultados trazables." },
-      { title: "Calidad", desc: "Nivel de agencia desde una sola fuente." },
+  values: {
+    label: "Nuestros valores",
+    headline: "Por qué Digital Solutions",
+    items: [
+      {
+        title: "Rápido",
+        description: "Plazos de entrega que impresionan. Sin largas esperas.",
+      },
+      {
+        title: "Fiable",
+        description: "Diligencia comercial en cada proyecto. Entrega según lo acordado.",
+      },
+      {
+        title: "Flexible",
+        description: "Soluciones individuales para requisitos individuales.",
+      },
+      {
+        title: "Soporte",
+        description: "Contacto personal — directo, sin intermediarios.",
+      },
+    ],
+  },
+  portfolio: {
+    label: "Portfolio",
+    headline: "Proyectos seleccionados",
+    sub: "Una mirada a los trabajos actuales — casos de estudio próximamente.",
+    items: [
+      {
+        tag: "Landing Page",
+        title: "Página de conversión e-commerce",
+        description: "Landing page Next.js con A/B testing y tasa de conversión optimizada.",
+      },
+      {
+        tag: "Proyecto SEO",
+        title: "Lanzamiento SEO Internacional",
+        description: "Estrategia SEO trilingüe con hreflang para DE, EN, ES.",
+      },
+      {
+        tag: "Consultoría",
+        title: "Setup de Video & Streaming",
+        description: "Home studio profesional para un emprendedor con más de 10k seguidores.",
+      },
+    ],
+    cta: "Ver todos los proyectos",
+  },
+  quality: {
+    label: "Promesa de calidad",
+    headline: "Precisión.\nFiabilidad.\nEsmero.",
+    p1: "Mi formación comercial en logística de carga y retail no es una coincidencia — es la base de mi trabajo. Pienso en procesos, entrego a tiempo y me comunico con claridad.",
+    p2: "Sin externalización. Sin gastos de agencia. Trabajará directamente conmigo — el experto que acompaña su proyecto de principio a fin.",
+    stats: [
+      { value: "100%", label: "Comunicación directa" },
+      { value: "3", label: "Mercados de idiomas" },
+      { value: "< 24h", label: "Tiempo de respuesta" },
+    ],
+  },
+  techstack: {
+    label: "Tech Stack",
+    headline: "Tecnologías de vanguardia",
+    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Vercel"],
+  },
+  faq: {
+    label: "FAQ",
+    headline: "Preguntas frecuentes",
+    items: [
+      {
+        question: "¿Cuánto cuesta una landing page?",
+        answer:
+          "El precio depende del alcance. Las landing pages simples comienzan desde 500 €. Los proyectos más complejos con SEO multilingüe y animaciones personalizadas se facturan por esfuerzo. Contácteme para una cotización sin compromiso.",
+      },
+      {
+        question: "¿Cómo funciona un proyecto típico?",
+        answer:
+          "1. Conversación inicial y briefing (gratis). 2. Presupuesto y concepto. 3. Diseño y desarrollo. 4. Ronda de feedback y refinamiento. 5. Lanzamiento y entrega. Duración media del proyecto: 1–3 semanas.",
+      },
+      {
+        question: "¿Ofrece SEO para mercados internacionales?",
+        answer:
+          "Sí, el SEO internacional es una de mis áreas principales. Implemento etiquetas hreflang correctas, sitemaps multilingües y estrategias de contenido para DE, EN y ES.",
+      },
+      {
+        question: "¿En qué idiomas se puede crear el sitio web?",
+        answer:
+          "Alemán, inglés y español. Los tres idiomas son gestionados profesionalmente por mí — sin herramientas de traducción automática.",
+      },
+      {
+        question: "¿Qué significa consultoría digital para usted?",
+        answer:
+          "Le ayudo a configurar su home office o estudio de streaming de forma profesional: OBS Studio, iluminación, micrófono, flujo de trabajo de software. Ideal para emprendedores, creadores y equipos remotos.",
+      },
     ],
   },
   contact: {
     label: "Contacto",
-    headline: "Iniciar Proyecto",
-    sub: "Describa su proyecto – le responderé en 24 horas.",
+    headline: "Iniciar proyecto",
+    sub: "Describa su proyecto — le responderé en 24 horas.",
     namePlaceholder: "Su nombre",
     emailPlaceholder: "Su correo electrónico",
     messagePlaceholder: "Describa su proyecto...",
-    gdpr: "Acepto el tratamiento de mis datos de acuerdo con la política de privacidad.*",
+    gdpr: "Acepto el tratamiento de mis datos de acuerdo con la política de privacidad.",
     send: "Enviar mensaje",
     sending: "Enviando...",
-    success: "¡Gracias! Su mensaje ha sido enviado.",
+    success: "¡Gracias! Me pondré en contacto pronto.",
     error: "Ocurrió un error. Por favor inténtelo de nuevo.",
     required: "Campo obligatorio",
     invalidEmail: "Dirección de correo no válida",
@@ -101,12 +191,22 @@ export const es: Translations = {
   legal: {
     imprintTitle: "Aviso Legal",
     imprintText:
-      "Información según § 5 TMG\n\n[Su nombre]\n[Su dirección]\n[Código postal Ciudad]\n\nContacto:\nCorreo: [su@correo.com]\n\nNúmero de identificación fiscal según § 27 a de la Ley del IVA:\n[Su NIF/CIF]\n\nResponsable del contenido según § 55 párr. 2 RStV:\n[Su nombre]\n[Su dirección]",
+      "Información según § 5 TMG\n\n[Su nombre]\n[Su dirección]\n[Código postal Ciudad]\n\nContacto:\nCorreo: [su@correo.com]\n\nNúmero de identificación fiscal:\n[Su NIF/CIF]\n\nResponsable del contenido:\n[Su nombre]\n[Su dirección]",
     privacyTitle: "Política de Privacidad",
     privacyText:
-      "1. Privacidad de un vistazo\n\nInformación general\nLa siguiente información proporciona una descripción general simple de lo que sucede con sus datos personales cuando visita este sitio web.\n\n2. Recopilación de datos en este sitio web\n\nFormulario de contacto\nSi nos envía consultas a través de nuestro formulario de contacto, sus datos del formulario de consulta se almacenarán para el propósito de procesar la consulta.\n\n[Política de privacidad completa se insertará aquí]",
+      "1. Privacidad de un vistazo\n\nInformación general\nLa siguiente información proporciona una descripción general de lo que sucede con sus datos personales cuando visita este sitio web.\n\n2. Recopilación de datos\n\nFormulario de contacto\nSus datos del formulario de consulta se almacenarán para el propósito de procesar la consulta.\n\n[Política de privacidad completa se insertará aquí]",
   },
   footer: {
+    tagline: "Soluciones web internacionales de un solo proveedor.",
     rights: "Todos los derechos reservados.",
+    links: {
+      services: "Servicios",
+      portfolio: "Portfolio",
+      about: "Sobre mí",
+      contact: "Contacto",
+      faq: "FAQ",
+      imprint: "Aviso legal",
+      privacy: "Privacidad",
+    },
   },
 };

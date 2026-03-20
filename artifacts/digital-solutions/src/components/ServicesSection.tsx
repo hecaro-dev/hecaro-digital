@@ -1,29 +1,9 @@
-/* =============================================
-   Services Section
-   Change content in: src/i18n/de.ts (services key)
-   ============================================= */
 import { motion } from "framer-motion";
 import { useInView } from "../hooks/useInView";
 import { Zap, Search, Monitor, CheckCircle2 } from "lucide-react";
 import { useI18n } from "../i18n";
 
-const ICONS = [
-  <Zap className="w-6 h-6" aria-hidden="true" />,
-  <Search className="w-6 h-6" aria-hidden="true" />,
-  <Monitor className="w-6 h-6" aria-hidden="true" />,
-];
-
-const ACCENT_COLORS = [
-  "from-indigo-500 to-violet-600",
-  "from-indigo-500 to-violet-600",
-  "from-indigo-500 to-violet-600",
-];
-
-const TEXT_ACCENT = [
-  "text-indigo-400",
-  "text-emerald-400",
-  "text-indigo-400",
-];
+const ICONS = [Zap, Search, Monitor];
 
 export default function ServicesSection() {
   const { t } = useI18n();
@@ -33,7 +13,7 @@ export default function ServicesSection() {
     <section
       id="services"
       ref={ref}
-      className="py-24 px-4"
+      className="py-32 px-4 bg-black"
       aria-labelledby="services-heading"
     >
       <div className="max-w-6xl mx-auto">
@@ -42,66 +22,75 @@ export default function ServicesSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16"
+          className="mb-20 max-w-2xl"
         >
-          <span className="text-indigo-400 text-sm font-semibold tracking-widest uppercase">
+          <span className="inline-block text-indigo-400 text-xs font-bold tracking-widest uppercase mb-4">
             {t.services.label}
           </span>
           <h2
             id="services-heading"
-            className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-white"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight"
           >
             {t.services.headline}
           </h2>
-          <p className="mt-4 text-slate-400 max-w-xl mx-auto text-lg">
+          <p className="text-slate-400 text-lg md:text-xl leading-relaxed">
             {t.services.sub}
           </p>
         </motion.div>
 
-        {/* Service cards */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {t.services.items.map((service, i) => (
-            <motion.article
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-              className="relative group bg-[rgba(15,20,40,0.6)] backdrop-blur-md border border-[rgba(255,255,255,0.06)] rounded-2xl p-7 hover:border-indigo-500/40 hover:shadow-[0_0_30px_rgba(99,102,241,0.1)] transition-all duration-500 overflow-hidden"
-            >
-              {/* Top glow on hover */}
-              <div
-                className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-indigo-500 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-              />
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {t.services.items.map((service, i) => {
+            const isLarge = i === 0;
+            const Icon = ICONS[i];
 
-              {/* Icon */}
-              <div
-                className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${ACCENT_COLORS[i]} mb-5 text-white`}
+            return (
+              <motion.article
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                className={`relative group bg-[rgba(255,255,255,0.03)] backdrop-blur-md border border-[rgba(255,255,255,0.08)] rounded-3xl p-8 sm:p-12 hover:border-indigo-500/30 transition-all duration-500 overflow-hidden ${
+                  isLarge ? "md:col-span-2" : "col-span-1"
+                }`}
               >
-                {ICONS[i]}
-              </div>
+                {/* Glow effect */}
+                <div className="absolute -inset-px bg-gradient-to-br from-indigo-500/20 to-emerald-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-3xl" />
 
-              {/* Title */}
-              <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="flex items-start justify-between mb-8">
+                    {/* Tag pill */}
+                    <span className="inline-flex px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-slate-300">
+                      {service.tag}
+                    </span>
+                    
+                    {/* Icon */}
+                    <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                  </div>
 
-              {/* Description */}
-              <p className="text-slate-400 text-sm leading-relaxed mb-5">
-                {service.description}
-              </p>
+                  <h3 className={`font-bold text-white mb-4 ${isLarge ? "text-3xl" : "text-2xl"}`}>
+                    {service.title}
+                  </h3>
+                  
+                  <p className="text-slate-400 text-base leading-relaxed mb-8 max-w-lg">
+                    {service.description}
+                  </p>
 
-              {/* Bullets */}
-              <ul className="space-y-2" aria-label={`Features of ${service.title}`}>
-                {service.bullets.map((bullet, j) => (
-                  <li key={j} className="flex items-start gap-2 text-sm">
-                    <CheckCircle2
-                      className={`w-4 h-4 mt-0.5 shrink-0 ${TEXT_ACCENT[i]}`}
-                      aria-hidden="true"
-                    />
-                    <span className="text-slate-300">{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.article>
-          ))}
+                  {/* Bullets */}
+                  <ul className={`mt-auto grid gap-3 ${isLarge ? "sm:grid-cols-2" : "grid-cols-1"}`} aria-label={`Features of ${service.title}`}>
+                    {service.bullets.map((bullet, j) => (
+                      <li key={j} className="flex items-start gap-3 text-sm">
+                        <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0 text-emerald-400" aria-hidden="true" />
+                        <span className="text-slate-300 leading-snug">{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>

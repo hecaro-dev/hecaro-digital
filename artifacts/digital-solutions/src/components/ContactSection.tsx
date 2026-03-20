@@ -1,7 +1,3 @@
-/* =============================================
-   Contact Form Section
-   Change content in: src/i18n/de.ts (contact key)
-   ============================================= */
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
@@ -11,7 +7,6 @@ import { Send, CheckCircle2, AlertCircle } from "lucide-react";
 import { useInView } from "../hooks/useInView";
 import { useI18n } from "../i18n";
 
-/* Form schema is built dynamically from translations */
 function buildSchema(t: ReturnType<typeof useI18n>["t"]) {
   return z.object({
     name: z.string().min(1, t.contact.required),
@@ -22,7 +17,6 @@ function buildSchema(t: ReturnType<typeof useI18n>["t"]) {
 }
 
 type FormValues = { name: string; email: string; message: string; gdpr: boolean };
-
 type Status = "idle" | "sending" | "success" | "error";
 
 export default function ContactSection() {
@@ -42,13 +36,10 @@ export default function ContactSection() {
     defaultValues: { name: "", email: "", message: "", gdpr: false },
   });
 
-  /* Simulated form submission – replace with real endpoint */
   async function onSubmit(data: FormValues) {
     setStatus("sending");
     try {
-      /* TODO: Replace with your actual form endpoint or email service */
-      await new Promise((resolve) => setTimeout(resolve, 1200));
-      console.log("Form data:", data);
+      await new Promise((resolve) => setTimeout(resolve, 1500));
       setStatus("success");
       reset();
     } catch {
@@ -57,159 +48,128 @@ export default function ContactSection() {
   }
 
   const inputClass =
-    "w-full bg-[#020617] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors";
+    "w-full bg-black/50 border border-white/10 rounded-xl px-5 py-4 text-base text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all";
 
   return (
-    <section
-      id="contact"
-      ref={ref}
-      className="py-24 px-4"
-      aria-labelledby="contact-heading"
-    >
-      <div className="max-w-2xl mx-auto">
+    <section id="contact" ref={ref} className="py-32 px-4 bg-black relative" aria-labelledby="contact-heading">
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-40">
+        <div className="w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px]" />
+      </div>
+
+      <div className="max-w-xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="text-indigo-400 text-sm font-semibold tracking-widest uppercase">
+          <span className="text-indigo-400 text-xs font-bold tracking-widest uppercase mb-4 inline-block">
             {t.contact.label}
           </span>
-          <h2
-            id="contact-heading"
-            className="mt-3 text-3xl sm:text-4xl font-bold text-white"
-          >
+          <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold text-white mb-4">
             {t.contact.headline}
           </h2>
-          <p className="mt-4 text-slate-400">{t.contact.sub}</p>
+          <p className="text-slate-400 text-lg">{t.contact.sub}</p>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-[rgba(15,20,40,0.6)] backdrop-blur-md border border-[rgba(255,255,255,0.06)] rounded-2xl p-8 shadow-2xl"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="bg-[rgba(255,255,255,0.03)] backdrop-blur-xl border border-[rgba(255,255,255,0.08)] rounded-3xl p-8 sm:p-10 shadow-2xl"
         >
-          {/* Success state */}
           {status === "success" ? (
-            <div className="flex flex-col items-center justify-center gap-4 py-8 text-center">
-              <CheckCircle2 className="w-14 h-14 text-emerald-400" aria-hidden="true" />
-              <p className="text-lg font-semibold text-white">{t.contact.success}</p>
+            <div className="flex flex-col items-center justify-center gap-4 py-16 text-center">
+              <div className="w-20 h-20 rounded-full bg-emerald-500/10 flex items-center justify-center mb-4">
+                <CheckCircle2 className="w-10 h-10 text-emerald-400" />
+              </div>
+              <p className="text-2xl font-bold text-white">{t.contact.success}</p>
+              <button 
+                onClick={() => setStatus("idle")} 
+                className="mt-6 text-indigo-400 hover:text-indigo-300 font-medium transition-colors"
+              >
+                Weitere Nachricht senden
+              </button>
             </div>
           ) : (
-            <form
-              onSubmit={handleSubmit(onSubmit)}
-              noValidate
-              aria-label="Contact form"
-            >
-              <div className="space-y-5">
-                {/* Name */}
+            <form onSubmit={handleSubmit(onSubmit)} noValidate>
+              <div className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2" htmlFor="name">
-                    {t.contact.namePlaceholder}
-                  </label>
                   <input
                     id="name"
                     type="text"
-                    autoComplete="name"
                     placeholder={t.contact.namePlaceholder}
-                    aria-invalid={!!errors.name}
-                    aria-describedby={errors.name ? "name-error" : undefined}
-                    className={`${inputClass} ${errors.name ? "border-red-500 focus:border-red-500 focus:ring-red-500" : ""}`}
+                    className={`${inputClass} ${errors.name ? "border-red-500 focus:border-red-500" : ""}`}
                     {...register("name")}
                   />
                   {errors.name && (
-                    <p id="name-error" role="alert" className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
-                      <AlertCircle className="w-3 h-3" aria-hidden="true" />
-                      {errors.name.message}
+                    <p className="mt-2 text-sm text-red-400 flex items-center gap-1.5 pl-1">
+                      <AlertCircle className="w-4 h-4" /> {errors.name.message}
                     </p>
                   )}
                 </div>
 
-                {/* Email */}
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2" htmlFor="email">
-                    {t.contact.emailPlaceholder}
-                  </label>
                   <input
                     id="email"
                     type="email"
-                    autoComplete="email"
                     placeholder={t.contact.emailPlaceholder}
-                    aria-invalid={!!errors.email}
-                    aria-describedby={errors.email ? "email-error" : undefined}
-                    className={`${inputClass} ${errors.email ? "border-red-500 focus:border-red-500 focus:ring-red-500" : ""}`}
+                    className={`${inputClass} ${errors.email ? "border-red-500 focus:border-red-500" : ""}`}
                     {...register("email")}
                   />
                   {errors.email && (
-                    <p id="email-error" role="alert" className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
-                      <AlertCircle className="w-3 h-3" aria-hidden="true" />
-                      {errors.email.message}
+                    <p className="mt-2 text-sm text-red-400 flex items-center gap-1.5 pl-1">
+                      <AlertCircle className="w-4 h-4" /> {errors.email.message}
                     </p>
                   )}
                 </div>
 
-                {/* Message */}
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2" htmlFor="message">
-                    {t.contact.messagePlaceholder}
-                  </label>
                   <textarea
                     id="message"
                     rows={5}
                     placeholder={t.contact.messagePlaceholder}
-                    aria-invalid={!!errors.message}
-                    aria-describedby={errors.message ? "message-error" : undefined}
-                    className={`${inputClass} resize-none ${errors.message ? "border-red-500 focus:border-red-500 focus:ring-red-500" : ""}`}
+                    className={`${inputClass} resize-none ${errors.message ? "border-red-500 focus:border-red-500" : ""}`}
                     {...register("message")}
                   />
                   {errors.message && (
-                    <p id="message-error" role="alert" className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
-                      <AlertCircle className="w-3 h-3" aria-hidden="true" />
-                      {errors.message.message}
+                    <p className="mt-2 text-sm text-red-400 flex items-center gap-1.5 pl-1">
+                      <AlertCircle className="w-4 h-4" /> {errors.message.message}
                     </p>
                   )}
                 </div>
 
-                {/* GDPR Checkbox */}
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-black/30 border border-white/5">
                   <input
                     id="gdpr"
                     type="checkbox"
-                    aria-invalid={!!errors.gdpr}
-                    aria-describedby={errors.gdpr ? "gdpr-error" : undefined}
-                    className="mt-0.5 w-4 h-4 rounded border-slate-600 bg-slate-800 text-indigo-500 focus:ring-indigo-500 focus:ring-offset-slate-900 cursor-pointer"
+                    className="mt-1 w-5 h-5 rounded border-white/20 bg-black text-indigo-500 focus:ring-indigo-500 cursor-pointer"
                     {...register("gdpr")}
                   />
                   <div>
-                    <label htmlFor="gdpr" className="text-sm text-slate-400 cursor-pointer leading-relaxed">
+                    <label htmlFor="gdpr" className="text-sm text-slate-400 cursor-pointer leading-relaxed block">
                       {t.contact.gdpr}
                     </label>
                     {errors.gdpr && (
-                      <p id="gdpr-error" role="alert" className="mt-1 text-xs text-red-400 flex items-center gap-1">
-                        <AlertCircle className="w-3 h-3" aria-hidden="true" />
-                        {errors.gdpr.message}
+                      <p className="mt-1.5 text-sm text-red-400 flex items-center gap-1.5">
+                        <AlertCircle className="w-4 h-4" /> {errors.gdpr.message}
                       </p>
                     )}
                   </div>
                 </div>
 
-                {/* Error state */}
                 {status === "error" && (
-                  <div role="alert" className="flex items-center gap-2 p-3 rounded-lg bg-red-900/30 border border-red-500/30 text-red-400 text-sm">
-                    <AlertCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
-                    {t.contact.error}
+                  <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm flex items-center gap-2">
+                    <AlertCircle className="w-5 h-5 shrink-0" /> {t.contact.error}
                   </div>
                 )}
 
-                {/* Submit */}
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-500 hover:bg-indigo-400 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-60 disabled:cursor-not-allowed text-white text-lg font-semibold transition-all duration-200 shadow-lg shadow-indigo-600/20"
                 >
-                  <Send className="w-4 h-4" aria-hidden="true" />
+                  <Send className="w-5 h-5" />
                   {status === "sending" ? t.contact.sending : t.contact.send}
                 </button>
               </div>

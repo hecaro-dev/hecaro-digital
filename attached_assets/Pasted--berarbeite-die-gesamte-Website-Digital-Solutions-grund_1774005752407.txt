@@ -1,0 +1,32 @@
+Überarbeite die gesamte Website 'Digital Solutions' grundlegend. Das Ziel ist ein Design auf Apple-Niveau (minimalistisch, edel, Fokus auf Typografie) kombiniert mit der Verkaufsstruktur von 'light-dm.de'.
+
+TECHNISCHE ARCHITEKTUR (i18n & SEO):
+- Implementiere echtes Next.js i18n mit Sub-Pfaden: /de, /en, /es.
+- Erstelle eine Middleware zur automatischen Spracherkennung basierend auf dem Browser, aber erlaube manuelles Umschalten über einen eleganten Switcher im Header.
+- SEO: Generiere eine dynamische sitemap.ts, robots.txt und setze korrekte Hreflang-Tags für alle drei Sprachen. Nutze JSON-LD für 'ProfessionalService'.
+
+DESIGN-SYSTEM (Apple-Stil):
+- Hintergrund: Tiefes Schwarz (#000000) mit subtilen Mesh-Gradients in Indigo und Dunkelgrün im Hintergrund.
+- Typografie: Nutze 'Inter' oder 'Geist'. Headlines: font-bold, enges Letter-Spacing, großzügige Line-Height.
+- Komponenten: Nutze 'Bento-Grid' Layouts für Services. Karten mit 1px Border (Opacity 10%), backdrop-blur (Glassmorphism) und sehr dezenten Schatten.
+- Visuals: Mix aus abstrakten 3D-Shapes und hochwertigen Tech-Illustrationen (Unsplash/Lucide). Keine generischen Stockfotos.
+
+STRUKTUR DER HOMEPAGE (Inspiriert von light-dm.de):
+1. HERO: Große Headline, viel Weißraum (Black-Space), zwei klare Buttons (Primary: 'Projekt starten', Secondary: 'Leistungen').
+2. MARQUEE: Eine dezent laufende Leiste: 'WEBDESIGN • SEO • LANDING PAGES • PERFORMANCE'.
+3. SERVICES (Bento-Grid): 
+   - 'Landing Pages' (Fokus auf Conversion & Speed)
+   - 'SEO & Sichtbarkeit' (International DE/ES/EN)
+   - 'Digital Consulting' (Home-Office & Video-Setup)
+4. UNSERE WERTE: 4 Kacheln (Schnell, Sicher, Flexibel, Support) mit Icons.
+5. PORTFOLIO-TEASER: 3 Platzhalter-Karten für 'Case Studies' mit hochwertigen Mockups.
+6. QUALITÄTSVERSPRECHEN (statt Kundenstimmen): Eine Sektion über 'Präzision, Zuverlässigkeit und kaufmännische Sorgfalt'.
+7. TECH STACK: Saubere Icons für Next.js, React, Tailwind, TypeScript, Figma.
+8. FAQ: Ein funktionales Accordion (Preise, Ablauf, SEO, Sprachen).
+9. KONTAKT: Ein minimalistisches Apple-Style Formular.
+10. FOOTER: Strukturierte Navigation, Social Links, Impressum/Datenschutz Platzhalter.
+
+WICHTIG: 
+- Entferne aggressive Garantien wie 'Lighthouse 95+ guaranteed'. Ersetze sie durch 'Optimiert für maximale Performance'.
+- Die Texte müssen in DE, EN und ES absolut professionell und fehlerfrei sein.
+- Achte auf extrem sauberes Spacing (Padding/Margin). Die Seite muss 'atmen'.

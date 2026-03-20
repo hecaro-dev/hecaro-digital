@@ -220,7 +220,7 @@ export const en: Translations = {
       "Content will be finalized upon business registration.\n\n1. Privacy at a Glance\n\nGeneral Information\nThe following information provides a simple overview of what happens to your personal data when you visit this website.\n\n2. Data Collection on This Website\n\nContact Form\nIf you submit inquiries to us via our contact form, your details from the inquiry form will be stored for the purpose of processing the inquiry.",
   },
   footer: {
-    tagline: "International web solutions from one source.",
+    tagline: "International web solutions — end-to-end.",
     rights: "All rights reserved.",
     navTitle: "Navigation",
     links: {

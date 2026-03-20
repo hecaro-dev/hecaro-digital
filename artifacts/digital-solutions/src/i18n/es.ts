@@ -220,7 +220,7 @@ export const es: Translations = {
       "El contenido se finalizará con el registro de la actividad económica.\n\n1. Privacidad de un vistazo\n\nInformación general\nLa siguiente información proporciona una descripción general de lo que sucede con sus datos personales cuando visita este sitio web.\n\n2. Recopilación de datos\n\nFormulario de contacto\nSus datos del formulario de consulta se almacenarán para el propósito de procesar la consulta.",
   },
   footer: {
-    tagline: "Soluciones web internacionales de un solo proveedor.",
+    tagline: "Soluciones web internacionales — de principio a fin.",
     rights: "Todos los derechos reservados.",
     navTitle: "Navegación",
     links: {

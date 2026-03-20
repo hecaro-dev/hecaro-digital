@@ -68,40 +68,47 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
 
           {/*
-            LEFT COLUMN: /public/hecaro-icon.svg
-            ─ opacity: 0.18 (premium watermark)
-            ─ filter: drop-shadow for the branded green glow
-            ─ Mobile: 250px · Desktop: 500px height
-            The img height drives the size; width is auto (aspect-correct).
+            LEFT COLUMN: Original uploaded logo (background removed PNG).
+            Using the actual brand asset so the shape is 100% authentic.
+            object-fit: contain keeps original proportions — no distortion.
+            filter: drop-shadow creates the branded green glow.
           */}
           <motion.div
             {...anim(0)}
             className="shrink-0 self-center flex items-center justify-center"
           >
-            {/* Mobile: 250px */}
+            {/*
+              The logo asset is dark-on-transparent.
+              brightness(0) invert(1) converts it to white so it's visible
+              against the dark hero background. drop-shadow adds the green glow.
+              opacity: 0.18 on the wrapper keeps it as a subtle watermark.
+            */}
+            {/* Mobile: 260px wide */}
             <img
-              src="/hecaro-icon.svg"
+              src="/hecaro-watermark.png"
               alt=""
               aria-hidden="true"
               className="block md:hidden select-none pointer-events-none"
               style={{
-                height: 250,
-                width: "auto",
+                width: 260,
+                height: "auto",
+                objectFit: "contain",
                 opacity: 0.18,
-                filter: "drop-shadow(0 0 40px rgba(34, 197, 94, 0.5))",
+                filter: "brightness(0) invert(1) drop-shadow(0 0 45px rgba(34, 197, 94, 0.5))",
               }}
             />
-            {/* Desktop: 500px */}
+            {/* Desktop: 550px wide */}
             <img
-              src="/hecaro-icon.svg"
+              src="/hecaro-watermark.png"
               alt=""
               aria-hidden="true"
               className="hidden md:block select-none pointer-events-none"
               style={{
-                height: 500,
-                width: "auto",
+                width: 550,
+                height: "auto",
+                objectFit: "contain",
                 opacity: 0.18,
-                filter: "drop-shadow(0 0 40px rgba(34, 197, 94, 0.5))",
+                filter: "brightness(0) invert(1) drop-shadow(0 0 45px rgba(34, 197, 94, 0.5))",
               }}
             />
           </motion.div>

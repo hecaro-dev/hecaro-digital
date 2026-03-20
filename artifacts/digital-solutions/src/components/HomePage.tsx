@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect } from "react";
 import { I18nProvider, LANGS, type Lang } from "../i18n";
+import CustomCursor from "./CustomCursor";
 import Header from "./Header";
 import HeroSection from "./HeroSection";
 import MarqueeSection from "./MarqueeSection";
@@ -41,6 +42,7 @@ function HomePageInner() {
 
   return (
     <>
+      <CustomCursor />
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[100] px-4 py-2 bg-emerald-600 text-white rounded-lg text-sm font-semibold"

@@ -89,7 +89,7 @@ export const de = {
       },
       {
         title: "Zuverlässig",
-        description: "Kaufmännische Sorgfalt in jedem Projekt. Lieferung wie vereinbart.",
+        description: "Absolute Prozess-Sicherheit in jedem Projekt. Lieferung wie vereinbart.",
       },
       {
         title: "Flexibel",
@@ -127,8 +127,10 @@ export const de = {
   quality: {
     label: "Qualitätsversprechen",
     headline: "Präzision.\nZuverlässigkeit.\nSorgfalt.",
-    p1: "Kaufmännische Präzision und eine strukturierte Arbeitsweise sind das Fundament jeder Projektabwicklung. Ich denke in Prozessen, liefere pünktlich und sorge für klare Kommunikation auf jeder Projektstufe.",
+    p1: "Über 20 Jahre Erfahrung im deutschen Arbeitsumfeld und absolute Prozess-Sicherheit sind das Fundament meiner Arbeit. Muttersprachliche Kompetenz in Deutsch und Spanisch ermöglicht direkte Kommunikation auf jedem Markt – ohne Umwege, ohne Missverständnisse.",
     p2: "Kein Outsourcing. Kein Agentur-Overhead. Sie arbeiten direkt mit mir – dem Experten, der Ihr Projekt von Anfang bis Ende begleitet.",
+    blockquote: "Kein Outsourcing. Kein Agentur-Overhead. Nur direkte, ehrliche und messbare Ergebnisse.",
+    foundationTitle: "Das Fundament",
     stats: [
       { value: "100%", label: "Direktkommunikation" },
       { value: "3", label: "Sprachmärkte" },
@@ -187,11 +189,6 @@ export const de = {
           "Ja, internationale SEO ist einer meiner Schwerpunkte. Ich implementiere korrekte Hreflang-Tags für DE, EN und ES, erstelle lokalisierte Metadaten und strukturierte Daten (JSON-LD) sowie mehrsprachige Sitemaps – für maximale Sichtbarkeit in allen Zielmärkten.",
       },
       {
-        question: "In welchen Sprachen kann die Website erstellt werden?",
-        answer:
-          "Standardmäßig Deutsch, Englisch und Spanisch. Alle drei Sprachen werden professionell von mir betreut – ohne automatische Übersetzungstools. Weitere Sprachen sind auf Anfrage möglich.",
-      },
-      {
         question: "Was bedeutet Digital Consulting bei Ihnen?",
         answer:
           "Digital Consulting umfasst die professionelle Optimierung Ihres Hardware-Setups für eine überzeugende digitale Präsenz: Beleuchtungskonzepte, Audiooptimierung, OBS Studio-Konfiguration und Software-Workflows. Ideal für Unternehmer, Content Creator und Remote-Teams.",
@@ -225,6 +222,7 @@ export const de = {
   footer: {
     tagline: "Internationale Web-Lösungen aus einer Hand.",
     rights: "Alle Rechte vorbehalten.",
+    navTitle: "Navigation",
     links: {
       services: "Leistungen",
       portfolio: "Portfolio",

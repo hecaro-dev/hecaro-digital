@@ -1,0 +1,30 @@
+FINAL BRANDING & UX UPGRADE (DE/EN/ES) — "The Professional Polish"
+
+1. VISUAL & INTERACTIVE UPGRADES (Apple-style):
+- CUSTOM CURSOR: Implement a custom cursor effect. A small, emerald-green glowing dot that follows the mouse with a slight delay (spring physics). On clickable elements (buttons, links), the dot should expand slightly.
+- SCROLL ANIMATIONS: Add subtle scroll-triggered animations (using Framer Motion). Sections should gently fade in and move up (y: 20 -> 0) when they enter the viewport.
+- HERO LOGO: Add a subtle breathing/glow animation to the large Hexagon Logo in the hero section.
+
+2. CONTENT & STRATEGY (Honesty & Focus):
+- LANGUAGES: REMOVE the specific FAQ question about "Which languages do you offer?". 
+- Instead, focus on the RESULT: In the "About" or "Quality" section, mention: "Muttersprachliche Kompetenz in Deutsch und Spanisch für Ihre internationale Reichweite." (Do NOT mention English levels or AI tools at all – keep it like light-dm.de).
+- REMOVE all mentions of "kaufmännische Ausbildung" or "Spedition/Einzelhandel". Replace with: "Über 20 Jahre Erfahrung im deutschen Arbeitsumfeld" and "Absolute Prozess-Sicherheit und Struktur".
+
+3. LANGUAGE FIXES (DE/EN/ES):
+- Fix Hero Spacing: 
+  - /de: "Digitale Lösungen, die überzeugen"
+  - /es: "Soluciones digitales que convencen"
+  - /en: "Digital solutions that convert"
+- Remove German leftovers on /en and /es:
+  - Replace German quote ("Kein Outsourcing...") with:
+    - /en: "No outsourcing. No agency overhead. Just direct, honest and measurable results."
+    - /es: "Sin subcontratación. Sin estructuras de agencia costosas. Resultados directos, honestos y medibles."
+  - Change "Das Fundament" heading:
+    - /en: "The Foundation"
+    - /es: "Los Pilares"
+  - Change Footer "Navigation" on /es to "Navegación".
+
+4. TECHNICAL QA:
+- Ensure the "Digital Solutions" wordmark only appears ONCE in the header and ONCE as a large block in the hero (no duplicates).
+- Ensure all FAQ answers are visible and correctly translated (except the deleted language question).
+- Run typecheck + build. The site must feel premium, fast, and "Apple-like" in its transitions.

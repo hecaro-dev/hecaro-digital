@@ -90,7 +90,7 @@ export const en: Translations = {
       },
       {
         title: "Reliable",
-        description: "Commercial diligence in every project. Delivery as agreed.",
+        description: "Absolute process reliability in every project. Delivery as agreed.",
       },
       {
         title: "Flexible",
@@ -128,8 +128,10 @@ export const en: Translations = {
   quality: {
     label: "Quality Promise",
     headline: "Precision.\nReliability.\nDiligence.",
-    p1: "Commercial precision and a structured working approach are the foundation of every project delivery. I think in processes, deliver on time and ensure clear communication at every stage.",
+    p1: "Over 20 years of experience in the German working environment and absolute process reliability are the foundation of my work. Native proficiency in German and Spanish enables direct communication in every market — without detours, without misunderstandings.",
     p2: "No outsourcing. No agency overhead. You work directly with me — the expert who accompanies your project from start to finish.",
+    blockquote: "No outsourcing. No agency overhead. Just direct, honest and measurable results.",
+    foundationTitle: "The Foundation",
     stats: [
       { value: "100%", label: "Direct Communication" },
       { value: "3", label: "Language Markets" },
@@ -188,11 +190,6 @@ export const en: Translations = {
           "Yes, international SEO is one of my core areas. I implement correct hreflang tags for DE, EN and ES, create localized metadata and structured data (JSON-LD) as well as multilingual sitemaps — for maximum visibility in all target markets.",
       },
       {
-        question: "In which languages can the website be created?",
-        answer:
-          "German, English and Spanish by default. All three languages are professionally managed by me — no automatic translation tools. Additional languages are available on request.",
-      },
-      {
         question: "What does Digital Consulting mean for you?",
         answer:
           "Digital Consulting covers the professional optimization of your hardware setup for a compelling digital presence: lighting concepts, audio optimization, OBS Studio configuration and software workflows. Ideal for entrepreneurs, content creators and remote teams.",
@@ -226,6 +223,7 @@ export const en: Translations = {
   footer: {
     tagline: "International web solutions from one source.",
     rights: "All rights reserved.",
+    navTitle: "Navigation",
     links: {
       services: "Services",
       portfolio: "Portfolio",

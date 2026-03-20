@@ -23,7 +23,7 @@ export default function Footer({ onLegal, onNav = () => {} }: FooterProps) {
           </div>
 
           <div className="md:col-span-4 lg:col-span-3">
-            <h4 className="text-white font-semibold mb-6">Navigation</h4>
+            <h4 className="text-white font-semibold mb-6">{t.footer.navTitle}</h4>
             <ul className="space-y-4 text-sm text-slate-400">
               <li><button onClick={() => onNav("services")} className="hover:text-white transition-colors">{t.footer.links.services}</button></li>
               <li><button onClick={() => onNav("portfolio")} className="hover:text-white transition-colors">{t.footer.links.portfolio}</button></li>

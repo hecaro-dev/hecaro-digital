@@ -42,7 +42,7 @@ export default function AboutSection() {
             </div>
 
             <blockquote className="mt-10 border-l-2 border-emerald-500 pl-6 italic text-slate-300 text-lg">
-              „Kein Outsourcing. Kein Agentur-Overhead. Nur direkte, ehrliche und messbare Ergebnisse."
+              „{t.quality.blockquote}"
             </blockquote>
           </motion.div>
 
@@ -62,7 +62,7 @@ export default function AboutSection() {
             </div>
 
             <div className="bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] rounded-3xl p-8 backdrop-blur-md">
-              <h3 className="text-xl font-bold text-white mb-6">Das Fundament</h3>
+              <h3 className="text-xl font-bold text-white mb-6">{t.quality.foundationTitle}</h3>
               <ul className="space-y-5">
                 {t.values.items.map((val, i) => (
                   <li key={i} className="flex items-start gap-4">

@@ -90,7 +90,7 @@ export const es: Translations = {
       },
       {
         title: "Fiable",
-        description: "Diligencia comercial en cada proyecto. Entrega según lo acordado.",
+        description: "Absoluta fiabilidad en los procesos de cada proyecto. Entrega según lo acordado.",
       },
       {
         title: "Flexible",
@@ -128,8 +128,10 @@ export const es: Translations = {
   quality: {
     label: "Promesa de calidad",
     headline: "Precisión.\nFiabilidad.\nEsmero.",
-    p1: "La precisión comercial y un enfoque de trabajo estructurado son la base de cada entrega de proyecto. Pienso en procesos, entrego a tiempo y garantizo una comunicación clara en cada etapa.",
+    p1: "Más de 20 años de experiencia en el entorno laboral alemán y una absoluta fiabilidad en los procesos son la base de mi trabajo. El dominio nativo del alemán y del español permite una comunicación directa en cada mercado — sin intermediarios, sin malentendidos.",
     p2: "Sin externalización. Sin gastos de agencia. Trabajará directamente conmigo — el experto que acompaña su proyecto de principio a fin.",
+    blockquote: "Sin subcontratación. Sin estructuras de agencia costosas. Resultados directos, honestos y medibles.",
+    foundationTitle: "Los Pilares",
     stats: [
       { value: "100%", label: "Comunicación directa" },
       { value: "3", label: "Mercados de idiomas" },
@@ -188,11 +190,6 @@ export const es: Translations = {
           "Sí, el SEO internacional es una de mis áreas principales. Implemento etiquetas hreflang correctas para DE, EN y ES, creo metadatos localizados y datos estructurados (JSON-LD) así como sitemaps multilingües — para la máxima visibilidad en todos los mercados objetivo.",
       },
       {
-        question: "¿En qué idiomas se puede crear el sitio web?",
-        answer:
-          "Alemán, inglés y español de forma estándar. Los tres idiomas son gestionados profesionalmente por mí — sin herramientas de traducción automática. Idiomas adicionales disponibles bajo solicitud.",
-      },
-      {
         question: "¿Qué significa consultoría digital para usted?",
         answer:
           "La consultoría digital abarca la optimización profesional de su configuración de hardware para una presencia digital convincente: conceptos de iluminación, optimización de audio, configuración de OBS Studio y flujos de trabajo de software. Ideal para emprendedores, creadores de contenido y equipos remotos.",
@@ -226,6 +223,7 @@ export const es: Translations = {
   footer: {
     tagline: "Soluciones web internacionales de un solo proveedor.",
     rights: "Todos los derechos reservados.",
+    navTitle: "Navegación",
     links: {
       services: "Servicios",
       portfolio: "Portfolio",

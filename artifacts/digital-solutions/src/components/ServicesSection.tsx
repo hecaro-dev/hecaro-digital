@@ -23,14 +23,15 @@ export default function ServicesSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-20 max-w-2xl"
+          className="mb-20 text-center mx-auto max-w-3xl"
         >
           <span className="inline-block text-emerald-400 text-xs font-bold tracking-widest uppercase mb-4">
             {t.services.label}
           </span>
           <h2
             id="services-heading"
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight"
+            className="text-4xl sm:text-5xl md:text-6xl text-white mb-6 tracking-tight"
+            style={{ fontFamily: "var(--font-syne), sans-serif", fontWeight: 800 }}
           >
             {t.services.headline}
           </h2>

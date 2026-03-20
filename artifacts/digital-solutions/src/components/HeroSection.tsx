@@ -46,12 +46,12 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
   return (
     <section
       id="top"
-      className="relative min-h-screen flex flex-col justify-center px-6 sm:px-8 lg:px-12 pt-32 pb-24 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
       aria-label="Hero"
     >
       {/* ── Background atmosphere ──────────────────────────────────── */}
-      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
-        <div className="absolute top-0 left-1/3 w-[900px] h-[600px] bg-emerald-600/8 rounded-full blur-[140px]" />
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-[700px] h-[500px] bg-emerald-600/8 rounded-full blur-[140px]" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[400px] bg-indigo-600/6 rounded-full blur-[100px]" />
         <div
           className="absolute inset-0"
@@ -60,147 +60,144 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             backgroundSize: "32px 32px",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020617]/60 to-[#020617]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#05070a]/60 to-[#05070a]" />
       </div>
 
       {/*
-        ── Logo watermark — absolutely positioned background element ──
-        position: absolute keeps it out of document flow entirely.
-        left: 0, top: 50%, translateY(-50%) pins it vertically centered on the left.
-        zIndex: 1 puts it above the atmospheric background but below the content (z-10).
-        overflow:hidden on the wrapper crops the HECAROOO text at 55% height.
-        filter is on the wrapper so it only processes the cropped area.
+        ── 2-column grid layout ─────────────────────────────────────
+        LEFT  : Logo — 500px wide, opacity 1, fully visible, vertically centered.
+        RIGHT : Text — headline, subline, CTAs. Full column width, no squishing.
+        gap-20 (80px) between columns for breathing room.
 
-        Original image: 500×500px (square, dark-on-transparent).
-        brightness(0) invert(1) → converts dark pixels to white.
-        Crop at 55% height → shows top 275px of original → H mark only, text hidden.
-
-        Desktop: 600px wide → wrapper h = 600 × 0.55 = 330px
-        Mobile : 320px wide → wrapper h = 320 × 0.55 = 176px (hidden via md: classes on desktop size)
+        Logo crop: image is 500×500px (square). HECAROOO text sits at ~65%+.
+        Wrapper overflow:hidden at 55% height (275px) crops it out.
+        brightness(0) invert(1) turns dark logo white on dark background.
       */}
+      <div className="relative z-10 max-w-6xl w-full mx-auto px-6 sm:px-8 lg:px-12 pt-28 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-16 md:gap-20">
 
-      {/* Mobile logo */}
-      <div
-        className="block md:hidden absolute pointer-events-none select-none"
-        style={{
-          left: 0,
-          top: "50%",
-          transform: "translateY(-50%)",
-          zIndex: 1,
-          width: 320,
-          height: 176,
-          overflow: "hidden",
-          opacity: 0.15,
-          filter: "brightness(0) invert(1) drop-shadow(0 0 40px rgba(34, 197, 94, 0.45))",
-        }}
-      >
-        <img
-          src="/hecaro-watermark.png"
-          alt=""
-          aria-hidden="true"
-          style={{
-            width: 320,
-            height: 320,
-            display: "block",
-            objectFit: "cover",
-            objectPosition: "center top",
-          }}
-        />
-      </div>
+          {/* ── LEFT: Logo ─────────────────────────────────────────── */}
+          <motion.div
+            {...anim(0)}
+            className="flex items-center justify-center md:justify-start"
+          >
+            {/* Mobile: 280px */}
+            <div
+              className="block md:hidden"
+              style={{
+                width: 280,
+                height: 154,
+                overflow: "hidden",
+                filter: "brightness(0) invert(1) drop-shadow(0 0 40px rgba(34,197,94,0.30))",
+              }}
+            >
+              <img
+                src="/hecaro-watermark.png"
+                alt="HECARO Digital"
+                style={{
+                  width: 280,
+                  height: 280,
+                  display: "block",
+                  objectFit: "cover",
+                  objectPosition: "center top",
+                }}
+              />
+            </div>
 
-      {/* Desktop logo */}
-      <div
-        className="hidden md:block absolute pointer-events-none select-none"
-        style={{
-          left: 0,
-          top: "50%",
-          transform: "translateY(-50%)",
-          zIndex: 1,
-          width: 600,
-          height: 330,
-          overflow: "hidden",
-          opacity: 0.15,
-          filter: "brightness(0) invert(1) drop-shadow(0 0 60px rgba(34, 197, 94, 0.45))",
-        }}
-      >
-        <img
-          src="/hecaro-watermark.png"
-          alt=""
-          aria-hidden="true"
-          style={{
-            width: 600,
-            height: 600,
-            display: "block",
-            objectFit: "cover",
-            objectPosition: "center top",
-          }}
-        />
-      </div>
+            {/* Desktop: 500px */}
+            <div
+              className="hidden md:block"
+              style={{
+                width: 500,
+                height: 275,
+                overflow: "hidden",
+                filter: "brightness(0) invert(1) drop-shadow(0 0 60px rgba(34,197,94,0.30))",
+              }}
+            >
+              <img
+                src="/hecaro-watermark.png"
+                alt="HECARO Digital"
+                style={{
+                  width: 500,
+                  height: 500,
+                  display: "block",
+                  objectFit: "cover",
+                  objectPosition: "center top",
+                }}
+              />
+            </div>
+          </motion.div>
 
-      {/* ── Text content — full width, above watermark ─────────────── */}
-      <div className="relative max-w-4xl w-full mx-auto" style={{ zIndex: 10 }}>
-        <motion.h1
-          {...anim(0.15)}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6"
-        >
-          {headlineParts.map((line, i) => (
-            <span key={i} className="block leading-[1.1]">
-              {i === 1 ? (
-                <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
-                  {line}
+          {/* ── RIGHT: Text ────────────────────────────────────────── */}
+          <div className="flex flex-col">
+            <motion.h1
+              {...anim(0.12)}
+              className="text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white mb-6 leading-[1.08]"
+              style={{
+                fontFamily: "var(--font-syne), sans-serif",
+                fontWeight: 800,
+              }}
+            >
+              {headlineParts.map((line, i) => (
+                <span key={i} className="block">
+                  {i === 1 ? (
+                    <span className="bg-gradient-to-r from-emerald-400 to-emerald-500 bg-clip-text text-transparent">
+                      {line}
+                    </span>
+                  ) : (
+                    line
+                  )}
                 </span>
-              ) : (
-                line
-              )}
-            </span>
-          ))}
-        </motion.h1>
+              ))}
+            </motion.h1>
 
-        <motion.p
-          {...anim(0.28)}
-          className="text-lg sm:text-xl md:text-2xl text-slate-400 leading-relaxed mb-10 max-w-2xl"
-          style={{ fontFamily: "var(--font-inter), sans-serif" }}
-        >
-          {t.hero.sub}
-        </motion.p>
+            <motion.p
+              {...anim(0.24)}
+              className="text-base sm:text-lg text-slate-400 leading-relaxed mb-10"
+              style={{ fontFamily: "var(--font-inter), sans-serif" }}
+            >
+              {t.hero.sub}
+            </motion.p>
 
-        <motion.div
-          {...anim(0.38)}
-          className="flex flex-col sm:flex-row items-start gap-4"
-        >
-          {/* Primary CTA — magnetic */}
-          <motion.button
-            ref={ctaRef}
-            style={{ x: sx, y: sy }}
-            onMouseMove={onCtaMove}
-            onMouseLeave={onCtaLeave}
-            onClick={() => onNav("contact")}
-            className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold transition-colors duration-300 shadow-lg shadow-emerald-500/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
-          >
-            {t.hero.cta}
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-          </motion.button>
+            <motion.div
+              {...anim(0.34)}
+              className="flex flex-col sm:flex-row items-start gap-4"
+            >
+              {/* Primary CTA */}
+              <motion.button
+                ref={ctaRef}
+                style={{ x: sx, y: sy }}
+                onMouseMove={onCtaMove}
+                onMouseLeave={onCtaLeave}
+                onClick={() => onNav("contact")}
+                className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold transition-colors duration-300 shadow-lg shadow-emerald-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+              >
+                {t.hero.cta}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </motion.button>
 
-          {/* Secondary CTA */}
-          <button
-            onClick={() => onNav("services")}
-            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full border border-emerald-500/30 hover:border-emerald-500/60 text-slate-300 hover:text-emerald-300 font-semibold transition-all duration-300 backdrop-blur-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50"
-          >
-            {t.hero.cta2}
-          </button>
-        </motion.div>
+              {/* Secondary CTA */}
+              <button
+                onClick={() => onNav("services")}
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-3.5 rounded-full border border-white/20 hover:border-white/40 text-slate-300 hover:text-white font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50"
+              >
+                {t.hero.cta2}
+              </button>
+            </motion.div>
+          </div>
+
+        </div>
       </div>
 
       {/* Scroll indicator */}
       <motion.button
         onClick={() => onNav("services")}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-500 hover:text-white transition-colors focus:outline-none"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-slate-600 hover:text-white transition-colors focus:outline-none"
         aria-label="Scroll down"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-        style={{ zIndex: 10 }}
       >
-        <ChevronDown className="w-8 h-8" aria-hidden="true" />
+        <ChevronDown className="w-7 h-7" aria-hidden="true" />
       </motion.button>
     </section>
   );

@@ -67,7 +67,7 @@
 
   body {
     @apply font-sans antialiased text-foreground min-h-screen;
-    background-color: #020617;
+    background-color: #05070a;
   }
 
   body::before {

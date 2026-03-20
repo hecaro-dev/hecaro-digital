@@ -68,44 +68,30 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
 
           {/*
-            LEFT COLUMN: Original uploaded logo (background removed PNG).
-            Using the actual brand asset so the shape is 100% authentic.
-            object-fit: contain keeps original proportions — no distortion.
-            filter: drop-shadow creates the branded green glow.
+            LEFT COLUMN: Logo watermark — massive statement element.
+            The wrapper overflows its flex slot (negative margin-left bleeds it left).
+            z-index: 0 keeps it behind the right-column text at z-index: 10.
+
+            Crop strategy (500×500 original image):
+              Text starts at ~65% height. We show top 55% to clear it cleanly.
+              Desktop 850px: img=850×850, wrapper h=467 → cutoff=467/850×500≈275px ✓
+              Mobile  380px: img=380×380, wrapper h=209 → cutoff≈275px ✓
           */}
           <motion.div
             {...anim(0)}
             className="shrink-0 self-center flex items-center justify-center"
+            style={{ position: "relative", zIndex: 0 }}
           >
-            {/*
-              The logo asset is dark-on-transparent.
-              brightness(0) invert(1) converts it to white so it's visible
-              against the dark hero background. drop-shadow adds the green glow.
-              opacity: 0.18 on the wrapper keeps it as a subtle watermark.
-            */}
-            {/*
-              Image is 500×500px (square). HECAROOO text sits at ~76–94% height.
-              STRATEGY: filter + opacity sit on the WRAPPER div. The wrapper
-              overflow:hidden clips the raw img FIRST, then the filter processes
-              only the cropped result (no drop-shadow leaking from hidden pixels).
-
-              Scale factors (500×500 original):
-                Screenshots reveal text starts at ~y=325px in original (65% height).
-                H mark ends at ~y=260px. We crop at 55% to safely clear the text.
-
-                Desktop 700px: img 700×700, wrapper h=385 → cutoff at 385/700×500=275px ✓
-                Mobile  300px: img 300×300, wrapper h=165 → cutoff at 165/300×500=275px ✓
-            */}
             {/* Mobile */}
             <div
               className="block md:hidden select-none pointer-events-none"
               style={{
-                width: 300,
-                height: 165,
+                width: 380,
+                height: 209,
                 overflow: "hidden",
                 flexShrink: 0,
                 opacity: 0.18,
-                filter: "brightness(0) invert(1) drop-shadow(0 0 35px rgba(34, 197, 94, 0.5))",
+                filter: "brightness(0) invert(1) drop-shadow(0 0 50px rgba(34, 197, 94, 0.55))",
               }}
             >
               <img
@@ -113,24 +99,25 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 alt=""
                 aria-hidden="true"
                 style={{
-                  width: 300,
-                  height: 300,
+                  width: 380,
+                  height: 380,
                   display: "block",
                   objectFit: "cover",
                   objectPosition: "center top",
                 }}
               />
             </div>
-            {/* Desktop */}
+            {/* Desktop — bleeds left with negative margin for full dominance */}
             <div
               className="hidden md:block select-none pointer-events-none"
               style={{
-                width: 700,
-                height: 385,
+                width: 850,
+                height: 467,
                 overflow: "hidden",
                 flexShrink: 0,
+                marginLeft: -60,
                 opacity: 0.18,
-                filter: "brightness(0) invert(1) drop-shadow(0 0 55px rgba(34, 197, 94, 0.5))",
+                filter: "brightness(0) invert(1) drop-shadow(0 0 70px rgba(34, 197, 94, 0.55))",
               }}
             >
               <img
@@ -138,8 +125,8 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 alt=""
                 aria-hidden="true"
                 style={{
-                  width: 700,
-                  height: 700,
+                  width: 850,
+                  height: 850,
                   display: "block",
                   objectFit: "cover",
                   objectPosition: "center top",
@@ -148,8 +135,8 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             </div>
           </motion.div>
 
-          {/* RIGHT COLUMN: Headline + Sub + CTAs */}
-          <div className="flex-1 min-w-0">
+          {/* RIGHT COLUMN: Headline + Sub + CTAs — z-index above the logo */}
+          <div className="flex-1 min-w-0 relative" style={{ zIndex: 10 }}>
             <motion.h1
               {...anim(0.15)}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6"

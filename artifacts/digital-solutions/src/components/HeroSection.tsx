@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useI18n } from "../i18n";
-import { LogoMark } from "./brand/Logo";
 
 interface HeroSectionProps {
   onNav: (section: string) => void;
@@ -19,17 +18,6 @@ function anim(delay: number) {
     transition: { duration: 0.55, delay, ease },
   };
 }
-
-const glowAnim = {
-  animate: {
-    filter: [
-      "drop-shadow(0 0 4px rgba(16,185,129,0.35))",
-      "drop-shadow(0 0 20px rgba(16,185,129,0.70))",
-      "drop-shadow(0 0 4px rgba(16,185,129,0.35))",
-    ],
-  },
-  transition: { duration: 2.8, repeat: Infinity, ease: "easeInOut" as const },
-};
 
 export default function HeroSection({ onNav }: HeroSectionProps) {
   const { t } = useI18n();
@@ -75,22 +63,37 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020617]/60 to-[#020617]" />
       </div>
 
-      <div className="relative z-10 max-w-5xl w-full mx-auto mt-8">
+      {/* Decorative large H mark — left watermark */}
+      <div
+        aria-hidden="true"
+        className="absolute hidden lg:block pointer-events-none"
+        style={{
+          left: "3%",
+          top: "50%",
+          transform: "translateY(-50%)",
+          opacity: 0.07,
+          zIndex: 0,
+          overflow: "hidden",
+          height: 420,
+        }}
+      >
+        <img
+          src="/hecaro-mark.png"
+          alt=""
+          style={{
+            height: Math.round(420 / 0.64),
+            width: "auto",
+            display: "block",
+            filter: "brightness(0) invert(1)",
+          }}
+        />
+      </div>
 
-        {/* Large animated logo */}
-        <motion.div {...anim(0)} className="mb-10">
-          <motion.div
-            animate={glowAnim.animate}
-            transition={glowAnim.transition}
-            style={{ display: "inline-flex" }}
-          >
-            <LogoMark size={80} theme="dark" />
-          </motion.div>
-        </motion.div>
+      <div className="relative z-10 max-w-5xl w-full mx-auto mt-8">
 
         {/* Headline */}
         <motion.h1
-          {...anim(0.2)}
+          {...anim(0.1)}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8"
         >
           {headlineParts.map((line, i) => (
@@ -108,7 +111,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
 
         {/* Sub-headline */}
         <motion.p
-          {...anim(0.3)}
+          {...anim(0.25)}
           className="text-lg sm:text-xl md:text-2xl text-slate-400 max-w-2xl leading-relaxed mb-12"
         >
           {t.hero.sub}

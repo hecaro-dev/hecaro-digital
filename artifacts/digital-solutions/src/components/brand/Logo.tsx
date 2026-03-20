@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * HECARO Digital – Brand System
+ * HECARO – Brand System
  *
  * LogoMark  – standalone SVG symbol (used in HeroSection pulsing glow)
  * Logo      – image lockup (HECAROOO PNG + "International Web Design & SEO" subline)
@@ -99,7 +99,7 @@ export function Logo({
     >
       <img
         src="/logo-nobg.png"
-        alt="HECARO Digital"
+        alt="HECARO"
         style={{
           height: size,
           width: "auto",

@@ -18,7 +18,7 @@ export default function Footer({ onLegal, onNav = () => {} }: FooterProps) {
             <div className="mb-4 flex items-center gap-3">
               <img
                 src="/hecaro-logo.png"
-                alt="HECARO Digital"
+                alt="HECARO"
                 style={{
                   height: 40,
                   width: "auto",
@@ -29,7 +29,7 @@ export default function Footer({ onLegal, onNav = () => {} }: FooterProps) {
               />
               <span className="flex flex-col leading-tight">
                 <span style={{ fontSize: 15, fontWeight: 700, color: "#ffffff", letterSpacing: "0.05em" }}>
-                  HECARO Digital
+                  HECARO
                 </span>
                 <span style={{ fontSize: 9, fontWeight: 300, color: "rgba(255,255,255,0.42)", letterSpacing: "0.07em", marginTop: 2 }}>
                   International Web Design &amp; SEO
@@ -60,7 +60,7 @@ export default function Footer({ onLegal, onNav = () => {} }: FooterProps) {
 
         <div className="pt-8 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} HECARO Digital. {t.footer.rights}
+            © {new Date().getFullYear()} HECARO. {t.footer.rights}
           </p>
           <div className="flex gap-4 text-sm text-slate-500">
             <span className="flex items-center gap-1.5">

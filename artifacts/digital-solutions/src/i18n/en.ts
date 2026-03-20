@@ -7,7 +7,7 @@ export const en: Translations = {
   lang: "en",
   langName: "English",
   meta: {
-    title: "HECARO Digital – International Web Design & SEO",
+    title: "HECARO – International Web Design & SEO",
     description:
       "Professional Next.js landing pages, international SEO strategy and digital consulting. Tailored for businesses with global ambitions.",
   },
@@ -82,7 +82,7 @@ export const en: Translations = {
   },
   values: {
     label: "Our Values",
-    headline: "Why HECARO Digital",
+    headline: "Why HECARO",
     items: [
       {
         title: "Fast",

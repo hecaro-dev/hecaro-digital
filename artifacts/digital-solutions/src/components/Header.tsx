@@ -9,24 +9,26 @@ interface HeaderProps {
   onNav: (section: string) => void;
 }
 
-const LOGO_FILTER = "brightness(0) invert(1)";
-
-function HLogo({ height, flip = false }: { height: number; flip?: boolean }) {
+/** Cropped H mark — clips the bottom text out of the image */
+function HMark({ height }: { height: number }) {
+  const totalImgHeight = Math.round(height / 0.64);
   return (
-    <img
-      src="/hecaro-logo.png"
-      alt=""
+    <div
+      style={{ height, overflow: "hidden", flexShrink: 0, display: "flex", alignItems: "flex-start" }}
       aria-hidden="true"
-      style={{
-        height,
-        width: "auto",
-        display: "block",
-        flexShrink: 0,
-        filter: LOGO_FILTER,
-        transform: flip ? "scaleX(-1)" : undefined,
-        userSelect: "none",
-      }}
-    />
+    >
+      <img
+        src="/hecaro-mark.png"
+        alt=""
+        style={{
+          height: totalImgHeight,
+          width: "auto",
+          display: "block",
+          filter: "brightness(0) invert(1)",
+          userSelect: "none",
+        }}
+      />
+    </div>
   );
 }
 
@@ -66,75 +68,26 @@ export default function Header({ onNav }: HeaderProps) {
       role="banner"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 sm:h-24">
+        <div className="flex items-center justify-between h-16">
 
-          {/* ── Brand lockup ────────────────────────────────────────── */}
+          {/* ── Brand ────────────────────────────────────────────────── */}
           <button
             onClick={() => handleNav("top")}
-            className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-xl"
-            aria-label="HECARO Digital – Home"
+            className="flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg"
+            aria-label="HECARO – Home"
           >
-            {/* Desktop: [H logo] | name + subline | [H logo mirrored] */}
-            <span className="hidden sm:flex items-center gap-4">
-              <HLogo height={60} />
-              <span className="flex flex-col items-center leading-tight">
-                <span
-                  style={{
-                    fontSize: 18,
-                    fontWeight: 700,
-                    color: "#ffffff",
-                    letterSpacing: "0.06em",
-                    fontFamily: "inherit",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  HECARO Digital
-                </span>
-                <span
-                  style={{
-                    fontSize: 10,
-                    fontWeight: 300,
-                    color: "rgba(255,255,255,0.46)",
-                    letterSpacing: "0.09em",
-                    fontFamily: "inherit",
-                    whiteSpace: "nowrap",
-                    marginTop: 3,
-                  }}
-                >
-                  International Web Design &amp; SEO
-                </span>
-              </span>
-              <HLogo height={60} flip />
-            </span>
-
-            {/* Mobile: [H logo] | name + subline */}
-            <span className="flex sm:hidden items-center gap-3">
-              <HLogo height={40} />
-              <span className="flex flex-col leading-tight">
-                <span
-                  style={{
-                    fontSize: 14,
-                    fontWeight: 700,
-                    color: "#ffffff",
-                    letterSpacing: "0.05em",
-                    fontFamily: "inherit",
-                  }}
-                >
-                  HECARO Digital
-                </span>
-                <span
-                  style={{
-                    fontSize: 8,
-                    fontWeight: 300,
-                    color: "rgba(255,255,255,0.46)",
-                    letterSpacing: "0.07em",
-                    fontFamily: "inherit",
-                    marginTop: 2,
-                  }}
-                >
-                  International Web Design &amp; SEO
-                </span>
-              </span>
+            <HMark height={36} />
+            <span
+              style={{
+                fontSize: 15,
+                fontWeight: 700,
+                color: "#ffffff",
+                letterSpacing: "0.06em",
+                fontFamily: "inherit",
+                whiteSpace: "nowrap",
+              }}
+            >
+              HECARO
             </span>
           </button>
 

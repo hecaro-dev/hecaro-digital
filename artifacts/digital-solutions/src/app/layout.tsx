@@ -27,17 +27,9 @@ export default function RootLayout({
     <html
       lang="de"
       className={`dark ${syne.variable}`}
-      style={{ fontFamily: "'Syne', system-ui, sans-serif" }}
+      style={{ fontFamily: "'Syne', var(--font-syne), system-ui, sans-serif" }}
       suppressHydrationWarning
     >
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=block"
-          rel="stylesheet"
-        />
-      </head>
       <body>{children}</body>
     </html>
   );

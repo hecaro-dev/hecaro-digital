@@ -58,18 +58,12 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
 
         {/* ── Large animated logo – above the headline ── */}
         <motion.div {...anim(0)} className="mb-10">
-          {/* Mobile: size=44, Desktop: size=72 */}
           <motion.div
             animate={glowAnim.animate}
             transition={glowAnim.transition}
             style={{ display: "inline-flex" }}
           >
-            <span className="flex sm:hidden">
-              <Logo size={44} theme="dark" />
-            </span>
-            <span className="hidden sm:flex">
-              <Logo size={72} theme="dark" />
-            </span>
+            <Logo size={64} theme="dark" />
           </motion.div>
         </motion.div>
 

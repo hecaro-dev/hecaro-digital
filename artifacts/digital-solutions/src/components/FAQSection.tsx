@@ -9,7 +9,21 @@ import { useI18n } from "../i18n";
 export default function FAQSection() {
   const { t } = useI18n();
   const { ref, inView } = useInView();
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const allIndices = t.faq.items.map((_, i) => i);
+  const [openSet, setOpenSet] = useState<Set<number>>(new Set(allIndices));
+
+  function toggle(i: number) {
+    setOpenSet((prev) => {
+      const next = new Set(prev);
+      if (next.has(i)) {
+        next.delete(i);
+      } else {
+        next.add(i);
+      }
+      return next;
+    });
+  }
 
   return (
     <section id="faq" className="py-32 px-4" ref={ref}>
@@ -30,7 +44,7 @@ export default function FAQSection() {
 
         <div className="space-y-4">
           {t.faq.items.map((item, i) => {
-            const isOpen = openIndex === i;
+            const isOpen = openSet.has(i);
             return (
               <motion.div
                 key={i}
@@ -40,7 +54,7 @@ export default function FAQSection() {
                 className="border-b border-white/[0.08] last:border-0 pb-4"
               >
                 <button
-                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  onClick={() => toggle(i)}
                   className="w-full flex items-center justify-between py-4 text-left focus:outline-none"
                 >
                   <span className="text-lg font-medium text-white pr-8">
@@ -50,7 +64,7 @@ export default function FAQSection() {
                     <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
                   </div>
                 </button>
-                <AnimatePresence>
+                <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}

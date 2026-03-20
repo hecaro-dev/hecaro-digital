@@ -21,7 +21,7 @@ export const de = {
   },
   hero: {
     badge: "Verfügbar weltweit · DE · EN · ES",
-    headline: "Digitale Lösungen,\ndie überzeugen",
+    headline: "Digitale Lösungen, \ndie überzeugen",
     sub: "Schnelle Landing Pages, messbare SEO-Ergebnisse und professionelle digitale Beratung – aus einer Hand, für internationale Märkte.",
     cta: "Projekt starten",
     cta2: "Leistungen ansehen",

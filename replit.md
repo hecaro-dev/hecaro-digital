@@ -21,7 +21,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 ```text
 artifacts-monorepo/
 ├── artifacts/              # Deployable applications
-│   ├── digital-solutions/  # Business website (React + Vite, multilingual DE/EN/ES)
+│   ├── digital-solutions/  # Business website (Next.js 15 App Router, SSR, multilingual DE/EN/ES)
 │   └── api-server/         # Express API server
 ├── lib/                    # Shared libraries
 │   ├── api-spec/           # OpenAPI spec + Orval codegen config

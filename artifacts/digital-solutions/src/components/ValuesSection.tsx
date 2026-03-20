@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { useInView } from "../hooks/useInView";
 import { Zap, Shield, Settings, MessageCircle } from "lucide-react";
@@ -41,9 +43,7 @@ export default function ValuesSection() {
                   <Icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">
-                  {item.description}
-                </p>
+                <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
               </motion.div>
             );
           })}

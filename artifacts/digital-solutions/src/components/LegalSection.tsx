@@ -1,7 +1,5 @@
-/* =============================================
-   Legal Pages (Impressum / Datenschutz)
-   Change content in: src/i18n/de.ts (legal key)
-   ============================================= */
+"use client";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { useI18n } from "../i18n";
@@ -14,16 +12,13 @@ interface LegalModalProps {
 export default function LegalModal({ type, onClose }: LegalModalProps) {
   const { t } = useI18n();
 
-  const title =
-    type === "imprint" ? t.legal.imprintTitle : t.legal.privacyTitle;
-  const text =
-    type === "imprint" ? t.legal.imprintText : t.legal.privacyText;
+  const title = type === "imprint" ? t.legal.imprintTitle : t.legal.privacyTitle;
+  const text = type === "imprint" ? t.legal.imprintText : t.legal.privacyText;
 
   return (
     <AnimatePresence>
       {type && (
         <>
-          {/* Backdrop */}
           <motion.div
             key="backdrop"
             initial={{ opacity: 0 }}
@@ -34,8 +29,6 @@ export default function LegalModal({ type, onClose }: LegalModalProps) {
             onClick={onClose}
             aria-hidden="true"
           />
-
-          {/* Modal */}
           <motion.dialog
             key="modal"
             open
@@ -48,34 +41,24 @@ export default function LegalModal({ type, onClose }: LegalModalProps) {
             aria-modal="true"
           >
             <div className="flex items-start justify-between mb-6">
-              <h2
-                id="legal-modal-title"
-                className="text-2xl font-bold text-white"
-              >
-                {title}
-              </h2>
+              <h2 id="legal-modal-title" className="text-2xl font-bold text-white">{title}</h2>
               <button
                 onClick={onClose}
-                className="text-slate-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded p-1"
+                className="text-slate-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded p-1"
                 aria-label="Close dialog"
               >
                 <X className="w-5 h-5" aria-hidden="true" />
               </button>
             </div>
-
-            {/* Content – pre-wrap preserves newlines */}
             <div className="prose prose-invert prose-sm max-w-none">
               {text.split("\n").map((line, i) =>
                 line === "" ? (
                   <br key={i} />
                 ) : (
-                  <p key={i} className="text-slate-400 text-sm leading-relaxed mb-1">
-                    {line}
-                  </p>
+                  <p key={i} className="text-slate-400 text-sm leading-relaxed mb-1">{line}</p>
                 )
               )}
             </div>
-
             <p className="mt-8 text-xs text-slate-600">
               * Platzhalter – bitte vor Veröffentlichung mit echten Daten befüllen.
             </p>

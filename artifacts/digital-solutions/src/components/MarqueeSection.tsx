@@ -1,9 +1,9 @@
+"use client";
+
 import { useI18n } from "../i18n";
 
 export default function MarqueeSection() {
   const { t } = useI18n();
-
-  // Duplicate for seamless loop
   const items = [...t.marquee, ...t.marquee];
 
   return (
@@ -13,8 +13,8 @@ export default function MarqueeSection() {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
         }
-        .animate-marquee { 
-          animation: marquee 30s linear infinite; 
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
           display: flex;
           width: max-content;
         }

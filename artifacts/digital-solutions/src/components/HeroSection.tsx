@@ -1,6 +1,5 @@
-/* =============================================
-   Hero Section
-   ============================================= */
+"use client";
+
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useI18n } from "../i18n";
@@ -20,7 +19,6 @@ const fadeUp = {
 
 export default function HeroSection({ onNav }: HeroSectionProps) {
   const { t } = useI18n();
-
   const headlineParts = t.hero.headline.split("\n");
 
   return (
@@ -29,12 +27,9 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
       className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-24 pb-16 overflow-hidden"
       aria-label="Hero"
     >
-      {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-emerald-600/8 rounded-full blur-[140px]" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[400px] bg-indigo-600/6 rounded-full blur-[100px]" />
-        
-        {/* Subtle dot grid */}
         <div
           className="absolute inset-0"
           style={{
@@ -46,7 +41,6 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto text-center mt-12">
-        {/* Badge */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -58,7 +52,6 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
           {t.hero.badge}
         </motion.div>
 
-        {/* Headline */}
         <motion.h1
           variants={fadeUp}
           initial="hidden"
@@ -79,7 +72,6 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
           ))}
         </motion.h1>
 
-        {/* Sub */}
         <motion.p
           variants={fadeUp}
           initial="hidden"
@@ -90,7 +82,6 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
           {t.hero.sub}
         </motion.p>
 
-        {/* CTAs */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -100,21 +91,20 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         >
           <button
             onClick={() => onNav("contact")}
-            className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold transition-all duration-300 shadow-lg shadow-emerald-500/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617]"
+            className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold transition-all duration-300 shadow-lg shadow-emerald-500/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
           >
             {t.hero.cta}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </button>
           <button
             onClick={() => onNav("services")}
-            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 text-white font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black backdrop-blur-sm"
+            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 text-white font-semibold transition-all duration-300 backdrop-blur-sm"
           >
             {t.hero.cta2}
           </button>
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.button
         onClick={() => onNav("services")}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-500 hover:text-white transition-colors focus:outline-none"

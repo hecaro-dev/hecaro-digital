@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
@@ -25,18 +27,12 @@ export default function ContactSection() {
   const [status, setStatus] = useState<Status>("idle");
 
   const schema = buildSchema(t);
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<FormValues>({
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<FormValues>({
     resolver: zodResolver(schema),
     defaultValues: { name: "", email: "", message: "", gdpr: false },
   });
 
-  async function onSubmit(data: FormValues) {
+  async function onSubmit(_data: FormValues) {
     setStatus("sending");
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -47,8 +43,7 @@ export default function ContactSection() {
     }
   }
 
-  const inputClass =
-    "w-full bg-black/50 border border-white/10 rounded-xl px-5 py-4 text-base text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all";
+  const inputClass = "w-full bg-black/50 border border-white/10 rounded-xl px-5 py-4 text-base text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all";
 
   return (
     <section id="contact" ref={ref} className="py-32 px-4 bg-black relative" aria-labelledby="contact-heading">
@@ -84,86 +79,37 @@ export default function ContactSection() {
                 <CheckCircle2 className="w-10 h-10 text-emerald-400" />
               </div>
               <p className="text-2xl font-bold text-white">{t.contact.success}</p>
-              <button 
-                onClick={() => setStatus("idle")} 
-                className="mt-6 text-emerald-400 hover:text-emerald-300 font-medium transition-colors"
-              >
-                Weitere Nachricht senden
+              <button onClick={() => setStatus("idle")} className="mt-6 text-emerald-400 hover:text-emerald-300 font-medium transition-colors">
+                {t.contact.send}
               </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit(onSubmit)} noValidate>
               <div className="space-y-6">
                 <div>
-                  <input
-                    id="name"
-                    type="text"
-                    placeholder={t.contact.namePlaceholder}
-                    className={`${inputClass} ${errors.name ? "border-red-500 focus:border-red-500" : ""}`}
-                    {...register("name")}
-                  />
-                  {errors.name && (
-                    <p className="mt-2 text-sm text-red-400 flex items-center gap-1.5 pl-1">
-                      <AlertCircle className="w-4 h-4" /> {errors.name.message}
-                    </p>
-                  )}
+                  <input id="name" type="text" placeholder={t.contact.namePlaceholder} className={`${inputClass} ${errors.name ? "border-red-500" : ""}`} {...register("name")} />
+                  {errors.name && <p className="mt-2 text-sm text-red-400 flex items-center gap-1.5 pl-1"><AlertCircle className="w-4 h-4" />{errors.name.message}</p>}
                 </div>
-
                 <div>
-                  <input
-                    id="email"
-                    type="email"
-                    placeholder={t.contact.emailPlaceholder}
-                    className={`${inputClass} ${errors.email ? "border-red-500 focus:border-red-500" : ""}`}
-                    {...register("email")}
-                  />
-                  {errors.email && (
-                    <p className="mt-2 text-sm text-red-400 flex items-center gap-1.5 pl-1">
-                      <AlertCircle className="w-4 h-4" /> {errors.email.message}
-                    </p>
-                  )}
+                  <input id="email" type="email" placeholder={t.contact.emailPlaceholder} className={`${inputClass} ${errors.email ? "border-red-500" : ""}`} {...register("email")} />
+                  {errors.email && <p className="mt-2 text-sm text-red-400 flex items-center gap-1.5 pl-1"><AlertCircle className="w-4 h-4" />{errors.email.message}</p>}
                 </div>
-
                 <div>
-                  <textarea
-                    id="message"
-                    rows={5}
-                    placeholder={t.contact.messagePlaceholder}
-                    className={`${inputClass} resize-none ${errors.message ? "border-red-500 focus:border-red-500" : ""}`}
-                    {...register("message")}
-                  />
-                  {errors.message && (
-                    <p className="mt-2 text-sm text-red-400 flex items-center gap-1.5 pl-1">
-                      <AlertCircle className="w-4 h-4" /> {errors.message.message}
-                    </p>
-                  )}
+                  <textarea id="message" rows={5} placeholder={t.contact.messagePlaceholder} className={`${inputClass} resize-none ${errors.message ? "border-red-500" : ""}`} {...register("message")} />
+                  {errors.message && <p className="mt-2 text-sm text-red-400 flex items-center gap-1.5 pl-1"><AlertCircle className="w-4 h-4" />{errors.message.message}</p>}
                 </div>
-
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-black/30 border border-white/5">
-                  <input
-                    id="gdpr"
-                    type="checkbox"
-                    className="mt-1 w-5 h-5 rounded border-white/20 bg-black text-emerald-500 focus:ring-emerald-500 cursor-pointer"
-                    {...register("gdpr")}
-                  />
+                  <input id="gdpr" type="checkbox" className="mt-1 w-5 h-5 rounded border-white/20 bg-black text-emerald-500 focus:ring-emerald-500 cursor-pointer" {...register("gdpr")} />
                   <div>
-                    <label htmlFor="gdpr" className="text-sm text-slate-400 cursor-pointer leading-relaxed block">
-                      {t.contact.gdpr}
-                    </label>
-                    {errors.gdpr && (
-                      <p className="mt-1.5 text-sm text-red-400 flex items-center gap-1.5">
-                        <AlertCircle className="w-4 h-4" /> {errors.gdpr.message}
-                      </p>
-                    )}
+                    <label htmlFor="gdpr" className="text-sm text-slate-400 cursor-pointer leading-relaxed block">{t.contact.gdpr}</label>
+                    {errors.gdpr && <p className="mt-1.5 text-sm text-red-400 flex items-center gap-1.5"><AlertCircle className="w-4 h-4" />{errors.gdpr.message}</p>}
                   </div>
                 </div>
-
                 {status === "error" && (
                   <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm flex items-center gap-2">
-                    <AlertCircle className="w-5 h-5 shrink-0" /> {t.contact.error}
+                    <AlertCircle className="w-5 h-5 shrink-0" />{t.contact.error}
                   </div>
                 )}
-
                 <button
                   type="submit"
                   disabled={status === "sending"}

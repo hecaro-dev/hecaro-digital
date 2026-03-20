@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { useInView } from "../hooks/useInView";
 import { useI18n } from "../i18n";
@@ -20,7 +22,6 @@ export default function TechStackSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">
             {t.techstack.headline}
           </h2>
-
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {t.techstack.items.map((tech, i) => (
               <motion.div
@@ -31,9 +32,7 @@ export default function TechStackSection() {
                 className="flex items-center gap-3 px-6 py-3 rounded-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] backdrop-blur-md shadow-lg"
               >
                 <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
-                <span className="text-slate-200 font-medium tracking-wide">
-                  {tech}
-                </span>
+                <span className="text-slate-200 font-medium tracking-wide">{tech}</span>
               </motion.div>
             ))}
           </div>

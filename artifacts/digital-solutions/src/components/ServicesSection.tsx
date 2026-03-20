@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { useInView } from "../hooks/useInView";
 import { Zap, Search, Monitor, CheckCircle2 } from "lucide-react";
@@ -17,7 +19,6 @@ export default function ServicesSection() {
       aria-labelledby="services-heading"
     >
       <div className="max-w-6xl mx-auto">
-        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -38,12 +39,10 @@ export default function ServicesSection() {
           </p>
         </motion.div>
 
-        {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {t.services.items.map((service, i) => {
             const isLarge = i === 0;
             const Icon = ICONS[i];
-
             return (
               <motion.article
                 key={i}
@@ -54,31 +53,22 @@ export default function ServicesSection() {
                   isLarge ? "md:col-span-2" : "col-span-1"
                 }`}
               >
-                {/* Glow effect */}
                 <div className="absolute -inset-px bg-gradient-to-br from-emerald-500/10 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-3xl" />
-
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-start justify-between mb-8">
-                    {/* Tag pill */}
                     <span className="inline-flex px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-slate-300">
                       {service.tag}
                     </span>
-                    
-                    {/* Icon */}
                     <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
                       <Icon className="w-6 h-6" />
                     </div>
                   </div>
-
                   <h3 className={`font-bold text-white mb-4 ${isLarge ? "text-3xl" : "text-2xl"}`}>
                     {service.title}
                   </h3>
-                  
                   <p className="text-slate-400 text-base leading-relaxed mb-8 max-w-lg">
                     {service.description}
                   </p>
-
-                  {/* Bullets */}
                   <ul className={`mt-auto grid gap-3 ${isLarge ? "sm:grid-cols-2" : "grid-cols-1"}`} aria-label={`Features of ${service.title}`}>
                     {service.bullets.map((bullet, j) => (
                       <li key={j} className="flex items-start gap-3 text-sm">

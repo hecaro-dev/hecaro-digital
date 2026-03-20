@@ -1,3 +1,5 @@
+"use client";
+
 import { useI18n } from "../i18n";
 
 interface FooterProps {
@@ -12,34 +14,28 @@ export default function Footer({ onLegal, onNav = () => {} }: FooterProps) {
     <footer className="bg-black pt-20 pb-10 px-4 border-t border-white/[0.06]" role="contentinfo">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
-          {/* Brand Col */}
           <div className="md:col-span-4 lg:col-span-5">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center">
-                <span className="text-white font-bold text-xs">DS</span>
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center">
+                <span className="text-black font-bold text-xs">DS</span>
               </div>
               <span className="font-bold text-white text-lg tracking-tight">Digital Solutions</span>
             </div>
-            <p className="text-slate-400 max-w-sm leading-relaxed text-sm">
-              {t.footer.tagline}
-            </p>
+            <p className="text-slate-400 max-w-sm leading-relaxed text-sm">{t.footer.tagline}</p>
           </div>
 
-          {/* Links Col 1 */}
           <div className="md:col-span-4 lg:col-span-3">
             <h4 className="text-white font-semibold mb-6">Navigation</h4>
             <ul className="space-y-4 text-sm text-slate-400">
               <li><button onClick={() => onNav("services")} className="hover:text-white transition-colors">{t.footer.links.services}</button></li>
               <li><button onClick={() => onNav("portfolio")} className="hover:text-white transition-colors">{t.footer.links.portfolio}</button></li>
-              <li><button onClick={() => onNav("about")} className="hover:text-white transition-colors">{t.footer.links.about}</button></li>
+              <li><button onClick={() => onNav("contact")} className="hover:text-white transition-colors">{t.footer.links.contact}</button></li>
             </ul>
           </div>
 
-          {/* Links Col 2 */}
           <div className="md:col-span-4 lg:col-span-4">
-            <h4 className="text-white font-semibold mb-6">Rechtliches & Kontakt</h4>
+            <h4 className="text-white font-semibold mb-6">Legal & FAQ</h4>
             <ul className="space-y-4 text-sm text-slate-400">
-              <li><button onClick={() => onNav("contact")} className="hover:text-white transition-colors">{t.footer.links.contact}</button></li>
               <li><button onClick={() => onNav("faq")} className="hover:text-white transition-colors">{t.footer.links.faq}</button></li>
               <li><button onClick={() => onLegal("imprint")} className="hover:text-white transition-colors">{t.footer.links.imprint}</button></li>
               <li><button onClick={() => onLegal("privacy")} className="hover:text-white transition-colors">{t.footer.links.privacy}</button></li>
@@ -47,13 +43,15 @@ export default function Footer({ onLegal, onNav = () => {} }: FooterProps) {
           </div>
         </div>
 
-        {/* Bottom */}
         <div className="pt-8 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-sm">
             © {new Date().getFullYear()} Digital Solutions. {t.footer.rights}
           </p>
           <div className="flex gap-4 text-sm text-slate-500">
-             <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> All systems operational</span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              All systems operational
+            </span>
           </div>
         </div>
       </div>

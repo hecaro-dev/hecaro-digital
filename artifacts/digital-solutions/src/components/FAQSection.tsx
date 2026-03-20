@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -44,10 +46,8 @@ export default function FAQSection() {
                   <span className="text-lg font-medium text-white pr-8">
                     {item.question}
                   </span>
-                  <div className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-emerald-500 border-emerald-500 text-black' : 'border-white/10 text-slate-400 hover:border-white/30'}`}>
-                    <ChevronDown
-                      className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-                    />
+                  <div className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-colors ${isOpen ? "bg-emerald-500 border-emerald-500 text-black" : "border-white/10 text-slate-400 hover:border-white/30"}`}>
+                    <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
                   </div>
                 </button>
                 <AnimatePresence>

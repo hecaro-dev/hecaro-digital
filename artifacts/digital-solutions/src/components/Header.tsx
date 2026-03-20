@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -67,11 +69,10 @@ export default function Header({ onNav }: HeaderProps) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
-          {/* Logo */}
           <button
             onClick={() => handleNav("top")}
             className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-xl"
-            aria-label="Digital Solutions – Startseite"
+            aria-label="Digital Solutions – Home"
           >
             <DSLogo />
             <span className="font-bold text-white tracking-tight text-lg hidden sm:block">
@@ -79,7 +80,6 @@ export default function Header({ onNav }: HeaderProps) {
             </span>
           </button>
 
-          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
             {navItems.map((item) => (
               <button
@@ -92,10 +92,7 @@ export default function Header({ onNav }: HeaderProps) {
             ))}
           </nav>
 
-          {/* Right side */}
           <div className="flex items-center gap-4">
-
-            {/* Language pill toggle */}
             <div className="hidden sm:flex items-center bg-white/[0.05] border border-white/[0.08] rounded-full p-0.5 backdrop-blur-sm">
               {langs.map((l) => (
                 <button
@@ -114,7 +111,6 @@ export default function Header({ onNav }: HeaderProps) {
               ))}
             </div>
 
-            {/* CTA button */}
             <button
               onClick={() => handleNav("contact")}
               className="hidden md:inline-flex items-center px-5 py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black text-sm font-bold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 shadow-lg shadow-emerald-500/25"
@@ -122,11 +118,10 @@ export default function Header({ onNav }: HeaderProps) {
               {t.nav.contact}
             </button>
 
-            {/* Mobile menu toggle */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="md:hidden text-slate-300 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg p-1"
-              aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
             >
               {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -135,7 +130,6 @@ export default function Header({ onNav }: HeaderProps) {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -156,7 +150,6 @@ export default function Header({ onNav }: HeaderProps) {
                 </button>
               ))}
 
-              {/* Mobile language toggle */}
               <div className="flex items-center gap-2 py-4">
                 <div className="flex items-center bg-white/[0.05] border border-white/[0.08] rounded-full p-0.5">
                   {langs.map((l) => (

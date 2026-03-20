@@ -1,14 +1,20 @@
-/* =============================================
-   i18n Context & Hook
-   ============================================= */
-import React, { createContext, useContext, useState, useEffect } from "react";
+"use client";
+
+import React, { createContext, useContext } from "react";
+import { useRouter } from "next/navigation";
 import { de, Translations } from "./de";
 import { en } from "./en";
 import { es } from "./es";
 
 export type Lang = "de" | "en" | "es";
+export const LANGS: Lang[] = ["de", "en", "es"];
 
 const translations: Record<Lang, Translations> = { de, en, es };
+
+export function getTranslations(lang: string): Translations {
+  const safeLang: Lang = LANGS.includes(lang as Lang) ? (lang as Lang) : "de";
+  return translations[safeLang];
+}
 
 interface I18nContextValue {
   lang: Lang;
@@ -22,33 +28,18 @@ const I18nContext = createContext<I18nContextValue>({
   t: de,
 });
 
-/* Detect browser language and map to supported lang */
-function detectLang(): Lang {
-  const stored = localStorage.getItem("ds-lang") as Lang | null;
-  if (stored && translations[stored]) return stored;
-  const browser = navigator.language.split("-")[0];
-  if (browser === "en") return "en";
-  if (browser === "es") return "es";
-  return "de";
-}
-
-export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("de");
-
-  useEffect(() => {
-    setLangState(detectLang());
-  }, []);
+export function I18nProvider({
+  lang,
+  children,
+}: {
+  lang: Lang;
+  children: React.ReactNode;
+}) {
+  const router = useRouter();
 
   function setLang(l: Lang) {
-    setLangState(l);
-    localStorage.setItem("ds-lang", l);
-    document.documentElement.lang = l;
+    router.push(`/${l}`);
   }
-
-  useEffect(() => {
-    document.documentElement.lang = lang;
-    document.title = translations[lang].meta.title;
-  }, [lang]);
 
   return (
     <I18nContext.Provider value={{ lang, setLang, t: translations[lang] }}>

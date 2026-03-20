@@ -1,7 +1,7 @@
 "use client";
 
 import { useI18n } from "../i18n";
-import { DSLogo } from "./Header";
+import { Logo } from "./brand/Logo";
 
 interface FooterProps {
   onLegal: (type: "imprint" | "privacy") => void;
@@ -16,9 +16,8 @@ export default function Footer({ onLegal, onNav = () => {} }: FooterProps) {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
           <div className="md:col-span-4 lg:col-span-5">
-            <div className="flex items-center gap-3 mb-6">
-              <DSLogo size={36} />
-              <span className="font-bold text-white text-lg tracking-tight">Digital Solutions</span>
+            <div className="mb-6">
+              <Logo size={30} theme="dark" />
             </div>
             <p className="text-slate-400 max-w-sm leading-relaxed text-sm">{t.footer.tagline}</p>
           </div>

@@ -4,47 +4,10 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useI18n } from "../i18n";
+import { Logo, LogoMark } from "./brand/Logo";
 
 interface HeaderProps {
   onNav: (section: string) => void;
-}
-
-export function DSLogo({ size = 36 }: { size?: number }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 36 36"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <rect width="36" height="36" rx="10" fill="#020617" />
-      <rect
-        x="0.75"
-        y="0.75"
-        width="34.5"
-        height="34.5"
-        rx="9.25"
-        stroke="#10b981"
-        strokeWidth="0.75"
-        strokeOpacity="0.4"
-      />
-      <path
-        d="M5 10L5 26L10 26C16.627 26 18 21.627 18 18C18 14.373 16.627 10 10 10Z"
-        fill="none"
-        stroke="#10b981"
-        strokeWidth="1.8"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M31 12C31 10 29.5 9 28 9C26.5 9 25 10 25 12C25 14 26 15 28 15.5C30 16 31 17 31 19C31 21 29.5 22 28 22C26.5 22 25 21 25 19"
-        stroke="#10b981"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
 }
 
 export default function Header({ onNav }: HeaderProps) {
@@ -87,12 +50,14 @@ export default function Header({ onNav }: HeaderProps) {
 
           <button
             onClick={() => handleNav("top")}
-            className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-xl"
+            className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-xl"
             aria-label="Digital Solutions – Home"
           >
-            <DSLogo />
-            <span className="font-bold text-white tracking-tight text-lg hidden sm:block">
-              Digital Solutions
+            <span className="flex sm:hidden">
+              <LogoMark size={26} theme="dark" />
+            </span>
+            <span className="hidden sm:flex">
+              <Logo size={26} theme="dark" />
             </span>
           </button>
 

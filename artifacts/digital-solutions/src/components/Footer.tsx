@@ -19,26 +19,15 @@ export default function Footer({ onLegal, onNav = () => {} }: FooterProps) {
               <span
                 style={{
                   fontFamily: "var(--font-syne), sans-serif",
-                  fontSize: 22,
-                  fontWeight: 700,
+                  fontSize: 20,
+                  fontWeight: 800,
                   color: "#ffffff",
-                  letterSpacing: "0.08em",
+                  letterSpacing: "0.05em",
                   display: "block",
+                  lineHeight: 1,
                 }}
               >
                 HECARO Digital
-              </span>
-              <span
-                style={{
-                  fontSize: 10,
-                  fontWeight: 300,
-                  color: "rgba(255,255,255,0.38)",
-                  letterSpacing: "0.09em",
-                  display: "block",
-                  marginTop: 4,
-                }}
-              >
-                International Web Design &amp; SEO
               </span>
             </div>
             <p className="text-slate-400 max-w-sm leading-relaxed text-sm">{t.footer.tagline}</p>

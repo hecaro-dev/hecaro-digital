@@ -65,47 +65,40 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
 
       {/* ── 2-column layout ─────────────────────────────────────────── */}
       <div className="relative z-10 max-w-6xl w-full mx-auto">
-        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-12 lg:gap-16">
+        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
 
           {/*
-            LEFT: Large H icon — watermark.
-            The image is square (roughly 1:1). We display it at a fixed WIDTH
-            and let height be auto (also same width, since square).
-            overflow:hidden on the container clips the bottom portion so that
-            the HECAROOO text (starting at ~62% of image height) is never shown.
-            Container height = 56% of image width = 56% of displayed height → safe crop.
-
-            Breakpoints:
-              mobile:  w=250px → container h=140px  (250×0.56)
-              sm:      w=300px → container h=168px  (300×0.56)
-              md:      w=420px → container h=235px  (420×0.56)
-              lg:      w=480px → container h=269px  (480×0.56)
+            LEFT: Large H watermark via background-image zoom.
+            backgroundSize "auto 220%"  → image rendered at 220% container height,
+              so only top 45% of image is visible.
+            backgroundPosition "center 30%" → aligns image's 30% Y point with
+              container's 30% Y point, centering the viewport on the H glyph.
+              H mark lives at ~20–60% of image; HECAROOO text at ~65%+
+              falls ~15% past the visible window — safely hidden.
+            Sizes: mobile 200×200, tablet 400×400, desktop 500×500.
+            On mobile (flex-col + items-center) the div is centered above the text.
           */}
           <motion.div
             {...anim(0)}
-            className="shrink-0 order-first overflow-hidden"
-            style={{ opacity: 0.22 }}
-          >
-            {/* Outer div sizes the CROP WINDOW (container) */}
-            <div className="w-[250px] h-[140px] sm:w-[300px] sm:h-[168px] md:w-[420px] md:h-[235px] lg:w-[480px] lg:h-[269px] overflow-hidden">
-              {/* Image width = container width (w-full), height = auto (square → same as width). */}
-              <img
-                src="/hecaro-source.png"
-                alt=""
-                aria-hidden="true"
-                className="w-full h-auto block pointer-events-none select-none"
-                style={{ filter: "brightness(0) invert(1)" }}
-              />
-            </div>
-          </motion.div>
+            aria-hidden="true"
+            className="shrink-0 self-center w-[200px] h-[200px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]"
+            style={{
+              opacity: 0.15,
+              backgroundImage: "url('/hecaro-source.png')",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center 30%",
+              backgroundSize: "auto 220%",
+              filter: "brightness(0) invert(1)",
+              pointerEvents: "none",
+              userSelect: "none",
+            }}
+          />
 
           {/* RIGHT: Text block */}
           <div className="flex-1 min-w-0">
-
-            {/* Headline */}
             <motion.h1
               {...anim(0.15)}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6"
             >
               {headlineParts.map((line, i) => (
                 <span key={i} className="block leading-[1.1]">
@@ -120,7 +113,6 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
               ))}
             </motion.h1>
 
-            {/* Sub-headline */}
             <motion.p
               {...anim(0.28)}
               className="text-base sm:text-lg md:text-xl text-slate-400 leading-relaxed mb-10"
@@ -128,12 +120,10 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
               {t.hero.sub}
             </motion.p>
 
-            {/* CTAs */}
             <motion.div
               {...anim(0.42)}
               className="flex flex-col sm:flex-row items-start gap-4"
             >
-              {/* Primary CTA — magnetic */}
               <motion.button
                 ref={ctaRef}
                 style={{ x: sx, y: sy }}
@@ -146,7 +136,6 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </motion.button>
 
-              {/* Secondary CTA */}
               <button
                 onClick={() => onNav("services")}
                 className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full border border-emerald-500/30 hover:border-emerald-500/60 text-slate-300 hover:text-emerald-300 font-semibold transition-all duration-300 backdrop-blur-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50"

@@ -56,12 +56,13 @@ export default function Header({ onNav }: HeaderProps) {
           >
             <span
               style={{
-                fontSize: 16,
-                fontWeight: 700,
+                fontSize: 17,
+                fontWeight: 800,
                 color: "#ffffff",
-                letterSpacing: "0.08em",
+                letterSpacing: "0.05em",
                 fontFamily: "var(--font-syne), sans-serif",
                 whiteSpace: "nowrap",
+                lineHeight: 1,
               }}
             >
               HECARO Digital

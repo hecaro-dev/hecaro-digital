@@ -2449,6 +2449,11 @@
       grid-template-columns: repeat(12, minmax(0, 1fr));
     }
   }
+  .md\:grid-cols-\[9fr_11fr\] {
+    @media (width >= 48rem) {
+      grid-template-columns: 9fr 11fr;
+    }
+  }
   .md\:flex-row {
     @media (width >= 48rem) {
       flex-direction: row;
@@ -2683,7 +2688,7 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Syne', var(--font-syne), system-ui, sans-serif;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.03em;
   }
   body::before {

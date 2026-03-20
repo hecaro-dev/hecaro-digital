@@ -73,7 +73,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         gap-24 (96px) gives generous breathing room between columns.
       */}
       <div className="relative z-10 max-w-6xl w-full mx-auto px-6 sm:px-8 lg:px-12 pt-28 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12 md:gap-24">
+        <div className="grid grid-cols-1 md:grid-cols-[9fr_11fr] items-center gap-12 md:gap-24">
 
           {/* ── LEFT: Logo — responsive, crops HECAROOO ─────────────── */}
           <motion.div
@@ -108,12 +108,12 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             </div>
           </motion.div>
 
-          {/* ── RIGHT: Text — max-w-3xl, min-w-0 prevents grid overflow ── */}
-          <div className="flex flex-col max-w-3xl min-w-0">
+          {/* ── RIGHT: Text — max-w-2xl, min-w-0 prevents grid overflow ── */}
+          <div className="flex flex-col max-w-2xl min-w-0">
             <motion.h1
               {...anim(0.12)}
               className="text-3xl md:text-4xl lg:text-6xl tracking-tight text-white mb-6 leading-[1.08]"
-              style={{ fontWeight: 800, fontFamily: "'Syne', system-ui, sans-serif" }}
+              style={{ fontWeight: 700, fontFamily: "'Syne', system-ui, sans-serif" }}
             >
               {headlineParts.map((line, i) => (
                 <span key={i} className="block">

@@ -56,7 +56,7 @@ export default function Header({ onNav }: HeaderProps) {
           >
             <span
               style={{
-                fontWeight: 800,
+                fontWeight: 700,
                 fontSize: 17,
                 letterSpacing: "0.05em",
                 color: "#ffffff",

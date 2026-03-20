@@ -13,7 +13,7 @@ export default function ServicesSection() {
     <section
       id="services"
       ref={ref}
-      className="py-32 px-4 bg-black"
+      className="py-32 px-4"
       aria-labelledby="services-heading"
     >
       <div className="max-w-6xl mx-auto">
@@ -24,7 +24,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="mb-20 max-w-2xl"
         >
-          <span className="inline-block text-indigo-400 text-xs font-bold tracking-widest uppercase mb-4">
+          <span className="inline-block text-emerald-400 text-xs font-bold tracking-widest uppercase mb-4">
             {t.services.label}
           </span>
           <h2
@@ -50,12 +50,12 @@ export default function ServicesSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                className={`relative group bg-[rgba(255,255,255,0.03)] backdrop-blur-md border border-[rgba(255,255,255,0.08)] rounded-3xl p-8 sm:p-12 hover:border-indigo-500/30 transition-all duration-500 overflow-hidden ${
+                className={`relative group bg-[rgba(255,255,255,0.03)] backdrop-blur-md border border-[rgba(255,255,255,0.08)] rounded-3xl p-8 sm:p-12 hover:border-emerald-500/30 transition-all duration-500 overflow-hidden ${
                   isLarge ? "md:col-span-2" : "col-span-1"
                 }`}
               >
                 {/* Glow effect */}
-                <div className="absolute -inset-px bg-gradient-to-br from-indigo-500/20 to-emerald-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-3xl" />
+                <div className="absolute -inset-px bg-gradient-to-br from-emerald-500/10 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-3xl" />
 
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-start justify-between mb-8">
@@ -65,7 +65,7 @@ export default function ServicesSection() {
                     </span>
                     
                     {/* Icon */}
-                    <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                    <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
                       <Icon className="w-6 h-6" />
                     </div>
                   </div>

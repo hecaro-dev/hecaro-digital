@@ -141,19 +141,46 @@ export const en: Translations = {
     headline: "State-of-the-Art Technologies",
     items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Vercel"],
   },
+  process: {
+    label: "Process",
+    headline: "How we work",
+    sub: "Transparent, structured and efficient — from the first idea to launch.",
+    steps: [
+      {
+        number: "01",
+        title: "Analysis",
+        description: "We understand your goals, target audience and market — before writing a single line of code.",
+      },
+      {
+        number: "02",
+        title: "Strategy",
+        description: "Based on the analysis, we develop a clear digital strategy with measurable goals.",
+      },
+      {
+        number: "03",
+        title: "Design & Development",
+        description: "Your project takes shape — with state-of-the-art technologies, precise design and clean code.",
+      },
+      {
+        number: "04",
+        title: "Launch",
+        description: "On-time delivery, smooth launch and personal support after go-live.",
+      },
+    ],
+  },
   faq: {
     label: "FAQ",
     headline: "Frequently Asked Questions",
     items: [
       {
-        question: "What does a landing page cost?",
+        question: "How are projects calculated?",
         answer:
-          "The price depends on the scope. Simple landing pages start from €500. More complex projects with multilingual SEO and custom animations are billed by effort. Contact me for a non-binding quote.",
+          "Every project is individual — which is why I create tailored quotes based on your specific requirements. Contact me for a free initial consultation and a transparent offer with no hidden costs.",
       },
       {
         question: "How does a typical project run?",
         answer:
-          "1. Initial conversation & briefing (free). 2. Quote & concept. 3. Design & development. 4. Feedback round & refinement. 5. Launch & handover. Average project duration: 1–3 weeks.",
+          "Analysis & Briefing → Strategy & Concept → Design & Development → Launch & Handover. Average project duration: 1–3 weeks depending on scope.",
       },
       {
         question: "Do you offer SEO for international markets?",

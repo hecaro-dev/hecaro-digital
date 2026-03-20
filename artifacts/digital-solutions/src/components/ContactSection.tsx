@@ -48,12 +48,12 @@ export default function ContactSection() {
   }
 
   const inputClass =
-    "w-full bg-black/50 border border-white/10 rounded-xl px-5 py-4 text-base text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all";
+    "w-full bg-black/50 border border-white/10 rounded-xl px-5 py-4 text-base text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all";
 
   return (
     <section id="contact" ref={ref} className="py-32 px-4 bg-black relative" aria-labelledby="contact-heading">
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-40">
-        <div className="w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px]" />
+        <div className="w-[600px] h-[600px] bg-emerald-600/8 rounded-full blur-[120px]" />
       </div>
 
       <div className="max-w-xl mx-auto relative z-10">
@@ -63,7 +63,7 @@ export default function ContactSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="text-indigo-400 text-xs font-bold tracking-widest uppercase mb-4 inline-block">
+          <span className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-4 inline-block">
             {t.contact.label}
           </span>
           <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -86,7 +86,7 @@ export default function ContactSection() {
               <p className="text-2xl font-bold text-white">{t.contact.success}</p>
               <button 
                 onClick={() => setStatus("idle")} 
-                className="mt-6 text-indigo-400 hover:text-indigo-300 font-medium transition-colors"
+                className="mt-6 text-emerald-400 hover:text-emerald-300 font-medium transition-colors"
               >
                 Weitere Nachricht senden
               </button>
@@ -143,7 +143,7 @@ export default function ContactSection() {
                   <input
                     id="gdpr"
                     type="checkbox"
-                    className="mt-1 w-5 h-5 rounded border-white/20 bg-black text-indigo-500 focus:ring-indigo-500 cursor-pointer"
+                    className="mt-1 w-5 h-5 rounded border-white/20 bg-black text-emerald-500 focus:ring-emerald-500 cursor-pointer"
                     {...register("gdpr")}
                   />
                   <div>
@@ -167,7 +167,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-60 disabled:cursor-not-allowed text-white text-lg font-semibold transition-all duration-200 shadow-lg shadow-indigo-600/20"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 disabled:opacity-60 disabled:cursor-not-allowed text-black text-lg font-bold transition-all duration-200 shadow-lg shadow-emerald-500/25"
                 >
                   <Send className="w-5 h-5" />
                   {status === "sending" ? t.contact.sending : t.contact.send}

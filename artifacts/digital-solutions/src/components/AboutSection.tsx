@@ -20,7 +20,7 @@ export default function AboutSection() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <span className="inline-flex px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-bold text-indigo-400 uppercase tracking-widest mb-8">
+            <span className="inline-flex px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-bold text-emerald-400 uppercase tracking-widest mb-8">
               {t.quality.label}
             </span>
             
@@ -28,7 +28,7 @@ export default function AboutSection() {
               {lines.map((line, i) => (
                 <span key={i} className="block leading-[1.15] mb-2">
                   {i === 1 ? (
-                    <span className="bg-gradient-to-r from-indigo-400 to-violet-500 bg-clip-text text-transparent">{line}</span>
+                    <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">{line}</span>
                   ) : i === 2 ? (
                     <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">{line}</span>
                   ) : (
@@ -43,7 +43,7 @@ export default function AboutSection() {
               <p>{t.quality.p2}</p>
             </div>
             
-            <blockquote className="mt-10 border-l-2 border-indigo-500 pl-6 italic text-slate-300 text-lg">
+            <blockquote className="mt-10 border-l-2 border-emerald-500 pl-6 italic text-slate-300 text-lg">
               „Kein Outsourcing. Kein Agentur-Overhead. Nur direkte, ehrliche und messbare Ergebnisse.“
             </blockquote>
           </motion.div>
@@ -59,7 +59,7 @@ export default function AboutSection() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
               {t.quality.stats.map((stat, i) => (
                 <div key={i} className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-2xl p-6 flex flex-col items-center text-center justify-center backdrop-blur-md">
-                  <div className="text-3xl font-bold text-indigo-400 mb-2">{stat.value}</div>
+                  <div className="text-3xl font-bold text-emerald-400 mb-2">{stat.value}</div>
                   <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">{stat.label}</div>
                 </div>
               ))}

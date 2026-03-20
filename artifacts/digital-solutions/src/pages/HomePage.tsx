@@ -7,6 +7,7 @@ import ValuesSection from "../components/ValuesSection";
 import PortfolioSection from "../components/PortfolioSection";
 import AboutSection from "../components/AboutSection";
 import TechStackSection from "../components/TechStackSection";
+import ProcessSection from "../components/ProcessSection";
 import FAQSection from "../components/FAQSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
@@ -52,6 +53,7 @@ export default function HomePage() {
         <ValuesSection />
         <PortfolioSection />
         <AboutSection />
+        <ProcessSection />
         <TechStackSection />
         <FAQSection />
         <ContactSection />

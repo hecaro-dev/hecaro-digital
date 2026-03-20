@@ -10,7 +10,7 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-32 px-4 bg-black" ref={ref}>
+    <section id="faq" className="py-32 px-4" ref={ref}>
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -18,7 +18,7 @@ export default function FAQSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-indigo-400 text-xs font-bold tracking-widest uppercase mb-4 inline-block">
+          <span className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-4 inline-block">
             {t.faq.label}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
@@ -44,7 +44,7 @@ export default function FAQSection() {
                   <span className="text-lg font-medium text-white pr-8">
                     {item.question}
                   </span>
-                  <div className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-indigo-500 border-indigo-500 text-white' : 'border-white/10 text-slate-400 hover:border-white/30'}`}>
+                  <div className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-emerald-500 border-emerald-500 text-black' : 'border-white/10 text-slate-400 hover:border-white/30'}`}>
                     <ChevronDown
                       className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
                     />

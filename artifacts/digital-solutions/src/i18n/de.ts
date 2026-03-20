@@ -140,19 +140,46 @@ export const de = {
     headline: "Modernste Technologien",
     items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Vercel"],
   },
+  process: {
+    label: "Prozess",
+    headline: "Wie wir arbeiten",
+    sub: "Transparent, strukturiert und effizient – von der ersten Idee bis zum Launch.",
+    steps: [
+      {
+        number: "01",
+        title: "Analyse",
+        description: "Wir verstehen Ihre Ziele, Zielgruppe und den Markt – bevor wir eine einzige Zeile Code schreiben.",
+      },
+      {
+        number: "02",
+        title: "Strategie",
+        description: "Auf Basis der Analyse entwickeln wir eine klare digitale Strategie mit messbaren Zielen.",
+      },
+      {
+        number: "03",
+        title: "Design & Entwicklung",
+        description: "Ihr Projekt nimmt Form an – mit modernsten Technologien, präzisem Design und sauberem Code.",
+      },
+      {
+        number: "04",
+        title: "Launch",
+        description: "Pünktliche Lieferung, reibungsloser Launch und persönlicher Support nach Go-live.",
+      },
+    ],
+  },
   faq: {
     label: "FAQ",
     headline: "Häufige Fragen",
     items: [
       {
-        question: "Was kostet eine Landing Page?",
+        question: "Wie werden Projekte kalkuliert?",
         answer:
-          "Der Preis hängt vom Umfang ab. Einfache Landing Pages starten ab 500 €. Komplexere Projekte mit mehrsprachiger SEO und individuellen Animationen werden nach Aufwand berechnet. Kontaktieren Sie mich für ein unverbindliches Angebot.",
+          "Jedes Projekt ist individuell – daher erstelle ich maßgeschneiderte Angebote auf Basis Ihrer Anforderungen. Kontaktieren Sie mich für ein kostenloses Erstgespräch und ein transparentes Angebot ohne versteckte Kosten.",
       },
       {
         question: "Wie läuft ein Projekt typisch ab?",
         answer:
-          "1. Erstgespräch & Briefing (kostenlos). 2. Angebot & Konzept. 3. Design & Entwicklung. 4. Feedback-Runde & Feinschliff. 5. Launch & Übergabe. Durchschnittliche Projektdauer: 1–3 Wochen.",
+          "Analyse & Briefing → Strategie & Konzept → Design & Entwicklung → Launch & Übergabe. Durchschnittliche Projektdauer: 1–3 Wochen je nach Umfang.",
       },
       {
         question: "Bieten Sie auch SEO für internationale Märkte an?",

@@ -141,19 +141,46 @@ export const es: Translations = {
     headline: "Tecnologías de vanguardia",
     items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Vercel"],
   },
+  process: {
+    label: "Proceso",
+    headline: "Cómo trabajamos",
+    sub: "Transparente, estructurado y eficiente — desde la primera idea hasta el lanzamiento.",
+    steps: [
+      {
+        number: "01",
+        title: "Análisis",
+        description: "Entendemos sus objetivos, público objetivo y mercado — antes de escribir una sola línea de código.",
+      },
+      {
+        number: "02",
+        title: "Estrategia",
+        description: "Basándonos en el análisis, desarrollamos una estrategia digital clara con objetivos medibles.",
+      },
+      {
+        number: "03",
+        title: "Diseño & Desarrollo",
+        description: "Su proyecto toma forma — con tecnologías de vanguardia, diseño preciso y código limpio.",
+      },
+      {
+        number: "04",
+        title: "Lanzamiento",
+        description: "Entrega puntual, lanzamiento sin problemas y soporte personal después del go-live.",
+      },
+    ],
+  },
   faq: {
     label: "FAQ",
     headline: "Preguntas frecuentes",
     items: [
       {
-        question: "¿Cuánto cuesta una landing page?",
+        question: "¿Cómo se calculan los proyectos?",
         answer:
-          "El precio depende del alcance. Las landing pages simples comienzan desde 500 €. Los proyectos más complejos con SEO multilingüe y animaciones personalizadas se facturan por esfuerzo. Contácteme para una cotización sin compromiso.",
+          "Cada proyecto es individual, por eso elaboro presupuestos personalizados según sus requisitos específicos. Contácteme para una consulta inicial gratuita y una oferta transparente sin costes ocultos.",
       },
       {
         question: "¿Cómo funciona un proyecto típico?",
         answer:
-          "1. Conversación inicial y briefing (gratis). 2. Presupuesto y concepto. 3. Diseño y desarrollo. 4. Ronda de feedback y refinamiento. 5. Lanzamiento y entrega. Duración media del proyecto: 1–3 semanas.",
+          "Análisis & Briefing → Estrategia & Concepto → Diseño & Desarrollo → Lanzamiento & Entrega. Duración media del proyecto: 1–3 semanas según el alcance.",
       },
       {
         question: "¿Ofrece SEO para mercados internacionales?",

@@ -4,7 +4,7 @@ import { useI18n } from "../i18n";
 import { ArrowRight } from "lucide-react";
 
 const GRADIENTS = [
-  "from-indigo-500/20 to-violet-600/20",
+  "from-emerald-500/15 to-emerald-700/10",
   "from-emerald-500/20 to-cyan-600/20",
   "from-violet-500/20 to-pink-600/20",
 ];
@@ -23,7 +23,7 @@ export default function PortfolioSection() {
           className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16"
         >
           <div>
-            <span className="text-indigo-400 text-xs font-bold tracking-widest uppercase mb-3 inline-block">
+            <span className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-3 inline-block">
               {t.portfolio.label}
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">

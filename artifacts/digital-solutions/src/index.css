@@ -73,37 +73,37 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  --background: 0 0% 0%;
+  --background: 222 84% 4%;
   --foreground: 0 0% 97%;
-  --border: 0 0% 10%;
-  --card: 0 0% 4%;
+  --border: 222 30% 12%;
+  --card: 222 50% 6%;
   --card-foreground: 0 0% 97%;
-  --card-border: 0 0% 10%;
-  --sidebar: 0 0% 4%;
+  --card-border: 222 30% 12%;
+  --sidebar: 222 50% 6%;
   --sidebar-foreground: 0 0% 97%;
-  --sidebar-border: 0 0% 10%;
-  --sidebar-primary: 239 84% 67%;
+  --sidebar-border: 222 30% 12%;
+  --sidebar-primary: 160 84% 39%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 8%;
+  --sidebar-accent: 222 40% 9%;
   --sidebar-accent-foreground: 0 0% 97%;
-  --sidebar-ring: 239 84% 67%;
-  --popover: 0 0% 4%;
+  --sidebar-ring: 160 84% 39%;
+  --popover: 222 50% 6%;
   --popover-foreground: 0 0% 97%;
-  --popover-border: 0 0% 10%;
-  --primary: 239 84% 67%;
+  --popover-border: 222 30% 12%;
+  --primary: 160 84% 39%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 0 0% 10%;
+  --secondary: 222 30% 12%;
   --secondary-foreground: 0 0% 97%;
-  --muted: 0 0% 8%;
+  --muted: 222 40% 9%;
   --muted-foreground: 215 16% 47%;
-  --accent: 239 84% 67%;
+  --accent: 160 84% 39%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 55%;
   --destructive-foreground: 0 0% 100%;
-  --input: 0 0% 10%;
-  --ring: 239 84% 67%;
-  --chart-1: 239 84% 67%;
-  --chart-2: 160 60% 50%;
+  --input: 222 30% 12%;
+  --ring: 160 84% 39%;
+  --chart-1: 160 84% 39%;
+  --chart-2: 239 84% 67%;
   --chart-3: 270 60% 60%;
   --chart-4: 35 90% 55%;
   --chart-5: 0 84% 60%;
@@ -140,37 +140,37 @@
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
 
-  --background: 0 0% 0%;
+  --background: 222 84% 4%;
   --foreground: 0 0% 97%;
-  --border: 0 0% 10%;
-  --card: 0 0% 4%;
+  --border: 222 30% 12%;
+  --card: 222 50% 6%;
   --card-foreground: 0 0% 97%;
-  --card-border: 0 0% 10%;
-  --sidebar: 0 0% 4%;
+  --card-border: 222 30% 12%;
+  --sidebar: 222 50% 6%;
   --sidebar-foreground: 0 0% 97%;
-  --sidebar-border: 0 0% 10%;
-  --sidebar-primary: 239 84% 67%;
+  --sidebar-border: 222 30% 12%;
+  --sidebar-primary: 160 84% 39%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 8%;
+  --sidebar-accent: 222 40% 9%;
   --sidebar-accent-foreground: 0 0% 97%;
-  --sidebar-ring: 239 84% 67%;
-  --popover: 0 0% 4%;
+  --sidebar-ring: 160 84% 39%;
+  --popover: 222 50% 6%;
   --popover-foreground: 0 0% 97%;
-  --popover-border: 0 0% 10%;
-  --primary: 239 84% 67%;
+  --popover-border: 222 30% 12%;
+  --primary: 160 84% 39%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 0 0% 10%;
+  --secondary: 222 30% 12%;
   --secondary-foreground: 0 0% 97%;
-  --muted: 0 0% 8%;
+  --muted: 222 40% 9%;
   --muted-foreground: 215 16% 47%;
-  --accent: 239 84% 67%;
+  --accent: 160 84% 39%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 55%;
   --destructive-foreground: 0 0% 100%;
-  --input: 0 0% 10%;
-  --ring: 239 84% 67%;
-  --chart-1: 239 84% 67%;
-  --chart-2: 160 60% 50%;
+  --input: 222 30% 12%;
+  --ring: 160 84% 39%;
+  --chart-1: 160 84% 39%;
+  --chart-2: 239 84% 67%;
   --chart-3: 270 60% 60%;
   --chart-4: 35 90% 55%;
   --chart-5: 0 84% 60%;
@@ -195,31 +195,44 @@
   }
 
   body {
-    @apply font-sans antialiased text-foreground bg-black min-h-screen relative;
+    @apply font-sans antialiased text-foreground min-h-screen relative;
+    background-color: #020617;
   }
 
   .dark body::before {
     content: "";
     position: fixed;
-    top: -20%;
-    left: -10%;
-    width: 60%;
-    height: 60%;
-    background: radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 60%);
+    top: -30%;
+    left: -15%;
+    width: 70%;
+    height: 70%;
+    background: radial-gradient(ellipse at center, rgba(16,185,129,0.07) 0%, transparent 65%);
     pointer-events: none;
     z-index: 0;
+    animation: meshDrift1 18s ease-in-out infinite alternate;
   }
 
   .dark body::after {
     content: "";
     position: fixed;
-    bottom: -20%;
-    right: -10%;
-    width: 60%;
-    height: 60%;
-    background: radial-gradient(circle, rgba(16,185,129,0.04) 0%, transparent 60%);
+    bottom: -25%;
+    right: -15%;
+    width: 65%;
+    height: 65%;
+    background: radial-gradient(ellipse at center, rgba(99,102,241,0.06) 0%, transparent 65%);
     pointer-events: none;
     z-index: 0;
+    animation: meshDrift2 22s ease-in-out infinite alternate;
+  }
+
+  @keyframes meshDrift1 {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(4%, 6%) scale(1.08); }
+  }
+
+  @keyframes meshDrift2 {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(-5%, -4%) scale(1.06); }
   }
 }
 

@@ -65,51 +65,33 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
 
       {/*
         ── 2-column grid layout ─────────────────────────────────────
-        LEFT  : Logo — 500px wide, opacity 1, fully visible, vertically centered.
-        RIGHT : Text — headline, subline, CTAs. Full column width, no squishing.
-        gap-20 (80px) between columns for breathing room.
-
-        Logo crop: image is 500×500px (square). HECAROOO text sits at ~65%+.
-        Wrapper overflow:hidden at 55% height (275px) crops it out.
-        brightness(0) invert(1) turns dark logo white on dark background.
+        Breakpoint: md (768px) — kicks in at user's 811px canvas viewport.
+        LEFT  : Logo — responsive width (fills 1fr column), aspect-ratio
+                crops HECAROOO text at 55% height. filter: brightness(0)
+                invert(1) makes dark PNG white. Colors/glow unchanged.
+        RIGHT : Text — max-w-2xl limits line length for comfortable reading.
+        gap-24 (96px) gives generous breathing room between columns.
       */}
       <div className="relative z-10 max-w-6xl w-full mx-auto px-6 sm:px-8 lg:px-12 pt-28 pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] items-center gap-12 lg:gap-0">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] items-center gap-12 md:gap-24">
 
-          {/* ── LEFT: Logo ─────────────────────────────────────────── */}
+          {/* ── LEFT: Logo — responsive, crops HECAROOO ─────────────── */}
           <motion.div
             {...anim(0)}
             className="flex items-center justify-center md:justify-start"
           >
-            {/* Mobile: 300px */}
+            {/*
+              The image is a 1:1 square PNG (dark mark on transparent).
+              Wrapper: aspect-ratio 100/55 (wider than tall) clips the bottom
+              45% so "HECAROOO" text never shows. brightness(0) invert(1)
+              turns the dark mark white. Colors/glow exactly as before.
+              max-w-[280px] on mobile keeps it compact;
+              md:max-w-none fills the column width naturally.
+            */}
             <div
-              className="block lg:hidden"
+              className="w-full max-w-[280px] md:max-w-none"
               style={{
-                width: 300,
-                height: 165,
-                overflow: "hidden",
-                filter: "brightness(0) invert(1) drop-shadow(0 0 40px rgba(34,197,94,0.30))",
-              }}
-            >
-              <img
-                src="/hecaro-watermark.png"
-                alt="HECARO Digital"
-                style={{
-                  width: 300,
-                  height: 300,
-                  display: "block",
-                  objectFit: "cover",
-                  objectPosition: "center top",
-                }}
-              />
-            </div>
-
-            {/* Desktop: 700px */}
-            <div
-              className="hidden lg:block"
-              style={{
-                width: 700,
-                height: 385,
+                aspectRatio: "100 / 55",
                 overflow: "hidden",
                 filter: "brightness(0) invert(1) drop-shadow(0 0 60px rgba(34,197,94,0.30))",
               }}
@@ -118,18 +100,16 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 src="/hecaro-watermark.png"
                 alt="HECARO Digital"
                 style={{
-                  width: 700,
-                  height: 700,
+                  width: "100%",
+                  height: "auto",
                   display: "block",
-                  objectFit: "cover",
-                  objectPosition: "center top",
                 }}
               />
             </div>
           </motion.div>
 
-          {/* ── RIGHT: Text ────────────────────────────────────────── */}
-          <div className="flex flex-col">
+          {/* ── RIGHT: Text — max-w-2xl keeps lines from stretching ── */}
+          <div className="flex flex-col max-w-2xl">
             <motion.h1
               {...anim(0.12)}
               className="text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white mb-6 leading-[1.08]"

@@ -27,6 +27,7 @@ export default function RootLayout({
     <html
       lang="de"
       className={`dark ${syne.variable}`}
+      style={{ fontFamily: "var(--font-syne), system-ui, sans-serif" }}
       suppressHydrationWarning
     >
       <body>{children}</body>

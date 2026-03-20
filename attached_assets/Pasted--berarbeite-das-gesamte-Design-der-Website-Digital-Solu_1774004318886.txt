@@ -1,0 +1,25 @@
+Überarbeite das gesamte Design der Website 'Digital Solutions', um ein High-End-Agentur-Niveau zu erreichen (ähnlich wie moderne Tech-Portfolios oder Apple-Produktseiten).
+
+DESIGN-UPGRADE:
+- Stil: 'Ultra-Clean & Modern'. Nutze ein tiefes Slate-Schwarz (#020617) als Hintergrund.
+- Akzentfarben: Nutze ein edles Smaragdgrün (#10b981) oder ein klares Indigo-Blau (#6366f1) nur für Highlights (Buttons, Icons).
+- Glaseffekte: Implementiere 'Glassmorphism' für den Header und die Service-Karten (backdrop-blur-md mit einer dezenten weißen/grauen Umrandung).
+- Typografie: Nutze die Schriftart 'Inter' oder 'Geist' über Google Fonts. Headlines müssen fett (font-bold) und großzügig gesperrt sein.
+- Bilder: Integiere hochwertige, thematisch passende Bilder von Unsplash (z.B. moderne Büros, MacBook-Setups, abstrakte Tech-Grafiken). Nutze das next/image Komponente für Performance.
+- Icons: Nutze 'Lucide-React' Icons für alle Service-Bereiche.
+
+TECHNIK & STRUKTUR (BEIBEHALTEN & VERFEINERN):
+- Framework: Next.js (App Router), TypeScript, Tailwind CSS.
+- Internationalisierung (i18n): Die Seite MUSS zwischen Deutsch, Englisch und Spanisch umschaltbar sein. Erstelle einen eleganten, kleinen Sprachwähler im Header.
+- SEO: Volle Optimierung (Sitemap, Robots, Meta-Tags, Hreflang) für alle drei Sprachen.
+
+INHALTS-STRUKTUR (WIE BESPROCHEN):
+1. HERO: Große, fette Headline: 'Internationale Web-Lösungen für Visionäre'. Ein schönes Hintergrundbild mit einem dezenten dunklen Overlay.
+2. SERVICES: Drei große, interaktive Karten (Hover-Effekt!) für:
+   - 'Next.js Landing Pages' (Fokus DE/ES/EN)
+   - 'SEO & Sichtbarkeit'
+   - 'Digital Setup Consulting'
+3. ÜBER MICH: Ein Bereich mit einem Bild-Platzhalter (für ein späteres Profi-Foto von dir) und dem Text über deine kaufmännische Zuverlässigkeit.
+4. KONTAKT: Ein minimalistisches Formular, das perfekt in das Design integriert ist.
+
+WICHTIG: Die Seite muss sich 'teuer' und 'schnell' anfühlen. Achte auf perfekte Abstände (Padding/Margin) und eine klare visuelle Hierarchie.

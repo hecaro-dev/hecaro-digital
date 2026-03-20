@@ -14,15 +14,15 @@ const ICONS = [
 ];
 
 const ACCENT_COLORS = [
-  "from-blue-500 to-blue-700",
-  "from-emerald-500 to-emerald-700",
-  "from-violet-500 to-violet-700",
+  "from-indigo-500 to-violet-600",
+  "from-indigo-500 to-violet-600",
+  "from-indigo-500 to-violet-600",
 ];
 
 const TEXT_ACCENT = [
-  "text-blue-400",
+  "text-indigo-400",
   "text-emerald-400",
-  "text-violet-400",
+  "text-indigo-400",
 ];
 
 export default function ServicesSection() {
@@ -44,7 +44,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
-          <span className="text-blue-400 text-sm font-semibold tracking-widest uppercase">
+          <span className="text-indigo-400 text-sm font-semibold tracking-widest uppercase">
             {t.services.label}
           </span>
           <h2
@@ -66,11 +66,11 @@ export default function ServicesSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-              className="relative group bg-slate-900/60 border border-slate-800/60 rounded-2xl p-7 hover:border-slate-700/80 transition-all duration-300 overflow-hidden"
+              className="relative group bg-[rgba(15,20,40,0.6)] backdrop-blur-md border border-[rgba(255,255,255,0.06)] rounded-2xl p-7 hover:border-indigo-500/40 hover:shadow-[0_0_30px_rgba(99,102,241,0.1)] transition-all duration-500 overflow-hidden"
             >
               {/* Top glow on hover */}
               <div
-                className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${ACCENT_COLORS[i]} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-indigo-500 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
               />
 
               {/* Icon */}

@@ -57,7 +57,7 @@ export default function ContactSection() {
   }
 
   const inputClass =
-    "w-full bg-slate-900/60 border border-slate-700/60 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors";
+    "w-full bg-[#020617] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors";
 
   return (
     <section
@@ -73,7 +73,7 @@ export default function ContactSection() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-12"
         >
-          <span className="text-blue-400 text-sm font-semibold tracking-widest uppercase">
+          <span className="text-indigo-400 text-sm font-semibold tracking-widest uppercase">
             {t.contact.label}
           </span>
           <h2
@@ -89,7 +89,7 @@ export default function ContactSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-slate-900/60 border border-slate-800/60 rounded-2xl p-8"
+          className="bg-[rgba(15,20,40,0.6)] backdrop-blur-md border border-[rgba(255,255,255,0.06)] rounded-2xl p-8 shadow-2xl"
         >
           {/* Success state */}
           {status === "success" ? (
@@ -179,7 +179,7 @@ export default function ContactSection() {
                     type="checkbox"
                     aria-invalid={!!errors.gdpr}
                     aria-describedby={errors.gdpr ? "gdpr-error" : undefined}
-                    className="mt-0.5 w-4 h-4 rounded border-slate-600 bg-slate-800 text-blue-600 focus:ring-blue-500 focus:ring-offset-slate-900 cursor-pointer"
+                    className="mt-0.5 w-4 h-4 rounded border-slate-600 bg-slate-800 text-indigo-500 focus:ring-indigo-500 focus:ring-offset-slate-900 cursor-pointer"
                     {...register("gdpr")}
                   />
                   <div>
@@ -207,7 +207,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-500 hover:bg-indigo-400 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
                 >
                   <Send className="w-4 h-4" aria-hidden="true" />
                   {status === "sending" ? t.contact.sending : t.contact.send}

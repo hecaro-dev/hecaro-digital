@@ -19,7 +19,7 @@ export default function AboutSection() {
     <section
       id="about"
       ref={ref}
-      className="py-24 px-4 bg-slate-900/30"
+      className="py-24 px-4 bg-white/[0.01]"
       aria-labelledby="about-heading"
     >
       <div className="max-w-6xl mx-auto">
@@ -30,7 +30,7 @@ export default function AboutSection() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-blue-400 text-sm font-semibold tracking-widest uppercase">
+            <span className="text-indigo-400 text-sm font-semibold tracking-widest uppercase">
               {t.about.label}
             </span>
             <h2
@@ -48,7 +48,7 @@ export default function AboutSection() {
             <p className="mt-4 text-slate-400 leading-relaxed">{t.about.p2}</p>
 
             {/* Divider with quote */}
-            <blockquote className="mt-8 border-l-2 border-blue-500 pl-5 italic text-slate-300">
+            <blockquote className="mt-8 border-l-2 border-indigo-500 pl-5 italic text-slate-300">
               „Verlässlichkeit ist keine Eigenschaft – sie ist mein Standard."
             </blockquote>
           </motion.div>
@@ -65,10 +65,10 @@ export default function AboutSection() {
               return (
                 <div
                   key={i}
-                  className="flex items-start gap-5 bg-slate-900/60 border border-slate-800/60 rounded-xl p-5"
+                  className="flex items-start gap-5 bg-[rgba(15,20,40,0.6)] backdrop-blur-md border border-[rgba(255,255,255,0.06)] rounded-xl p-5"
                 >
-                  <div className="shrink-0 w-10 h-10 rounded-lg bg-blue-600/20 flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-blue-400" aria-hidden="true" />
+                  <div className="shrink-0 w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-indigo-400" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-white">{value.title}</h3>
@@ -79,14 +79,18 @@ export default function AboutSection() {
             })}
 
             {/* Profile placeholder card */}
-            <div className="mt-4 flex items-center gap-4 bg-slate-900/60 border border-slate-800/60 rounded-xl p-5">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white font-bold text-lg shrink-0">
+            <div className="mt-6 flex items-center gap-5 bg-[rgba(15,20,40,0.6)] backdrop-blur-md border border-[rgba(255,255,255,0.06)] rounded-xl p-5 shadow-[0_0_20px_rgba(99,102,241,0.05)] relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white font-bold text-xl shrink-0 shadow-lg shadow-indigo-500/20 border-2 border-white/10 relative z-10">
                 DS
               </div>
-              <div>
-                <p className="font-semibold text-white">Digital Solutions</p>
-                <p className="text-slate-400 text-xs mt-0.5">
-                  Einzelunternehmen · Gegründet 2024
+              <div className="relative z-10">
+                <p className="font-semibold text-white text-lg tracking-tight">Digital Solutions</p>
+                <p className="text-indigo-300 text-xs uppercase tracking-wider font-medium mt-1">
+                  Inhaber
+                </p>
+                <p className="text-slate-400 text-xs mt-1.5 italic">
+                  Profi-Foto folgt
                 </p>
               </div>
             </div>

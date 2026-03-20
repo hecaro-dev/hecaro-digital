@@ -38,8 +38,8 @@ export default function Header({ onNav }: HeaderProps) {
       className={`
         fixed top-0 left-0 right-0 z-50 transition-all duration-300
         ${scrolled
-          ? "bg-slate-950/95 backdrop-blur-md border-b border-slate-800/50 shadow-lg"
-          : "bg-transparent"}
+          ? "bg-[rgba(2,6,23,0.85)] backdrop-blur-lg border-b border-white/5 shadow-lg"
+          : "bg-[rgba(2,6,23,0.7)] backdrop-blur-md border-b border-transparent"}
       `}
       role="banner"
     >
@@ -48,10 +48,10 @@ export default function Header({ onNav }: HeaderProps) {
           {/* Logo */}
           <button
             onClick={() => handleNav("top")}
-            className="flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+            className="flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded"
             aria-label="Digital Solutions – zur Startseite"
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
               <span className="text-white font-bold text-sm">DS</span>
             </div>
             <span className="font-semibold text-white tracking-tight">Digital Solutions</span>
@@ -63,7 +63,7 @@ export default function Header({ onNav }: HeaderProps) {
               <button
                 key={item.key}
                 onClick={() => handleNav(item.key)}
-                className="text-sm text-slate-300 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded px-1"
+                className="text-sm text-slate-400 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded px-1"
               >
                 {item.label}
               </button>
@@ -77,7 +77,7 @@ export default function Header({ onNav }: HeaderProps) {
             {/* CTA */}
             <button
               onClick={() => handleNav("contact")}
-              className="hidden md:inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+              className="hidden md:inline-flex items-center px-4 py-2 rounded-lg bg-indigo-500 hover:bg-indigo-400 text-white text-sm font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 shadow-md shadow-indigo-500/20"
             >
               {t.nav.contact}
             </button>
@@ -85,7 +85,7 @@ export default function Header({ onNav }: HeaderProps) {
             {/* Mobile menu toggle */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden text-slate-300 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded p-1"
+              className="md:hidden text-slate-300 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded p-1"
               aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
               aria-expanded={menuOpen}
             >
@@ -103,21 +103,21 @@ export default function Header({ onNav }: HeaderProps) {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-slate-950/98 border-t border-slate-800/50 overflow-hidden"
+            className="md:hidden bg-[#020617] border-t border-white/5 overflow-hidden"
           >
             <nav className="px-4 py-4 flex flex-col gap-3" aria-label="Mobile navigation">
               {navItems.map((item) => (
                 <button
                   key={item.key}
                   onClick={() => handleNav(item.key)}
-                  className="text-left text-slate-300 hover:text-white py-2 text-sm font-medium transition-colors"
+                  className="text-left text-slate-400 hover:text-white py-2 text-sm font-medium transition-colors"
                 >
                   {item.label}
                 </button>
               ))}
               <button
                 onClick={() => handleNav("contact")}
-                className="mt-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold transition-all duration-200 text-center"
+                className="mt-2 px-4 py-2 rounded-lg bg-indigo-500 hover:bg-indigo-400 text-white text-sm font-semibold transition-all duration-200 text-center"
               >
                 {t.nav.contact}
               </button>

@@ -63,28 +63,27 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020617]/60 to-[#020617]" />
       </div>
 
-      {/* Decorative large H mark — left watermark */}
+      {/* Decorative large H mark — left watermark (H symbol only, text cropped off) */}
       <div
         aria-hidden="true"
-        className="absolute hidden lg:block pointer-events-none"
+        className="absolute pointer-events-none overflow-hidden h-[200px] sm:h-[320px] lg:h-[450px]"
         style={{
-          left: "3%",
+          left: "2%",
           top: "50%",
           transform: "translateY(-50%)",
-          opacity: 0.10,
+          opacity: 0.17,
           zIndex: 0,
-          overflow: "hidden",
-          height: 420,
         }}
       >
+        {/* Image is rendered at 2.22× the container height so only the top 45% (the H symbol) shows */}
         <img
-          src="/hecaro-mark.png"
+          src="/hecaro-brand.png"
           alt=""
+          className="h-[444px] sm:h-[711px] lg:h-[1000px] w-auto"
           style={{
-            height: Math.round(420 / 0.50),
-            width: "auto",
             display: "block",
             filter: "brightness(0) invert(1)",
+            userSelect: "none",
           }}
         />
       </div>

@@ -4,7 +4,7 @@
  * HECARO – Brand System
  *
  * LogoMark  – standalone SVG symbol (used in HeroSection pulsing glow)
- * Logo      – image lockup (HECAROOO PNG + "International Web Design & SEO" subline)
+ * Logo      – image lockup (HECARO PNG + "International Web Design & SEO" subline)
  */
 
 // ─── Hexagon geometry (24 × 24 viewBox, pointy-top) ─────────────────────────

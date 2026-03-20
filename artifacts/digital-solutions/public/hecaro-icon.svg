@@ -1,24 +1,5 @@
-<svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg" fill="white">
-  <!--
-    HECARO Digital — "H" brand glyph
-    Two thick stems connected by a diagonal crossbar.
-    Right stem features a curved arc accent (the signature brand detail).
-    Transparent background; white fill — use CSS opacity + filter for display.
-  -->
-  <path d="
-    M 0,0
-    L 88,0
-    L 88,190
-    L 212,138
-    L 212,0
-    C 212,0 270,-4 290,36
-    C 308,72 294,110 258,128
-    L 212,148
-    L 212,193
-    L 88,245
-    L 88,380
-    L 0,380
-    Z
-  "/>
-  <rect x="212" y="128" width="88" height="252"/>
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <path d="M45 30 h22 v140 h-22 z" fill="#22c55e"/>
+  <path d="M133 30 h22 v140 h-22 z" fill="#22c55e"/>
+  <path d="M67 115 Q 90 75, 110 105 T 133 85 v 25 Q 110 150, 90 120 T 67 140 z" fill="#22c55e"/>
 </svg>

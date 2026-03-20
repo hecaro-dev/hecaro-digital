@@ -78,7 +78,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             {...anim(0)}
             className="shrink-0 self-center flex items-center justify-center"
           >
-            {/* Mobile */}
+            {/* Mobile: 250px */}
             <img
               src="/hecaro-icon.svg"
               alt=""
@@ -88,10 +88,10 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 height: 250,
                 width: "auto",
                 opacity: 0.18,
-                filter: "drop-shadow(0 0 40px rgba(34, 197, 94, 0.3))",
+                filter: "drop-shadow(0 0 40px rgba(34, 197, 94, 0.5))",
               }}
             />
-            {/* Desktop */}
+            {/* Desktop: 500px */}
             <img
               src="/hecaro-icon.svg"
               alt=""
@@ -101,7 +101,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 height: 500,
                 width: "auto",
                 opacity: 0.18,
-                filter: "drop-shadow(0 0 40px rgba(34, 197, 94, 0.3))",
+                filter: "drop-shadow(0 0 40px rgba(34, 197, 94, 0.5))",
               }}
             />
           </motion.div>

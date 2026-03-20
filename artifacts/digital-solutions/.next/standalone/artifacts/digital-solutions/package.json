@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "cp -r .next/static .next/standalone/.next/static 2>/dev/null || true; cp -r public .next/standalone/public 2>/dev/null || true",
-    "start": "node .next/standalone/server.js",
+    "postbuild": "cp -r .next/static .next/standalone/artifacts/digital-solutions/.next/static 2>/dev/null || true; cp -r public .next/standalone/artifacts/digital-solutions/public 2>/dev/null || true",
+    "start": "PORT=8080 HOSTNAME=0.0.0.0 node .next/standalone/artifacts/digital-solutions/server.js",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

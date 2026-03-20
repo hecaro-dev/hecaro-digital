@@ -71,7 +71,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
           left: "3%",
           top: "50%",
           transform: "translateY(-50%)",
-          opacity: 0.07,
+          opacity: 0.10,
           zIndex: 0,
           overflow: "hidden",
           height: 420,
@@ -81,7 +81,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
           src="/hecaro-mark.png"
           alt=""
           style={{
-            height: Math.round(420 / 0.64),
+            height: Math.round(420 / 0.50),
             width: "auto",
             display: "block",
             filter: "brightness(0) invert(1)",

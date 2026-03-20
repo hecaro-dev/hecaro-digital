@@ -9,28 +9,6 @@ interface HeaderProps {
   onNav: (section: string) => void;
 }
 
-/** Cropped H mark — clips the bottom text out of the image */
-function HMark({ height }: { height: number }) {
-  const totalImgHeight = Math.round(height / 0.64);
-  return (
-    <div
-      style={{ height, overflow: "hidden", flexShrink: 0, display: "flex", alignItems: "flex-start" }}
-      aria-hidden="true"
-    >
-      <img
-        src="/hecaro-mark.png"
-        alt=""
-        style={{
-          height: totalImgHeight,
-          width: "auto",
-          display: "block",
-          filter: "brightness(0) invert(1)",
-          userSelect: "none",
-        }}
-      />
-    </div>
-  );
-}
 
 export default function Header({ onNav }: HeaderProps) {
   const { t, lang, setLang } = useI18n();
@@ -73,10 +51,9 @@ export default function Header({ onNav }: HeaderProps) {
           {/* ── Brand ────────────────────────────────────────────────── */}
           <button
             onClick={() => handleNav("top")}
-            className="flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg"
+            className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg"
             aria-label="HECARO – Home"
           >
-            <HMark height={36} />
             <span
               style={{
                 fontSize: 15,

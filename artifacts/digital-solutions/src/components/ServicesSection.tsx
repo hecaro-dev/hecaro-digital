@@ -31,7 +31,7 @@ export default function ServicesSection() {
           <h2
             id="services-heading"
             className="text-4xl sm:text-5xl md:text-6xl text-white mb-6 tracking-tight"
-            style={{ fontFamily: "var(--font-syne), sans-serif", fontWeight: 800 }}
+            style={{ fontWeight: 800 }}
           >
             {t.services.headline}
           </h2>

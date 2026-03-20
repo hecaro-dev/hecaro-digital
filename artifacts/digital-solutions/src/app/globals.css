@@ -49,7 +49,7 @@
   --input: 222 30% 12%;
   --ring: 160 84% 39%;
 
-  --app-font-sans: 'Inter', system-ui, sans-serif;
+  --app-font-sans: var(--font-syne), system-ui, sans-serif;
   --app-font-mono: 'JetBrains Mono', Menlo, monospace;
   --radius: 0.625rem;
   --elevate-1: rgba(255,255,255,.04);

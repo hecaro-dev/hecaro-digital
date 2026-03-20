@@ -18,7 +18,6 @@ export default function Footer({ onLegal, onNav = () => {} }: FooterProps) {
             <div className="mb-5">
               <span
                 style={{
-                  fontFamily: "var(--font-syne), sans-serif",
                   fontWeight: 800,
                   fontSize: 20,
                   letterSpacing: "0.05em",

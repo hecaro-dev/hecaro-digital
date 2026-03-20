@@ -56,7 +56,6 @@ export default function Header({ onNav }: HeaderProps) {
           >
             <span
               style={{
-                fontFamily: "var(--font-syne), sans-serif",
                 fontWeight: 800,
                 fontSize: 17,
                 letterSpacing: "0.05em",

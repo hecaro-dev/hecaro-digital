@@ -74,19 +74,19 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         brightness(0) invert(1) turns dark logo white on dark background.
       */}
       <div className="relative z-10 max-w-6xl w-full mx-auto px-6 sm:px-8 lg:px-12 pt-28 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-16 md:gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] items-center gap-12 lg:gap-0">
 
           {/* ── LEFT: Logo ─────────────────────────────────────────── */}
           <motion.div
             {...anim(0)}
             className="flex items-center justify-center md:justify-start"
           >
-            {/* Mobile: 280px */}
+            {/* Mobile: 300px */}
             <div
-              className="block md:hidden"
+              className="block lg:hidden"
               style={{
-                width: 280,
-                height: 154,
+                width: 300,
+                height: 165,
                 overflow: "hidden",
                 filter: "brightness(0) invert(1) drop-shadow(0 0 40px rgba(34,197,94,0.30))",
               }}
@@ -95,8 +95,8 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 src="/hecaro-watermark.png"
                 alt="HECARO Digital"
                 style={{
-                  width: 280,
-                  height: 280,
+                  width: 300,
+                  height: 300,
                   display: "block",
                   objectFit: "cover",
                   objectPosition: "center top",
@@ -104,12 +104,12 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
               />
             </div>
 
-            {/* Desktop: 500px */}
+            {/* Desktop: 700px */}
             <div
-              className="hidden md:block"
+              className="hidden lg:block"
               style={{
-                width: 500,
-                height: 275,
+                width: 700,
+                height: 385,
                 overflow: "hidden",
                 filter: "brightness(0) invert(1) drop-shadow(0 0 60px rgba(34,197,94,0.30))",
               }}
@@ -118,8 +118,8 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 src="/hecaro-watermark.png"
                 alt="HECARO Digital"
                 style={{
-                  width: 500,
-                  height: 500,
+                  width: 700,
+                  height: 700,
                   display: "block",
                   objectFit: "cover",
                   objectPosition: "center top",
@@ -133,10 +133,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             <motion.h1
               {...anim(0.12)}
               className="text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white mb-6 leading-[1.08]"
-              style={{
-                fontFamily: "var(--font-syne), sans-serif",
-                fontWeight: 800,
-              }}
+              style={{ fontWeight: 800 }}
             >
               {headlineParts.map((line, i) => (
                 <span key={i} className="block">
@@ -153,8 +150,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
 
             <motion.p
               {...anim(0.24)}
-              className="text-base sm:text-lg text-slate-400 leading-relaxed mb-10"
-              style={{ fontFamily: "var(--font-inter), sans-serif" }}
+              className="text-base sm:text-lg text-slate-400 leading-relaxed mb-10 font-normal"
             >
               {t.hero.sub}
             </motion.p>

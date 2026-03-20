@@ -1,0 +1,34 @@
+Erstelle eine hochprofessionelle, internationale Business-Website für mein Einzelunternehmen 'Digital Solutions'. Das Projekt muss mit Next.js (App Router) aufgebaut sein und technisch wie optisch auf absolutem Agentur-Niveau liegen.
+
+WICHTIGE ZUSATZFUNKTION: INTERNATIONALISIERUNG (i18n)
+- Die Website muss in drei Sprachen verfügbar sein: Deutsch (Standard), Englisch und Spanisch.
+- Implementiere eine Sprachumschaltung (Language Switcher) im Header.
+- Nutze Next.js Middleware oder eine saubere Ordnerstruktur ([lang]), um die Sprachen korrekt zu trennen.
+- Alle SEO-Tags (Hreflang) müssen für alle drei Sprachen korrekt gesetzt sein, damit Google weiß, welche Version für welches Land ist.
+
+TECHNISCHER STACK & SEO:
+- Framework: Next.js, TypeScript, Tailwind CSS.
+- Volle SEO-Optimierung: Dynamische sitemap.ts, robots.txt, JSON-LD strukturierte Daten für 'ProfessionalService'.
+- Performance: Optimiere die Core Web Vitals (LCP, FID, CLS). Nutze next/image und optimierte Fonts.
+- Barrierefreiheit: Erfülle WCAG-Standards (Kontraste, Aria-Labels, Tastaturbedienung).
+
+DESIGN-VORGABEN:
+- Stil: Premium Dark Mode (Slate/Zinc). Akzente in Electric Blue oder Emerald Green.
+- Look: Seriös, modern, minimalistisch. Keine billigen Animationen, sondern dezente, hochwertige Übergänge (Framer Motion falls sinnvoll).
+- Responsive: Perfekte Darstellung auf MacBook M4 Pro Max, iPhone 17 Pro Max und Tablets.
+
+STRUKTUR & INHALT (In allen 3 Sprachen):
+1. HERO: 'High-End Webdesign & SEO-Lösungen'. Fokus auf messbare Ergebnisse für Kunden.
+2. LEISTUNGEN: 
+   - 'Next.js Landing Pages': Fokus auf Speed und Conversion.
+   - 'SEO-Strategie': Sichtbarkeit in Google weltweit.
+   - 'Digital Consulting': Professionelle Home-Office & Streaming Setups (OBS, Licht, Audio).
+3. ÜBER MICH: Betone die kaufmännische Ausbildung (Spedition/Einzelhandel) als Fundament für Zuverlässigkeit und strukturiertes Projektmanagement.
+4. KONTAKT: Ein funktionales Formular mit Validierung und DSGVO-Checkbox.
+5. RECHTLICHES: Platzhalter für Impressum und Datenschutz (DSGVO-konform vorbereitet).
+
+ZIELGRUPPE:
+Kleine Unternehmen, Dienstleister und internationale Kunden, die eine seriöse digitale Präsenz suchen. Die Seite muss so professionell sein, dass sie als Nachweis für eine Existenzgründung beim Jobcenter dient.
+
+BITTE UMSETZEN:
+Baue das Projekt vollständig auf. Erstelle alle notwendigen Dateien, Komponenten und Sprach-Dateien (Locales). Der Code muss sauber kommentiert sein, damit ich später Texte leicht anpassen kann.

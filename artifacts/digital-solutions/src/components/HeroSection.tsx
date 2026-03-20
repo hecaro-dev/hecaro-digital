@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useI18n } from "../i18n";
+import { Logo } from "./brand/Logo";
 
 interface HeroSectionProps {
   onNav: (section: string) => void;
@@ -18,6 +19,17 @@ function anim(delay: number) {
   };
 }
 
+const glowAnim = {
+  animate: {
+    filter: [
+      "drop-shadow(0 0 4px rgba(16,185,129,0.35))",
+      "drop-shadow(0 0 20px rgba(16,185,129,0.70))",
+      "drop-shadow(0 0 4px rgba(16,185,129,0.35))",
+    ],
+  },
+  transition: { duration: 2.8, repeat: Infinity, ease: "easeInOut" as const },
+};
+
 export default function HeroSection({ onNav }: HeroSectionProps) {
   const { t } = useI18n();
   const headlineParts = t.hero.headline.split("\n");
@@ -25,11 +37,12 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
   return (
     <section
       id="top"
-      className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-24 pb-16 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center px-6 sm:px-8 lg:px-12 pt-24 pb-16 overflow-hidden"
       aria-label="Hero"
     >
-      <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-emerald-600/8 rounded-full blur-[140px]" />
+      {/* Background atmosphere */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/3 w-[900px] h-[600px] bg-emerald-600/8 rounded-full blur-[140px]" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[400px] bg-indigo-600/6 rounded-full blur-[100px]" />
         <div
           className="absolute inset-0"
@@ -41,17 +54,37 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020617]/60 to-[#020617]" />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center mt-12">
+      <div className="relative z-10 max-w-5xl w-full mx-auto mt-8">
+
+        {/* ── Large animated logo – above the headline ── */}
+        <motion.div {...anim(0)} className="mb-10">
+          {/* Mobile: size=44, Desktop: size=72 */}
+          <motion.div
+            animate={glowAnim.animate}
+            transition={glowAnim.transition}
+            style={{ display: "inline-flex" }}
+          >
+            <span className="flex sm:hidden">
+              <Logo size={44} theme="dark" />
+            </span>
+            <span className="hidden sm:flex">
+              <Logo size={72} theme="dark" />
+            </span>
+          </motion.div>
+        </motion.div>
+
+        {/* Badge */}
         <motion.div
-          {...anim(0)}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-300 text-xs font-semibold tracking-wide mb-10 backdrop-blur-sm"
+          {...anim(0.1)}
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-300 text-xs font-semibold tracking-wide mb-8 backdrop-blur-sm"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
           {t.hero.badge}
         </motion.div>
 
+        {/* Headline */}
         <motion.h1
-          {...anim(0.1)}
+          {...anim(0.2)}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8"
         >
           {headlineParts.map((line, i) => (
@@ -67,16 +100,18 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
           ))}
         </motion.h1>
 
+        {/* Sub-headline */}
         <motion.p
-          {...anim(0.2)}
-          className="text-lg sm:text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-12"
+          {...anim(0.3)}
+          className="text-lg sm:text-xl md:text-2xl text-slate-400 max-w-2xl leading-relaxed mb-12"
         >
           {t.hero.sub}
         </motion.p>
 
+        {/* CTAs */}
         <motion.div
-          {...anim(0.3)}
-          className="flex flex-col sm:flex-row items-center justify-center gap-5"
+          {...anim(0.4)}
+          className="flex flex-col sm:flex-row items-start gap-4"
         >
           <button
             onClick={() => onNav("contact")}
@@ -94,6 +129,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         </motion.div>
       </div>
 
+      {/* Scroll indicator */}
       <motion.button
         onClick={() => onNav("services")}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-500 hover:text-white transition-colors focus:outline-none"

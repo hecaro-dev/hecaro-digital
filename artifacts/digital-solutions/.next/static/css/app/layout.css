@@ -286,6 +286,9 @@
   .left-1\/2 {
     left: calc(1 / 2 * 100%);
   }
+  .left-1\/3 {
+    left: calc(1 / 3 * 100%);
+  }
   .z-10 {
     z-index: 10;
   }
@@ -1208,9 +1211,6 @@
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
-  .gap-5 {
-    gap: calc(var(--spacing) * 5);
-  }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
   }
@@ -1925,6 +1925,9 @@
     --tw-blur: blur(140px);
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
+  .filter {
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
   .backdrop-blur-\[2px\] {
     --tw-backdrop-blur: blur(2px);
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
@@ -2261,6 +2264,11 @@
       padding-inline: calc(var(--spacing) * 6);
     }
   }
+  .sm\:px-8 {
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 8);
+    }
+  }
   .sm\:text-5xl {
     @media (width >= 40rem) {
       font-size: var(--text-5xl);
@@ -2413,6 +2421,11 @@
   .lg\:px-8 {
     @media (width >= 64rem) {
       padding-inline: calc(var(--spacing) * 8);
+    }
+  }
+  .lg\:px-12 {
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 12);
     }
   }
   .lg\:text-8xl {

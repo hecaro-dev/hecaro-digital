@@ -22,7 +22,7 @@ export const en: Translations = {
   },
   hero: {
     badge: "Available worldwide · DE · EN · ES",
-    headline: "Digital solutions\nthat convert.",
+    headline: "Digital solutions\nthat convert",
     sub: "Fast landing pages, measurable SEO results and professional digital consulting — from one source, for international markets.",
     cta: "Start a Project",
     cta2: "View Services",
@@ -128,7 +128,7 @@ export const en: Translations = {
   quality: {
     label: "Quality Promise",
     headline: "Precision.\nReliability.\nDiligence.",
-    p1: "My commercial training in freight logistics and retail is no coincidence — it is the foundation of my work. I think in processes, deliver on time and communicate clearly.",
+    p1: "Commercial precision and a structured working approach are the foundation of every project delivery. I think in processes, deliver on time and ensure clear communication at every stage.",
     p2: "No outsourcing. No agency overhead. You work directly with me — the expert who accompanies your project from start to finish.",
     stats: [
       { value: "100%", label: "Direct Communication" },

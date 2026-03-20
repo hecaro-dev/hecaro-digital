@@ -21,7 +21,7 @@ export const de = {
   },
   hero: {
     badge: "Verfügbar weltweit · DE · EN · ES",
-    headline: "Digitale Lösungen,\ndie überzeugen.",
+    headline: "Digitale Lösungen,\ndie überzeugen",
     sub: "Schnelle Landing Pages, messbare SEO-Ergebnisse und professionelle digitale Beratung – aus einer Hand, für internationale Märkte.",
     cta: "Projekt starten",
     cta2: "Leistungen ansehen",
@@ -127,7 +127,7 @@ export const de = {
   quality: {
     label: "Qualitätsversprechen",
     headline: "Präzision.\nZuverlässigkeit.\nSorgfalt.",
-    p1: "Meine kaufmännische Ausbildung in Spedition und Einzelhandel ist kein Zufall – sie ist das Fundament meiner Arbeit. Ich denke in Prozessen, liefere pünktlich und kommuniziere klar.",
+    p1: "Kaufmännische Präzision und eine strukturierte Arbeitsweise sind das Fundament jeder Projektabwicklung. Ich denke in Prozessen, liefere pünktlich und sorge für klare Kommunikation auf jeder Projektstufe.",
     p2: "Kein Outsourcing. Kein Agentur-Overhead. Sie arbeiten direkt mit mir – dem Experten, der Ihr Projekt von Anfang bis Ende begleitet.",
     stats: [
       { value: "100%", label: "Direktkommunikation" },

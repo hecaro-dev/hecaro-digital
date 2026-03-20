@@ -22,7 +22,7 @@ export const es: Translations = {
   },
   hero: {
     badge: "Disponible mundialmente · DE · EN · ES",
-    headline: "Soluciones digitales\nque convencen.",
+    headline: "Soluciones digitales\nque convencen",
     sub: "Landing pages rápidas, resultados SEO medibles y consultoría digital profesional — de un solo proveedor, para mercados internacionales.",
     cta: "Iniciar proyecto",
     cta2: "Ver servicios",
@@ -128,7 +128,7 @@ export const es: Translations = {
   quality: {
     label: "Promesa de calidad",
     headline: "Precisión.\nFiabilidad.\nEsmero.",
-    p1: "Mi formación comercial en logística de carga y retail no es una coincidencia — es la base de mi trabajo. Pienso en procesos, entrego a tiempo y me comunico con claridad.",
+    p1: "La precisión comercial y un enfoque de trabajo estructurado son la base de cada entrega de proyecto. Pienso en procesos, entrego a tiempo y garantizo una comunicación clara en cada etapa.",
     p2: "Sin externalización. Sin gastos de agencia. Trabajará directamente conmigo — el experto que acompaña su proyecto de principio a fin.",
     stats: [
       { value: "100%", label: "Comunicación directa" },

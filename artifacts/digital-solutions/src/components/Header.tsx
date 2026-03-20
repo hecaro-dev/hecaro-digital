@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useI18n } from "../i18n";
-import { Logo, LogoMark } from "./brand/Logo";
+import { Logo } from "./brand/Logo";
 
 interface HeaderProps {
   onNav: (section: string) => void;
@@ -51,13 +51,13 @@ export default function Header({ onNav }: HeaderProps) {
           <button
             onClick={() => handleNav("top")}
             className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-xl"
-            aria-label="Digital Solutions – Home"
+            aria-label="HECARO Digital – Home"
           >
             <span className="flex sm:hidden">
-              <LogoMark size={26} theme="dark" />
+              <Logo size={28} theme="dark" showWordmark={false} />
             </span>
             <span className="hidden sm:flex">
-              <Logo size={26} theme="dark" />
+              <Logo size={40} theme="dark" />
             </span>
           </button>
 

@@ -38,7 +38,7 @@ export async function generateMetadata({
       title: t.meta.title,
       description: t.meta.description,
       url: `${BASE_URL}/${safeLang}`,
-      siteName: "Digital Solutions",
+      siteName: "HECARO Digital",
       locale: safeLang,
       type: "website",
     },
@@ -59,7 +59,7 @@ export default async function LangLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: "Digital Solutions",
+    name: "HECARO Digital",
     description: t.meta.description,
     url: `${BASE_URL}/${safeLang}`,
     areaServed: ["DE", "ES", "GB", "US"],

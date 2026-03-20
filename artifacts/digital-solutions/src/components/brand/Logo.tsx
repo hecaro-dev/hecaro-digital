@@ -1,25 +1,19 @@
 "use client";
 
 /**
- * Digital Solutions – Brand System
+ * HECARO Digital – Brand System
  *
- * The "Node" mark:
- *   - Hairline hexagon outline  → precision, structure, systems
- *   - Six hairline spokes       → network connectivity, the node
- *   - Bright emerald center dot → the active point of impact
- *
- * Exports:
- *   LogoMark  – standalone SVG symbol, theme-aware, any size
- *   Logo      – horizontal lockup (symbol + two-line wordmark)
+ * LogoMark  – standalone SVG symbol (used in HeroSection pulsing glow)
+ * Logo      – image lockup (HECAROOO PNG + "International Web Design & SEO" subline)
  */
 
 // ─── Hexagon geometry (24 × 24 viewBox, pointy-top) ─────────────────────────
+// (kept for HeroSection LogoMark usage)
 
 const CX = 12;
 const CY = 12;
 const R = 9;
 
-/** Returns [x, y] for a vertex at `deg` degrees clockwise from 12 o'clock */
 function pt(deg: number): [number, number] {
   const rad = ((deg - 90) * Math.PI) / 180;
   return [
@@ -53,7 +47,6 @@ export function LogoMark({ size = 28, theme = "dark", className }: LogoMarkProps
       className={className}
       style={{ flexShrink: 0 }}
     >
-      {/* Hairline spokes – center to each vertex */}
       {VERTS.map(([x, y], i) => (
         <line
           key={i}
@@ -67,7 +60,6 @@ export function LogoMark({ size = 28, theme = "dark", className }: LogoMarkProps
         />
       ))}
 
-      {/* Hexagon outline */}
       <polygon
         points={POLY_PTS}
         stroke={ink}
@@ -77,10 +69,7 @@ export function LogoMark({ size = 28, theme = "dark", className }: LogoMarkProps
         fill="none"
       />
 
-      {/* Soft glow halo behind the node dot */}
       <circle cx={CX} cy={CY} r="3.6" fill={ink} fillOpacity="0.11" />
-
-      {/* The node – bright center dot */}
       <circle cx={CX} cy={CY} r="1.8" fill={ink} />
     </svg>
   );
@@ -94,52 +83,44 @@ interface LogoProps {
 }
 
 export function Logo({
-  size = 28,
+  size = 32,
   theme = "dark",
   showWordmark = true,
   className,
 }: LogoProps) {
-  const isDark = theme === "dark";
-  const primaryColor = isDark ? "#ffffff" : "#020617";
-  const subColor = isDark ? "rgba(255,255,255,0.46)" : "rgba(2,6,23,0.42)";
-
-  const mainPx = Math.max(13, Math.round(size * 0.57));
-  const subPx = Math.max(8, Math.round(size * 0.34));
-  const gap = Math.round(size * 0.4);
+  const subColor = theme === "dark" ? "rgba(255,255,255,0.46)" : "rgba(2,6,23,0.42)";
+  const subPx = Math.max(8, Math.round(size * 0.27));
+  const imgFilter = theme === "dark" ? "brightness(0) invert(1)" : "none";
 
   return (
     <div
       className={`flex items-center select-none ${className ?? ""}`}
-      style={{ gap }}
+      style={{ gap: Math.round(size * 0.4) }}
     >
-      <LogoMark size={size} theme={theme} />
-
+      <img
+        src="/logo-nobg.png"
+        alt="HECARO Digital"
+        style={{
+          height: size,
+          width: "auto",
+          display: "block",
+          flexShrink: 0,
+          filter: imgFilter,
+        }}
+      />
       {showWordmark && (
-        <div className="flex flex-col" style={{ lineHeight: 1.2 }}>
-          <span
-            style={{
-              fontSize: mainPx,
-              fontWeight: 600,
-              color: primaryColor,
-              letterSpacing: "0.02em",
-              fontFamily: "inherit",
-            }}
-          >
-            Digital Solutions
-          </span>
-          <span
-            style={{
-              fontSize: subPx,
-              fontWeight: 300,
-              color: subColor,
-              letterSpacing: "0.06em",
-              fontFamily: "inherit",
-              marginTop: 2,
-            }}
-          >
-            International Web Design &amp; SEO
-          </span>
-        </div>
+        <span
+          style={{
+            fontSize: subPx,
+            fontWeight: 300,
+            color: subColor,
+            letterSpacing: "0.06em",
+            fontFamily: "inherit",
+            whiteSpace: "nowrap",
+          }}
+        >
+          International Web Design &amp; SEO
+        </span>
       )}
     </div>
   );

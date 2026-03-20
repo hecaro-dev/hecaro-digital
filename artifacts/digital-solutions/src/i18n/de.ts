@@ -6,7 +6,7 @@ export const de = {
   lang: "de",
   langName: "Deutsch",
   meta: {
-    title: "Digital Solutions – International Web Design & SEO",
+    title: "HECARO Digital – International Web Design & SEO",
     description:
       "Professionelle Next.js Landing Pages, internationale SEO-Strategie und digitale Beratung. Maßgeschneidert für Unternehmen mit globalen Ambitionen.",
   },
@@ -81,7 +81,7 @@ export const de = {
   },
   values: {
     label: "Unsere Werte",
-    headline: "Warum Digital Solutions",
+    headline: "Warum HECARO Digital",
     items: [
       {
         title: "Schnell",

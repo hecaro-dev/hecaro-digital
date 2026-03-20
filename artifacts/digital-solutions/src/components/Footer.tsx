@@ -17,7 +17,7 @@ export default function Footer({ onLegal, onNav = () => {} }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
           <div className="md:col-span-4 lg:col-span-5">
             <div className="mb-6">
-              <Logo size={30} theme="dark" />
+              <Logo size={32} theme="dark" />
             </div>
             <p className="text-slate-400 max-w-sm leading-relaxed text-sm">{t.footer.tagline}</p>
           </div>
@@ -43,7 +43,7 @@ export default function Footer({ onLegal, onNav = () => {} }: FooterProps) {
 
         <div className="pt-8 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} Digital Solutions. {t.footer.rights}
+            © {new Date().getFullYear()} HECARO Digital. {t.footer.rights}
           </p>
           <div className="flex gap-4 text-sm text-slate-500">
             <span className="flex items-center gap-1.5">

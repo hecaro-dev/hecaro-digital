@@ -19,6 +19,57 @@ function anim(delay: number) {
   };
 }
 
+/*
+ * HMark — vector SVG of the HECARO "H" brand glyph.
+ * Pure SVG path: 100% sharp on Retina/4K, zero blur, no image loading.
+ *
+ * viewBox 0 0 300 380
+ *   Left stem  : x 0–88   (full height)
+ *   Right stem : x 212–300 (full height)
+ *   Crossbar   : diagonal, left y 190–245 → right y 138–193
+ *   Upper-right accent: subtle cubic curve gives the branded "ear" detail
+ */
+function HMark({ size }: { size: number }) {
+  return (
+    <svg
+      viewBox="0 0 300 380"
+      width={size}
+      height={size}
+      aria-hidden="true"
+      fill="white"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ display: "block", flexShrink: 0 }}
+    >
+      {/*
+        Main H body — single closed path.
+        Crossbar slopes from (left y=190/245) up to (right y=138/193).
+        The top-right corner of the right stem uses a cubic bezier that
+        creates the characteristic concave "ear" curve visible in the logo.
+      */}
+      <path d="
+        M 0,0
+        L 88,0
+        L 88,190
+        L 212,138
+        L 212,0
+        C 212,0 270,-4 290,36
+        C 308,72 294,110 258,128
+        L 212,148
+        L 212,193
+        L 88,245
+        L 88,380
+        L 0,380
+        Z
+      " />
+      {/*
+        Right stem body — separate rectangle so the upper-right accent
+        (encoded in the path above) blends seamlessly at the top.
+      */}
+      <rect x="212" y="128" width="88" height="252" />
+    </svg>
+  );
+}
+
 export default function HeroSection({ onNav }: HeroSectionProps) {
   const { t } = useI18n();
   const headlineParts = t.hero.headline.split("\n");
@@ -46,7 +97,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
   return (
     <section
       id="top"
-      className="relative min-h-screen flex flex-col justify-center px-6 sm:px-8 lg:px-12 pt-24 pb-16 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center px-6 sm:px-8 lg:px-12 pt-32 pb-24 overflow-hidden"
       aria-label="Hero"
     >
       {/* Background atmosphere */}
@@ -65,34 +116,27 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
 
       {/* ── 2-column layout ─────────────────────────────────────────── */}
       <div className="relative z-10 max-w-6xl w-full mx-auto">
-        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
+        {/*
+          flex-col on mobile → H centered above text.
+          md:flex-row on desktop → H left, text right, vertically centered.
+          gap-20 = 80px desktop gutter.
+        */}
+        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
 
-          {/*
-            LEFT: Large H watermark via background-image zoom.
-            backgroundSize "auto 220%"  → image rendered at 220% container height,
-              so only top 45% of image is visible.
-            backgroundPosition "center 30%" → aligns image's 30% Y point with
-              container's 30% Y point, centering the viewport on the H glyph.
-              H mark lives at ~20–60% of image; HECAROOO text at ~65%+
-              falls ~15% past the visible window — safely hidden.
-            Sizes: mobile 200×200, tablet 400×400, desktop 500×500.
-            On mobile (flex-col + items-center) the div is centered above the text.
-          */}
+          {/* LEFT: SVG H watermark — 100% vector sharp */}
           <motion.div
             {...anim(0)}
-            aria-hidden="true"
-            className="shrink-0 self-center w-[200px] h-[200px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]"
-            style={{
-              opacity: 0.15,
-              backgroundImage: "url('/hecaro-source.png')",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center 30%",
-              backgroundSize: "auto 220%",
-              filter: "brightness(0) invert(1)",
-              pointerEvents: "none",
-              userSelect: "none",
-            }}
-          />
+            className="shrink-0 self-center"
+            style={{ opacity: 0.15 }}
+          >
+            {/* Mobile: 200px · Desktop: 480px */}
+            <div className="block md:hidden">
+              <HMark size={200} />
+            </div>
+            <div className="hidden md:block">
+              <HMark size={480} />
+            </div>
+          </motion.div>
 
           {/* RIGHT: Text block */}
           <div className="flex-1 min-w-0">
@@ -116,6 +160,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             <motion.p
               {...anim(0.28)}
               className="text-base sm:text-lg md:text-xl text-slate-400 leading-relaxed mb-10"
+              style={{ fontFamily: "var(--font-inter), sans-serif" }}
             >
               {t.hero.sub}
             </motion.p>

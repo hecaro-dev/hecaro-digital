@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Syne } from "next/font/google";
+import { Syne, Inter } from "next/font/google";
 import "./globals.css";
 
 const syne = Syne({
   subsets: ["latin"],
   weight: ["600", "700", "800"],
   variable: "--font-syne",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -24,7 +31,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={`dark ${syne.variable}`} suppressHydrationWarning>
+    <html
+      lang="de"
+      className={`dark ${syne.variable} ${inter.variable}`}
+      suppressHydrationWarning
+    >
       <body>{children}</body>
     </html>
   );

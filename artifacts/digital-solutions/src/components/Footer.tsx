@@ -16,18 +16,30 @@ export default function Footer({ onLegal, onNav = () => {} }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
           <div className="md:col-span-4 lg:col-span-5">
             <div className="mb-5">
-              <span
-                style={{
-                  fontFamily: "var(--font-syne), sans-serif",
-                  fontSize: 20,
-                  fontWeight: 800,
-                  color: "#ffffff",
-                  letterSpacing: "0.05em",
-                  display: "block",
-                  lineHeight: 1,
-                }}
-              >
-                HECARO Digital
+              <span style={{ display: "inline-flex", alignItems: "baseline", gap: "0.3em", lineHeight: 1 }}>
+                <span
+                  style={{
+                    fontFamily: "var(--font-syne), sans-serif",
+                    fontWeight: 800,
+                    fontSize: 20,
+                    letterSpacing: "0.05em",
+                    color: "#ffffff",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  HECARO
+                </span>
+                <span
+                  style={{
+                    fontFamily: "var(--font-syne), sans-serif",
+                    fontWeight: 600,
+                    fontSize: 18,
+                    letterSpacing: "0.02em",
+                    color: "rgba(255,255,255,0.65)",
+                  }}
+                >
+                  Digital
+                </span>
               </span>
             </div>
             <p className="text-slate-400 max-w-sm leading-relaxed text-sm">{t.footer.tagline}</p>

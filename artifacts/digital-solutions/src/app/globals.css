@@ -121,3 +121,17 @@
     to { transform: translate(-5%, -4%) scale(1.06); }
   }
 }
+
+/* ── Descender-Fix ─────────────────────────────────────────────────────────
+   Outside @layer so these beat every Tailwind utility (text-5xl/6xl/7xl/8xl
+   all set line-height:1 which clips g/y/p descenders).
+   !important is required to override component-level leading-* utilities.
+───────────────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3 !important;
+  padding-bottom: 0.2em !important;
+}
+
+body {
+  line-height: 1.6 !important;
+}

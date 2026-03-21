@@ -2736,6 +2736,13 @@
     }
   }
 }
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3 !important;
+  padding-bottom: 0.2em !important;
+}
+body {
+  line-height: 1.6 !important;
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;

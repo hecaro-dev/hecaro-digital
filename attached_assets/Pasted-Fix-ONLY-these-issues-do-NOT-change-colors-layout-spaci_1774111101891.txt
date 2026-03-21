@@ -1,0 +1,41 @@
+Fix ONLY these issues (do NOT change colors, layout, spacing, fonts, glow, backgrounds, sizing):
+
+A) Restore section labels / “eyebrows” (LEISTUNGEN, PORTFOLIO, UNSERE WERTE etc.)
+Problem: The small green label is being affected by global CSS and is no longer sitting nicely above the H2/H3.
+Fix:
+- Remove any global rule that forces `span, p, a` (or all elements) to `display: inline-block` or adds padding-bottom / negative margins globally.
+- Ensure the eyebrow/label component is `display: inline-flex` or `display: inline-block` WITH `margin-bottom`, and the headline is `display: block`.
+- Specifically: headings (h1-h6) must remain `display: block` and labels must not be forced into the same line as the headline.
+
+B) Fix clipped descenders globally (g, y, p, q) across the entire website
+Important: The previous attempt added invalid CSS and/or “nuclear” global rules that broke layout.
+Fix this properly WITHOUT global `* { overflow: visible !important; }` and WITHOUT forcing all spans/paragraphs to inline-block.
+
+Do this approach:
+1) In app/globals.css:
+   - Remove the last injected “GLOBALER FIX …” blocks that change display for span/p/a globally.
+   - Keep body line-height normal.
+   - Add ONLY this safe base rule:
+
+     h1, h2, h3, h4, h5, h6 {
+       line-height: 1.25 !important;
+       padding-bottom: 0.12em; /* just enough for descenders */
+       overflow: visible;
+     }
+
+   - Do NOT touch other elements globally (no span/p/a display overrides).
+
+2) Find the real clipping cause:
+   - Search the codebase for `overflow-hidden`, `leading-none`, `leading-[1]`, `h-[`, `max-h-[`, `line-clamp`, and any wrapper class that could clip text.
+   - Remove/adjust ONLY where it wraps headings/text (Hero headline, section headings, card titles).
+   - If overflow-hidden is needed for background blobs, apply it ONLY to the background layer div, never the wrapper around text.
+
+3) Hero headline:
+   - Keep “die überzeugen” on one line (already good) but ensure the H1 and the green span have enough bottom space:
+     Add `pb-6` to the H1 and ensure no parent container has overflow-hidden.
+
+Validation checklist:
+- The green section label sits ABOVE the big heading again (not beside it).
+- The “g” in “Lösungen” and “überzeugen” is fully visible.
+- Same for headings down the page (“Warum HECARO Digital”, “Ausgewählte Projekte”, etc.)
+- NO visual changes besides fixing these two issues.

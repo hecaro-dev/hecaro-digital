@@ -31,16 +31,6 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
-        <style dangerouslySetInnerHTML={{ __html: `
-          * { overflow: visible !important; }
-          h1, h2, h3, h4, h5, h6 {
-            line-height: 1.4 !important;
-            padding-bottom: 0.2em !important;
-          }
-          p, a {
-            line-height: 1.6 !important;
-          }
-        `}} />
         {children}
       </body>
     </html>

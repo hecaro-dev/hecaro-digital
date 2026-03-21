@@ -2,6 +2,10 @@
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
 
+/* ── DESCENDER FIX — highest priority, loaded before all other rules ──── */
+* { line-height: 1.4 !important; }
+h1, h2, h3, h4, h5, h6 { padding-bottom: 20px !important; }
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

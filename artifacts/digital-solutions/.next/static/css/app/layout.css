@@ -2645,6 +2645,12 @@
   inherits: false;
   initial-value: 0;
 }
+* {
+  line-height: 1.4 !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  padding-bottom: 20px !important;
+}
 :root {
   --background: 222 84% 4%;
   --foreground: 0 0% 97%;

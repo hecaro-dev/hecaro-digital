@@ -28,6 +28,30 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* ── Tailwind v4 line-height overrides (equivalent of tailwind.config.js)
+     Forces every text-* utility to never use line-height:1.
+     This is the v4 way to configure the leading scale globally.          ── */
+  --leading-none:    1.3;
+  --leading-tight:   1.3;
+  --leading-snug:    1.4;
+  --leading-normal:  1.6;
+  --leading-relaxed: 1.8;
+  --leading-loose:   2;
+
+  --text-xs--line-height:   1.6;
+  --text-sm--line-height:   1.6;
+  --text-base--line-height: 1.6;
+  --text-lg--line-height:   1.5;
+  --text-xl--line-height:   1.5;
+  --text-2xl--line-height:  1.4;
+  --text-3xl--line-height:  1.4;
+  --text-4xl--line-height:  1.3;
+  --text-5xl--line-height:  1.3;
+  --text-6xl--line-height:  1.3;
+  --text-7xl--line-height:  1.3;
+  --text-8xl--line-height:  1.3;
+  --text-9xl--line-height:  1.3;
 }
 
 :root {

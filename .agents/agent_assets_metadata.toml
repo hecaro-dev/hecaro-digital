@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "E30TQj1ErgEY0OppLv6Af"
+uri = "file://hecaro-digital.tar.gz"
+type = "unspecified"
+title = "hecaro-digital.tar.gz — Quellcode (ohne node_modules / .next)"

@@ -46,11 +46,11 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
   return (
     <section
       id="top"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center"
       aria-label="Hero"
     >
-      {/* ── Background ─────────────────────────────────────────────── */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* ── Background — overflow-hidden lives HERE, not on <section> ── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
           className="absolute inset-0"
           style={{

@@ -72,12 +72,17 @@
     font-family: 'Syne', var(--font-syne), system-ui, sans-serif;
     font-weight: 400;
     letter-spacing: 0em;
+    line-height: 1.5;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Syne', var(--font-syne), system-ui, sans-serif;
     font-weight: 700;
     letter-spacing: -0.03em;
+    /* Prevent descender clipping — Tailwind's text-5xl+ defaults to line-height:1 */
+    line-height: 1.2;
+    /* Extra bottom breathing room for the last line's descenders */
+    padding-bottom: 0.1em;
   }
 
   body::before {

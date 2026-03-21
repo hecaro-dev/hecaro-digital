@@ -26,8 +26,10 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
   const headlineParts = t.hero.headline.split("\n");
   const lastLine = headlineParts[headlineParts.length - 1];
   const lastSpaceIdx = lastLine.lastIndexOf(" ");
-  const lastLinePrefix = lastSpaceIdx >= 0 ? lastLine.substring(0, lastSpaceIdx + 1) : "";
-  const lastLineKeyword = lastSpaceIdx >= 0 ? lastLine.substring(lastSpaceIdx + 1) : lastLine;
+  const lastLinePrefix =
+    lastSpaceIdx >= 0 ? lastLine.substring(0, lastSpaceIdx + 1) : "";
+  const lastLineKeyword =
+    lastSpaceIdx >= 0 ? lastLine.substring(lastSpaceIdx + 1) : lastLine;
 
   const ctaRef = useRef<HTMLButtonElement>(null);
   const mx = useMotionValue(0);
@@ -38,10 +40,17 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
   const onCtaMove = (e: React.MouseEvent) => {
     if (!ctaRef.current) return;
     const r = ctaRef.current.getBoundingClientRect();
-    mx.set(Math.max(-8, Math.min(8, (e.clientX - (r.left + r.width / 2)) * 0.28)));
-    my.set(Math.max(-8, Math.min(8, (e.clientY - (r.top + r.height / 2)) * 0.28)));
+    mx.set(
+      Math.max(-8, Math.min(8, (e.clientX - (r.left + r.width / 2)) * 0.28)),
+    );
+    my.set(
+      Math.max(-8, Math.min(8, (e.clientY - (r.top + r.height / 2)) * 0.28)),
+    );
   };
-  const onCtaLeave = () => { mx.set(0); my.set(0); };
+  const onCtaLeave = () => {
+    mx.set(0);
+    my.set(0);
+  };
 
   return (
     <section
@@ -69,10 +78,8 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
       */}
       <div className="relative z-10 max-w-[1400px] w-full mx-auto px-6 sm:px-10 lg:px-16 pt-28 pb-20">
         <div className="grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] items-center gap-16 md:gap-24 lg:gap-32">
-
           {/* ── LEFT: Massive text ─────────────────────────────────── */}
           <div className="flex flex-col min-w-0">
-
             {/* Eyebrow */}
             <motion.p
               {...anim(0)}
@@ -92,7 +99,9 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
               }}
             >
               {headlineParts.slice(0, -1).map((line, i) => (
-                <span key={i} className="block">{line}</span>
+                <span key={i} className="block">
+                  {line}
+                </span>
               ))}
               <span className="block" style={{ whiteSpace: "nowrap" }}>
                 {lastLinePrefix}
@@ -104,7 +113,9 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             <motion.p
               {...anim(0.22)}
               className="text-xl sm:text-2xl text-gray-400 max-w-xl mt-8 leading-relaxed font-normal"
-              style={{ fontFamily: "'Syne', var(--font-syne), system-ui, sans-serif" }}
+              style={{
+                fontFamily: "'Syne', var(--font-syne), system-ui, sans-serif",
+              }}
             >
               {t.hero.sub}
             </motion.p>
@@ -120,7 +131,8 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 style={{
                   x: sx,
                   y: sy,
-                  boxShadow: "0 0 50px rgba(0,255,153,0.4), 0 0 100px rgba(0,255,153,0.15)",
+                  boxShadow:
+                    "0 0 50px rgba(0,255,153,0.4), 0 0 100px rgba(0,255,153,0.15)",
                 }}
                 onMouseMove={onCtaMove}
                 onMouseLeave={onCtaLeave}
@@ -128,7 +140,10 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 className="group inline-flex items-center justify-center gap-3 w-full sm:w-auto px-12 py-6 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs tracking-widest uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
               >
                 {t.hero.cta}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                <ArrowRight
+                  className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                  aria-hidden="true"
+                />
               </motion.button>
 
               {/* Secondary */}
@@ -181,7 +196,6 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
               }}
             />
           </motion.div>
-
         </div>
       </div>
 

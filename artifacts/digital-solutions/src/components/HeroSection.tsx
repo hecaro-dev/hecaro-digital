@@ -13,15 +13,21 @@ const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 function anim(delay: number) {
   return {
-    initial: { opacity: 0, y: 20 },
+    initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.55, delay, ease },
+    transition: { duration: 0.7, delay, ease },
   };
 }
 
 export default function HeroSection({ onNav }: HeroSectionProps) {
   const { t } = useI18n();
+
+  // Split headline by newline, then isolate the last word for the neon highlight
   const headlineParts = t.hero.headline.split("\n");
+  const lastLine = headlineParts[headlineParts.length - 1];
+  const lastSpaceIdx = lastLine.lastIndexOf(" ");
+  const lastLinePrefix = lastSpaceIdx >= 0 ? lastLine.substring(0, lastSpaceIdx + 1) : "";
+  const lastLineKeyword = lastSpaceIdx >= 0 ? lastLine.substring(lastSpaceIdx + 1) : lastLine;
 
   const ctaRef = useRef<HTMLButtonElement>(null);
   const mx = useMotionValue(0);
@@ -32,16 +38,10 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
   const onCtaMove = (e: React.MouseEvent) => {
     if (!ctaRef.current) return;
     const r = ctaRef.current.getBoundingClientRect();
-    const dx = (e.clientX - (r.left + r.width / 2)) * 0.28;
-    const dy = (e.clientY - (r.top + r.height / 2)) * 0.28;
-    mx.set(Math.max(-8, Math.min(8, dx)));
-    my.set(Math.max(-8, Math.min(8, dy)));
+    mx.set(Math.max(-8, Math.min(8, (e.clientX - (r.left + r.width / 2)) * 0.28)));
+    my.set(Math.max(-8, Math.min(8, (e.clientY - (r.top + r.height / 2)) * 0.28)));
   };
-
-  const onCtaLeave = () => {
-    mx.set(0);
-    my.set(0);
-  };
+  const onCtaLeave = () => { mx.set(0); my.set(0); };
 
   return (
     <section
@@ -49,10 +49,8 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
       aria-label="Hero"
     >
-      {/* ── Background atmosphere ──────────────────────────────────── */}
+      {/* ── Background ─────────────────────────────────────────────── */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-[700px] h-[500px] bg-emerald-600/8 rounded-full blur-[140px]" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[400px] bg-indigo-600/6 rounded-full blur-[100px]" />
         <div
           className="absolute inset-0"
           style={{
@@ -60,107 +58,128 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             backgroundSize: "32px 32px",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#05070a]/60 to-[#05070a]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#05070a]/50 to-[#05070a]" />
       </div>
 
       {/*
-        ── 2-column grid layout ─────────────────────────────────────
-        Breakpoint: md (768px) — kicks in at user's 811px canvas viewport.
-        LEFT  : Logo — responsive width (fills 1fr column), aspect-ratio
-                crops HECAROOO text at 55% height. filter: brightness(0)
-                invert(1) makes dark PNG white. Colors/glow unchanged.
-        RIGHT : Text — max-w-2xl limits line length for comfortable reading.
-        gap-24 (96px) gives generous breathing room between columns.
+        ── Grid: LEFT = Text (55fr) | RIGHT = Logo (45fr) ──────────
+        fr units prevent gap-overflow unlike percentage columns.
+        Kicks in at md (768 px) – covers the 811 px canvas viewport.
+        Gap steps up progressively to keep both columns breathable.
       */}
-      <div className="relative z-10 max-w-6xl w-full mx-auto px-6 sm:px-8 lg:px-12 pt-28 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-[9fr_11fr] items-center gap-12 md:gap-24">
+      <div className="relative z-10 max-w-[1400px] w-full mx-auto px-6 sm:px-10 lg:px-16 pt-28 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-[55fr_45fr] items-center gap-12 md:gap-20 lg:gap-28">
 
-          {/* ── LEFT: Logo — responsive, crops HECAROOO ─────────────── */}
-          <motion.div
-            {...anim(0)}
-            className="flex items-center justify-center md:justify-start"
-          >
-            {/*
-              The image is a 1:1 square PNG (dark mark on transparent).
-              Wrapper: aspect-ratio 100/55 (wider than tall) clips the bottom
-              45% so "HECAROOO" text never shows. brightness(0) invert(1)
-              turns the dark mark white. Colors/glow exactly as before.
-              max-w-[280px] on mobile keeps it compact;
-              md:max-w-none fills the column width naturally.
-            */}
-            <div
-              className="w-full max-w-[280px] md:max-w-none"
+          {/* ── LEFT: Massive text ─────────────────────────────────── */}
+          <div className="flex flex-col min-w-0">
+
+            {/* Eyebrow */}
+            <motion.p
+              {...anim(0)}
+              className="text-sm tracking-[0.3em] text-gray-500 uppercase mb-6"
+            >
+              ✦ DIGITAL SOLUTIONS STUDIO
+            </motion.p>
+
+            {/* H1 — oversized, 800 weight, last word in neon green */}
+            <motion.h1
+              {...anim(0.1)}
+              className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tighter text-white"
               style={{
-                aspectRatio: "100 / 55",
-                overflow: "hidden",
-                filter: "brightness(0) invert(1) drop-shadow(0 0 60px rgba(34,197,94,0.30))",
+                fontWeight: 800,
+                fontFamily: "'Syne', var(--font-syne), system-ui, sans-serif",
               }}
             >
-              <img
-                src="/hecaro-watermark.png"
-                alt="HECARO Digital"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  display: "block",
-                }}
-              />
-            </div>
-          </motion.div>
-
-          {/* ── RIGHT: Text — max-w-2xl, min-w-0 prevents grid overflow ── */}
-          <div className="flex flex-col max-w-2xl min-w-0">
-            <motion.h1
-              {...anim(0.12)}
-              className="text-3xl md:text-4xl lg:text-6xl tracking-tight text-white mb-6 leading-[1.08]"
-              style={{ fontWeight: 700, fontFamily: "'Syne', system-ui, sans-serif" }}
-            >
-              {headlineParts.map((line, i) => (
-                <span key={i} className="block">
-                  {i === 1 ? (
-                    <span className="bg-gradient-to-r from-emerald-400 to-emerald-500 bg-clip-text text-transparent">
-                      {line}
-                    </span>
-                  ) : (
-                    line
-                  )}
-                </span>
+              {headlineParts.slice(0, -1).map((line, i) => (
+                <span key={i} className="block">{line}</span>
               ))}
+              <span className="block">
+                {lastLinePrefix}
+                <span style={{ color: "#00ff99" }}>{lastLineKeyword}</span>
+              </span>
             </motion.h1>
 
+            {/* Subline */}
             <motion.p
-              {...anim(0.24)}
-              className="text-base sm:text-lg text-slate-400 leading-relaxed mb-10 font-normal"
+              {...anim(0.22)}
+              className="text-xl sm:text-2xl text-gray-400 max-w-xl mt-8 leading-relaxed font-normal"
+              style={{ fontFamily: "'Syne', var(--font-syne), system-ui, sans-serif" }}
             >
               {t.hero.sub}
             </motion.p>
 
+            {/* CTAs */}
             <motion.div
               {...anim(0.34)}
-              className="flex flex-col sm:flex-row items-start gap-4"
+              className="flex flex-col sm:flex-row items-start gap-4 mt-10"
             >
-              {/* Primary CTA */}
+              {/* Primary — huge button with neon glow */}
               <motion.button
                 ref={ctaRef}
-                style={{ x: sx, y: sy }}
+                style={{
+                  x: sx,
+                  y: sy,
+                  boxShadow: "0 0 50px rgba(0,255,153,0.4), 0 0 100px rgba(0,255,153,0.15)",
+                }}
                 onMouseMove={onCtaMove}
                 onMouseLeave={onCtaLeave}
                 onClick={() => onNav("contact")}
-                className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-xs tracking-widest uppercase transition-colors duration-300 shadow-lg shadow-emerald-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                className="group inline-flex items-center justify-center gap-3 w-full sm:w-auto px-12 py-6 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs tracking-widest uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
               >
                 {t.hero.cta}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </motion.button>
 
-              {/* Secondary CTA */}
+              {/* Secondary */}
               <button
                 onClick={() => onNav("services")}
-                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-3.5 rounded-full border border-white/20 hover:border-white/40 text-slate-300 hover:text-white font-semibold text-xs tracking-widest uppercase transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-6 rounded-full border border-white/20 hover:border-white/40 text-slate-300 hover:text-white font-bold text-xs tracking-widest uppercase transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50"
               >
                 {t.hero.cta2}
               </button>
             </motion.div>
           </div>
+
+          {/* ── RIGHT: Giant glowing H logo ────────────────────────── */}
+          <motion.div
+            {...anim(0.06)}
+            className="relative flex items-center justify-center md:justify-end"
+          >
+            {/*
+              Neon-green glow orb behind the logo.
+              blur-[160px] creates the large soft halo.
+              opacity-20 keeps it subtle but visible.
+            */}
+            <div
+              className="absolute rounded-full"
+              style={{
+                inset: "-20% -10%",
+                background: "#00ff99",
+                opacity: 0.2,
+                filter: "blur(160px)",
+                zIndex: 0,
+              }}
+            />
+
+            {/*
+              Logo: white background PNG.
+              filter: invert(1) brightness(1.5) — inverts so bg becomes black,
+              H mark becomes bright white.
+              mix-blend-mode: screen — black areas become transparent,
+              white H shines through as pure white over the dark page bg.
+              The neon glow shows through the transparent areas for depth.
+            */}
+            <img
+              src="/hecaro-h-logo.png"
+              alt="HECARO Digital"
+              className="relative w-full max-w-[380px] md:max-w-none"
+              style={{
+                zIndex: 1,
+                filter: "invert(1) brightness(1.5)",
+                mixBlendMode: "screen",
+              }}
+            />
+          </motion.div>
 
         </div>
       </div>

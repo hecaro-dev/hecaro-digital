@@ -74,7 +74,7 @@ export default function Header({ onNav }: HeaderProps) {
               <button
                 key={item.key}
                 onClick={() => handleNav(item.key)}
-                className="text-[11px] font-semibold tracking-widest uppercase text-slate-400 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded px-1"
+                className="text-base font-bold tracking-widest uppercase text-slate-400 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded px-1"
               >
                 {item.label}
               </button>

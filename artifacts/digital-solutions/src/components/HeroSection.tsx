@@ -68,7 +68,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         Gap steps up progressively to keep both columns breathable.
       */}
       <div className="relative z-10 max-w-[1400px] w-full mx-auto px-6 sm:px-10 lg:px-16 pt-28 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-[55fr_45fr] items-center gap-12 md:gap-20 lg:gap-28">
+        <div className="grid grid-cols-1 md:grid-cols-[55fr_45fr] items-center gap-16 md:gap-24 lg:gap-32">
 
           {/* ── LEFT: Massive text ─────────────────────────────────── */}
           <div className="flex flex-col min-w-0">
@@ -84,7 +84,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             {/* H1 — oversized, 800 weight, last word in neon green */}
             <motion.h1
               {...anim(0.1)}
-              className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tighter text-white"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.2] tracking-tighter text-white"
               style={{
                 fontWeight: 800,
                 fontFamily: "'Syne', var(--font-syne), system-ui, sans-serif",

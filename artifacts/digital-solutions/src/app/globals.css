@@ -29,9 +29,6 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* ── Tailwind v4 line-height overrides (equivalent of tailwind.config.js)
-     Forces every text-* utility to never use line-height:1.
-     This is the v4 way to configure the leading scale globally.          ── */
   --leading-none:    1.3;
   --leading-tight:   1.3;
   --leading-snug:    1.4;
@@ -146,13 +143,8 @@
   }
 }
 
-/* ── Hard overrides outside @layer — beat ALL Tailwind utilities ───────────
-   text-5xl / text-6xl / text-7xl / text-8xl all set line-height:1 by
-   default, which gives zero room for descenders (g, y, p, q).
-   These rules win over every utility class because they are unlayered.
-──────────────────────────────────────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1.3 !important;
+  line-height: 1.4 !important;
   padding-bottom: 0.3em !important;
   overflow: visible !important;
 }

@@ -91,11 +91,13 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             {/* H1 — oversized, 800 weight, last word in neon green */}
             <motion.h1
               {...anim(0.1)}
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tighter text-white pb-6"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tighter text-white !overflow-visible"
               style={{
                 fontWeight: 800,
                 fontFamily: "'Syne', var(--font-syne), system-ui, sans-serif",
-                lineHeight: 1.4,
+                lineHeight: 1.6,
+                paddingBottom: "0.5em",
+                marginBottom: "2rem",
               }}
             >
               {headlineParts.slice(0, -1).map((line, i) => (

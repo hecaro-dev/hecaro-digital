@@ -146,8 +146,12 @@
 }
 
 /* Unlayered — beats every Tailwind utility including leading-none on text-5xl+ */
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.25 !important;
-  padding-bottom: 0.12em !important;
-  overflow: visible !important;
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5 !important;
+    padding-bottom: 0.2em !important;
+    overflow: visible !important;
+  }
+
+  p, li, span, a {
+    overflow: visible !important;
 }

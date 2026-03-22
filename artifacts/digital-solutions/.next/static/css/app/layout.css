@@ -1377,6 +1377,9 @@
       margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
+  .\!overflow-visible {
+    overflow: visible !important;
+  }
   .overflow-hidden {
     overflow: hidden;
   }
@@ -2722,8 +2725,11 @@
   }
 }
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1.25 !important;
-  padding-bottom: 0.12em !important;
+  line-height: 1.5 !important;
+  padding-bottom: 0.2em !important;
+  overflow: visible !important;
+}
+p, li, span, a {
   overflow: visible !important;
 }
 @property --tw-translate-x {

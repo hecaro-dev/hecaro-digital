@@ -89,28 +89,29 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             </motion.p>
 
             {/* H1 — oversized, 800 weight, last word in neon green */}
-            <motion.h1
-              {...anim(0.1)}
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tighter text-white !overflow-visible"
-              style={{
-                fontWeight: 800,
-                fontFamily: "'Syne', var(--font-syne), system-ui, sans-serif",
-                lineHeight: 1.6,
-                paddingBottom: "0.5em",
-                marginBottom: "2rem",
-              }}
-            >
-              {headlineParts.slice(0, -1).map((line, i) => (
-                <span key={i} className="block">
-                  {line}
+              <motion.h1
+                {...anim(0.1)}
+                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tighter text-white !overflow-visible"
+                style={{
+                  fontWeight: 800,
+                  fontFamily: "'Syne', var(--font-syne), system-ui, sans-serif",
+                  lineHeight: 1.6,
+                  paddingBottom: "0.5em",
+                  marginBottom: "2rem",
+                }}
+              >
+                {headlineParts.slice(0, -1).map((line, i) => (
+                  <span key={i} className="block !overflow-visible !leading-[1.8] !pb-4">
+                    {line}
+                  </span>
+                ))}
+                <span className="block !overflow-visible !leading-[1.8] !pb-4" style={{ whiteSpace: "nowrap" }}>
+                  {lastLinePrefix}
+                  <span style={{ color: "#00ff99", display: "inline-block", paddingBottom: "15px", marginBottom: "-15px" }}>
+                    {lastLineKeyword}
+                  </span>
                 </span>
-              ))}
-              <span className="block" style={{ whiteSpace: "nowrap" }}>
-                {lastLinePrefix}
-                <span style={{ color: "#00ff99" }}>{lastLineKeyword}</span>
-              </span>
-            </motion.h1>
-
+              </motion.h1>
             {/* Subline */}
             <motion.p
               {...anim(0.22)}

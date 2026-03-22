@@ -6,7 +6,8 @@ const syne = Syne({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-syne",
-  display: "block",
+  display: "swap",
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
@@ -27,10 +28,9 @@ export default function RootLayout({
     <html
       lang="de"
       className={`dark ${syne.variable}`}
-      style={{ fontFamily: "'Syne', var(--font-syne), system-ui, sans-serif" }}
       suppressHydrationWarning
     >
-      <body>
+      <body className={syne.className}>
         {children}
       </body>
     </html>

@@ -76,7 +76,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         Kicks in at md (768 px) – covers the 811 px canvas viewport.
         Gap steps up progressively to keep both columns breathable.
       */}
-      <div className="relative z-10 max-w-[1400px] w-full mx-auto px-6 sm:px-10 lg:px-16 pt-28 pb-20">
+      <div className="relative z-10 max-w-[1400px] w-full mx-auto px-6 sm:px-10 lg:px-16 pt-32 pb-20">
         <div className="grid grid-cols-1 md:grid-cols-[1.6fr_0.4fr] items-center gap-16 md:gap-20 lg:gap-24">
           {/* ── LEFT: Massive text ─────────────────────────────────── */}
           <div className="flex flex-col min-w-0">

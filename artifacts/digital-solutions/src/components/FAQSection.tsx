@@ -9,9 +9,7 @@ import { useI18n } from "../i18n";
 export default function FAQSection() {
   const { t } = useI18n();
   const { ref, inView } = useInView();
-
-  const allIndices = t.faq.items.map((_, i) => i);
-  const [openSet, setOpenSet] = useState<Set<number>>(new Set(allIndices));
+  const [openSet, setOpenSet] = useState<Set<number>>(new Set([0]));
 
   function toggle(i: number) {
     setOpenSet((prev) => {
@@ -42,7 +40,7 @@ export default function FAQSection() {
           </h2>
         </motion.div>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           {t.faq.items.map((item, i) => {
             const isOpen = openSet.has(i);
             return (
@@ -51,16 +49,25 @@ export default function FAQSection() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.1 + i * 0.08 }}
-                className="border-b border-white/[0.08] last:border-0 pb-4"
+                className={`rounded-2xl border transition-colors duration-200 ${
+                  isOpen
+                    ? "bg-[rgba(16,185,129,0.04)] border-emerald-500/20"
+                    : "bg-[rgba(255,255,255,0.02)] border-white/[0.06] hover:border-white/[0.12]"
+                }`}
               >
                 <button
                   onClick={() => toggle(i)}
-                  className="w-full flex items-center justify-between py-4 text-left focus:outline-none"
+                  className="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-inset rounded-2xl min-h-[64px]"
+                  aria-expanded={isOpen}
                 >
-                  <span className="text-lg font-medium text-white pr-8">
+                  <span className="text-base md:text-lg font-semibold text-white pr-6 leading-snug">
                     {item.question}
                   </span>
-                  <div className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-colors ${isOpen ? "bg-emerald-500 border-emerald-500 text-black" : "border-white/10 text-slate-400 hover:border-white/30"}`}>
+                  <div className={`w-9 h-9 rounded-full border flex items-center justify-center shrink-0 transition-all duration-200 ${
+                    isOpen
+                      ? "bg-emerald-500 border-emerald-500 text-black shadow-lg shadow-emerald-500/30"
+                      : "border-white/10 text-slate-400 hover:border-white/30 hover:text-white"
+                  }`}>
                     <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
                   </div>
                 </button>
@@ -73,7 +80,7 @@ export default function FAQSection() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <p className="pb-6 text-slate-400 leading-relaxed text-base">
+                      <p className="px-6 pb-6 text-slate-300 leading-relaxed text-base">
                         {item.answer}
                       </p>
                     </motion.div>

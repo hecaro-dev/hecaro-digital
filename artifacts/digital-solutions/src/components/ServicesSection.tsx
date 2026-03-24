@@ -40,7 +40,7 @@ export default function ServicesSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {t.services.items.map((service, i) => {
             const isLarge = i === 0;
             const Icon = ICONS[i];

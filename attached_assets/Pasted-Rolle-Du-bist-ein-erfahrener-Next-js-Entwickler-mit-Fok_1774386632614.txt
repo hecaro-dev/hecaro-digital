@@ -1,0 +1,44 @@
+Rolle: Du bist ein erfahrener Next.js Entwickler mit Fokus auf Design-Feinschliff, Performance und UX. Optimiere die bestehende Website basierend auf dem aktuellen Stand und folge diesen Anweisungen:
+
+1. Logo:
+   - Vergrößere das Logo in der Navigationsleiste auf eine markantere Größe (z.B. Höhe 64-80px).
+   - Stelle sicher, dass das Logo vertikal zentriert ist und ausreichend Abstand zu den Menüelementen hat.
+   - Vermeide, dass globale CSS-Regeln das Logo ungewollt verkleinern.
+
+2. Hero-Sektion:
+   - Behalte die aktuelle Aufteilung der Headline („Ihre digitale Visitenkarte“ in einer Zeile, „die verkauft.“ darunter).
+   - Prüfe und optimiere die Button-Größen und Abstände für mobile Geräte (mind. 44x44px Touch-Ziel).
+   - Sorge für harmonische Zeilenabstände und responsive Schriftgrößen.
+
+3. Werte-Sektion:
+   - Behalte die aktuelle Struktur und den Text bei.
+   - Füge bei Bedarf mehr Weißraum zwischen den Wert-Karten hinzu, um die Lesbarkeit zu verbessern.
+
+4. Leistungen:
+   - Optimiere die Abstände zwischen den Karten für ein gleichmäßiges Layout.
+   - Stelle sicher, dass die Icons und Checklisten gut sichtbar und konsistent sind.
+
+5. Prozess:
+   - Hebe den aktuellen Schritt visuell stärker hervor (z.B. durch Farb- oder Schattenakzente).
+   - Behalte den Text bei: „Die Realisierung Ihrer digitalen Präsenz ohne Kompromisse – wo exklusive Ästhetik auf technologische Meisterschaft trifft.“
+
+6. Portfolio:
+   - Ersetze die leeren Platzhalterbilder durch aussagekräftige Bilder oder ansprechende Design-Platzhalter.
+   - Entferne den Untertitel „Case Studies folgen.“.
+
+7. FAQ:
+   - Teste die Akkordeon-Funktion auf allen Geräten und behebe eventuelle Bedienprobleme.
+   - Stelle sicher, dass alle Antworten in der Ich-Form verfasst sind.
+
+8. Tech Stack:
+   - Füge mehr visuelle Struktur oder Abstände hinzu, damit die Icons nicht verloren wirken.
+   - Optimiere die Darstellung für verschiedene Bildschirmgrößen.
+
+9. Allgemein:
+   - Prüfe die gesamte Seite auf konsistente Abstände, Schriftgrößen und Farbkontraste (WCAG-konform).
+   - Optimiere die Performance (next/image, Font-Loading, Core Web Vitals).
+   - Verifiziere SEO-relevante Elemente (Meta-Tags, Sitemap, hreflang, JSON-LD).
+
+Bitte führe die Änderungen schrittweise durch und melde nach jedem größeren Abschnitt den Fortschritt mit Screenshots oder Preview-Links. Priorisiere zuerst das Logo und die Hero-Sektion.
+
+Ziel: Eine hochprofessionelle, exklusive Website mit klarer Markenpräsenz, perfektem Layout und optimaler Nutzererfahrung.

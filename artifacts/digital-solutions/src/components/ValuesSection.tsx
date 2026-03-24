@@ -28,7 +28,7 @@ export default function ValuesSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {t.values.items.map((item, i) => {
             const Icon = ICONS[i];
             return (

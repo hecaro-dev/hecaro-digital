@@ -9,7 +9,6 @@ interface HeaderProps {
   onNav: (section: string) => void;
 }
 
-
 export default function Header({ onNav }: HeaderProps) {
   const { t, lang, setLang } = useI18n();
   const [scrolled, setScrolled] = useState(false);
@@ -40,25 +39,38 @@ export default function Header({ onNav }: HeaderProps) {
       className={`
         fixed top-0 left-0 right-0 z-50 transition-all duration-500
         ${scrolled
-          ? "bg-[rgba(2,6,23,0.88)] backdrop-blur-xl border-b border-white/[0.06] shadow-2xl shadow-black/40"
+          ? "bg-[rgba(2,6,23,0.92)] backdrop-blur-xl border-b border-white/[0.06] shadow-2xl shadow-black/40"
           : "bg-transparent"}
       `}
       role="banner"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
 
-          {/* ── Brand ────────────────────────────────────────────────── */}
+          {/* ── Brand ─────────────────────────────────────────────── */}
           <button
             onClick={() => handleNav("top")}
-            className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg"
+            className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg"
             aria-label="HECARO Digital – Home"
           >
+            <img
+              src="/hecaro-h-logo.png"
+              alt=""
+              aria-hidden="true"
+              style={{
+                height: 44,
+                width: "auto",
+                display: "block",
+                flexShrink: 0,
+                filter: "invert(1) brightness(1.8)",
+                mixBlendMode: "screen" as const,
+              }}
+            />
             <span
               style={{
                 fontWeight: 700,
-                fontSize: 17,
-                letterSpacing: "0.05em",
+                fontSize: 20,
+                letterSpacing: "0.04em",
                 color: "#ffffff",
                 whiteSpace: "nowrap",
                 lineHeight: 1,
@@ -74,7 +86,7 @@ export default function Header({ onNav }: HeaderProps) {
               <button
                 key={item.key}
                 onClick={() => handleNav(item.key)}
-                className="text-base font-bold tracking-widest uppercase text-slate-400 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded px-1"
+                className="text-sm font-bold tracking-widest uppercase text-slate-400 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded px-1 py-2"
               >
                 {item.label}
               </button>
@@ -88,7 +100,7 @@ export default function Header({ onNav }: HeaderProps) {
                 <button
                   key={l}
                   onClick={() => setLang(l)}
-                  className={`relative px-3 py-1 rounded-full text-xs font-semibold uppercase transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+                  className={`relative px-3 py-1.5 rounded-full text-xs font-semibold uppercase transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
                     lang === l
                       ? "bg-emerald-500 text-black shadow-sm shadow-emerald-500/30"
                       : "text-slate-400 hover:text-white"
@@ -103,7 +115,7 @@ export default function Header({ onNav }: HeaderProps) {
 
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden text-slate-300 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg p-1"
+              className="md:hidden text-slate-300 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
             >
@@ -128,7 +140,7 @@ export default function Header({ onNav }: HeaderProps) {
                 <button
                   key={item.key}
                   onClick={() => handleNav(item.key)}
-                  className="text-left text-slate-300 hover:text-white py-2.5 text-xs font-semibold uppercase tracking-widest transition-colors border-b border-white/[0.04] last:border-0"
+                  className="text-left text-slate-300 hover:text-white py-3 text-xs font-semibold uppercase tracking-widest transition-colors border-b border-white/[0.04] last:border-0 min-h-[44px] flex items-center"
                 >
                   {item.label}
                 </button>
@@ -140,7 +152,7 @@ export default function Header({ onNav }: HeaderProps) {
                     <button
                       key={l}
                       onClick={() => { setLang(l); setMenuOpen(false); }}
-                      className={`px-3 py-1 rounded-full text-xs font-semibold uppercase transition-all duration-200 ${
+                      className={`px-3 py-1.5 rounded-full text-xs font-semibold uppercase transition-all duration-200 min-h-[44px] flex items-center justify-center ${
                         lang === l
                           ? "bg-emerald-500 text-black"
                           : "text-slate-400"
@@ -154,7 +166,7 @@ export default function Header({ onNav }: HeaderProps) {
 
               <button
                 onClick={() => handleNav("contact")}
-                className="mt-1 px-4 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold uppercase tracking-widest transition-all duration-200 text-center text-xs"
+                className="mt-1 px-4 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold uppercase tracking-widest transition-all duration-200 text-center text-xs min-h-[44px] flex items-center justify-center"
               >
                 {t.nav.contact}
               </button>

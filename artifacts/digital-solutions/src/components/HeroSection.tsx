@@ -191,7 +191,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             <img
               src="/hecaro-h-logo.png"
               alt="HECARO Digital"
-              className="relative w-full max-w-[380px] md:max-w-none"
+              className="relative w-full max-w-[380px] md:max-w-none ml-[300px] mr-[40px] mt-[0px] mb-[100px] pl-[40px] pr-[0px] pt-[40px] pb-[100px] rounded-tl-[0px] rounded-tr-[0px] rounded-br-[0px] rounded-bl-[0px]"
               style={{
                 zIndex: 1,
                 filter: "invert(1) brightness(1.5)",

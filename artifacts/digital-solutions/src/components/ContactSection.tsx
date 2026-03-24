@@ -67,6 +67,15 @@ export default function ContactSection() {
           <p className="text-slate-400 text-lg">{t.contact.sub}</p>
         </motion.div>
 
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.08 }}
+          className="text-center text-emerald-300 font-semibold text-xl mb-10 tracking-wide"
+        >
+          {t.contact.cta}
+        </motion.p>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

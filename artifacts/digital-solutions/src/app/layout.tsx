@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Syne } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 
-const syne = Syne({
+const outfit = Outfit({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-syne",
+  variable: "--font-outfit",
   display: "swap",
   adjustFontFallback: false,
 });
@@ -27,10 +27,10 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`dark ${syne.variable}`}
+      className={`dark ${outfit.variable}`}
       suppressHydrationWarning
     >
-      <body className={syne.className}>
+      <body className={outfit.className}>
         {children}
       </body>
     </html>

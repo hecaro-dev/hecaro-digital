@@ -7,9 +7,9 @@ export const en: Translations = {
   lang: "en",
   langName: "English",
   meta: {
-    title: "HECARO Digital – International Web Design & SEO",
+    title: "HECARO Digital – High-Performance Landing Pages & SEO",
     description:
-      "Professional Next.js landing pages, international SEO strategy and digital consulting. Tailored for businesses with global ambitions.",
+      "I build landing pages that sell — with load times under one second, international SEO and clear user guidance. For businesses with high standards.",
   },
   nav: {
     services: "Services",
@@ -22,8 +22,8 @@ export const en: Translations = {
   },
   hero: {
     badge: "Available worldwide · DE · EN · ES",
-    headline: "Digital solutions \nthat convert",
-    sub: "Fast landing pages, measurable SEO, and professional digital consulting — end-to-end, for international markets.",
+    headline: "Your digital calling card,\nthat sells.",
+    sub: "I build landing pages that stand out not only through design, but through load times under one second and clear user guidance that measurably increases your conversion rate.",
     cta: "Start a Project",
     cta2: "View Services",
   },
@@ -34,7 +34,7 @@ export const en: Translations = {
     "PERFORMANCE",
     "NEXT.JS",
     "TYPESCRIPT",
-    "CONSULTING",
+    "STRATEGY",
     "INTERNATIONAL",
   ],
   services: {
@@ -43,62 +43,62 @@ export const en: Translations = {
     sub: "Every solution is individually conceived — for maximum impact.",
     items: [
       {
-        tag: "Speed & Conversion",
-        title: "Landing Pages",
+        tag: "Strategy",
+        title: "Strategy & Analysis",
         description:
-          "Lightning-fast Next.js landing pages that turn visitors into customers. Optimized for performance and maximum conversion.",
+          "Every successful project starts with a clear plan. I analyse your situation, target audience and competition — and develop a digital strategy that delivers measurable results.",
+        bullets: [
+          "Competitive & market analysis",
+          "Definition of KPIs and conversion goals",
+          "User journey mapping",
+          "Technical requirements analysis",
+        ],
+      },
+      {
+        tag: "Speed & Conversion",
+        title: "High-Performance Landing Pages",
+        description:
+          "I build landing pages that don't just impress — they convert. With load times under one second and conversion-oriented design, you get the maximum out of your traffic.",
         bullets: [
           "Server-Side Rendering & Static Generation",
+          "Core Web Vitals optimised (LCP < 1 sec.)",
           "Mobile-first, fully responsive",
-          "Optimized for maximum performance",
-          "Conversion-oriented UI/UX design",
+          "A/B-testing ready",
         ],
       },
       {
         tag: "International",
-        title: "SEO & Visibility",
+        title: "International SEO",
         description:
-          "Sustainable Google visibility — in Germany, Spain and worldwide. Technical SEO that works long-term.",
+          "Sustainable Google visibility — in Germany, Spain and worldwide. Technical SEO that works long-term and reaches your target audience in every market.",
         bullets: [
-          "Technical SEO audit & on-page optimization",
+          "Technical SEO audit & on-page optimisation",
           "International hreflang implementation",
           "JSON-LD Structured Data & Rich Snippets",
-          "Google Search Console & Analytics",
-        ],
-      },
-      {
-        tag: "Setup & Workflow",
-        title: "Digital Consulting",
-        description:
-          "Professional home office & streaming setups. OBS, lighting, audio — your digital presence at the highest level.",
-        bullets: [
-          "OBS Studio setup & scene configuration",
-          "Lighting concept for video & calls",
-          "Audio optimization & noise cancellation",
-          "Software workflow for creators & businesses",
+          "Google Search Console & Analytics integration",
         ],
       },
     ],
   },
   values: {
-    label: "Our Values",
+    label: "My Values",
     headline: "Why HECARO Digital",
     items: [
       {
-        title: "Fast",
-        description: "Delivery times that impress. No long waiting periods.",
+        title: "Precision",
+        description: "Every detail matters. I work with the utmost care — nothing is left to chance.",
       },
       {
-        title: "Reliable",
-        description: "Absolute process reliability in every project. Delivery as agreed.",
+        title: "Commitment",
+        description: "Delivery as agreed. My commitments are not promises — they are obligations.",
       },
       {
-        title: "Flexible",
-        description: "Individual solutions for individual requirements.",
+        title: "Individuality",
+        description: "No templates. No compromises. Every project is conceived from scratch for you.",
       },
       {
-        title: "Support",
-        description: "Personal point of contact — direct, without detours.",
+        title: "Exclusivity",
+        description: "I take on a limited number of projects — so that each one receives the attention it deserves.",
       },
     ],
   },
@@ -110,25 +110,20 @@ export const en: Translations = {
       {
         tag: "Landing Page",
         title: "E-Commerce Conversion Page",
-        description: "Next.js landing page with A/B testing and optimized conversion rate.",
+        description: "Next.js landing page with conversion-oriented design and optimised load time under one second.",
       },
       {
         tag: "SEO Project",
         title: "International SEO Rollout",
-        description: "Trilingual SEO strategy with hreflang for DE, EN, ES.",
-      },
-      {
-        tag: "Consulting",
-        title: "Video & Streaming Setup",
-        description: "Professional home studio for an established content creator & entrepreneur.",
+        description: "Trilingual SEO strategy with hreflang for DE, EN, ES — sustainable visibility in three markets.",
       },
     ],
     cta: "View all projects",
   },
   quality: {
-    label: "Quality Promise",
+    label: "Standards & Responsibility",
     headline: "Precision.\nReliability.\nAttention to Detail.",
-    p1: "Over 20 years of experience in the German working environment and absolute process reliability are the foundation of my work. Native proficiency in German and Spanish enables direct communication in every market — without detours, without misunderstandings.",
+    p1: "Behind HECARO Digital, I stand personally. My goal is to create digital presences that reflect the high standards of my clients. I accompany you from the first idea through launch and beyond as a reliable partner — human, direct and focused on your business success.",
     p2: "No outsourcing. No agency overhead. You work directly with me — the expert who accompanies your project from start to finish.",
     foundationTitle: "The Foundation",
     stats: [
@@ -139,23 +134,23 @@ export const en: Translations = {
   },
   techstack: {
     label: "Tech Stack",
-    headline: "State-of-the-Art Technologies",
-    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Cloud Deployments"],
+    headline: "Technological Excellence",
+    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Performance Hosting"],
   },
   process: {
     label: "Process",
-    headline: "How we work",
+    headline: "My Process",
     sub: "Transparent, structured and efficient — from the first idea to launch.",
     steps: [
       {
         number: "01",
         title: "Analysis",
-        description: "We understand your goals, target audience and market — before writing a single line of code.",
+        description: "I analyse your goals, target audience and market — before writing a single line of code.",
       },
       {
         number: "02",
         title: "Strategy",
-        description: "Based on the analysis, we develop a clear digital strategy with measurable goals.",
+        description: "Based on the analysis, I develop a clear digital strategy with measurable goals.",
       },
       {
         number: "03",
@@ -186,18 +181,14 @@ export const en: Translations = {
       {
         question: "Do you offer SEO for international markets?",
         answer:
-          "Yes, international SEO is one of my core areas. I implement correct hreflang tags for DE, EN and ES, create localized metadata and structured data (JSON-LD) as well as multilingual sitemaps — for maximum visibility in all target markets.",
-      },
-      {
-        question: "What does Digital Consulting mean for you?",
-        answer:
-          "Digital Consulting covers the professional optimization of your hardware setup for a compelling digital presence: lighting concepts, audio optimization, OBS Studio configuration and software workflows. Ideal for entrepreneurs, content creators and remote teams.",
+          "Yes, international SEO is one of my core areas. I implement correct hreflang tags for DE, EN and ES, create localised metadata and structured data (JSON-LD) as well as multilingual sitemaps — for maximum visibility in all target markets.",
       },
     ],
   },
   contact: {
     label: "Contact",
     headline: "Start a Project",
+    cta: "Your vision deserves a digital counterpart.",
     sub: "Describe your project — I will respond within 24 hours.",
     namePlaceholder: "Your Name",
     emailPlaceholder: "Your Email",
@@ -214,13 +205,13 @@ export const en: Translations = {
   legal: {
     imprintTitle: "Legal Notice",
     imprintText:
-      "Content will be finalized upon business registration.\n\nInformation pursuant to § 5 TMG\n\n[Your Name]\n[Your Address]\n[Postal Code City]\n\nContact:\nEmail: [your@email.com]\n\nVAT Identification Number pursuant to § 27 a of the Value Added Tax Act:\n[Your VAT ID]\n\nResponsible for content pursuant to § 55 para. 2 RStV:\n[Your Name]\n[Your Address]",
+      "Content will be finalised upon business registration.\n\nInformation pursuant to § 5 TMG\n\n[Your Name]\n[Your Address]\n[Postal Code City]\n\nContact:\nEmail: [your@email.com]\n\nVAT Identification Number pursuant to § 27 a of the Value Added Tax Act:\n[Your VAT ID]\n\nResponsible for content pursuant to § 55 para. 2 RStV:\n[Your Name]\n[Your Address]",
     privacyTitle: "Privacy Policy",
     privacyText:
-      "Content will be finalized upon business registration.\n\n1. Privacy at a Glance\n\nGeneral Information\nThe following information provides a simple overview of what happens to your personal data when you visit this website.\n\n2. Data Collection on This Website\n\nContact Form\nIf you submit inquiries to us via our contact form, your details from the inquiry form will be stored for the purpose of processing the inquiry.",
+      "Content will be finalised upon business registration.\n\n1. Privacy at a Glance\n\nGeneral Information\nThe following information provides a simple overview of what happens to your personal data when you visit this website.\n\n2. Data Collection on This Website\n\nContact Form\nIf you submit enquiries via our contact form, your details from the enquiry form will be stored for the purpose of processing the enquiry.",
   },
   footer: {
-    tagline: "International web solutions — end-to-end.",
+    tagline: "High-Performance Landing Pages & International SEO",
     rights: "All rights reserved.",
     navTitle: "Navigation",
     links: {

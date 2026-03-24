@@ -72,7 +72,7 @@
   --input: 222 30% 12%;
   --ring: 160 84% 39%;
 
-  --app-font-sans: var(--font-syne), system-ui, sans-serif;
+  --app-font-sans: var(--font-outfit), system-ui, sans-serif;
   --app-font-mono: 'JetBrains Mono', Menlo, monospace;
   --radius: 0.625rem;
   --elevate-1: rgba(255,255,255,.04);
@@ -86,13 +86,13 @@
 
   html {
     scroll-behavior: smooth;
-    font-family: 'Syne', var(--font-syne), system-ui, sans-serif;
+    font-family: 'Outfit', var(--font-outfit), system-ui, sans-serif;
   }
 
   body {
     @apply antialiased text-foreground min-h-screen;
     background-color: #05070a;
-    font-family: 'Syne', var(--font-syne), system-ui, sans-serif;
+    font-family: 'Outfit', var(--font-outfit), system-ui, sans-serif;
     font-weight: 400;
     letter-spacing: 0em;
     line-height: 1.6;
@@ -100,7 +100,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Syne', var(--font-syne), system-ui, sans-serif;
+    font-family: 'Outfit', var(--font-outfit), system-ui, sans-serif;
     font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.25;

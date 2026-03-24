@@ -94,7 +94,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tighter text-white !overflow-visible"
                 style={{
                   fontWeight: 800,
-                  fontFamily: "'Syne', var(--font-syne), system-ui, sans-serif",
+                  fontFamily: "'Outfit', var(--font-outfit), system-ui, sans-serif",
                   lineHeight: 1.6,
                   paddingBottom: "0.5em",
                   marginBottom: "2rem",
@@ -117,7 +117,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
               {...anim(0.22)}
               className="text-xl sm:text-2xl text-gray-400 max-w-xl mt-8 leading-relaxed font-normal"
               style={{
-                fontFamily: "'Syne', var(--font-syne), system-ui, sans-serif",
+                fontFamily: "'Outfit', var(--font-outfit), system-ui, sans-serif",
               }}
             >
               {t.hero.sub}

@@ -7,9 +7,9 @@ export const es: Translations = {
   lang: "es",
   langName: "Español",
   meta: {
-    title: "HECARO Digital – International Web Design & SEO",
+    title: "HECARO Digital – Landing Pages de Alto Rendimiento & SEO",
     description:
-      "Landing pages profesionales con Next.js, estrategia SEO internacional y consultoría digital. Hecho a medida para empresas con ambiciones globales.",
+      "Construyo landing pages que venden — con tiempos de carga inferiores a un segundo, SEO internacional y una guía de usuario clara. Para empresas con altos estándares.",
   },
   nav: {
     services: "Servicios",
@@ -22,8 +22,8 @@ export const es: Translations = {
   },
   hero: {
     badge: "Disponible mundialmente · DE · EN · ES",
-    headline: "Soluciones digitales \nque convencen",
-    sub: "Landing pages rápidas, SEO medible y consultoría digital profesional — todo en un solo servicio, para mercados internacionales.",
+    headline: "Su tarjeta de visita digital,\nque vende.",
+    sub: "Construyo landing pages que no solo destacan por el diseño, sino por tiempos de carga inferiores a un segundo y una guía de usuario clara que aumenta de forma medible su tasa de conversión.",
     cta: "Iniciar proyecto",
     cta2: "Ver servicios",
   },
@@ -34,7 +34,7 @@ export const es: Translations = {
     "PERFORMANCE",
     "NEXT.JS",
     "TYPESCRIPT",
-    "CONSULTORÍA",
+    "ESTRATEGIA",
     "INTERNACIONAL",
   ],
   services: {
@@ -43,62 +43,62 @@ export const es: Translations = {
     sub: "Cada solución se diseña a medida — para maximizar el impacto.",
     items: [
       {
-        tag: "Velocidad & Conversión",
-        title: "Landing Pages",
+        tag: "Estrategia",
+        title: "Estrategia & Análisis",
         description:
-          "Landing pages ultrarrápidas con Next.js que convierten visitantes en clientes. Optimizadas para el rendimiento y la conversión máxima.",
+          "Todo proyecto exitoso comienza con un plan claro. Analizo su situación, público objetivo y competencia — y desarrollo una estrategia digital que ofrece resultados medibles.",
+        bullets: [
+          "Análisis de competencia y mercado",
+          "Definición de KPIs y objetivos de conversión",
+          "Mapeo del recorrido del usuario",
+          "Análisis de requisitos técnicos",
+        ],
+      },
+      {
+        tag: "Velocidad & Conversión",
+        title: "Landing Pages de Alto Rendimiento",
+        description:
+          "Construyo landing pages que no solo impresionan — convierten. Con tiempos de carga inferiores a un segundo y diseño orientado a la conversión, maximiza el rendimiento de su tráfico.",
         bullets: [
           "Server-Side Rendering & Static Generation",
+          "Core Web Vitals optimizados (LCP < 1 seg.)",
           "Mobile-first, completamente responsivo",
-          "Optimizado para máximo rendimiento",
-          "Diseño UI/UX orientado a la conversión",
+          "Listo para A/B-testing",
         ],
       },
       {
         tag: "Internacional",
-        title: "SEO & Visibilidad",
+        title: "SEO Internacional",
         description:
-          "Visibilidad sostenible en Google — en Alemania, España y en todo el mundo. SEO técnico que funciona a largo plazo.",
+          "Visibilidad sostenible en Google — en Alemania, España y en todo el mundo. SEO técnico que funciona a largo plazo y alcanza a su público objetivo en cada mercado.",
         bullets: [
           "Auditoría SEO técnica y optimización on-page",
           "Implementación internacional de hreflang",
           "JSON-LD Structured Data & Rich Snippets",
-          "Google Search Console & Analytics",
-        ],
-      },
-      {
-        tag: "Configuración & Flujo de trabajo",
-        title: "Consultoría Digital",
-        description:
-          "Configuraciones profesionales de home office y streaming. OBS, iluminación, audio — su presencia digital al más alto nivel.",
-        bullets: [
-          "Configuración de OBS Studio y escenas",
-          "Concepto de iluminación para video y llamadas",
-          "Optimización de audio y cancelación de ruido",
-          "Flujo de trabajo para creadores y empresas",
+          "Integración de Google Search Console & Analytics",
         ],
       },
     ],
   },
   values: {
-    label: "Nuestros valores",
+    label: "Mis valores",
     headline: "Por qué HECARO Digital",
     items: [
       {
-        title: "Rápido",
-        description: "Plazos de entrega que impresionan. Sin largas esperas.",
+        title: "Precisión",
+        description: "Cada detalle importa. Trabajo con el máximo cuidado — nada se deja al azar.",
       },
       {
-        title: "Fiable",
-        description: "Absoluta fiabilidad en los procesos de cada proyecto. Entrega según lo acordado.",
+        title: "Compromiso",
+        description: "Entrega según lo acordado. Mis compromisos no son promesas — son obligaciones.",
       },
       {
-        title: "Flexible",
-        description: "Soluciones individuales para requisitos individuales.",
+        title: "Individualidad",
+        description: "Sin plantillas. Sin compromisos. Cada proyecto se concibe desde cero para usted.",
       },
       {
-        title: "Soporte",
-        description: "Contacto personal — directo, sin intermediarios.",
+        title: "Exclusividad",
+        description: "Acepto un número limitado de proyectos — para que cada uno reciba la atención que merece.",
       },
     ],
   },
@@ -110,25 +110,20 @@ export const es: Translations = {
       {
         tag: "Landing Page",
         title: "Página de conversión e-commerce",
-        description: "Landing page Next.js con A/B testing y tasa de conversión optimizada.",
+        description: "Landing page Next.js con diseño orientado a la conversión y tiempo de carga optimizado inferior a un segundo.",
       },
       {
         tag: "Proyecto SEO",
         title: "Lanzamiento SEO Internacional",
-        description: "Estrategia SEO trilingüe con hreflang para DE, EN, ES.",
-      },
-      {
-        tag: "Consultoría",
-        title: "Setup de Video & Streaming",
-        description: "Home studio profesional para un creador de contenido & empresario consolidado.",
+        description: "Estrategia SEO trilingüe con hreflang para DE, EN, ES — visibilidad sostenible en tres mercados.",
       },
     ],
     cta: "Ver todos los proyectos",
   },
   quality: {
-    label: "Promesa de calidad",
+    label: "Estándares & Responsabilidad",
     headline: "Precisión.\nFiabilidad.\nAtención al detalle.",
-    p1: "Más de 20 años de experiencia en el entorno laboral alemán y una absoluta fiabilidad en los procesos son la base de mi trabajo. El dominio nativo del alemán y del español permite una comunicación directa en cada mercado — sin intermediarios, sin malentendidos.",
+    p1: "Detrás de HECARO Digital estoy yo personalmente. Mi objetivo es crear presencias digitales que reflejen las altas exigencias de mis clientes. Le acompaño desde la primera idea hasta después del lanzamiento como socio de confianza — humano, directo y enfocado en su éxito empresarial.",
     p2: "Sin externalización. Sin gastos de agencia. Trabajará directamente conmigo — el experto que acompaña su proyecto de principio a fin.",
     foundationTitle: "Los Pilares",
     stats: [
@@ -139,23 +134,23 @@ export const es: Translations = {
   },
   techstack: {
     label: "Tech Stack",
-    headline: "Tecnologías de vanguardia",
-    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Cloud Deployments"],
+    headline: "Excelencia tecnológica",
+    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Performance Hosting"],
   },
   process: {
     label: "Proceso",
-    headline: "Cómo trabajamos",
+    headline: "Mi Proceso",
     sub: "Transparente, estructurado y eficiente — desde la primera idea hasta el lanzamiento.",
     steps: [
       {
         number: "01",
         title: "Análisis",
-        description: "Entendemos sus objetivos, público objetivo y mercado — antes de escribir una sola línea de código.",
+        description: "Analizo sus objetivos, público objetivo y mercado — antes de escribir una sola línea de código.",
       },
       {
         number: "02",
         title: "Estrategia",
-        description: "Basándonos en el análisis, desarrollamos una estrategia digital clara con objetivos medibles.",
+        description: "Basándome en el análisis, desarrollo una estrategia digital clara con objetivos medibles.",
       },
       {
         number: "03",
@@ -188,16 +183,12 @@ export const es: Translations = {
         answer:
           "Sí, el SEO internacional es una de mis áreas principales. Implemento etiquetas hreflang correctas para DE, EN y ES, creo metadatos localizados y datos estructurados (JSON-LD) así como sitemaps multilingües — para la máxima visibilidad en todos los mercados objetivo.",
       },
-      {
-        question: "¿Qué significa consultoría digital para usted?",
-        answer:
-          "La consultoría digital abarca la optimización profesional de su configuración de hardware para una presencia digital convincente: conceptos de iluminación, optimización de audio, configuración de OBS Studio y flujos de trabajo de software. Ideal para emprendedores, creadores de contenido y equipos remotos.",
-      },
     ],
   },
   contact: {
     label: "Contacto",
     headline: "Iniciar proyecto",
+    cta: "Su visión merece una correspondencia digital.",
     sub: "Describa su proyecto — le responderé en 24 horas.",
     namePlaceholder: "Su nombre",
     emailPlaceholder: "Su correo electrónico",
@@ -220,7 +211,7 @@ export const es: Translations = {
       "El contenido se finalizará con el registro de la actividad económica.\n\n1. Privacidad de un vistazo\n\nInformación general\nLa siguiente información proporciona una descripción general de lo que sucede con sus datos personales cuando visita este sitio web.\n\n2. Recopilación de datos\n\nFormulario de contacto\nSus datos del formulario de consulta se almacenarán para el propósito de procesar la consulta.",
   },
   footer: {
-    tagline: "Soluciones web internacionales — de principio a fin.",
+    tagline: "Landing Pages de Alto Rendimiento & SEO Internacional",
     rights: "Todos los derechos reservados.",
     navTitle: "Navegación",
     links: {

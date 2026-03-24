@@ -1,0 +1,32 @@
+Rolle: Du bist ein Senior Next.js Experte. Deine Aufgabe ist die vollständige Transformation der bestehenden Website "Global Biz Hub" zu "HECARO Digital". Setze folgende 5 Phasen strikt um:
+
+Phase 1: Das Fundament (Technik & Identität)
+1. Font-Fix: Ersetze die Schriftart "Syne" im gesamten Projekt (CSS & Config) durch "Outfit" (Google Font). Dies muss das Problem der abgeschnittenen Unterlängen ("g", "y", "p") endgültig lösen.
+2. Die "Ich"-Werdung: Scanne alle Dateien (page.tsx, Komponenten, Texte). Ersetze konsequent jede Wir-Form ("Wir", "Unser", "Uns") durch die Ich-Form ("Ich", "Mein", "Mir").
+3. KI-Cleaning: Entferne alle Sätze und Begriffe wie "KI", "Künstliche Intelligenz" oder "AI-gestützt". Der Fokus liegt allein auf meiner persönlichen Expertise.
+
+Phase 2: Der erste Eindruck (Hero & Werte)
+4. Hero-Sektion: 
+   - Neue Headline (DE): "Ihre digitale Visitenkarte, die verkauft."
+   - Subtext: "Ich baue Landing Pages, die nicht nur durch Design bestechen, sondern durch Ladezeiten unter einer Sekunde und eine klare Nutzerführung, die Ihre Conversion-Rate messbar steigert."
+5. Die 4 Prinzipien: Ersetze die alten Werte durch: Präzision, Verbindlichkeit, Individualität, Exklusivität.
+
+Phase 3: Das Angebot (Leistungen & Prozess)
+6. Die 3 Säulen: Baue die Leistungen um auf: 
+   1. Strategie & Analyse
+   2. High-Performance Landing Pages
+   3. Internationales SEO
+   (Lösche den Bereich "Consulting" vollständig).
+7. Mein Prozess: Benenne den Bereich in "Mein Prozess" um. Schärfe die 4 Phasen (Analyse, Strategie, Design, Launch) im persönlichen "Ich"-Stil.
+8. Tech-Stack: Ändere die Headline zu "Technologische Exzellenz" und betone den Fokus auf Performance-Hosting.
+
+Phase 4: Vertrauen & Abschluss (Qualität & CTA)
+9. Anspruch & Verantwortung: Füge folgenden Text ein: "Hinter HECARO Digital stehe ich persönlich. Mein Ziel ist es, digitale Präsenzen zu schaffen, die den hohen Anspruch meiner Kunden widerspiegeln. Ich begleite Sie von der ersten Idee über den Launch hinaus als verlässlicher Partner – menschlich, direkt und mit Fokus auf Ihren geschäftlichen Erfolg."
+10. Portfolio-Bereinigung: Entferne alle "Coming Soon" Kacheln/Sektionen vollständig. Die Seite soll sauber und exklusiv wirken.
+11. Finaler CTA: Füge direkt vor dem Kontaktformular den Text ein: "Ihre Vision verdient eine digitale Entsprechung."
+
+Phase 5: Der Feinschliff (FAQ & Sprachen)
+12. FAQ-Update: Lösche die Frage zu Consulting. Passe alle verbleibenden Antworten auf den "Ich"-Stil an.
+13. Internationaler Check: Prüfe die /en und /es Routen. Stelle sicher, dass dort kein Sprach-Mix (Deutsch/Englisch) mehr vorhanden ist und alle Texte übersetzt sind.
+
+Technische Anweisung: Arbeite direkt in den Dateien src/app/[lang]/page.tsx und den zugehörigen Komponenten sowie der globals.css. Achte auf perfekte Mobile-Responsivität und maximale Lade-Geschwindigkeit.

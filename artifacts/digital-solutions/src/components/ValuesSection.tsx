@@ -2,10 +2,10 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "../hooks/useInView";
-import { Zap, Shield, Settings, MessageCircle } from "lucide-react";
+import { Target, ShieldCheck, Fingerprint, Gem } from "lucide-react";
 import { useI18n } from "../i18n";
 
-const ICONS = [Zap, Shield, Settings, MessageCircle];
+const ICONS = [Target, ShieldCheck, Fingerprint, Gem];
 
 export default function ValuesSection() {
   const { t } = useI18n();

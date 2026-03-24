@@ -123,7 +123,7 @@ export const de = {
     label: "Anspruch & Verantwortung",
     headline: "Präzision.\nZuverlässigkeit.\nSorgfalt.",
     p1: "Hinter HECARO Digital stehe ich persönlich. Mein Ziel ist es, digitale Präsenzen zu schaffen, die den hohen Anspruch meiner Kunden widerspiegeln. Ich begleite Sie von der ersten Idee über den Launch hinaus als verlässlicher Partner – menschlich, direkt und mit Fokus auf Ihren geschäftlichen Erfolg.",
-    p2: "Kein Outsourcing. Kein Agentur-Overhead. Sie arbeiten direkt mit mir – dem Experten, der Ihr Projekt von Anfang bis Ende begleitet.",
+    p2: "Direkte Zusammenarbeit ohne Umwege – Sie arbeiten persönlich mit mir, dem Experten, der Ihr Projekt von Anfang bis Ende begleitet.",
     foundationTitle: "Das Fundament",
     stats: [
       { value: "100%", label: "Direktkommunikation" },
@@ -154,7 +154,7 @@ export const de = {
       {
         number: "03",
         title: "Design & Entwicklung",
-        description: "Ihr Projekt nimmt Form an – mit modernsten Technologien, präzisem Design und sauberem Code.",
+        description: "Die Realisierung Ihrer digitalen Präsenz ohne Kompromisse – wo exklusive Ästhetik auf technologische Meisterschaft trifft.",
       },
       {
         number: "04",

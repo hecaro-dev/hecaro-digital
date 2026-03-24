@@ -124,7 +124,7 @@ export const en: Translations = {
     label: "Standards & Responsibility",
     headline: "Precision.\nReliability.\nAttention to Detail.",
     p1: "Behind HECARO Digital, I stand personally. My goal is to create digital presences that reflect the high standards of my clients. I accompany you from the first idea through launch and beyond as a reliable partner — human, direct and focused on your business success.",
-    p2: "No outsourcing. No agency overhead. You work directly with me — the expert who accompanies your project from start to finish.",
+    p2: "Direct collaboration, no detours — you work personally with me, the expert who accompanies your project from start to finish.",
     foundationTitle: "The Foundation",
     stats: [
       { value: "100%", label: "Direct Communication" },
@@ -155,7 +155,7 @@ export const en: Translations = {
       {
         number: "03",
         title: "Design & Development",
-        description: "Your project takes shape — with state-of-the-art technologies, precise design and clean code.",
+        description: "The realisation of your digital presence without compromise — where exclusive aesthetics meets technological mastery.",
       },
       {
         number: "04",

@@ -77,7 +77,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         Gap steps up progressively to keep both columns breathable.
       */}
       <div className="relative z-10 max-w-[1400px] w-full mx-auto px-6 sm:px-10 lg:px-16 pt-28 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] items-center gap-16 md:gap-24 lg:gap-32">
+        <div className="grid grid-cols-1 md:grid-cols-[1.6fr_0.4fr] items-center gap-16 md:gap-20 lg:gap-24">
           {/* ── LEFT: Massive text ─────────────────────────────────── */}
           <div className="flex flex-col min-w-0">
             {/* Eyebrow */}
@@ -91,21 +91,21 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             {/* H1 — oversized, 800 weight, last word in neon green */}
               <motion.h1
                 {...anim(0.1)}
-                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tighter text-white !overflow-visible"
+                className="text-4xl md:text-5xl lg:text-6xl xl:text-6xl tracking-tighter text-white !overflow-visible"
                 style={{
                   fontWeight: 800,
                   fontFamily: "'Outfit', var(--font-outfit), system-ui, sans-serif",
-                  lineHeight: 1.6,
-                  paddingBottom: "0.5em",
+                  lineHeight: 1.4,
+                  paddingBottom: "0.4em",
                   marginBottom: "2rem",
                 }}
               >
                 {headlineParts.slice(0, -1).map((line, i) => (
-                  <span key={i} className="block !overflow-visible !leading-[1.8] !pb-4">
+                  <span key={i} className="block !overflow-visible !leading-[1.5] !pb-2" style={{ whiteSpace: "nowrap" }}>
                     {line}
                   </span>
                 ))}
-                <span className="block !overflow-visible !leading-[1.8] !pb-4" style={{ whiteSpace: "nowrap" }}>
+                <span className="block !overflow-visible !leading-[1.5] !pb-2" style={{ whiteSpace: "nowrap" }}>
                   {lastLinePrefix}
                   <span style={{ color: "#00ff99", display: "inline-block", paddingBottom: "15px", marginBottom: "-15px" }}>
                     {lastLineKeyword}

@@ -124,7 +124,7 @@ export const es: Translations = {
     label: "Estándares & Responsabilidad",
     headline: "Precisión.\nFiabilidad.\nAtención al detalle.",
     p1: "Detrás de HECARO Digital estoy yo personalmente. Mi objetivo es crear presencias digitales que reflejen las altas exigencias de mis clientes. Le acompaño desde la primera idea hasta después del lanzamiento como socio de confianza — humano, directo y enfocado en su éxito empresarial.",
-    p2: "Sin externalización. Sin gastos de agencia. Trabajará directamente conmigo — el experto que acompaña su proyecto de principio a fin.",
+    p2: "Colaboración directa, sin intermediarios — trabajará personalmente conmigo, el experto que acompaña su proyecto de principio a fin.",
     foundationTitle: "Los Pilares",
     stats: [
       { value: "100%", label: "Comunicación directa" },
@@ -155,7 +155,7 @@ export const es: Translations = {
       {
         number: "03",
         title: "Diseño & Desarrollo",
-        description: "Su proyecto toma forma — con tecnologías de vanguardia, diseño preciso y código limpio.",
+        description: "La realización de su presencia digital sin compromisos — donde la estética exclusiva se une a la maestría tecnológica.",
       },
       {
         number: "04",

@@ -25,10 +25,9 @@ export default function PortfolioSection() {
           <span className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-3 inline-block">
             {t.portfolio.label}
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
             {t.portfolio.headline}
           </h2>
-          <p className="text-slate-400 text-lg">{t.portfolio.sub}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">

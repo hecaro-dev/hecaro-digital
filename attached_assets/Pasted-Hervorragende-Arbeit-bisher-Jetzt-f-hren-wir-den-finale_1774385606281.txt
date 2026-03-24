@@ -1,0 +1,17 @@
+Hervorragende Arbeit bisher. Jetzt führen wir den finalen Feinschliff durch, um das Layout und die exklusive Positionierung zu perfektionieren:
+
+1. Hero-Layout (WICHTIG): Passe die Headline in der Hero-Sektion so an, dass "Ihre digitale Visitenkarte" in einer einzigen Zeile steht. Das Wort "die verkauft." soll direkt darunter in einer zweiten Zeile stehen. Nutze dafür ein kontrolliertes Break oder passe die Container-Breite an, damit es auf Desktop-Bildschirmen nicht unnötig umbricht.
+
+2. Wortwahl & Positionierung: Entferne das Wort "Agentur" (und "Agency") konsequent von der gesamten Website. Ersetze Formulierungen wie "Kein Agentur-Overhead" durch "Direkte Zusammenarbeit ohne Umwege" oder "Persönliche Betreuung statt anonymer Prozesse". Wir betonen den Vorteil der direkten Experten-Zusammenarbeit, ohne andere Marktteilnehmer negativ zu bewerten.
+
+3. Redundanz entfernen: Lösche die Sektion "Das Fundament" (die Sektion mit den Checkmark-Listen für Präzision, Verbindlichkeit etc.) vollständig. Wir nutzen stattdessen nur die Sektion "Warum HECARO Digital" mit den Icons.
+
+4. Text-Integration: Nimm den persönlichen Text ("Hinter HECARO Digital stehe ich persönlich... Ich begleite Ihr Projekt von Anfang bis Ende") und platziere ihn als einleitenden Textabschnitt direkt UNTER die 4 Werte-Karten von "Warum HECARO Digital".
+
+5. Portfolio-Cleanup: Lösche im Portfolio den Untertitel "Einblicke in aktuelle Arbeiten – Case Studies folgen.". Die Überschrift "Ausgewählte Projekte" reicht völlig aus.
+
+6. Prozess-Schärfung (Premium-Stil): Ändere den Text bei Prozess-Schritt 03 (Design & Entwicklung) zu: "Die Realisierung Ihrer digitalen Präsenz ohne Kompromisse – wo exklusive Ästhetik auf technologische Meisterschaft trifft."
+
+7. FAQ-Check: Überprüfe noch einmal, ob wirklich alle Antworten in der "Ich-Form" verfasst sind (z.B. "Ich erstelle maßgeschneiderte Angebote" statt "Wir erstellen...").
+
+Ziel: Eine extrem saubere, exklusive Seite mit perfekter Typografie und einer klaren, persönlichen Linie auf höchstem Niveau.

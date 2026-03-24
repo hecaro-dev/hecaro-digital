@@ -28,7 +28,7 @@ export default function ValuesSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {t.values.items.map((item, i) => {
             const Icon = ICONS[i];
             return (
@@ -48,6 +48,17 @@ export default function ValuesSection() {
             );
           })}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.45 }}
+          className="max-w-3xl mx-auto text-center"
+        >
+          <p className="text-slate-300 text-lg md:text-xl leading-relaxed">
+            {t.quality.p1}
+          </p>
+        </motion.div>
       </div>
     </section>
   );

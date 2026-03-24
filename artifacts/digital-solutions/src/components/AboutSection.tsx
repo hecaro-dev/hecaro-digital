@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "../hooks/useInView";
 import { useI18n } from "../i18n";
-import { CheckCircle2 } from "lucide-react";
 
 export default function AboutSection() {
   const { t } = useI18n();
@@ -48,7 +47,7 @@ export default function AboutSection() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="space-y-6"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {t.quality.stats.map((stat, i) => (
                 <div key={i} className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-2xl p-6 flex flex-col items-center text-center justify-center backdrop-blur-md">
                   <div className="text-3xl font-bold text-emerald-400 mb-2">{stat.value}</div>
@@ -56,22 +55,8 @@ export default function AboutSection() {
                 </div>
               ))}
             </div>
-
-            <div className="bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] rounded-3xl p-8 backdrop-blur-md">
-              <h3 className="text-xl font-bold text-white mb-6">{t.quality.foundationTitle}</h3>
-              <ul className="space-y-5">
-                {t.values.items.map((val, i) => (
-                  <li key={i} className="flex items-start gap-4">
-                    <CheckCircle2 className="w-6 h-6 text-emerald-400 shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="text-white font-semibold mb-1">{val.title}</h4>
-                      <p className="text-slate-400 text-sm">{val.description}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </motion.div>
+
         </div>
       </div>
     </section>

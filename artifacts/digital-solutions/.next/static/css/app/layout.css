@@ -1036,6 +1036,9 @@
   .mr-\[-81px\] {
     margin-right: -81px;
   }
+  .mr-\[0px\] {
+    margin-right: 0px;
+  }
   .mr-\[40px\] {
     margin-right: 40px;
   }
@@ -1075,8 +1078,14 @@
   .mb-20 {
     margin-bottom: calc(var(--spacing) * 20);
   }
+  .mb-\[0px\] {
+    margin-bottom: 0px;
+  }
   .mb-\[100px\] {
     margin-bottom: 100px;
+  }
+  .ml-\[0px\] {
+    margin-left: 0px;
   }
   .ml-\[300px\] {
     margin-left: 300px;
@@ -1836,6 +1845,9 @@
   }
   .pb-20 {
     padding-bottom: calc(var(--spacing) * 20);
+  }
+  .pb-\[0px\] {
+    padding-bottom: 0px;
   }
   .pb-\[100px\] {
     padding-bottom: 100px;

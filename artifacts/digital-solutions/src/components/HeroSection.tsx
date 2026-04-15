@@ -191,9 +191,9 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             <img
               src="/hecaro-h-logo.png"
               alt="HECARO Digital"
-              className="relative"
+              className="relative md:scale-125 md:-translate-x-10"
               style={{
-                maxWidth: 300,
+                maxWidth: 500,
                 width: "100%",
                 height: "auto",
                 zIndex: 1,

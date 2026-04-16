@@ -295,65 +295,132 @@ function QualifierUI() {
                 initial={{ opacity: 0, scale: 0.97 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
-                className="space-y-5"
+                className="space-y-4"
               >
-                {/* Grade badge */}
-                <div className={`rounded-3xl border p-8 sm:p-10 ${
-                  result.grade === "A"
-                    ? "bg-emerald-950/50 border-emerald-500/30"
-                    : "bg-amber-950/30 border-amber-500/30"
-                }`}>
-                  <div className="flex items-start gap-5 mb-6">
-                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-black shrink-0 ${
-                      result.grade === "A"
-                        ? "bg-emerald-500/20 text-emerald-400"
-                        : "bg-amber-500/20 text-amber-400"
-                    }`}>
-                      {result.grade}
-                    </div>
-                    <div>
-                      <p className={`text-xs font-bold uppercase tracking-widest mb-1 ${result.grade === "A" ? "text-emerald-400" : "text-amber-400"}`}>
-                        {q.resultTitle}
-                      </p>
-                      <h2 className="text-xl font-bold text-white">
-                        {result.grade === "A" ? q.gradeA : q.gradeB}
-                      </h2>
-                      <p className="text-slate-400 text-sm mt-1">
-                        {result.grade === "A" ? q.gradeADesc : q.gradeBDesc}
-                      </p>
-                    </div>
-                  </div>
+                {result.grade === "A" ? (
+                  /* ── GRADE A: Mini-Audit ── */
+                  <>
+                    <div className="rounded-3xl border border-emerald-500/30 bg-emerald-950/50 p-8 sm:p-10 space-y-7">
+                      {/* Header */}
+                      <div className="flex items-start gap-5">
+                        <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl font-black shrink-0 bg-emerald-500/20 text-emerald-400">
+                          A
+                        </div>
+                        <div>
+                          <p className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-1">
+                            {q.resultTitle}
+                          </p>
+                          <h2 className="text-lg sm:text-xl font-bold text-white leading-snug">
+                            {q.gradeAHeadline}
+                          </h2>
+                        </div>
+                      </div>
 
-                  <div className="space-y-4">
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">{q.summary}</p>
-                      <p className="text-slate-300 text-sm leading-relaxed">{result.summary}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">{q.recommendation}</p>
-                      <p className="text-slate-300 text-sm leading-relaxed">{result.recommendation}</p>
-                    </div>
-                  </div>
-                </div>
+                      {/* 3 Bullet Points */}
+                      <div className="space-y-3">
+                        {[
+                          { label: q.gradeABulletEngpass, value: bottleneck.length > 65 ? bottleneck.slice(0, 65) + "…" : bottleneck },
+                          { label: null, value: q.gradeABulletImpact },
+                          { label: null, value: q.gradeABulletBudget },
+                        ].map((item, i) => (
+                          <div key={i} className="flex items-start gap-3">
+                            <CheckCircle2 className="w-5 h-5 text-emerald-400 mt-0.5 shrink-0" />
+                            <p className="text-slate-200 text-sm leading-relaxed">
+                              {item.label ? (
+                                <><span className="text-slate-400 font-medium">{item.label} </span>{item.value}</>
+                              ) : item.value}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
 
-                {/* CTAs */}
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Link
-                    href={`/${lang}#contact`}
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm uppercase tracking-widest transition-all"
-                  >
-                    {q.cta} <ArrowRight className="w-4 h-4" />
-                  </Link>
-                  <Link
-                    href={`/${lang}`}
-                    className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-white/15 hover:border-white/30 text-slate-300 hover:text-white text-sm font-semibold transition-all"
-                  >
-                    <Home className="w-4 h-4" /> {q.backHome}
-                  </Link>
-                </div>
+                      {/* Divider */}
+                      <div className="border-t border-emerald-500/15" />
+
+                      {/* Why ideal fit */}
+                      <div>
+                        <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
+                          {q.gradeAFitTitle}
+                        </p>
+                        <p className="text-slate-300 text-sm leading-relaxed">{result.recommendation}</p>
+                      </div>
+                    </div>
+
+                    {/* CTAs */}
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <Link
+                        href={`/${lang}#contact`}
+                        className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm uppercase tracking-widest transition-all"
+                      >
+                        {q.ctaA} <ArrowRight className="w-4 h-4" />
+                      </Link>
+                      <Link
+                        href={`/${lang}`}
+                        className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-white/15 hover:border-white/30 text-slate-300 hover:text-white text-sm font-semibold transition-all"
+                      >
+                        <Home className="w-4 h-4" /> {q.backHome}
+                      </Link>
+                    </div>
+                  </>
+                ) : (
+                  /* ── GRADE B: Ehrliche Einschätzung ── */
+                  <>
+                    <div className="rounded-3xl border border-amber-500/25 bg-amber-950/20 p-8 sm:p-10 space-y-7">
+                      {/* Header */}
+                      <div className="flex items-start gap-5">
+                        <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl font-black shrink-0 bg-amber-500/15 text-amber-400">
+                          B
+                        </div>
+                        <div>
+                          <p className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-1">
+                            {q.resultTitle}
+                          </p>
+                          <h2 className="text-lg sm:text-xl font-bold text-white leading-snug">
+                            {q.gradeBHeadline}
+                          </h2>
+                        </div>
+                      </div>
+
+                      {/* AI Summary */}
+                      <div>
+                        <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
+                          {q.summary}
+                        </p>
+                        <p className="text-slate-300 text-sm leading-relaxed">{result.summary}</p>
+                      </div>
+
+                      {/* Divider */}
+                      <div className="border-t border-amber-500/15" />
+
+                      {/* Honest explanation */}
+                      <div>
+                        <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
+                          {q.gradeBExplanationTitle}
+                        </p>
+                        <p className="text-slate-300 text-sm leading-relaxed">{q.gradeBExplanation}</p>
+                      </div>
+                    </div>
+
+                    {/* CTAs */}
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <Link
+                        href={`/${lang}#contact`}
+                        className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-amber-500/30 hover:border-amber-500/50 hover:bg-amber-500/5 text-amber-300 hover:text-amber-200 font-semibold text-sm transition-all"
+                      >
+                        {q.ctaB}
+                      </Link>
+                      <Link
+                        href={`/${lang}`}
+                        className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-white/15 hover:border-white/30 text-slate-300 hover:text-white text-sm font-semibold transition-all"
+                      >
+                        <Home className="w-4 h-4" /> {q.backHome}
+                      </Link>
+                    </div>
+                  </>
+                )}
 
                 {/* Demo note */}
-                <p className="text-center text-slate-600 text-xs mt-4 leading-relaxed">
+                <p className="text-center text-slate-600 text-xs pt-2 leading-relaxed">
                   ✦ {q.demoNote}
                 </p>
               </motion.div>

@@ -2,8 +2,9 @@
 
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { useI18n } from "../i18n";
+import Link from "next/link";
 
 interface HeroSectionProps {
   onNav: (section: string) => void;
@@ -20,7 +21,7 @@ function anim(delay: number) {
 }
 
 export default function HeroSection({ onNav }: HeroSectionProps) {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
 
   // Split headline by newline, then isolate the last word for the neon highlight
   const headlineParts = t.hero.headline.split("\n");
@@ -156,6 +157,15 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
               >
                 {t.hero.cta2}
               </button>
+
+              {/* KI-Demo */}
+              <Link
+                href={`/${lang}/demo-qualifier`}
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-6 rounded-full border border-emerald-500/30 hover:border-emerald-500/60 hover:bg-emerald-500/5 text-emerald-400 hover:text-emerald-300 font-bold text-xs tracking-widest uppercase transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50"
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                {t.qualifier.heroCta}
+              </Link>
             </motion.div>
           </div>
 

@@ -2,13 +2,14 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "../hooks/useInView";
-import { Zap, Search, Monitor, CheckCircle2 } from "lucide-react";
+import { Zap, Search, Monitor, CheckCircle2, Sparkles } from "lucide-react";
 import { useI18n } from "../i18n";
+import Link from "next/link";
 
 const ICONS = [Zap, Search, Monitor];
 
 export default function ServicesSection() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const { ref, inView } = useInView();
 
   return (
@@ -83,6 +84,31 @@ export default function ServicesSection() {
             );
           })}
         </div>
+
+        {/* KI-Demo Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 p-6 sm:p-8 rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.04]"
+        >
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/25 flex items-center justify-center shrink-0">
+              <Sparkles className="w-5 h-5 text-emerald-400" />
+            </div>
+            <div>
+              <p className="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-1">KI-Automatisierung</p>
+              <p className="text-slate-300 text-sm leading-relaxed">Erleben Sie live, wie KI Ihre Lead-Qualifizierung vollständig automatisiert – und nur noch geeignete Anfragen durchlässt.</p>
+            </div>
+          </div>
+          <Link
+            href={`/${lang}/demo-qualifier`}
+            className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full border border-emerald-500/40 hover:border-emerald-500/70 hover:bg-emerald-500/10 text-emerald-400 hover:text-emerald-300 text-xs font-bold uppercase tracking-widest transition-all duration-200 whitespace-nowrap"
+          >
+            <Sparkles className="w-3.5 h-3.5" />
+            {t.qualifier.servicesLink}
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

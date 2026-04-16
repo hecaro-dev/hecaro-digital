@@ -349,7 +349,7 @@ function QualifierUI() {
                     {/* CTAs */}
                     <div className="flex flex-col sm:flex-row gap-3">
                       <Link
-                        href={`/${lang}#contact`}
+                        href={`/${lang}/project-check`}
                         className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm uppercase tracking-widest transition-all"
                       >
                         {q.ctaA} <ArrowRight className="w-4 h-4" />

@@ -263,6 +263,8 @@ export const de = {
     descLabel: "Projektbeschreibung",
     descPlaceholder: "Was ist dein aktuelles Setup? Wo hängst du? Was soll sich konkret verbessern? Je mehr Details, desto besser.",
     cta: "Analyse anfordern",
+    submitting: "Wird gesendet ...",
+    submitError: "Fehler beim Senden. Bitte versuche es erneut.",
     successHeadline: "Danke – ich melde mich bald",
     successText: "Ich analysiere dein Projekt persönlich und schreibe dir innerhalb von 1–2 Werktagen mit konkreten Vorschlägen zurück.",
     backHome: "Zurück zur Startseite",

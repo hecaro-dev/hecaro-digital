@@ -264,6 +264,8 @@ export const es: Translations = {
     descLabel: "Descripción del proyecto",
     descPlaceholder: "¿Cuál es tu configuración actual? ¿Dónde estás atascado? ¿Qué necesita mejorar concretamente? Cuanto más detalle, mejor.",
     cta: "Solicitar análisis",
+    submitting: "Enviando ...",
+    submitError: "Error al enviar. Por favor inténtalo de nuevo.",
     successHeadline: "Gracias – me pondré en contacto pronto",
     successText: "Analizaré tu proyecto personalmente y te responderé en 1–2 días hábiles con propuestas concretas.",
     backHome: "Volver al inicio",

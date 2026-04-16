@@ -264,6 +264,8 @@ export const en: Translations = {
     descLabel: "Project description",
     descPlaceholder: "What is your current setup? Where are you stuck? What specifically needs to improve? The more detail, the better.",
     cta: "Request analysis",
+    submitting: "Sending ...",
+    submitError: "Send failed. Please try again.",
     successHeadline: "Thank you – I'll be in touch soon",
     successText: "I'll personally analyse your project and reply within 1–2 business days with concrete suggestions.",
     backHome: "Back to Home",

@@ -16,16 +16,35 @@ function ProjectCheckUI() {
   const [website, setWebsite] = useState("");
   const [desc, setDesc] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [formError, setFormError] = useState("");
   const [touched, setTouched] = useState({ name: false, email: false, desc: false });
 
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const canSubmit = name.trim().length > 1 && emailValid && desc.trim().length > 10;
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setTouched({ name: true, email: true, desc: true });
     if (!canSubmit) return;
-    setSubmitted(true);
+
+    setSubmitting(true);
+    setFormError("");
+
+    try {
+      const res = await fetch("/api/project-check", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, website, description: desc }),
+      });
+
+      if (!res.ok) throw new Error("send_failed");
+      setSubmitted(true);
+    } catch {
+      setFormError(p.submitError);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -152,14 +171,29 @@ function ProjectCheckUI() {
                     />
                   </div>
 
+                  {/* Error */}
+                  {formError && (
+                    <div className="flex items-center gap-2 text-red-400 text-sm bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3">
+                      <span className="shrink-0">⚠</span>
+                      {formError}
+                    </div>
+                  )}
+
                   {/* Submit */}
                   <div className="flex justify-end pt-2">
                     <button
                       type="submit"
-                      disabled={!canSubmit}
-                      className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-30 disabled:cursor-not-allowed text-black font-bold text-sm uppercase tracking-widest transition-all"
+                      disabled={!canSubmit || submitting}
+                      className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-40 disabled:cursor-not-allowed text-black font-bold text-sm uppercase tracking-widest transition-all"
                     >
-                      {p.cta} <ArrowRight className="w-4 h-4" />
+                      {submitting ? (
+                        <>
+                          <span className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+                          {p.submitting}
+                        </>
+                      ) : (
+                        <>{p.cta} <ArrowRight className="w-4 h-4" /></>
+                      )}
                     </button>
                   </div>
                 </form>

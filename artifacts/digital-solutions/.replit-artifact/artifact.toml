@@ -1,5 +1,5 @@
 kind = "web"
-previewPath = "/"
+previewPath = "/de/preview"
 title = "Digital Solutions"
 version = "1.0.0"
 id = "artifacts/digital-solutions"

@@ -1,14 +1,15 @@
 "use client";
 
+import Link from "next/link";
 import { useI18n } from "../i18n";
 
 interface FooterProps {
-  onLegal: (type: "imprint" | "privacy") => void;
+  onLegal?: (type: "imprint" | "privacy") => void;
   onNav?: (section: string) => void;
 }
 
-export default function Footer({ onLegal, onNav = () => {} }: FooterProps) {
-  const { t } = useI18n();
+export default function Footer({ onNav = () => {} }: FooterProps) {
+  const { t, lang } = useI18n();
 
   return (
     <footer className="bg-black pt-20 pb-10 px-4 border-t border-white/[0.06]" role="contentinfo">
@@ -45,8 +46,8 @@ export default function Footer({ onLegal, onNav = () => {} }: FooterProps) {
             <h4 className="text-white font-semibold mb-6">Legal & FAQ</h4>
             <ul className="space-y-4 text-sm text-slate-400">
               <li><button onClick={() => onNav("faq")} className="hover:text-white transition-colors">{t.footer.links.faq}</button></li>
-              <li><button onClick={() => onLegal("imprint")} className="hover:text-white transition-colors">{t.footer.links.imprint}</button></li>
-              <li><button onClick={() => onLegal("privacy")} className="hover:text-white transition-colors">{t.footer.links.privacy}</button></li>
+              <li><Link href={`/${lang}/impressum`} className="hover:text-white transition-colors">{t.footer.links.imprint}</Link></li>
+              <li><Link href={`/${lang}/datenschutz`} className="hover:text-white transition-colors">{t.footer.links.privacy}</Link></li>
             </ul>
           </div>
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { I18nProvider, LANGS, type Lang } from "../i18n";
 import CustomCursor from "./CustomCursor";
 import Header from "./Header";
@@ -15,9 +15,6 @@ import TechStackSection from "./TechStackSection";
 import FAQSection from "./FAQSection";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
-import LegalModal from "./LegalSection";
-
-type LegalType = "imprint" | "privacy" | null;
 
 function scrollTo(id: string) {
   if (id === "top") {
@@ -32,13 +29,7 @@ function scrollTo(id: string) {
 }
 
 function HomePageInner() {
-  const [legalOpen, setLegalOpen] = useState<LegalType>(null);
   const handleNav = useCallback((section: string) => scrollTo(section), []);
-  const handleLegal = useCallback(
-    (type: "imprint" | "privacy") => setLegalOpen(type),
-    []
-  );
-  const closeLegal = useCallback(() => setLegalOpen(null), []);
 
   return (
     <>
@@ -62,8 +53,7 @@ function HomePageInner() {
         <FAQSection />
         <ContactSection />
       </main>
-      <Footer onLegal={handleLegal} onNav={handleNav} />
-      <LegalModal type={legalOpen} onClose={closeLegal} />
+      <Footer onNav={handleNav} />
     </>
   );
 }

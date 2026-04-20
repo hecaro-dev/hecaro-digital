@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import LegalPage from "../../../components/LegalPage";
+import { HomePage } from "../../../components/HomePage";
 
 const LANGS = ["de", "en", "es"];
 
@@ -7,7 +7,7 @@ export async function generateStaticParams() {
   return LANGS.map((lang) => ({ lang }));
 }
 
-export default async function Page({
+export default async function LangPage({
   params,
 }: {
   params: Promise<{ lang: string }>;
@@ -18,5 +18,5 @@ export default async function Page({
     notFound();
   }
 
-  return <LegalPage lang={lang} kind="privacy" />;
+  return <HomePage lang={lang} />;
 }

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import ProjectCheckPage from "../../../components/ProjectCheckPage";
+import ProjectCheckPage from "../../../../components/ProjectCheckPage";
 
 const LANGS = ["de", "en", "es"];
 

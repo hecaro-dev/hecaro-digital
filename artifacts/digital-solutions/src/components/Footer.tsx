@@ -46,8 +46,8 @@ export default function Footer({ onNav = () => {} }: FooterProps) {
             <h4 className="text-white font-semibold mb-6">Legal & FAQ</h4>
             <ul className="space-y-4 text-sm text-slate-400">
               <li><button onClick={() => onNav("faq")} className="hover:text-white transition-colors">{t.footer.links.faq}</button></li>
-              <li><Link href={`/${lang}/impressum`} className="hover:text-white transition-colors">{t.footer.links.imprint}</Link></li>
-              <li><Link href={`/${lang}/datenschutz`} className="hover:text-white transition-colors">{t.footer.links.privacy}</Link></li>
+              <li><Link href={`/${lang}/preview/impressum`} className="hover:text-white transition-colors">{t.footer.links.imprint}</Link></li>
+              <li><Link href={`/${lang}/preview/datenschutz`} className="hover:text-white transition-colors">{t.footer.links.privacy}</Link></li>
             </ul>
           </div>
         </div>

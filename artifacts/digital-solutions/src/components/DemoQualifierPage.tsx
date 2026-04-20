@@ -64,7 +64,7 @@ function QualifierUI() {
     >
       {/* Header */}
       <header className="px-6 py-5 flex items-center justify-between max-w-4xl mx-auto w-full">
-        <Link href={`/${lang}`} className="flex items-center gap-2.5 text-white hover:text-emerald-400 transition-colors">
+        <Link href={`/${lang}/preview`} className="flex items-center gap-2.5 text-white hover:text-emerald-400 transition-colors">
           <img
             src="/hecaro-h-logo.png"
             alt="HECARO Digital"
@@ -349,13 +349,13 @@ function QualifierUI() {
                     {/* CTAs */}
                     <div className="flex flex-col sm:flex-row gap-3">
                       <Link
-                        href={`/${lang}/project-check`}
+                        href={`/${lang}/preview/project-check`}
                         className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm uppercase tracking-widest transition-all"
                       >
                         {q.ctaA} <ArrowRight className="w-4 h-4" />
                       </Link>
                       <Link
-                        href={`/${lang}`}
+                        href={`/${lang}/preview`}
                         className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-white/15 hover:border-white/30 text-slate-300 hover:text-white text-sm font-semibold transition-all"
                       >
                         <Home className="w-4 h-4" /> {q.backHome}
@@ -410,7 +410,7 @@ function QualifierUI() {
                         {q.ctaB}
                       </Link>
                       <Link
-                        href={`/${lang}`}
+                        href={`/${lang}/preview`}
                         className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-white/15 hover:border-white/30 text-slate-300 hover:text-white text-sm font-semibold transition-all"
                       >
                         <Home className="w-4 h-4" /> {q.backHome}

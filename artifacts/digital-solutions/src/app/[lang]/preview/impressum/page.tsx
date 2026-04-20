@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import LegalPage from "../../../components/LegalPage";
+import LegalPage from "../../../../components/LegalPage";
 
 const LANGS = ["de", "en", "es"];
 

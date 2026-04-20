@@ -102,7 +102,7 @@ export default function ServicesSection() {
             </div>
           </div>
           <Link
-            href={`/${lang}/demo-qualifier`}
+            href={`/${lang}/preview/demo-qualifier`}
             className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full border border-emerald-500/40 hover:border-emerald-500/70 hover:bg-emerald-500/10 text-emerald-400 hover:text-emerald-300 text-xs font-bold uppercase tracking-widest transition-all duration-200 whitespace-nowrap"
           >
             <Sparkles className="w-3.5 h-3.5" />

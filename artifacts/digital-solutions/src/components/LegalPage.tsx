@@ -24,7 +24,7 @@ function LegalPageInner({ kind }: { kind: LegalKind }) {
       {/* Header */}
       <header className="px-6 py-5 flex items-center justify-between max-w-4xl mx-auto w-full">
         <Link
-          href={`/${lang}`}
+          href={`/${lang}/preview`}
           className="flex items-center gap-2.5 text-white hover:text-emerald-400 transition-colors"
         >
           <img
@@ -58,7 +58,7 @@ function LegalPageInner({ kind }: { kind: LegalKind }) {
 
           <div className="mt-10">
             <Link
-              href={`/${lang}`}
+              href={`/${lang}/preview`}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/15 hover:border-white/30 text-slate-300 hover:text-white text-sm font-semibold transition-all"
             >
               <ArrowLeft className="w-4 h-4" />

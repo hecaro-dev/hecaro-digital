@@ -160,7 +160,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
 
               {/* KI-Demo */}
               <Link
-                href={`/${lang}/demo-qualifier`}
+                href={`/${lang}/preview/demo-qualifier`}
                 className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-6 rounded-full border border-emerald-500/30 hover:border-emerald-500/60 hover:bg-emerald-500/5 text-emerald-400 hover:text-emerald-300 font-bold text-xs tracking-widest uppercase transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50"
               >
                 <Sparkles className="w-3.5 h-3.5" />

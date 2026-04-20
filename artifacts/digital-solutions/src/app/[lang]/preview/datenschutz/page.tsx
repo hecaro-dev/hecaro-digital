@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import DemoQualifierPage from "../../../components/DemoQualifierPage";
+import LegalPage from "../../../../components/LegalPage";
 
 const LANGS = ["de", "en", "es"];
 
@@ -18,5 +18,5 @@ export default async function Page({
     notFound();
   }
 
-  return <DemoQualifierPage lang={lang} />;
+  return <LegalPage lang={lang} kind="privacy" />;
 }

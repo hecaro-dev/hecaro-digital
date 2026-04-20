@@ -440,3 +440,4 @@ export default function DemoQualifierPage({ lang }: { lang: string }) {
     </I18nProvider>
   );
 }
+ 

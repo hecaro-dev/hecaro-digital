@@ -3,6 +3,10 @@
 import { motion } from "framer-motion";
 import { useInView } from "../hooks/useInView";
 import { useI18n } from "../i18n";
+import Link from "next/link";
+import { ArrowRight, AlertCircle } from "lucide-react";
+
+const DEMO_PATHS = ["demo-qualifier", "project-check"];
 
 const PLACEHOLDERS = [
   {
@@ -45,7 +49,7 @@ const PLACEHOLDERS = [
 ];
 
 export default function PortfolioSection() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const { ref, inView } = useInView();
 
   return (
@@ -60,9 +64,10 @@ export default function PortfolioSection() {
           <span className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-3 inline-block">
             {t.portfolio.label}
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             {t.portfolio.headline}
           </h2>
+          <p className="text-slate-400 text-lg max-w-xl">{t.portfolio.sub}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
@@ -79,11 +84,29 @@ export default function PortfolioSection() {
                 {PLACEHOLDERS[i].icon}
               </div>
               <div className="p-8 flex-1 flex flex-col">
-                <span className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-slate-300 w-max mb-5">
+                <span className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-slate-300 w-max mb-4">
                   {item.tag}
                 </span>
+
+                {/* Problem label */}
+                <div className="flex items-center gap-2 mb-4">
+                  <AlertCircle className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <span className="text-xs text-amber-400/80 font-medium">{item.problem}</span>
+                </div>
+
                 <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
+                <p className="text-slate-400 text-sm leading-relaxed flex-1">{item.description}</p>
+
+                {/* CTA */}
+                <div className="mt-6 pt-6 border-t border-white/[0.06]">
+                  <Link
+                    href={`/${lang}/preview/${DEMO_PATHS[i]}`}
+                    className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 text-sm font-semibold transition-colors group/link"
+                  >
+                    {item.ctaLabel}
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
               </div>
             </motion.div>
           ))}

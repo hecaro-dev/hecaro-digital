@@ -1,14 +1,13 @@
 /* =============================================
    GERMAN TRANSLATIONS (Default Language)
-   Texte hier anpassen, um die Website zu aktualisieren.
    ============================================= */
 export const de = {
   lang: "de",
   langName: "Deutsch",
   meta: {
-    title: "HECARO Digital – High-Performance Landing Pages & SEO",
+    title: "HECARO Digital – Automatisierte Lead-Qualifizierung für B2B",
     description:
-      "Ich baue Landing Pages, die verkaufen – mit Ladezeiten unter einer Sekunde, internationalem SEO und klarer Nutzerführung. Für Unternehmen mit Anspruch.",
+      "Weniger unqualifizierte Anfragen, mehr produktive Gespräche. Wir bauen KI-Qualifier und Conversion Landing Pages für B2B-Berater, Dienstleister und kleine Agenturen.",
   },
   nav: {
     services: "Leistungen",
@@ -16,65 +15,67 @@ export const de = {
     contact: "Kontakt",
     imprint: "Impressum",
     privacy: "Datenschutz",
-    portfolio: "Portfolio",
+    portfolio: "Demos",
     faq: "FAQ",
   },
   hero: {
-    badge: "Verfügbar weltweit · DE · EN · ES",
-    headline: "Ihre digitale Visitenkarte,\ndie verkauft.",
-    sub: "Ich baue Landing Pages, die nicht nur durch Design bestechen, sondern durch Ladezeiten unter einer Sekunde und eine klare Nutzerführung, die Ihre Conversion-Rate messbar steigert.",
-    cta: "Projekt starten",
+    badge: "B2B · DE · EN · ES",
+    headline: "Keine unqualifizierten\nAnfragen mehr.",
+    sub: "Wir befreien B2B-Experten von Zeitverschwendung durch automatisierte Lead-Qualifizierung und High-Performance Landingpages – nur noch die richtigen Interessenten kommen durch.",
+    cta: "Projekt anfragen",
     cta2: "Leistungen ansehen",
   },
   marquee: [
-    "WEBDESIGN",
-    "SEO",
+    "LEAD QUALIFIER",
+    "KI-AUTOMATION",
     "LANDING PAGES",
-    "PERFORMANCE",
+    "B2B-STRATEGIE",
     "NEXT.JS",
-    "TYPESCRIPT",
-    "STRATEGIE",
+    "CONVERSION",
+    "LEAD ROUTING",
     "INTERNATIONAL",
   ],
   services: {
     label: "Leistungen",
-    headline: "Was ich für Sie leiste",
-    sub: "Jede Lösung ist individuell konzipiert – für maximale Wirkung.",
+    headline: "Drei Bausteine, ein Ziel",
+    sub: "Weniger Zeitverlust durch ungeeignete Anfragen – mehr Gespräche, die wirklich zählen.",
+    aiTitle: "KI-Demo live testen",
+    aiDesc: "Erleben Sie selbst, wie das System Anfragen in 4 Schritten bewertet – und warum das Ihren Vertrieb transformiert.",
     items: [
       {
-        tag: "Strategie",
-        title: "Strategie & Analyse",
+        tag: "Qualify First",
+        title: "Lead Qualifier & Project Check",
         description:
-          "Jedes erfolgreiche Projekt beginnt mit einem klaren Plan. Ich analysiere Ihre Ausgangslage, Zielgruppe und Wettbewerb – und entwickle eine digitale Strategie, die messbare Ergebnisse liefert.",
+          "Bevor Sie ein Erstgespräch führen, hat das System bereits gefiltert. Ein intelligentes Vorqualifizierungs-System bewertet Anfragen automatisch per KI – rund um die Uhr, professionell, ohne Ihren Aufwand. Nur wer Budget, Bedarf und Entscheidungskompetenz mitbringt, kommt durch.",
         bullets: [
-          "Wettbewerbs- & Marktanalyse",
-          "Definition von KPIs und Conversion-Zielen",
-          "User Journey Mapping",
-          "Technische Anforderungsanalyse",
+          "Automatische Lead-Bewertung per KI",
+          "Mehrstufiges Qualifizierungs-Formular",
+          "Direktweiterleitung qualifizierter Anfragen",
+          "Bis zu 80 % weniger ungeplante Erstgespräche",
         ],
       },
       {
-        tag: "Speed & Conversion",
-        title: "High-Performance Landing Pages",
+        tag: "Conversion",
+        title: "Conversion Landing Page",
         description:
-          "Ich baue Landing Pages, die nicht nur beeindrucken – sie konvertieren. Mit Ladezeiten unter einer Sekunde und conversion-orientiertem Design holen Sie das Maximum aus Ihrem Traffic heraus.",
+          "Eine Landing Page, die für Ihre Zielgruppe gebaut ist – nicht für den Designer. Mit psychologisch optimierter Copy, klaren CTAs und Ladezeiten unter einer Sekunde.",
         bullets: [
-          "Server-Side Rendering & Static Generation",
+          "Conversion-orientiertes Copywriting",
           "Core Web Vitals optimiert (LCP < 1 Sek.)",
-          "Mobile-first, vollständig responsiv",
-          "A/B-Testing ready",
+          "Mobile-first, A/B-Testing ready",
+          "Hreflang & SEO vollständig integriert",
         ],
       },
       {
-        tag: "International",
-        title: "Internationales SEO",
+        tag: "AI Automation",
+        title: "AI Automation Setup",
         description:
-          "Nachhaltige Sichtbarkeit bei Google – in Deutschland, Spanien und weltweit. Technisches SEO, das langfristig wirkt und Ihre Zielgruppe in jedem Markt erreicht.",
+          "Follow-up, Lead Routing und automatisierte Übergaben – Ihr Vertriebsprozess läuft auch ohne Sie. Wir verbinden KI mit Ihrem bestehenden Workflow, damit keine Anfrage verloren geht.",
         bullets: [
-          "Technisches SEO-Audit & On-Page-Optimierung",
-          "Internationale Hreflang-Implementierung",
-          "JSON-LD Structured Data & Rich Snippets",
-          "Google Search Console & Analytics-Integration",
+          "Automatisiertes E-Mail-Follow-up",
+          "Intelligentes Lead Routing",
+          "CRM-Integration & Benachrichtigungen",
+          "Sofort integrierbar in bestehende Websites",
         ],
       },
     ],
@@ -102,22 +103,28 @@ export const de = {
     ],
   },
   portfolio: {
-    label: "Portfolio",
-    headline: "Ausgewählte Projekte",
-    sub: "Einblicke in aktuelle Arbeiten – Case Studies folgen.",
+    label: "Demos",
+    headline: "System-Beispiele live erleben",
+    sub: "Keine Mockups – echte, funktionsfähige Systeme, die Sie direkt testen können.",
     items: [
       {
-        tag: "Landing Page",
-        title: "E-Commerce Conversion-Seite",
-        description: "Next.js Landing Page mit conversion-orientiertem Design und optimierter Ladezeit unter einer Sekunde.",
+        tag: "Lead Qualifier",
+        title: "KI Lead-Qualifier Demo",
+        description:
+          "Das Problem: Zu viele Erstgespräche mit ungeeigneten Interessenten. Diese Demo zeigt, wie ein KI-System Anfragen automatisch bewertet und qualifiziert – bevor Sie Ihre Zeit investieren.",
+        problem: "Zu viele unqualifizierte Erstgespräche",
+        ctaLabel: "Demo starten →",
       },
       {
-        tag: "SEO-Projekt",
-        title: "Internationales SEO-Rollout",
-        description: "Dreisprachige SEO-Strategie mit Hreflang für DE, EN, ES – nachhaltige Sichtbarkeit in drei Märkten.",
+        tag: "Project Check",
+        title: "Project Check System",
+        description:
+          "Das Problem: Interessenten wissen nicht, wie sie ein Projekt beschreiben sollen. Dieses System nimmt die Anfrage strukturiert auf und leitet relevante Informationen direkt weiter.",
+        problem: "Unstrukturierte Projektanfragen",
+        ctaLabel: "System testen →",
       },
     ],
-    cta: "Alle Projekte ansehen",
+    cta: "Alle Demos ansehen",
   },
   quality: {
     label: "Anspruch & Verantwortung",
@@ -134,7 +141,7 @@ export const de = {
   techstack: {
     label: "Tech Stack",
     headline: "Technologische Exzellenz",
-    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Performance Hosting"],
+    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "OpenAI", "Nodemailer"],
   },
   process: {
     label: "Prozess",
@@ -168,26 +175,31 @@ export const de = {
     headline: "Häufige Fragen",
     items: [
       {
-        question: "Wie werden Projekte kalkuliert?",
+        question: "Warum brauche ich eine Qualifizierung vor dem Gespräch?",
         answer:
-          "Jedes Projekt ist individuell – daher erstelle ich maßgeschneiderte Angebote auf Basis Ihrer Anforderungen. Kontaktieren Sie mich für ein kostenloses Erstgespräch und ein transparentes Angebot ohne versteckte Kosten.",
+          "Weil Erstgespräche mit ungeeigneten Interessenten Ihre wertvollste Ressource kosten: Zeit. Ein Qualifizierungs-System filtert automatisch heraus, wer Budget, Bedarf und Entscheidungskompetenz hat – damit Sie nur noch mit Menschen sprechen, bei denen sich ein Gespräch wirklich lohnt.",
       },
       {
-        question: "Wie läuft ein Projekt typisch ab?",
+        question: "Wie viel Zeit spare ich durch die Automatisierung?",
         answer:
-          "Ein Projekt läuft in vier klaren Phasen ab: Erstgespräch & Briefing → Konzept & Strategie → Design & Entwicklung → Launch & Übergabe. Nach einem kostenlosen Erstgespräch erhalten Sie ein konkretes Angebot. Die durchschnittliche Projektdauer beträgt 1–3 Wochen je nach Umfang.",
+          "Unsere Kunden berichten von 60–80 % weniger ungeplanten Erstgesprächen. Statt 10 Gesprächen pro Woche sprechen Sie nur noch mit 2–3 wirklich qualifizierten Interessenten. Der Rest wird automatisch informiert, geleitet oder höflich weiterverwiesen.",
       },
       {
-        question: "Bieten Sie auch SEO für internationale Märkte an?",
+        question: "Läuft die gesamte Kommunikation nur schriftlich ab?",
         answer:
-          "Ja, internationales SEO ist einer meiner Schwerpunkte. Ich implementiere korrekte Hreflang-Tags für DE, EN und ES, erstelle lokalisierte Metadaten und strukturierte Daten (JSON-LD) sowie mehrsprachige Sitemaps – für maximale Sichtbarkeit in allen Zielmärkten.",
+          "Der Erstkontakt ja – und das ist Absicht. Das System erfasst alle relevanten Informationen strukturiert, bevor ein persönliches Gespräch stattfindet. Dadurch ist jedes Gespräch, das Sie führen, vorbereitet und produktiv. Kein Zeitverlust durch Nachfragen.",
+      },
+      {
+        question: "Wie integriert sich die KI in meine bestehende Website?",
+        answer:
+          "Reibungslos. Unser System wird als eigenständige Seite oder eingebettetes Widget implementiert – ohne Ihren bestehenden Tech-Stack zu verändern. Keine Plugins, kein komplexes Setup. Integration in 24–48 Stunden.",
       },
     ],
   },
   contact: {
     label: "Kontakt",
-    headline: "Projekt starten",
-    cta: "Ihre Vision verdient eine digitale Entsprechung.",
+    headline: "Projekt anfragen",
+    cta: "Bereit für qualifiziertere Anfragen?",
     sub: "Beschreiben Sie Ihr Vorhaben – ich melde mich innerhalb von 24 Stunden.",
     namePlaceholder: "Ihr Name",
     emailPlaceholder: "Ihre E-Mail",
@@ -242,7 +254,7 @@ export const de = {
     backHome: "Zurück zur Startseite",
     demoNote: "Dies ist eine Live-Demo der KI-Qualifizierungslösung – implementierbar auf Ihrer Website.",
     heroCta: "KI-Demo testen",
-    servicesLink: "Live-Beispiel ansehen →",
+    servicesLink: "Live-Demo starten →",
     errorMsg: "Fehler bei der Analyse. Bitte erneut versuchen.",
   },
   projectCheck: {
@@ -271,12 +283,12 @@ export const de = {
     required: "Pflichtfeld",
   },
   footer: {
-    tagline: "High-Performance Landing Pages & Internationales SEO",
+    tagline: "Automatisierte Lead-Qualifizierung & Conversion Landing Pages für B2B",
     rights: "Alle Rechte vorbehalten.",
     navTitle: "Navigation",
     links: {
       services: "Leistungen",
-      portfolio: "Portfolio",
+      portfolio: "Demos",
       about: "Über mich",
       contact: "Kontakt",
       faq: "FAQ",

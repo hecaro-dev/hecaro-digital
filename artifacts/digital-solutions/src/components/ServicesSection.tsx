@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "../hooks/useInView";
-import { Zap, Search, Monitor, CheckCircle2, Sparkles } from "lucide-react";
+import { Shield, Monitor, Zap, CheckCircle2, Sparkles } from "lucide-react";
 import { useI18n } from "../i18n";
 import Link from "next/link";
 
-const ICONS = [Zap, Search, Monitor];
+const ICONS = [Shield, Monitor, Zap];
 
 export default function ServicesSection() {
   const { t, lang } = useI18n();
@@ -97,8 +97,8 @@ export default function ServicesSection() {
               <Sparkles className="w-5 h-5 text-emerald-400" />
             </div>
             <div>
-              <p className="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-1">KI-Automatisierung</p>
-              <p className="text-slate-300 text-sm leading-relaxed">Erleben Sie live, wie KI Ihre Lead-Qualifizierung vollständig automatisiert – und nur noch geeignete Anfragen durchlässt.</p>
+              <p className="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-1">{t.services.aiTitle}</p>
+              <p className="text-slate-300 text-sm leading-relaxed">{t.services.aiDesc}</p>
             </div>
           </div>
           <Link

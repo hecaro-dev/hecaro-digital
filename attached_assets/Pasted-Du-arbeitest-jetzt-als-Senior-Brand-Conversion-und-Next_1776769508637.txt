@@ -1,0 +1,54 @@
+Du arbeitest jetzt als Senior Brand-, Conversion- und Next.js-Operator für ein B2B-Web-/AI-Startup.
+
+### ÜBERGEORDNETE SICHERHEITS-REGEL:
+Verändere NICHT das grundlegende Design-System, die Farben, die Schriften oder das Logo (H-Logo). Nutze die bestehenden CSS/Tailwind-Klassen. Konzentriere dich ausschließlich auf die inhaltliche Struktur, die Texte (Copywriting) und die logische Anordnung der Sektionen unter strikter Beibehaltung der bestehenden Ästhetik. Dein Ziel ist eine inhaltliche Optimierung, kein Redesign.
+
+### Ziel:
+Die bestehende Website unter den Preview-Routen (/de/preview, /en/preview, /es/preview) soll strategisch so geschärft werden, dass sie ein verkaufsfähiges Angebot für B2B-Dienstleister, Berater und kleine Agenturen kommuniziert. Fokus: weniger unqualifizierte Anfragen, bessere Lead-Qualifizierung, klare Landingpages und sinnvolle AI-/Automation-Elemente.
+
+WICHTIG:
+- Die Root-Routen /de, /en, /es bleiben unveränderte Wartungsseiten.
+- Arbeite ausschließlich an den Preview-Seiten und Komponenten.
+- Keine erfundenen Kunden/Resultate. Nutze für Projekte den Begriff "Demos" oder "System-Beispiele".
+
+### STRATEGISCHE POSITIONIERUNG:
+Die Hauptbotschaft lautet: "Wir befreien B2B-Experten von unqualifizierten Anfragen durch automatisierte Lead-Qualifizierung und High-Performance Landingpages."
+
+AUFGABEN:
+
+1) HERO-BLOCK (INHALT):
+- Schärfe die Headline auf den Nutzen: Bessere Anfragen, weniger Zeitverlust durch Qualifizierung.
+- CTAs auf Preview-Pfade ausrichten: "Projekt anfragen", "Leistungen ansehen", "KI-Demo testen".
+
+2) ANGEBOT (3 PAKETE):
+Überarbeite die Leistungssektion auf drei klare Bausteine:
+- Lead Qualifier / Project Check (Vorqualifizierung von Anfragen)
+- Conversion Landing Page (Psychologisch optimierte Seitenstruktur & Copy)
+- AI Automation Setup (Follow-up, Lead Routing, automatisierte Übergaben)
+
+3) PORTFOLIO ZU "DEMOS" UMBAUEN:
+- Benenne Portfolio-Sektion in "Demos" oder "System-Beispiele" um.
+- Erkläre kurz: Welches Problem wird gelöst? Was sieht man in der Demo? Warum ist das wertvoll?
+- Stelle sicher, dass die Links zu deinen bestehenden Demos (Qualifier/Check) korrekt eingebunden sind.
+
+4) FAQ VERVOLLSTÄNDIGEN:
+Ergänze/Überarbeite FAQ mit Fokus auf B2B-Einwände:
+- Warum brauche ich eine Qualifizierung vor dem Gespräch?
+- Wie viel Zeit spare ich durch die Automation?
+- Läuft die Kommunikation nur schriftlich ab?
+- Wie integriert sich die KI in meine bestehende Website?
+
+5) MEHRSPRACHIGKEIT (DE/EN/ES):
+- Stelle sicher, dass alle neuen Texte in allen drei Sprachen konsistent und professionell übersetzt sind.
+- Korrigiere bestehende Sprach-Mixe (kein Deutsch in EN/ES Seiten).
+
+6) WORKFLOW-FOKUS:
+- Das gesamte Messaging soll signalisieren, dass der Erstkontakt effizient über das Formular/System erfolgt, um Zeit für beide Seiten zu sparen.
+
+7) NAVIGATION & LINKS:
+- Alle Links (Header, Footer, CTAs) innerhalb des /preview Pfads MÜSSEN auf /preview-Ziele zeigen. Prüfe das doppelt.
+
+Am Ende gib mir eine kurze Zusammenfassung:
+- Welche Dateien wurden angepasst?
+- Funktionieren die Preview-Links sauber?
+- Gibt es inhaltliche Lücken, die ich noch füllen muss?

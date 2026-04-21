@@ -7,9 +7,9 @@ export const es: Translations = {
   lang: "es",
   langName: "Español",
   meta: {
-    title: "HECARO Digital – Landing Pages de Alto Rendimiento & SEO",
+    title: "HECARO Digital – Cualificación automatizada de leads para expertos B2B",
     description:
-      "Construyo landing pages que venden — con tiempos de carga inferiores a un segundo, SEO internacional y una guía de usuario clara. Para empresas con altos estándares.",
+      "Menos solicitudes no cualificadas, más conversaciones productivas. Construimos cualificadores IA y landing pages de conversión para consultores B2B, proveedores de servicios y pequeñas agencias.",
   },
   nav: {
     services: "Servicios",
@@ -17,65 +17,67 @@ export const es: Translations = {
     contact: "Contacto",
     imprint: "Aviso legal",
     privacy: "Privacidad",
-    portfolio: "Portfolio",
+    portfolio: "Demos",
     faq: "FAQ",
   },
   hero: {
-    badge: "Disponible mundialmente · DE · EN · ES",
-    headline: "Su tarjeta de visita digital,\nque vende.",
-    sub: "Construyo landing pages que no solo destacan por el diseño, sino por tiempos de carga inferiores a un segundo y una guía de usuario clara que aumenta de forma medible su tasa de conversión.",
-    cta: "Iniciar proyecto",
+    badge: "B2B · DE · EN · ES",
+    headline: "Sin más solicitudes\nno cualificadas.",
+    sub: "Liberamos a los expertos B2B del tiempo perdido mediante la cualificación automatizada de leads y landing pages de alto rendimiento — solo pasan los prospectos adecuados.",
+    cta: "Solicitar proyecto",
     cta2: "Ver servicios",
   },
   marquee: [
-    "DISEÑO WEB",
-    "SEO",
+    "LEAD QUALIFIER",
+    "AUTOMATIZACIÓN IA",
     "LANDING PAGES",
-    "PERFORMANCE",
+    "ESTRATEGIA B2B",
     "NEXT.JS",
-    "TYPESCRIPT",
-    "ESTRATEGIA",
+    "CONVERSIÓN",
+    "ROUTING DE LEADS",
     "INTERNACIONAL",
   ],
   services: {
     label: "Servicios",
-    headline: "En qué puedo ayudarle",
-    sub: "Cada solución se diseña a medida — para maximizar el impacto.",
+    headline: "Tres bloques, un objetivo",
+    sub: "Menos tiempo perdido con solicitudes inadecuadas — más conversaciones que realmente cuentan.",
+    aiTitle: "Probar demo de IA en vivo",
+    aiDesc: "Compruebe usted mismo cómo el sistema evalúa solicitudes en 4 pasos y por qué transformará su proceso de ventas.",
     items: [
       {
-        tag: "Estrategia",
-        title: "Estrategia & Análisis",
+        tag: "Qualify First",
+        title: "Lead Qualifier & Project Check",
         description:
-          "Todo proyecto exitoso comienza con un plan claro. Analizo su situación, público objetivo y competencia — y desarrollo una estrategia digital que ofrece resultados medibles.",
+          "Antes de que usted atienda una primera llamada, el sistema ya ha filtrado. Un inteligente sistema de precualificación evalúa solicitudes automáticamente con IA — las 24 horas, de forma profesional, sin esfuerzo por su parte. Solo quien tiene presupuesto, necesidad y autoridad de decisión llega hasta usted.",
         bullets: [
-          "Análisis de competencia y mercado",
-          "Definición de KPIs y objetivos de conversión",
-          "Mapeo del recorrido del usuario",
-          "Análisis de requisitos técnicos",
+          "Puntuación automática de leads con IA",
+          "Formulario de cualificación en múltiples pasos",
+          "Derivación directa de leads cualificados",
+          "Hasta el 80% menos de primeras llamadas no planificadas",
         ],
       },
       {
-        tag: "Velocidad & Conversión",
-        title: "Landing Pages de Alto Rendimiento",
+        tag: "Conversión",
+        title: "Landing Page de Conversión",
         description:
-          "Construyo landing pages que no solo impresionan — convierten. Con tiempos de carga inferiores a un segundo y diseño orientado a la conversión, maximiza el rendimiento de su tráfico.",
+          "Una landing page construida para su público objetivo, no para el diseñador. Con copy psicológicamente optimizado, CTAs claros y tiempos de carga inferiores a un segundo.",
         bullets: [
-          "Server-Side Rendering & Static Generation",
+          "Copywriting orientado a la conversión",
           "Core Web Vitals optimizados (LCP < 1 seg.)",
-          "Mobile-first, completamente responsivo",
-          "Listo para A/B-testing",
+          "Mobile-first, listo para A/B-testing",
+          "Hreflang & SEO completamente integrados",
         ],
       },
       {
-        tag: "Internacional",
-        title: "SEO Internacional",
+        tag: "IA Automation",
+        title: "AI Automation Setup",
         description:
-          "Visibilidad sostenible en Google — en Alemania, España y en todo el mundo. SEO técnico que funciona a largo plazo y alcanza a su público objetivo en cada mercado.",
+          "Follow-up, enrutamiento de leads y traspasos automatizados: su proceso de ventas funciona incluso sin usted. Conectamos la IA a su flujo de trabajo existente para que ninguna solicitud se pierda.",
         bullets: [
-          "Auditoría SEO técnica y optimización on-page",
-          "Implementación internacional de hreflang",
-          "JSON-LD Structured Data & Rich Snippets",
-          "Integración de Google Search Console & Analytics",
+          "Follow-up de email automatizado",
+          "Enrutamiento inteligente de leads",
+          "Integración CRM y notificaciones",
+          "Listo para integrar en sitios web existentes",
         ],
       },
     ],
@@ -103,22 +105,28 @@ export const es: Translations = {
     ],
   },
   portfolio: {
-    label: "Portfolio",
-    headline: "Proyectos seleccionados",
-    sub: "Una mirada a los trabajos actuales — casos de estudio próximamente.",
+    label: "Demos",
+    headline: "Sistemas en vivo para explorar",
+    sub: "Sin maquetas — sistemas reales y completamente funcionales que puede probar directamente.",
     items: [
       {
-        tag: "Landing Page",
-        title: "Página de conversión e-commerce",
-        description: "Landing page Next.js con diseño orientado a la conversión y tiempo de carga optimizado inferior a un segundo.",
+        tag: "Lead Qualifier",
+        title: "Demo Qualifier de Leads IA",
+        description:
+          "El problema: demasiadas primeras llamadas con prospectos inadecuados. Esta demo muestra cómo un sistema de IA evalúa y cualifica solicitudes automáticamente, antes de que usted invierta su tiempo.",
+        problem: "Demasiadas primeras llamadas no cualificadas",
+        ctaLabel: "Iniciar demo →",
       },
       {
-        tag: "Proyecto SEO",
-        title: "Lanzamiento SEO Internacional",
-        description: "Estrategia SEO trilingüe con hreflang para DE, EN, ES — visibilidad sostenible en tres mercados.",
+        tag: "Project Check",
+        title: "Sistema Project Check",
+        description:
+          "El problema: los clientes no saben describir un proyecto. Este sistema recoge la solicitud de forma estructurada y reenvía la información relevante directamente.",
+        problem: "Solicitudes de proyecto no estructuradas",
+        ctaLabel: "Probar sistema →",
       },
     ],
-    cta: "Ver todos los proyectos",
+    cta: "Ver todas las demos",
   },
   quality: {
     label: "Estándares & Responsabilidad",
@@ -135,7 +143,7 @@ export const es: Translations = {
   techstack: {
     label: "Tech Stack",
     headline: "Excelencia tecnológica",
-    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Performance Hosting"],
+    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "OpenAI", "Nodemailer"],
   },
   process: {
     label: "Proceso",
@@ -169,26 +177,31 @@ export const es: Translations = {
     headline: "Preguntas frecuentes",
     items: [
       {
-        question: "¿Cómo se calculan los proyectos?",
+        question: "¿Por qué necesito una cualificación antes de la llamada?",
         answer:
-          "Cada proyecto es individual, por eso elaboro presupuestos personalizados según sus requisitos específicos. Contácteme para una consulta inicial gratuita y una oferta transparente sin costes ocultos.",
+          "Porque las primeras llamadas con prospectos inadecuados consumen su recurso más valioso: el tiempo. Un sistema de cualificación filtra automáticamente quién tiene presupuesto, necesidad y autoridad de decisión — para que solo hable con personas que realmente valen la pena.",
       },
       {
-        question: "¿Cómo funciona un proyecto típico?",
+        question: "¿Cuánto tiempo ahorro con la automatización?",
         answer:
-          "Un proyecto se desarrolla en cuatro fases claras: Consulta inicial & briefing → Concepto & estrategia → Diseño & desarrollo → Lanzamiento & entrega. Tras la consulta inicial gratuita, recibirá una propuesta concreta. Duración media del proyecto: 1–3 semanas según el alcance.",
+          "Nuestros clientes reportan entre un 60 y un 80% menos de primeras llamadas no planificadas. En lugar de 10 llamadas introductorias por semana, habla con solo 2–3 prospectos realmente cualificados. El resto es informado, guiado o redirigido automáticamente.",
       },
       {
-        question: "¿Ofrece SEO para mercados internacionales?",
+        question: "¿Toda la comunicación se realiza solo por escrito?",
         answer:
-          "Sí, el SEO internacional es una de mis áreas principales. Implemento etiquetas hreflang correctas para DE, EN y ES, creo metadatos localizados y datos estructurados (JSON-LD) así como sitemaps multilingües — para la máxima visibilidad en todos los mercados objetivo.",
+          "El primer contacto sí, y eso es deliberado. El sistema recoge toda la información relevante de forma estructurada antes de que tenga lugar una conversación personal. Así, cada conversación que mantiene está preparada y es productiva. Sin pérdida de tiempo por preguntas adicionales.",
+      },
+      {
+        question: "¿Cómo se integra la IA en mi sitio web actual?",
+        answer:
+          "Sin problemas. Nuestro sistema se implementa como página independiente o widget integrado, sin modificar su stack tecnológico existente. Sin plugins, sin configuración compleja. Integración en 24–48 horas.",
       },
     ],
   },
   contact: {
     label: "Contacto",
-    headline: "Iniciar proyecto",
-    cta: "Su visión merece una correspondencia digital.",
+    headline: "Solicitar proyecto",
+    cta: "¿Listo para recibir solicitudes más cualificadas?",
     sub: "Describa su proyecto — le responderé en 24 horas.",
     namePlaceholder: "Su nombre",
     emailPlaceholder: "Su correo electrónico",
@@ -243,7 +256,7 @@ export const es: Translations = {
     backHome: "Volver al inicio",
     demoNote: "Esta es una demostración en vivo de la solución de cualificación IA — implementable en su sitio web.",
     heroCta: "Probar demo IA",
-    servicesLink: "Ver ejemplo en vivo →",
+    servicesLink: "Iniciar demo en vivo →",
     errorMsg: "Error en el análisis. Por favor inténtelo de nuevo.",
   },
   projectCheck: {
@@ -272,12 +285,12 @@ export const es: Translations = {
     required: "Obligatorio",
   },
   footer: {
-    tagline: "Landing Pages de Alto Rendimiento & SEO Internacional",
+    tagline: "Cualificación automatizada de leads y Landing Pages de conversión para B2B",
     rights: "Todos los derechos reservados.",
     navTitle: "Navegación",
     links: {
       services: "Servicios",
-      portfolio: "Portfolio",
+      portfolio: "Demos",
       about: "Sobre mí",
       contact: "Contacto",
       faq: "FAQ",

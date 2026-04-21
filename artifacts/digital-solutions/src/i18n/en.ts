@@ -7,9 +7,9 @@ export const en: Translations = {
   lang: "en",
   langName: "English",
   meta: {
-    title: "HECARO Digital – High-Performance Landing Pages & SEO",
+    title: "HECARO Digital – Automated Lead Qualification for B2B Experts",
     description:
-      "I build landing pages that sell — with load times under one second, international SEO and clear user guidance. For businesses with high standards.",
+      "Fewer unqualified requests, more productive conversations. We build AI qualifiers and conversion landing pages for B2B consultants, service providers and small agencies.",
   },
   nav: {
     services: "Services",
@@ -17,65 +17,67 @@ export const en: Translations = {
     contact: "Contact",
     imprint: "Legal Notice",
     privacy: "Privacy Policy",
-    portfolio: "Portfolio",
+    portfolio: "Demos",
     faq: "FAQ",
   },
   hero: {
-    badge: "Available worldwide · DE · EN · ES",
-    headline: "Your digital calling card,\nthat sells.",
-    sub: "I build landing pages that stand out not only through design, but through load times under one second and clear user guidance that measurably increases your conversion rate.",
-    cta: "Start a Project",
-    cta2: "View Services",
+    badge: "B2B · DE · EN · ES",
+    headline: "No more unqualified\nrequests.",
+    sub: "We free B2B experts from wasted time through automated lead qualification and high-performance landing pages — only the right prospects get through.",
+    cta: "Request a project",
+    cta2: "View services",
   },
   marquee: [
-    "WEB DESIGN",
-    "SEO",
+    "LEAD QUALIFIER",
+    "AI AUTOMATION",
     "LANDING PAGES",
-    "PERFORMANCE",
+    "B2B STRATEGY",
     "NEXT.JS",
-    "TYPESCRIPT",
-    "STRATEGY",
+    "CONVERSION",
+    "LEAD ROUTING",
     "INTERNATIONAL",
   ],
   services: {
     label: "Services",
-    headline: "What I do for you",
-    sub: "Every solution is individually conceived — for maximum impact.",
+    headline: "Three building blocks, one goal",
+    sub: "Less time lost to unsuitable requests — more conversations that actually count.",
+    aiTitle: "Try AI Demo live",
+    aiDesc: "See for yourself how the system evaluates enquiries in 4 steps — and why it will transform your sales process.",
     items: [
       {
-        tag: "Strategy",
-        title: "Strategy & Analysis",
+        tag: "Qualify First",
+        title: "Lead Qualifier & Project Check",
         description:
-          "Every successful project starts with a clear plan. I analyse your situation, target audience and competition — and develop a digital strategy that delivers measurable results.",
+          "Before you take a first call, the system has already filtered. An intelligent pre-qualification system automatically evaluates enquiries via AI — around the clock, professionally, without any effort from you. Only those who have budget, need and decision-making authority get through.",
         bullets: [
-          "Competitive & market analysis",
-          "Definition of KPIs and conversion goals",
-          "User journey mapping",
-          "Technical requirements analysis",
+          "Automated lead scoring via AI",
+          "Multi-step qualification form",
+          "Direct forwarding of qualified leads",
+          "Up to 80% fewer unplanned first calls",
         ],
       },
       {
-        tag: "Speed & Conversion",
-        title: "High-Performance Landing Pages",
+        tag: "Conversion",
+        title: "Conversion Landing Page",
         description:
-          "I build landing pages that don't just impress — they convert. With load times under one second and conversion-oriented design, you get the maximum out of your traffic.",
+          "A landing page built for your target audience — not for the designer. Psychologically optimised copy, clear CTAs and load times under one second.",
         bullets: [
-          "Server-Side Rendering & Static Generation",
+          "Conversion-oriented copywriting",
           "Core Web Vitals optimised (LCP < 1 sec.)",
-          "Mobile-first, fully responsive",
-          "A/B-testing ready",
+          "Mobile-first, A/B-testing ready",
+          "Hreflang & SEO fully integrated",
         ],
       },
       {
-        tag: "International",
-        title: "International SEO",
+        tag: "AI Automation",
+        title: "AI Automation Setup",
         description:
-          "Sustainable Google visibility — in Germany, Spain and worldwide. Technical SEO that works long-term and reaches your target audience in every market.",
+          "Follow-up, lead routing and automated handovers — your sales process runs even without you. We connect AI to your existing workflow so no enquiry gets lost.",
         bullets: [
-          "Technical SEO audit & on-page optimisation",
-          "International hreflang implementation",
-          "JSON-LD Structured Data & Rich Snippets",
-          "Google Search Console & Analytics integration",
+          "Automated email follow-up",
+          "Intelligent lead routing",
+          "CRM integration & notifications",
+          "Ready to integrate into existing websites",
         ],
       },
     ],
@@ -103,22 +105,28 @@ export const en: Translations = {
     ],
   },
   portfolio: {
-    label: "Portfolio",
-    headline: "Selected Projects",
-    sub: "A glimpse into current work — case studies to follow.",
+    label: "Demos",
+    headline: "Experience systems live",
+    sub: "No mockups — real, fully functional systems you can test directly.",
     items: [
       {
-        tag: "Landing Page",
-        title: "E-Commerce Conversion Page",
-        description: "Next.js landing page with conversion-oriented design and optimised load time under one second.",
+        tag: "Lead Qualifier",
+        title: "AI Lead Qualifier Demo",
+        description:
+          "The problem: too many first calls with unsuitable prospects. This demo shows how an AI system automatically evaluates and qualifies enquiries — before you invest your time.",
+        problem: "Too many unqualified first calls",
+        ctaLabel: "Start demo →",
       },
       {
-        tag: "SEO Project",
-        title: "International SEO Rollout",
-        description: "Trilingual SEO strategy with hreflang for DE, EN, ES — sustainable visibility in three markets.",
+        tag: "Project Check",
+        title: "Project Check System",
+        description:
+          "The problem: clients don't know how to describe a project. This system collects the enquiry in a structured way and forwards the relevant information directly.",
+        problem: "Unstructured project enquiries",
+        ctaLabel: "Test system →",
       },
     ],
-    cta: "View all projects",
+    cta: "View all demos",
   },
   quality: {
     label: "Standards & Responsibility",
@@ -135,7 +143,7 @@ export const en: Translations = {
   techstack: {
     label: "Tech Stack",
     headline: "Technological Excellence",
-    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Performance Hosting"],
+    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "OpenAI", "Nodemailer"],
   },
   process: {
     label: "Process",
@@ -169,26 +177,31 @@ export const en: Translations = {
     headline: "Frequently Asked Questions",
     items: [
       {
-        question: "How are projects calculated?",
+        question: "Why do I need qualification before the call?",
         answer:
-          "Every project is individual — which is why I create tailored quotes based on your specific requirements. Contact me for a free initial consultation and a transparent offer with no hidden costs.",
+          "Because first calls with unsuitable prospects cost your most valuable resource: time. A qualification system automatically filters out who has budget, need and decision-making authority — so you only talk to people worth talking to.",
       },
       {
-        question: "How does a typical project run?",
+        question: "How much time do I save through automation?",
         answer:
-          "A project runs in four clear phases: Initial consultation & briefing → Concept & strategy → Design & development → Launch & handover. After a free initial consultation you receive a concrete proposal. Average project duration: 1–3 weeks depending on scope.",
+          "Our clients report 60–80% fewer unplanned first calls. Instead of 10 introductory calls per week, you speak with only 2–3 truly qualified prospects. The rest are automatically informed, guided or politely referred on.",
       },
       {
-        question: "Do you offer SEO for international markets?",
+        question: "Does all communication happen in writing only?",
         answer:
-          "Yes, international SEO is one of my core areas. I implement correct hreflang tags for DE, EN and ES, create localised metadata and structured data (JSON-LD) as well as multilingual sitemaps — for maximum visibility in all target markets.",
+          "The first contact does — and that's intentional. The system captures all relevant information in a structured way before a personal conversation takes place. This means every conversation you have is prepared and productive. No time wasted on follow-up questions.",
+      },
+      {
+        question: "How does the AI integrate into my existing website?",
+        answer:
+          "Smoothly. Our system is implemented as a standalone page or embedded widget — without changing your existing tech stack. No plugins, no complex setup. Integration in 24–48 hours.",
       },
     ],
   },
   contact: {
     label: "Contact",
-    headline: "Start a Project",
-    cta: "Your vision deserves a digital counterpart.",
+    headline: "Request a project",
+    cta: "Ready for more qualified enquiries?",
     sub: "Describe your project — I will respond within 24 hours.",
     namePlaceholder: "Your Name",
     emailPlaceholder: "Your Email",
@@ -243,7 +256,7 @@ export const en: Translations = {
     backHome: "Back to Home",
     demoNote: "This is a live demo of the AI qualification solution — implementable on your website.",
     heroCta: "Try AI Demo",
-    servicesLink: "View Live Example →",
+    servicesLink: "Start live demo →",
     errorMsg: "Analysis error. Please try again.",
   },
   projectCheck: {
@@ -272,12 +285,12 @@ export const en: Translations = {
     required: "Required",
   },
   footer: {
-    tagline: "High-Performance Landing Pages & International SEO",
+    tagline: "Automated Lead Qualification & Conversion Landing Pages for B2B",
     rights: "All rights reserved.",
     navTitle: "Navigation",
     links: {
       services: "Services",
-      portfolio: "Portfolio",
+      portfolio: "Demos",
       about: "About",
       contact: "Contact",
       faq: "FAQ",

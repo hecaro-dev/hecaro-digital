@@ -23,7 +23,7 @@ export const es: Translations = {
   hero: {
     badge: "B2B LEAD & AUTOMATION STUDIO",
     headline: "Sin más solicitudes\nno cualificadas.",
-    sub: "Liberamos a los expertos B2B del tiempo perdido mediante la cualificación automatizada de leads y landing pages de alto rendimiento — solo pasan los prospectos adecuados.",
+    sub: "Liberamos a los expertos B2B del tiempo perdido. Mediante la cualificación automatizada de leads y landing pages de alto rendimiento, solo los prospectos adecuados llegan hasta usted.",
     cta: "Solicitar proyecto",
     cta2: "Ver servicios",
   },
@@ -53,7 +53,8 @@ export const es: Translations = {
           "Puntuación automática de leads con IA",
           "Formulario de cualificación en múltiples pasos",
           "Derivación directa de leads cualificados",
-          "Hasta el 80% menos de primeras llamadas no planificadas",
+          "Reducción significativa de primeras llamadas no cualificadas",
+          "Evaluación transparente de presupuesto y necesidades antes del contacto",
         ],
       },
       {
@@ -95,12 +96,12 @@ export const es: Translations = {
         description: "Entrega según lo acordado. Mis compromisos no son promesas — son obligaciones.",
       },
       {
-        title: "Individualidad",
-        description: "Sin plantillas. Sin compromisos. Cada proyecto se concibe desde cero para usted.",
+        title: "Trabajo a medida",
+        description: "Nada prefabricado. Desarrollamos sistemas adaptados exactamente a sus procesos de ventas — para el máximo rendimiento e integración perfecta.",
       },
       {
         title: "Exclusividad",
-        description: "Acepto un número limitado de proyectos — para que cada uno reciba la atención que merece.",
+        description: "La calidad requiere concentración. Trabajamos con un número cuidadosamente seleccionado de mandatos a la vez, para dar a cada sistema la profundidad necesaria.",
       },
     ],
   },
@@ -207,7 +208,7 @@ export const es: Translations = {
     emailPlaceholder: "Su correo electrónico",
     messagePlaceholder: "Describa su proyecto...",
     gdpr: "Acepto el tratamiento de mis datos de acuerdo con la política de privacidad.",
-    send: "Enviar mensaje",
+    send: "Enviar solicitud de proyecto",
     sending: "Enviando...",
     success: "¡Gracias! Me pondré en contacto pronto.",
     error: "Ocurrió un error. Por favor inténtelo de nuevo.",

@@ -23,7 +23,7 @@ export const en: Translations = {
   hero: {
     badge: "B2B LEAD & AUTOMATION STUDIO",
     headline: "No more unqualified\nrequests.",
-    sub: "We free B2B experts from wasted time through automated lead qualification and high-performance landing pages — only the right prospects get through.",
+    sub: "We free B2B experts from wasted time. Through automated lead qualification and high-performance landing pages, only the right prospects reach you.",
     cta: "Request a project",
     cta2: "View services",
   },
@@ -53,7 +53,8 @@ export const en: Translations = {
           "Automated lead scoring via AI",
           "Multi-step qualification form",
           "Direct forwarding of qualified leads",
-          "Up to 80% fewer unplanned first calls",
+          "Significant reduction of unqualified first calls",
+          "Transparent budget & needs assessment before contact",
         ],
       },
       {
@@ -95,12 +96,12 @@ export const en: Translations = {
         description: "Delivery as agreed. My commitments are not promises — they are obligations.",
       },
       {
-        title: "Individuality",
-        description: "No templates. No compromises. Every project is conceived from scratch for you.",
+        title: "Custom-Built",
+        description: "No off-the-shelf solutions. We develop systems precisely tailored to your sales processes — for maximum performance and seamless integration.",
       },
       {
         title: "Exclusivity",
-        description: "I take on a limited number of projects — so that each one receives the attention it deserves.",
+        description: "Quality demands focus. We work with a carefully selected number of clients at a time, giving every system the depth it deserves.",
       },
     ],
   },
@@ -207,7 +208,7 @@ export const en: Translations = {
     emailPlaceholder: "Your Email",
     messagePlaceholder: "Describe your project...",
     gdpr: "I agree to the processing of my data in accordance with the privacy policy.",
-    send: "Send Message",
+    send: "Submit Project Request",
     sending: "Sending...",
     success: "Thank you! I will be in touch soon.",
     error: "An error occurred. Please try again.",

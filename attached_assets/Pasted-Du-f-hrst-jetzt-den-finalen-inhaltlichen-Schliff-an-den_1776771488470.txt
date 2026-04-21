@@ -1,0 +1,30 @@
+Du führst jetzt den finalen inhaltlichen Schliff an den Preview-Routen (/de/preview, /en/preview, /es/preview) durch. Bewahre das Design zu 100%, optimiere nur die Texte und Bezeichnungen in allen 3 Sprachen.
+
+AUFGABEN:
+
+1) WERTE-SEKTION (Warum HECARO Digital?):
+- Ändere den Punkt "Individualität" in "Maßarbeit".
+- Textkorrektur für "Maßarbeit": "Keine Massenware. Wir entwickeln Systeme, die exakt auf Ihre Vertriebsprozesse zugeschnitten sind – für maximale Performance und nahtlose Integration." (Übersetze dies sinngemäß in EN/ES).
+- Textkorrektur für "Exklusivität" (Fokus): "Qualität braucht Konzentration. Wir arbeiten nur mit einer handverlesenen Anzahl an Mandaten gleichzeitig, um jedem System die notwendige Tiefe zu geben." (Übersetze dies sinngemäß in EN/ES).
+
+2) LEISTUNGS-SEKTION (3 Bausteine):
+- Ändere bei "Lead Qualifier" das Bulletpoint "Bis zu 80 % weniger ungeplante Erstgespräche" in "Signifikante Reduktion unqualifizierter Erstgespräche".
+- Füge bei "Lead Qualifier" hinzu: "Transparente Budget- & Bedarfsprüfung vor dem Kontakt".
+
+3) PROZESS-SEKTION:
+- Entferne den Badge "AKTUELL" (oder ähnliche Status-Badges) aus dem Prozess-Schritt "Design & Entwicklung".
+- Der Prozess soll sauber und abgeschlossen wirken.
+
+4) KONTAKT-SEKTION:
+- Ändere den Button-Text von "Nachricht senden" zu "Projektanfrage absenden" (entsprechend in EN/ES).
+- Stelle sicher, dass die Subheadline "Ich melde mich innerhalb von 24 Stunden" in allen Sprachen korrekt übersetzt ist.
+
+5) HERO-SEKTION (FEINTUNING):
+- Ändere den Subtext (Fließtext) in zwei kurze Sätze: "Wir befreien B2B-Experten von Zeitverschwendung. Durch automatisierte Lead-Qualifizierung und High-Performance Landingpages kommen nur noch die richtigen Interessenten bei Ihnen an." (Übersetze dies präzise in EN/ES).
+
+6) QUALITÄTSSICHERUNG ÜBERSETZUNGEN:
+- Gehe alle t-Objekte in i18n/de.ts, en.ts und es.ts durch.
+- Stelle sicher, dass kein deutscher Text mehr in den EN/ES Dateien steht.
+- Achte auf professionelles Business-Vokabular (z.B. "Prospection" statt "Searching" in ES, "Qualified Leads" in EN).
+
+Nach Abschluss: Bestätige mir kurz, dass der Badge "AKTUELL" entfernt wurde und die Werte-Sektion jetzt "Maßarbeit" statt "Individualität" heißt.

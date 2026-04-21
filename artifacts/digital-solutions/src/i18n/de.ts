@@ -21,7 +21,7 @@ export const de = {
   hero: {
     badge: "B2B LEAD & AUTOMATION STUDIO",
     headline: "Keine unqualifizierten\nAnfragen mehr.",
-    sub: "Wir befreien B2B-Experten von Zeitverschwendung durch automatisierte Lead-Qualifizierung und High-Performance Landingpages – nur noch die richtigen Interessenten kommen durch.",
+    sub: "Wir befreien B2B-Experten von Zeitverschwendung. Durch automatisierte Lead-Qualifizierung und High-Performance Landingpages kommen nur noch die richtigen Interessenten bei Ihnen an.",
     cta: "Projekt anfragen",
     cta2: "Leistungen ansehen",
   },
@@ -51,7 +51,8 @@ export const de = {
           "Automatische Lead-Bewertung per KI",
           "Mehrstufiges Qualifizierungs-Formular",
           "Direktweiterleitung qualifizierter Anfragen",
-          "Bis zu 80 % weniger ungeplante Erstgespräche",
+          "Signifikante Reduktion unqualifizierter Erstgespräche",
+          "Transparente Budget- & Bedarfsprüfung vor dem Kontakt",
         ],
       },
       {
@@ -93,12 +94,12 @@ export const de = {
         description: "Lieferung wie vereinbart. Meine Zusagen sind keine Versprechen – sie sind Verpflichtungen.",
       },
       {
-        title: "Individualität",
-        description: "Kein Template. Keine Kompromisse. Jedes Projekt wird von Grund auf für Sie konzipiert.",
+        title: "Maßarbeit",
+        description: "Keine Massenware. Wir entwickeln Systeme, die exakt auf Ihre Vertriebsprozesse zugeschnitten sind – für maximale Performance und nahtlose Integration.",
       },
       {
         title: "Exklusivität",
-        description: "Ich nehme nur eine begrenzte Anzahl an Projekten an – damit jedes meiner Arbeit das verdient bekommt.",
+        description: "Qualität braucht Konzentration. Wir arbeiten nur mit einer handverlesenen Anzahl an Mandaten gleichzeitig, um jedem System die notwendige Tiefe zu geben.",
       },
     ],
   },
@@ -205,7 +206,7 @@ export const de = {
     emailPlaceholder: "Ihre E-Mail",
     messagePlaceholder: "Beschreiben Sie Ihr Projekt...",
     gdpr: "Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu.",
-    send: "Nachricht senden",
+    send: "Projektanfrage absenden",
     sending: "Wird gesendet...",
     success: "Vielen Dank! Ich melde mich bald.",
     error: "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",

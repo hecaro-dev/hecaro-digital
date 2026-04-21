@@ -19,7 +19,7 @@ export const de = {
     faq: "FAQ",
   },
   hero: {
-    badge: "B2B · DE · EN · ES",
+    badge: "B2B LEAD & AUTOMATION STUDIO",
     headline: "Keine unqualifizierten\nAnfragen mehr.",
     sub: "Wir befreien B2B-Experten von Zeitverschwendung durch automatisierte Lead-Qualifizierung und High-Performance Landingpages – nur noch die richtigen Interessenten kommen durch.",
     cta: "Projekt anfragen",

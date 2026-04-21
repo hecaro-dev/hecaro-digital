@@ -21,7 +21,7 @@ export const en: Translations = {
     faq: "FAQ",
   },
   hero: {
-    badge: "B2B · DE · EN · ES",
+    badge: "B2B LEAD & AUTOMATION STUDIO",
     headline: "No more unqualified\nrequests.",
     sub: "We free B2B experts from wasted time through automated lead qualification and high-performance landing pages — only the right prospects get through.",
     cta: "Request a project",

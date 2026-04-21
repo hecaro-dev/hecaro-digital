@@ -86,7 +86,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
               {...anim(0)}
               className="text-sm tracking-[0.3em] text-gray-500 uppercase mb-6"
             >
-              ✦ DIGITAL SOLUTIONS STUDIO
+              ✦ {t.hero.badge}
             </motion.p>
 
             {/* H1 — oversized, 800 weight, last word in neon green */}

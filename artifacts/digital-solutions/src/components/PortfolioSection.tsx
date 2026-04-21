@@ -6,7 +6,7 @@ import { useI18n } from "../i18n";
 import Link from "next/link";
 import { ArrowRight, AlertCircle } from "lucide-react";
 
-const DEMO_PATHS = ["demo-qualifier", "project-check"];
+const DEMO_PATHS = ["demo-qualifier", "project-check", "crm-sync"];
 
 const PLACEHOLDERS = [
   {
@@ -43,6 +43,38 @@ const PLACEHOLDERS = [
         <text x="40" y="18" textAnchor="middle" fill="rgba(34,211,238,0.9)" fontSize="7" fontWeight="bold">DE EN ES</text>
         <circle cx="60" cy="22" r="5" fill="rgba(52,211,153,0.8)" />
         <path d="M58 22 L60 24 L63 20" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    gradient: "from-violet-950/80 via-violet-900/30 to-emerald-900/20",
+    icon: (
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 opacity-80">
+        {/* Database cylinder left */}
+        <ellipse cx="20" cy="22" rx="10" ry="4" stroke="rgba(167,139,250,0.5)" strokeWidth="1.5" fill="rgba(167,139,250,0.08)" />
+        <rect x="10" y="22" width="20" height="14" fill="rgba(167,139,250,0.05)" stroke="none" />
+        <ellipse cx="20" cy="36" rx="10" ry="4" stroke="rgba(167,139,250,0.4)" strokeWidth="1.5" fill="rgba(167,139,250,0.08)" />
+        <line x1="10" y1="22" x2="10" y2="36" stroke="rgba(167,139,250,0.3)" strokeWidth="1.5" />
+        <line x1="30" y1="22" x2="30" y2="36" stroke="rgba(167,139,250,0.3)" strokeWidth="1.5" />
+        {/* Arrow center */}
+        <path d="M32 29 L48 29" stroke="rgba(52,211,153,0.6)" strokeWidth="1.5" strokeLinecap="round" markerEnd="url(#arr)" />
+        <polygon points="46,26 52,29 46,32" fill="rgba(52,211,153,0.7)" />
+        {/* CRM card right */}
+        <rect x="52" y="16" width="22" height="26" rx="3" stroke="rgba(52,211,153,0.5)" strokeWidth="1.5" fill="rgba(52,211,153,0.05)" />
+        <rect x="56" y="21" width="14" height="2" rx="1" fill="rgba(52,211,153,0.5)" />
+        <rect x="56" y="26" width="10" height="1.5" rx="0.75" fill="rgba(255,255,255,0.2)" />
+        <rect x="56" y="30" width="12" height="1.5" rx="0.75" fill="rgba(255,255,255,0.15)" />
+        <rect x="56" y="34" width="8" height="1.5" rx="0.75" fill="rgba(255,255,255,0.15)" />
+        {/* Score badge */}
+        <rect x="55" y="38" width="16" height="6" rx="3" fill="rgba(52,211,153,0.25)" stroke="rgba(52,211,153,0.5)" strokeWidth="1" />
+        <text x="63" y="42.5" textAnchor="middle" fill="rgba(52,211,153,0.95)" fontSize="5" fontWeight="bold">95%</text>
+        {/* Check circle */}
+        <circle cx="63" cy="58" r="8" fill="rgba(52,211,153,0.15)" stroke="rgba(52,211,153,0.6)" strokeWidth="1.5" />
+        <path d="M59.5 58 L62 60.5 L67 55.5" stroke="rgba(52,211,153,0.95)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        {/* Dots flowing */}
+        <circle cx="20" cy="55" r="2.5" fill="rgba(167,139,250,0.4)" />
+        <circle cx="30" cy="55" r="2" fill="rgba(167,139,250,0.3)" />
+        <circle cx="39" cy="55" r="1.5" fill="rgba(167,139,250,0.2)" />
       </svg>
     ),
   },

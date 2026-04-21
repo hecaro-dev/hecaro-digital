@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { de, Translations } from "./de";
 import { en } from "./en";
 import { es } from "./es";
@@ -36,9 +36,14 @@ export function I18nProvider({
   children: React.ReactNode;
 }) {
   const router = useRouter();
+  const pathname = usePathname();
 
   function setLang(l: Lang) {
-    router.push(`/${l}`);
+    // Replace just the language segment: /de/preview/... → /en/preview/...
+    // pathname always starts with /[lang], so replace the first segment.
+    const segments = pathname.split("/");
+    segments[1] = l;
+    router.push(segments.join("/"));
   }
 
   return (

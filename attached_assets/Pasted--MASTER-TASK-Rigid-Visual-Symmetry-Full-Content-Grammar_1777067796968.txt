@@ -1,0 +1,28 @@
+### MASTER TASK: Rigid Visual Symmetry + Full Content & Grammar Audit (DE/EN/ES)
+
+**PART 1: THE BRICK METHOD (Visual Symmetry Fix)**
+The current Solution-Cards are misaligned. Paket 01 is drifting upwards. We will now force exact symmetry using a rigid 3-zone structure.
+- **Goal:** All 3 cards must look like identical clones regarding spacing, regardless of text length.
+- **Zone 1 (Header & Description):** Wrap the title and intro text in a container with a **strictly fixed height of 180px** (on Desktop >1024px). The horizontal divider line must sit exactly at the 180px mark in all 3 cards.
+- **Zone 2 (Price/Action):** Wrap the price-button ("Ab 1.250 €", etc.) in a container with a **strictly fixed height of 100px**. Vertically center the buttons within this zone so their visual centers align perfectly.
+- **Zone 3 (Features):** The checklist must start at the exact same Y-coordinate (280px from the card top) in all 3 cards.
+- **Constraint:** Use fixed heights (e.g., `h-[180px]` or `min-h-[180px]`) and remove any `justify-between` logic that allows cards to shrink or expand based on content.
+
+**PART 2: CONTENT, GRAMMAR & CREDIBILITY AUDIT**
+Strictly scan all project files (i18n, components, pages) in DE, EN, and ES.
+1. **German Formal Consistency (CRITICAL):**
+   - Convert ANY remaining "Du/Dein" (especially in the Project Check and Interactive parts) to the formal **"Sie/Ihr"**. The entire site must be 100% formal "Sie".
+2. **Grammar Pass (DE):**
+   - Fix "das" vs "dass" in the FAQ ("schriftliche Kommunikation"). Rationale: "das Gespräch, **das** Sie führen" (Relativpronomen, nur ein 's').
+3. **Credibility & Risk Audit (ALL LANGUAGES):**
+   - Replace absolute/unverifiable claims like "Unsere Kunden berichten..." or "100% ..."
+   - **New phrasing (DE):** "Systemgestützte Prozesse reduzieren unqualifizierte Erstgespräche erfahrungsgemäß um 60–80 %."
+   - **New phrasing (DE):** Change "100% Direktkommunikation" to "Fokus auf direkte und transparente Kommunikation".
+   - Mirror these changes in EN and ES (typically, depending on technical feasibility, focus on transparent communication).
+4. **Spanish Quality (ES):**
+   - Ensure consistent use of formal "Usted" across all sub-pages and demos. No literal machine translations; use professional Madrid-business tone.
+
+**PART 3: DOCUMENTATION & COMMIT**
+1. Create/Update `audit_report.md` at the root with a table of all changed texts (Before vs. After).
+2. Commit with message: `final: pixel-perfect alignment and full grammar/credibility audit`
+3. Verify: Check that Paket 01, 02, and 03 are now pixel-perfect twins.

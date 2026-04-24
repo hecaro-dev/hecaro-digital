@@ -65,8 +65,8 @@ export default function ServicesSection() {
                     </div>
                   </div>
 
-                  {/* ── Zone B: Title + Description — fixed min-height locks the bottom edge ── */}
-                  <div style={{ minHeight: '220px' }} className="flex flex-col">
+                  {/* ── Zone B: Title + Description — STRICTLY 180px (Brick Method) ── */}
+                  <div className="md:h-[180px] md:overflow-hidden flex flex-col">
                     <h3 className="text-xl font-bold text-white mb-3">
                       {service.title}
                     </h3>
@@ -75,10 +75,9 @@ export default function ServicesSection() {
                     </p>
                   </div>
 
-                  {/* ── Zone C: Price badge — fixed height 80px, vertically centered ── */}
+                  {/* ── Zone C: Price badge — STRICTLY 100px, badge centred ── */}
                   <div
-                    style={{ height: '80px' }}
-                    className="flex items-center border-t border-white/[0.06]"
+                    className="md:h-[100px] flex items-center border-t border-white/[0.06]"
                   >
                     {price && (
                       <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 text-sm font-bold">

@@ -143,7 +143,7 @@ export const en: Translations = {
     p2: "Direct collaboration, no detours — you work personally with me, the expert who accompanies your project from start to finish.",
     foundationTitle: "The Foundation",
     stats: [
-      { value: "100%", label: "Direct Communication" },
+      { value: "Focus", label: "Direct Communication" },
       { value: "3", label: "Language Markets" },
       { value: "< 24h", label: "Response Time" },
     ],
@@ -192,7 +192,7 @@ export const en: Translations = {
       {
         question: "How much time do I save through automation?",
         answer:
-          "System-based qualification typically reduces unplanned first calls significantly — in most cases down to 2–3 genuinely qualified prospects per week. The rest are automatically informed, guided or politely referred on.",
+          "System-based processes typically reduce unqualified first calls by 60–80 %. Instead of unplanned conversations, you only speak with genuinely suitable prospects — the rest are automatically informed, guided or politely referred on.",
       },
       {
         question: "Does all communication happen in writing only?",

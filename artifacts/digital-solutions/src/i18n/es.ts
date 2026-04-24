@@ -143,7 +143,7 @@ export const es: Translations = {
     p2: "Colaboración directa, sin intermediarios — trabajará personalmente conmigo, el experto que acompaña su proyecto de principio a fin.",
     foundationTitle: "Los Pilares",
     stats: [
-      { value: "100%", label: "Comunicación directa" },
+      { value: "Enfoque", label: "Comunicación directa" },
       { value: "3", label: "Mercados de idiomas" },
       { value: "< 24h", label: "Tiempo de respuesta" },
     ],
@@ -192,7 +192,7 @@ export const es: Translations = {
       {
         question: "¿Cuánto tiempo ahorro con la automatización?",
         answer:
-          "Los sistemas de cualificación reducen habitualmente las primeras llamadas no planificadas de forma significativa — en la mayoría de los casos, a 2–3 prospectos realmente adecuados por semana. El resto es informado, guiado o redirigido automáticamente.",
+          "Los procesos basados en sistemas reducen habitualmente las primeras llamadas no cualificadas en un 60–80 %. En lugar de conversaciones no planificadas, solo habla con prospectos realmente adecuados — el resto se informa, guía o redirige automáticamente.",
       },
       {
         question: "¿Toda la comunicación se realiza solo por escrito?",

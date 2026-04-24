@@ -102,7 +102,7 @@ export default function PortfolioSection() {
           <p className="text-slate-400 text-lg max-w-xl">{t.portfolio.sub}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {t.portfolio.items.map((item, i) => (
             <motion.div
               key={i}

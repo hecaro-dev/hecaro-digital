@@ -78,7 +78,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         Gap steps up progressively to keep both columns breathable.
       */}
       <div className="relative z-10 max-w-[1400px] w-full mx-auto px-6 sm:px-10 lg:px-16 pt-32 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-16 md:gap-20 lg:gap-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-16 md:gap-24 lg:gap-36">
           {/* ── LEFT: Massive text ─────────────────────────────────── */}
           <div className="flex flex-col min-w-0">
             {/* Eyebrow */}
@@ -172,7 +172,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
           {/* ── RIGHT: Giant glowing H logo ────────────────────────── */}
           <motion.div
             {...anim(0.06)}
-            className="relative flex items-center justify-center"
+            className="relative flex items-center justify-center pl-6 lg:pl-12"
           >
             {/*
               Neon-green glow orb behind the logo.
@@ -201,7 +201,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             <img
               src="/hecaro-h-logo.png"
               alt="HECARO Digital"
-              className="relative md:scale-125 md:-translate-x-10"
+              className="relative md:scale-110"
               style={{
                 maxWidth: 500,
                 width: "100%",

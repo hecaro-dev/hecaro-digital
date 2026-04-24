@@ -1,0 +1,60 @@
+### TASK: 1) Targeted Pixel-Fix for Paket 01 + 2) Strict Spelling/Grammar/Credibility Audit (DE/EN/ES)
+
+Context:
+- Visual issue: Paket 01 description block is shorter than Paket 02/03 causing misalignment of divider, price-button and feature list. We must only adjust Paket 01 so all three cards are visually identical (same vertical alignment). Do NOT change card copy content other than grammar fixes below.
+- Quality requirement: Run a strict, repo-wide spelling/grammar and "risky-claim" audit for DE, EN, ES and fix issues as described.
+
+PART A — Visual: Make Paket 01 match Paket 02 & 03 (only Paket 01 changes)
+1. Locate the three solution cards (Anfragen-Filter, Lead-System, Individuelle Systemanbindung) component(s).
+2. Do NOT change font sizes, colors, logos or the other two cards.
+3. Implement the following for Paket 01 only:
+   - Wrap the description text in Paket 01 with a container that has a fixed min-height equal to the visible height of the description containers in Paket 02/03 (use a pixel value derived from the current render or a safe Tailwind class like `min-h-[Xpx]`).
+   - Ensure the horizontal divider beneath the description sits at the exact same Y position as in Paket 02/03.
+   - Ensure the Price-Button container in Paket 01 is vertically centered in the same middle-zone height as the other cards. The visual center of "Ab 1.250 €" must match the visual center of "Ab 2.500 €" and the "Individuelle Projektierung" button.
+   - Ensure the checklist in Paket 01 starts on the exact same Y-axis as the checklists in the other cards, and the gap between button and first checklist item equals the same pixel gap used in Paket 02/03 (e.g., `gap = 40px` or equivalent utility).
+4. Use CSS Grid/Flex (column layout) + fixed zone heights approach, but only apply the fixed min-height to Paket 01 description container and the button container to match the other two cards. Validate in Desktop >1024px viewport.
+5. Run visual QA: draw (conceptually) a horizontal line and confirm it intersects (1) the bottom of description divider, (2) the centerline of the price button, (3) the top of the checklist — at the same pixel Y coordinate in all 3 cards.
+6. Commit only the minimal CSS/JSX/TSX changes required for Paket 01 alignment. Commit message: `fix(layout): align paket-01 to paket-02/03`.
+
+PART B — Strict Spelling / Grammar / Credibility Audit (DE / EN / ES)
+Scope: all content files (page components, i18n files, demo texts, FAQ, hero, package cards, contact, footer, meta tags, alt texts).
+
+Primary rules:
+1. Run a full spelling + grammar pass in each language:
+   - German: fix "das" vs "dass", capitalization, punctuation, common typos. Example correction: ensure "jedes Gespräch, das Sie führen" uses the grammatically correct form (determine if it's a relative pronoun -> `das`; if it's a conjunction -> `dass`; choose correctly based on sentence structure).
+   - English: check grammar (articles, agreement, punctuation).
+   - Spanish: use formal "Usted" in client-facing text and check accents and inverted question marks.
+2. Replace unverifiable/absolute claims:
+   - Flag and replace “Unsere Kunden berichten …”, “100% …”, “Kein manueller Schritt mehr” etc.
+   - Replace with conservative, verifiable phrasing:
+     - DE examples: "Systemgestützte Prozesse reduzieren erfahrungsgemäß …", "je nach System/viability", "nach technischer Prüfung".
+     - EN: "System-based processes typically reduce …", "depending on technical feasibility", "subject to technical review".
+     - ES: "Los procesos basados en sistemas suelen reducir …", "según viabilidad técnica".
+3. Numeric claims: convert absolutes to qualified language or "bis zu" and, where possible, add context (e.g., "je nach Setup, typischerweise bis zu 15 Min.").
+4. Do not change legal pages (Impressum/Datenschutz) automatically—flag them for legal review if wording seems risky.
+5. For every change, create a line-level changelog entry.
+
+Deliverables & Process:
+1. Apply edits directly in the repo, commit with message:
+   `fix: spelling/grammar & credibility updates (DE/EN/ES) + paket-01 layout`
+2. Create `audit_report.md` at repo root containing:
+   - Summary: number of fixes per language.
+   - Detailed list: for each changed file list (path, original snippet, corrected snippet, reason).
+   - Items flagged but NOT auto-changed (legal, unverifiable KPI claims requiring strategy decision) with recommended alternatives.
+   - The commit hashes for the layout commit and the content fixes commit.
+3. After all fixes, run a second pass check to ensure no new grammar issues introduced.
+4. Push commits and include the commit hashes in `audit_report.md`.
+
+Quality Gate (must pass before finishing):
+- Visual: Confirm Paket 01 aligns pixel-perfect with Paket 02/03 in Desktop preview. Provide one screenshot of the solutions row after the change.
+- Content: Provide `audit_report.md` and list of changed files. Include before/after examples for the FAQ sentence and the "60–80%" phrasing (show original vs corrected phrasing in DE/EN/ES).
+- If any textual fix requires product/strategic approval (e.g., removing a customer metric that marketing insists on), DO NOT auto-change; instead add to `audit_report.md` as "Action Required".
+
+Tone rule:
+- Preserve premium, business-first tone. Avoid making copy more promotional than original; prefer conservative, verifiable phrasing.
+
+Finish:
+- Commit and push changes. Return in the agent response:
+  - The commit hashes
+  - Path to `audit_report.md`
+  - One-sentence summary: (files changed, fixes per language, layout status)

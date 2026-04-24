@@ -190,7 +190,7 @@ export const de = {
       {
         question: "Wie viel Zeit spare ich durch die Automatisierung?",
         answer:
-          "Unsere Kunden berichten von 60–80 % weniger ungeplanten Erstgesprächen. Statt 10 Gesprächen pro Woche sprechen Sie nur noch mit 2–3 wirklich qualifizierten Interessenten. Der Rest wird automatisch informiert, geleitet oder höflich weiterverwiesen.",
+          "Systemgestützte Qualifizierung reduziert erfahrungsgemäß ungeplante Erstgespräche deutlich – je nach Ausgangssituation typischerweise auf 2–3 wirklich geeignete Interessenten pro Woche. Der Rest wird automatisch informiert, geleitet oder höflich weiterverwiesen.",
       },
       {
         question: "Läuft die gesamte Kommunikation nur schriftlich ab?",
@@ -200,7 +200,7 @@ export const de = {
       {
         question: "Wie wird das System in meine bestehende Website integriert?",
         answer:
-          "Ganz einfach. Unser System wird als eigenständige Seite oder eingebettetes Formular integriert – ohne Ihre bestehende Website oder Systeme zu verändern. Keine zusätzliche Software, kein komplexes Setup. Einsatzbereit in 24–48 Stunden.",
+          "Ganz einfach. Unser System wird als eigenständige Seite oder eingebettetes Formular integriert – ohne Ihre bestehende Website oder Systeme zu verändern. Keine zusätzliche Software, kein komplexes Setup. Typischerweise einsatzbereit in 24–48 Stunden.",
       },
     ],
   },

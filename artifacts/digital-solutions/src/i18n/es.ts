@@ -192,7 +192,7 @@ export const es: Translations = {
       {
         question: "¿Cuánto tiempo ahorro con la automatización?",
         answer:
-          "Nuestros clientes reportan entre un 60 y un 80% menos de primeras llamadas no planificadas. En lugar de 10 llamadas introductorias por semana, habla con solo 2–3 prospectos realmente cualificados. El resto es informado, guiado o redirigido automáticamente.",
+          "Los sistemas de cualificación reducen habitualmente las primeras llamadas no planificadas de forma significativa — en la mayoría de los casos, a 2–3 prospectos realmente adecuados por semana. El resto es informado, guiado o redirigido automáticamente.",
       },
       {
         question: "¿Toda la comunicación se realiza solo por escrito?",
@@ -202,7 +202,7 @@ export const es: Translations = {
       {
         question: "¿Cómo se integra el sistema en mi sitio web actual?",
         answer:
-          "Con total sencillez. Nuestro sistema se integra como página independiente o formulario embebido, sin modificar su sitio web ni sus sistemas actuales. Sin software adicional, sin configuración compleja. Listo en 24–48 horas.",
+          "Con total sencillez. Nuestro sistema se integra como página independiente o formulario embebido, sin modificar su sitio web ni sus sistemas actuales. Sin software adicional, sin configuración compleja. Normalmente listo en 24–48 horas.",
       },
     ],
   },
@@ -316,26 +316,26 @@ export const es: Translations = {
   },
   projectCheck: {
     badge: "Gratuito · Sin compromiso",
-    headline: "Describe tu proyecto – lo analizaré y te contactaré con propuestas concretas",
-    sub: "Recibirás:",
+    headline: "Describa su proyecto – lo analizaré y le contactaré con propuestas concretas",
+    sub: "Recibirá:",
     bullets: [
-      "una evaluación de tu configuración actual",
+      "una evaluación de su configuración actual",
       "potenciales de optimización concretos",
       "un próximo paso claro",
     ],
     nameLabel: "Nombre",
-    namePlaceholder: "Tu nombre",
+    namePlaceholder: "Su nombre",
     emailLabel: "Email",
-    emailPlaceholder: "tu@email.com",
+    emailPlaceholder: "su@email.com",
     websiteLabel: "Sitio web",
-    websitePlaceholder: "https://tu-sitio.com (opcional)",
+    websitePlaceholder: "https://su-sitio.com (opcional)",
     descLabel: "Descripción del proyecto",
-    descPlaceholder: "¿Cuál es tu configuración actual? ¿Dónde estás atascado? ¿Qué necesita mejorar concretamente? Cuanto más detalle, mejor.",
+    descPlaceholder: "¿Cuál es su configuración actual? ¿Dónde tiene dificultades? ¿Qué necesita mejorar concretamente? Cuanto más detalle, mejor.",
     cta: "Solicitar análisis",
     submitting: "Enviando ...",
-    submitError: "Error al enviar. Por favor inténtalo de nuevo.",
+    submitError: "Error al enviar. Por favor inténtelo de nuevo.",
     successHeadline: "Gracias – me pondré en contacto pronto",
-    successText: "Analizaré tu proyecto personalmente y te responderé en 1–2 días hábiles con propuestas concretas.",
+    successText: "Analizaré su proyecto personalmente y le responderé en 1–2 días hábiles con propuestas concretas.",
     backHome: "Volver al inicio",
     required: "Obligatorio",
   },

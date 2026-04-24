@@ -192,7 +192,7 @@ export const en: Translations = {
       {
         question: "How much time do I save through automation?",
         answer:
-          "Our clients report 60–80% fewer unplanned first calls. Instead of 10 introductory calls per week, you speak with only 2–3 truly qualified prospects. The rest are automatically informed, guided or politely referred on.",
+          "System-based qualification typically reduces unplanned first calls significantly — in most cases down to 2–3 genuinely qualified prospects per week. The rest are automatically informed, guided or politely referred on.",
       },
       {
         question: "Does all communication happen in writing only?",
@@ -202,7 +202,7 @@ export const en: Translations = {
       {
         question: "How does the system integrate with my existing website?",
         answer:
-          "Easily. Our system is implemented as a standalone page or embedded form — without changing your existing website or systems. No extra software, no complex setup. Ready within 24–48 hours.",
+          "Easily. Our system is implemented as a standalone page or embedded form — without changing your existing website or systems. No extra software, no complex setup. Typically ready within 24–48 hours.",
       },
     ],
   },

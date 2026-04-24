@@ -41,40 +41,45 @@ export default function ServicesSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {t.services.items.map((service, i) => {
-            const isLarge = i === 0;
             const Icon = ICONS[i];
+            const price = service.price;
             return (
               <motion.article
                 key={i}
                 initial={{ opacity: 0, y: 10 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                className={`relative group bg-[rgba(255,255,255,0.03)] backdrop-blur-md border border-[rgba(255,255,255,0.08)] rounded-3xl p-8 sm:p-12 hover:border-emerald-500/30 transition-all duration-500 overflow-hidden ${
-                  isLarge ? "md:col-span-2" : "col-span-1"
-                }`}
+                className="relative group bg-[rgba(255,255,255,0.03)] backdrop-blur-md border border-[rgba(255,255,255,0.08)] rounded-3xl p-8 hover:border-emerald-500/30 transition-all duration-500 overflow-hidden"
               >
                 <div className="absolute -inset-px bg-gradient-to-br from-emerald-500/10 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-3xl" />
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex items-start justify-between mb-8">
+                  <div className="flex items-start justify-between mb-6">
                     <span className="inline-flex px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-slate-300">
                       {service.tag}
                     </span>
-                    <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-                      <Icon className="w-6 h-6" />
+                    <div className="w-10 h-10 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                      <Icon className="w-5 h-5" />
                     </div>
                   </div>
-                  <h3 className={`font-bold text-white mb-4 ${isLarge ? "text-3xl" : "text-2xl"}`}>
+                  <h3 className="text-xl font-bold text-white mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-slate-400 text-base leading-relaxed mb-8 max-w-lg">
+                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
                     {service.description}
                   </p>
-                  <ul className={`mt-auto grid gap-3 ${isLarge ? "sm:grid-cols-2" : "grid-cols-1"}`} aria-label={`Features of ${service.title}`}>
+                  {price && (
+                    <div className="mb-6">
+                      <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 text-sm font-bold">
+                        {price}
+                      </span>
+                    </div>
+                  )}
+                  <ul className="mt-auto grid gap-2.5" aria-label={`Features of ${service.title}`}>
                     {service.bullets.map((bullet, j) => (
-                      <li key={j} className="flex items-start gap-3 text-sm">
-                        <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0 text-emerald-400" aria-hidden="true" />
+                      <li key={j} className="flex items-start gap-2.5 text-sm">
+                        <CheckCircle2 className="w-4 h-4 mt-0.5 shrink-0 text-emerald-400" aria-hidden="true" />
                         <span className="text-slate-300 leading-snug">{bullet}</span>
                       </li>
                     ))}

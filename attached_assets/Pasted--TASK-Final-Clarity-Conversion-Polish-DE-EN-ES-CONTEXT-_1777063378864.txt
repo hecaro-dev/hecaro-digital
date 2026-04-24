@@ -1,0 +1,40 @@
+### TASK: Final Clarity & Conversion Polish (DE/EN/ES)
+
+**CONTEXT:** Our wording is currently too technical ("Automation Studio", "Tech Stack", "API Integration"). We need to pivot to "Business Plain Language" so a non-technical partner or client understands the value instantly.
+
+**1. Hero Section Polish:**
+- **Eyebrow Text:** Change from "B2B LEAD & AUTOMATION STUDIO" to:
+  - DE: INTELLIGENTE ANFRAGEN-QUALIFIZIERUNG
+  - EN: SMART INQUIRY QUALIFICATION
+  - ES: CUALIFICACIÓN INTELIGENTE DE CONSULTAS
+- **Primary Button (Green):** Change to "Lösung anfragen" (DE) / "Request Solution" (EN) / "Solicitar solución" (ES).
+- **Secondary Button:** Change to "Methode entdecken" (DE) / "Discover Method" (EN) / "Descubrir método" (ES).
+
+**2. Solutions / Packages Update:**
+- Ensure the 3-column layout uses the previously defined simplified wording:
+- **Package 01:** "Anfragen-Filter" / "Inquiry Filter" / "Filtro de Consultas".
+- **Package 02:** "Lead-System" (Standard).
+- **Package 03:** "Individuelle Systemanbindung" (Custom Integration).
+- **Package 03 Content Change:** Add "Inklusive technischer Machbarkeits-Analyse (Audit)" to the bullet points to justify the custom pricing.
+
+**3. Values & Process Refinement:**
+- **In "Mein Prozess" (Step 03):** Change "Technologische Meisterschaft" to "Technische Umsetzung & Qualitätssicherung".
+- **In "Werte" (Image 4/7):** Ensure the text focuses on "personal architect" and "no mass production".
+- **Tech Stack Section (Image 9):** Change Headline to: 
+  - DE: Moderne Standards für Ihre Sicherheit
+  - EN: Modern Standards for your Security
+  - ES: Estándares modernos para su seguridad
+  - (Add small tags to the logos: Next.js = "Speed", OpenAI = "Intelligence", Nodemailer = "Reliability").
+
+**4. Demos & FAQ Shifting:**
+- Lower the complexity of Demo descriptions. Focus on: "The Problem" -> "Our Solution" -> "Your Result".
+- Replace jargon like "Webhook" or "API" in the FAQ with "Automatische Verbindung" or "System-Schnittstelle".
+
+**5. Contact Form (Image 2):**
+- Change Headline from "Projekt anfragen" to "System-Check anfragen" (more specific).
+- Placeholder in message box: "Beschreiben Sie kurz Ihre aktuellen Herausforderungen bei der Anfragen-Prüfung..."
+
+**6. Global i18n Guardrail:**
+- Ensure Spanish (ES) uses the formal "Usted" and sounds like professional business language suitable for a Madrid-based partner. Avoid literal technical translations. Use "ahorro de tiempo" instead of "automatización de workflows".
+
+**GOAL:** After this update, a visitor should NOT think "This is a programmer," but "This is a business partner who saves me time by filtering my leads."

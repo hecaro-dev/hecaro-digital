@@ -19,11 +19,11 @@ export const de = {
     faq: "FAQ",
   },
   hero: {
-    badge: "B2B LEAD & AUTOMATION STUDIO",
+    badge: "INTELLIGENTE ANFRAGEN-QUALIFIZIERUNG",
     headline: "Mehr passende Anfragen.\nWeniger manuelle Vorarbeit.",
     sub: "Wir bauen Systeme, die Ihre B2B-Anfragen automatisch prüfen und sortieren.",
-    cta: "Projekt anfragen",
-    cta2: "Lösungen ansehen",
+    cta: "Lösung anfragen",
+    cta2: "Methode entdecken",
   },
   marquee: [
     "LEAD QUALIFIER",
@@ -73,9 +73,9 @@ export const de = {
           "Für Unternehmen mit bestehenden Tools und komplexen Abläufen. Wir verknüpfen Ihre Prozesse so, dass manuelle Arbeit auf ein Minimum reduziert wird.",
         price: "Individuelle Projektierung",
         bullets: [
-          "Prüfung der technischen Machbarkeit (Audit)",
+          "Inklusive technischer Machbarkeits-Analyse (Audit)",
           "Nahtlose Verbindung zu bestehenden Systemen",
-          "Automatisierte Workflow-Logik",
+          "Automatisierte Ablauf-Logik",
         ],
       },
     ],
@@ -147,8 +147,8 @@ export const de = {
     ],
   },
   techstack: {
-    label: "Tech Stack",
-    headline: "Technologische Exzellenz",
+    label: "Standards",
+    headline: "Moderne Standards für Ihre Sicherheit",
     items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "OpenAI", "Nodemailer"],
   },
   process: {
@@ -169,7 +169,7 @@ export const de = {
       {
         number: "03",
         title: "Design & Entwicklung",
-        description: "Die Realisierung Ihrer digitalen Präsenz ohne Kompromisse – wo exklusive Ästhetik auf technologische Meisterschaft trifft.",
+        description: "Die Realisierung Ihrer digitalen Präsenz – mit technischer Umsetzung & Qualitätssicherung auf höchstem Niveau.",
       },
       {
         number: "04",
@@ -198,20 +198,20 @@ export const de = {
           "Der Erstkontakt ja – und das ist Absicht. Das System erfasst alle relevanten Informationen strukturiert, bevor ein persönliches Gespräch stattfindet. Dadurch ist jedes Gespräch, das Sie führen, vorbereitet und produktiv. Kein Zeitverlust durch Nachfragen.",
       },
       {
-        question: "Wie integriert sich die KI in meine bestehende Website?",
+        question: "Wie wird das System in meine bestehende Website integriert?",
         answer:
-          "Reibungslos. Unser System wird als eigenständige Seite oder eingebettetes Widget implementiert – ohne Ihren bestehenden Tech-Stack zu verändern. Keine Plugins, kein komplexes Setup. Integration in 24–48 Stunden.",
+          "Ganz einfach. Unser System wird als eigenständige Seite oder eingebettetes Formular integriert – ohne Ihre bestehende Website oder Systeme zu verändern. Keine zusätzliche Software, kein komplexes Setup. Einsatzbereit in 24–48 Stunden.",
       },
     ],
   },
   contact: {
     label: "Kontakt",
-    headline: "Projekt anfragen",
+    headline: "System-Check anfragen",
     cta: "Bereit für qualifiziertere Anfragen?",
-    sub: "Beschreiben Sie Ihr Vorhaben – ich melde mich innerhalb von 24 Stunden.",
+    sub: "Beschreiben Sie Ihre Situation – ich melde mich innerhalb von 24 Stunden.",
     namePlaceholder: "Ihr Name",
     emailPlaceholder: "Ihre E-Mail",
-    messagePlaceholder: "Beschreiben Sie Ihr Projekt...",
+    messagePlaceholder: "Beschreiben Sie kurz Ihre aktuellen Herausforderungen bei der Anfragen-Prüfung...",
     gdpr: "Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu.",
     send: "Projektanfrage absenden",
     sending: "Wird gesendet...",

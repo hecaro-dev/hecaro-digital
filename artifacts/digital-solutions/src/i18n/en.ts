@@ -21,11 +21,11 @@ export const en: Translations = {
     faq: "FAQ",
   },
   hero: {
-    badge: "B2B LEAD & AUTOMATION STUDIO",
+    badge: "SMART INQUIRY QUALIFICATION",
     headline: "Better leads.\nLess manual work.",
     sub: "We build systems that automatically review and sort your B2B enquiries.",
-    cta: "Request a project",
-    cta2: "View solutions",
+    cta: "Request Solution",
+    cta2: "Discover Method",
   },
   marquee: [
     "LEAD QUALIFIER",
@@ -75,7 +75,7 @@ export const en: Translations = {
           "For businesses with existing tools and complex workflows. We connect your processes to reduce manual effort to a minimum.",
         price: "Custom Quote",
         bullets: [
-          "Technical feasibility check (Audit)",
+          "Includes technical feasibility analysis (Audit)",
           "Seamless connection to existing systems",
           "Automated workflow logic",
         ],
@@ -149,8 +149,8 @@ export const en: Translations = {
     ],
   },
   techstack: {
-    label: "Tech Stack",
-    headline: "Technological Excellence",
+    label: "Standards",
+    headline: "Modern Standards for your Security",
     items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "OpenAI", "Nodemailer"],
   },
   process: {
@@ -171,7 +171,7 @@ export const en: Translations = {
       {
         number: "03",
         title: "Design & Development",
-        description: "The realisation of your digital presence without compromise — where exclusive aesthetics meets technological mastery.",
+        description: "The realisation of your digital presence — technical implementation & quality assurance at the highest level.",
       },
       {
         number: "04",
@@ -200,20 +200,20 @@ export const en: Translations = {
           "The first contact does — and that's intentional. The system captures all relevant information in a structured way before a personal conversation takes place. This means every conversation you have is prepared and productive. No time wasted on follow-up questions.",
       },
       {
-        question: "How does the AI integrate into my existing website?",
+        question: "How does the system integrate with my existing website?",
         answer:
-          "Smoothly. Our system is implemented as a standalone page or embedded widget — without changing your existing tech stack. No plugins, no complex setup. Integration in 24–48 hours.",
+          "Easily. Our system is implemented as a standalone page or embedded form — without changing your existing website or systems. No extra software, no complex setup. Ready within 24–48 hours.",
       },
     ],
   },
   contact: {
     label: "Contact",
-    headline: "Request a project",
+    headline: "Request a System Check",
     cta: "Ready for more qualified enquiries?",
-    sub: "Describe your project — I will respond within 24 hours.",
+    sub: "Describe your situation — I will respond within 24 hours.",
     namePlaceholder: "Your Name",
     emailPlaceholder: "Your Email",
-    messagePlaceholder: "Describe your project...",
+    messagePlaceholder: "Briefly describe your current challenges with enquiry review...",
     gdpr: "I agree to the processing of my data in accordance with the privacy policy.",
     send: "Submit Project Request",
     sending: "Sending...",

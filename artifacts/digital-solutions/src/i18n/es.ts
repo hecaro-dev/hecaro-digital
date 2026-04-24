@@ -21,11 +21,11 @@ export const es: Translations = {
     faq: "FAQ",
   },
   hero: {
-    badge: "B2B LEAD & AUTOMATION STUDIO",
+    badge: "CUALIFICACIÓN INTELIGENTE DE CONSULTAS",
     headline: "Mejores clientes.\nMenos trabajo manual.",
     sub: "Construimos sistemas que revisan y clasifican sus consultas B2B de forma automática.",
-    cta: "Solicitar proyecto",
-    cta2: "Ver soluciones",
+    cta: "Solicitar solución",
+    cta2: "Descubrir método",
   },
   marquee: [
     "LEAD QUALIFIER",
@@ -75,7 +75,7 @@ export const es: Translations = {
           "Para empresas con herramientas existentes y procesos complejos. Conectamos sus procesos para reducir el trabajo manual al mínimo.",
         price: "Presupuesto a medida",
         bullets: [
-          "Revisión de viabilidad técnica (Auditoría)",
+          "Incluye análisis de viabilidad técnica (Auditoría)",
           "Conexión fluida con sistemas existentes",
           "Lógica de flujo de trabajo automatizada",
         ],
@@ -149,8 +149,8 @@ export const es: Translations = {
     ],
   },
   techstack: {
-    label: "Tech Stack",
-    headline: "Excelencia tecnológica",
+    label: "Estándares",
+    headline: "Estándares modernos para su seguridad",
     items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "OpenAI", "Nodemailer"],
   },
   process: {
@@ -171,7 +171,7 @@ export const es: Translations = {
       {
         number: "03",
         title: "Diseño & Desarrollo",
-        description: "La realización de su presencia digital sin compromisos — donde la estética exclusiva se une a la maestría tecnológica.",
+        description: "La realización de su presencia digital — implementación técnica y aseguramiento de calidad al más alto nivel.",
       },
       {
         number: "04",
@@ -200,20 +200,20 @@ export const es: Translations = {
           "El primer contacto sí, y eso es deliberado. El sistema recoge toda la información relevante de forma estructurada antes de que tenga lugar una conversación personal. Así, cada conversación que mantiene está preparada y es productiva. Sin pérdida de tiempo por preguntas adicionales.",
       },
       {
-        question: "¿Cómo se integra la IA en mi sitio web actual?",
+        question: "¿Cómo se integra el sistema en mi sitio web actual?",
         answer:
-          "Sin problemas. Nuestro sistema se implementa como página independiente o widget integrado, sin modificar su stack tecnológico existente. Sin plugins, sin configuración compleja. Integración en 24–48 horas.",
+          "Con total sencillez. Nuestro sistema se integra como página independiente o formulario embebido, sin modificar su sitio web ni sus sistemas actuales. Sin software adicional, sin configuración compleja. Listo en 24–48 horas.",
       },
     ],
   },
   contact: {
     label: "Contacto",
-    headline: "Solicitar proyecto",
-    cta: "¿Listo para recibir solicitudes más cualificadas?",
-    sub: "Describa su proyecto — le responderé en 24 horas.",
+    headline: "Solicitar una verificación del sistema",
+    cta: "¿Listo para recibir consultas más cualificadas?",
+    sub: "Describa su situación — le responderé en 24 horas.",
     namePlaceholder: "Su nombre",
     emailPlaceholder: "Su correo electrónico",
-    messagePlaceholder: "Describa su proyecto...",
+    messagePlaceholder: "Describa brevemente sus retos actuales en la revisión de consultas...",
     gdpr: "Acepto el tratamiento de mis datos de acuerdo con la política de privacidad.",
     send: "Enviar solicitud de proyecto",
     sending: "Enviando...",

@@ -4,12 +4,14 @@ import { motion } from "framer-motion";
 import { useInView } from "../hooks/useInView";
 import { useI18n } from "../i18n";
 
-const TECH_META: Record<string, { icon: string }> = {
-  "Next.js":          { icon: "▲" },
-  "React":            { icon: "⚛" },
-  "TypeScript":       { icon: "TS" },
-  "Tailwind CSS":     { icon: "✦" },
-  "Figma":            { icon: "✏" },
+const TECH_META: Record<string, { icon: string; tag?: string }> = {
+  "Next.js":             { icon: "▲", tag: "Speed" },
+  "React":               { icon: "⚛" },
+  "TypeScript":          { icon: "TS" },
+  "Tailwind CSS":        { icon: "✦" },
+  "OpenAI":              { icon: "◈", tag: "Intelligence" },
+  "Nodemailer":          { icon: "✉", tag: "Reliability" },
+  "Figma":               { icon: "✏" },
   "Performance Hosting": { icon: "⚡" },
 };
 
@@ -51,6 +53,11 @@ export default function TechStackSection() {
                 <span className="text-slate-300 font-medium text-sm text-center leading-tight tracking-wide">
                   {tech}
                 </span>
+                {meta?.tag && (
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-500/60 group-hover:text-emerald-400/80 transition-colors duration-300">
+                    {meta.tag}
+                  </span>
+                )}
               </motion.div>
             );
           })}

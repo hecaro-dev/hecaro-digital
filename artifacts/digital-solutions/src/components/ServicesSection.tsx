@@ -70,14 +70,14 @@ export default function ServicesSection() {
                     <h3 className="text-xl font-bold text-white mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-slate-400 text-sm leading-relaxed">
+                    <p className="text-slate-400 text-sm leading-relaxed min-h-[160px]">
                       {service.description}
                     </p>
                   </div>
 
-                  {/* ── Zone C: Price badge — STRICTLY 120px, badge centred ── */}
+                  {/* ── Zone C: Price badge — STRICTLY 80px, badge centred ── */}
                   <div
-                    className="h-[120px] flex items-center border-t border-white/[0.06]"
+                    className="h-[80px] flex items-center border-t border-white/[0.06]"
                   >
                     {price && (
                       <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 text-sm font-bold">

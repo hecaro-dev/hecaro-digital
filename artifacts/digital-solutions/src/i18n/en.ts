@@ -70,14 +70,14 @@ export const en: Translations = {
       },
       {
         tag: "Package 03",
-        title: "Full Automation",
+        title: "Custom System Integration",
         description:
-          "Complete handling from enquiry to handover into your system. No more manual steps — your process runs on autopilot.",
-        price: "Custom",
+          "For businesses with existing tools and complex workflows. We connect your processes to reduce manual effort to a minimum.",
+        price: "Custom Quote",
         bullets: [
-          "Fully automated from receipt to handover",
-          "Connected to your existing workflow",
-          "Ongoing optimisation included",
+          "Technical feasibility check (Audit)",
+          "Seamless connection to existing systems",
+          "Automated workflow logic",
         ],
       },
     ],

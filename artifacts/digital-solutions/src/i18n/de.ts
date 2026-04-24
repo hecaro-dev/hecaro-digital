@@ -68,14 +68,14 @@ export const de = {
       },
       {
         tag: "Paket 03",
-        title: "Voll-Automatisierung",
+        title: "Individuelle Systemanbindung",
         description:
-          "Komplette Abwicklung von der Anfrage bis zur Übergabe in Ihr System. Kein manueller Schritt mehr – Ihr Ablauf läuft auf Autopilot.",
-        price: "Individuell",
+          "Für Unternehmen mit bestehenden Tools und komplexen Abläufen. Wir verknüpfen Ihre Prozesse so, dass manuelle Arbeit auf ein Minimum reduziert wird.",
+        price: "Individuelle Projektierung",
         bullets: [
-          "Vom Eingang bis zur Übergabe vollautomatisch",
-          "Verbindung zu Ihrem bestehenden Ablauf",
-          "Laufende Optimierung inklusive",
+          "Prüfung der technischen Machbarkeit (Audit)",
+          "Nahtlose Verbindung zu bestehenden Systemen",
+          "Automatisierte Workflow-Logik",
         ],
       },
     ],

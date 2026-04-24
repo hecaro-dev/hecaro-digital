@@ -70,14 +70,14 @@ export const es: Translations = {
       },
       {
         tag: "Paquete 03",
-        title: "Automatización Total",
+        title: "Integración de sistemas a medida",
         description:
-          "Gestión completa desde la consulta hasta la entrega en su sistema. Sin pasos manuales — su proceso funciona en piloto automático.",
-        price: "Personalizado",
+          "Para empresas con herramientas existentes y procesos complejos. Conectamos sus procesos para reducir el trabajo manual al mínimo.",
+        price: "Presupuesto a medida",
         bullets: [
-          "Automatizado de principio a fin",
-          "Conectado a su flujo de trabajo existente",
-          "Optimización continua incluida",
+          "Revisión de viabilidad técnica (Auditoría)",
+          "Conexión fluida con sistemas existentes",
+          "Lógica de flujo de trabajo automatizada",
         ],
       },
     ],

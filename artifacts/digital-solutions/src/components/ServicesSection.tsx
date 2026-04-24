@@ -65,20 +65,22 @@ export default function ServicesSection() {
                     </div>
                   </div>
 
-                  {/* ── Zone B: Title + Description — STRICTLY 240px (Brick Method) ── */}
-                  <div className="h-[240px] overflow-hidden flex flex-col">
+                  {/* ── Zone B1: Title — fixed 80px on md+ ── */}
+                  <div className="md:h-[80px] md:overflow-hidden">
                     <h3 className="text-xl font-bold text-white mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-slate-400 text-sm leading-relaxed min-h-[160px]">
+                  </div>
+
+                  {/* ── Zone B2: Description — fixed 140px on md+ ── */}
+                  <div className="md:h-[140px] md:overflow-hidden">
+                    <p className="text-slate-400 text-sm leading-relaxed">
                       {service.description}
                     </p>
                   </div>
 
-                  {/* ── Zone C: Price badge — STRICTLY 80px, badge centred ── */}
-                  <div
-                    className="h-[80px] flex items-center border-t border-white/[0.06]"
-                  >
+                  {/* ── Zone C: Price badge — fixed 100px, badge centred ── */}
+                  <div className="md:h-[100px] flex items-center border-t border-white/[0.06]">
                     {price && (
                       <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 text-sm font-bold">
                         {price}
@@ -86,7 +88,7 @@ export default function ServicesSection() {
                     )}
                   </div>
 
-                  {/* ── Zone D: Feature list — always starts on identical Y ── */}
+                  {/* ── Zone D: Feature list — starts at identical Y in every card ── */}
                   <ul className="grid gap-2.5 pt-6 border-t border-white/[0.06]" aria-label={`Features of ${service.title}`}>
                     {service.bullets.map((bullet, j) => (
                       <li key={j} className="flex items-start gap-2.5 text-sm">

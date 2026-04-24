@@ -55,6 +55,7 @@ export default function ServicesSection() {
               >
                 <div className="absolute -inset-px bg-gradient-to-br from-emerald-500/10 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-3xl" />
                 <div className="relative z-10 flex flex-col h-full">
+                  {/* ── Row 1: Tag + Icon — fixed height ── */}
                   <div className="flex items-start justify-between mb-6">
                     <span className="inline-flex px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-slate-300">
                       {service.tag}
@@ -63,20 +64,28 @@ export default function ServicesSection() {
                       <Icon className="w-5 h-5" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                    {service.description}
-                  </p>
-                  {price && (
-                    <div className="mb-6">
+
+                  {/* ── Row 2: Title + Description — flex-1 stretches to fill ── */}
+                  <div className="flex-1 flex flex-col mb-0">
+                    <h3 className="text-xl font-bold text-white mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+
+                  {/* ── Row 3: Price badge — always on same Y across all cards ── */}
+                  <div className="pt-6 mt-6 border-t border-white/[0.06] mb-6">
+                    {price && (
                       <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 text-sm font-bold">
                         {price}
                       </span>
-                    </div>
-                  )}
-                  <ul className="mt-auto grid gap-2.5" aria-label={`Features of ${service.title}`}>
+                    )}
+                  </div>
+
+                  {/* ── Row 4: Feature list — always on same Y across all cards ── */}
+                  <ul className="grid gap-2.5" aria-label={`Features of ${service.title}`}>
                     {service.bullets.map((bullet, j) => (
                       <li key={j} className="flex items-start gap-2.5 text-sm">
                         <CheckCircle2 className="w-4 h-4 mt-0.5 shrink-0 text-emerald-400" aria-hidden="true" />

@@ -42,6 +42,7 @@ export default function ContactSection() {
           name: data.name,
           email: data.email,
           message: data.message,
+          lang,
         }),
       });
       if (!res.ok) throw new Error("send failed");

@@ -3,9 +3,57 @@ import nodemailer from "nodemailer";
 
 const router = Router();
 
+const AUTO_RESPONDER = {
+  de: {
+    subject: "Anfrage erhalten – HECARO Digital",
+    body: (name: string) =>
+      [
+        `Guten Tag ${name},`,
+        "",
+        "vielen Dank für Ihre Anfrage bei HECARO Digital.",
+        "",
+        "Ich habe Ihre Nachricht erhalten und werde diese persönlich sichten.",
+        "Sie erhalten innerhalb der nächsten 24 Stunden eine Rückmeldung zu Ihrem Anliegen.",
+        "",
+        "Beste Grüße",
+        "HECARO Digital",
+      ].join("\n"),
+  },
+  en: {
+    subject: "Inquiry received – HECARO Digital",
+    body: (name: string) =>
+      [
+        `Dear ${name},`,
+        "",
+        "thank you for reaching out to HECARO Digital.",
+        "",
+        "I have received your message and will review it personally.",
+        "You can expect a reply within the next 24 hours.",
+        "",
+        "Best regards,",
+        "HECARO Digital",
+      ].join("\n"),
+  },
+  es: {
+    subject: "Consulta recibida – HECARO Digital",
+    body: (name: string) =>
+      [
+        `Estimado/a ${name},`,
+        "",
+        "gracias por ponerse en contacto con HECARO Digital.",
+        "",
+        "He recibido su mensaje y lo revisaré personalmente.",
+        "Recibirá una respuesta en las próximas 24 horas.",
+        "",
+        "Atentamente,",
+        "HECARO Digital",
+      ].join("\n"),
+  },
+};
+
 router.post("/contact", async (req, res) => {
   try {
-    const { name, email, message } = req.body;
+    const { name, email, message, lang } = req.body;
 
     if (!name || !email || !message) {
       res.status(400).json({ error: "Missing required fields" });
@@ -31,7 +79,7 @@ router.post("/contact", async (req, res) => {
       auth: { user: smtpUser, pass: smtpPass },
     });
 
-    const body = [
+    const ownerBody = [
       "Neue Kontaktanfrage über HECARO Digital:",
       "",
       `Name:  ${name}`,
@@ -46,10 +94,23 @@ router.post("/contact", async (req, res) => {
       to: contactEmail,
       replyTo: email,
       subject: `Neue Anfrage von ${name}`,
-      text: body,
+      text: ownerBody,
     });
 
     res.json({ ok: true });
+
+    const locale = lang === "en" ? "en" : lang === "es" ? "es" : "de";
+    const responder = AUTO_RESPONDER[locale];
+
+    transporter.sendMail({
+      from: `"HECARO Digital" <${smtpUser}>`,
+      to: email,
+      subject: responder.subject,
+      text: responder.body(name),
+    }).catch((err: unknown) => {
+      console.error("contact auto-responder error:", err);
+    });
+
   } catch (err) {
     console.error("contact route error:", err);
     res.status(500).json({ error: "Send failed" });

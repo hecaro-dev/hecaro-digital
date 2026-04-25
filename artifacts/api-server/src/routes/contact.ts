@@ -3,10 +3,10 @@ import nodemailer from "nodemailer";
 
 const router = Router();
 
-const AUTO_RESPONDER = {
+const AUTO_RESPONDER: Record<string, { subject: string; body: (name: string) => string }> = {
   de: {
     subject: "Anfrage erhalten – HECARO Digital",
-    body: (name: string) =>
+    body: (name) =>
       [
         `Guten Tag ${name},`,
         "",
@@ -21,7 +21,7 @@ const AUTO_RESPONDER = {
   },
   en: {
     subject: "Inquiry received – HECARO Digital",
-    body: (name: string) =>
+    body: (name) =>
       [
         `Dear ${name},`,
         "",
@@ -36,7 +36,7 @@ const AUTO_RESPONDER = {
   },
   es: {
     subject: "Consulta recibida – HECARO Digital",
-    body: (name: string) =>
+    body: (name) =>
       [
         `Estimado/a ${name},`,
         "",
@@ -52,69 +52,73 @@ const AUTO_RESPONDER = {
 };
 
 router.post("/contact", async (req, res) => {
+  const { name, email, message, lang } = req.body;
+
+  if (!name || !email || !message) {
+    res.status(400).json({ error: "Missing required fields" });
+    return;
+  }
+
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPass = process.env.SMTP_PASS;
+  const smtpHost = process.env.SMTP_HOST ?? "smtp.gmail.com";
+  const smtpPort = parseInt(process.env.SMTP_PORT ?? "587", 10);
+  const contactEmail = process.env.CONTACT_EMAIL ?? smtpUser;
+
+  if (!smtpUser || !smtpPass || !contactEmail) {
+    console.error("contact: SMTP not configured — SMTP_USER, SMTP_PASS, CONTACT_EMAIL required");
+    res.status(503).json({ error: "Email not configured" });
+    return;
+  }
+
+  const transporter = nodemailer.createTransport({
+    host: smtpHost,
+    port: smtpPort,
+    secure: smtpPort === 465,
+    auth: { user: smtpUser, pass: smtpPass },
+  });
+
+  // ── 1. Main email to owner ── must succeed for the request to succeed
   try {
-    const { name, email, message, lang } = req.body;
-
-    if (!name || !email || !message) {
-      res.status(400).json({ error: "Missing required fields" });
-      return;
-    }
-
-    const smtpUser = process.env.SMTP_USER;
-    const smtpPass = process.env.SMTP_PASS;
-    const smtpHost = process.env.SMTP_HOST ?? "smtp.gmail.com";
-    const smtpPort = parseInt(process.env.SMTP_PORT ?? "587", 10);
-    const contactEmail = process.env.CONTACT_EMAIL ?? smtpUser;
-
-    if (!smtpUser || !smtpPass || !contactEmail) {
-      console.error("contact: SMTP not configured — SMTP_USER, SMTP_PASS, CONTACT_EMAIL required");
-      res.status(503).json({ error: "Email not configured" });
-      return;
-    }
-
-    const transporter = nodemailer.createTransport({
-      host: smtpHost,
-      port: smtpPort,
-      secure: smtpPort === 465,
-      auth: { user: smtpUser, pass: smtpPass },
-    });
-
-    const ownerBody = [
-      "Neue Kontaktanfrage über HECARO Digital:",
-      "",
-      `Name:  ${name}`,
-      `Email: ${email}`,
-      "",
-      "Nachricht:",
-      message,
-    ].join("\n");
-
     await transporter.sendMail({
       from: `"HECARO Digital" <${smtpUser}>`,
       to: contactEmail,
       replyTo: email,
       subject: `Neue Anfrage von ${name}`,
-      text: ownerBody,
+      text: [
+        "Neue Kontaktanfrage über HECARO Digital:",
+        "",
+        `Name:  ${name}`,
+        `Email: ${email}`,
+        "",
+        "Nachricht:",
+        message,
+      ].join("\n"),
     });
-
-    res.json({ ok: true });
-
-    const locale = lang === "en" ? "en" : lang === "es" ? "es" : "de";
-    const responder = AUTO_RESPONDER[locale];
-
-    transporter.sendMail({
-      from: `"HECARO Digital" <${smtpUser}>`,
-      to: email,
-      subject: responder.subject,
-      text: responder.body(name),
-    }).catch((err: unknown) => {
-      console.error("contact auto-responder error:", err);
-    });
-
   } catch (err) {
-    console.error("contact route error:", err);
+    console.error("contact main mail error:", err);
     res.status(500).json({ error: "Send failed" });
+    return;
   }
+
+  // ── 2. Respond to client immediately ── auto-responder must not block this
+  res.json({ ok: true });
+
+  // ── 3. Auto-responder — fully isolated, never throws into main handler ──
+  void (async () => {
+    try {
+      const locale = lang === "en" ? "en" : lang === "es" ? "es" : "de";
+      const responder = AUTO_RESPONDER[locale];
+      await transporter.sendMail({
+        from: `"HECARO Digital" <${smtpUser}>`,
+        to: email,
+        subject: responder.subject,
+        text: responder.body(name),
+      });
+    } catch (err) {
+      console.error("contact auto-responder error (non-critical):", err);
+    }
+  })();
 });
 
 export default router;

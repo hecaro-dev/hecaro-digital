@@ -11,38 +11,40 @@ export async function POST(req: NextRequest) {
 
     const smtpUser = process.env.SMTP_USER;
     const smtpPass = process.env.SMTP_PASS;
-    const smtpHost = process.env.SMTP_HOST ?? "smtp.gmail.com";
-    const smtpPort = parseInt(process.env.SMTP_PORT ?? "587", 10);
     const contactEmail = process.env.CONTACT_EMAIL ?? smtpUser;
 
+    console.log("Using SMTP User:", smtpUser);
+    console.log("Sending to:", contactEmail);
+
     if (!smtpUser || !smtpPass || !contactEmail) {
-      console.error("contact: SMTP not configured — SMTP_USER, SMTP_PASS, CONTACT_EMAIL required");
+      console.error("contact: SMTP_USER, SMTP_PASS or CONTACT_EMAIL not set");
       return NextResponse.json({ error: "Email not configured" }, { status: 503 });
     }
 
     const transporter = nodemailer.createTransport({
-      host: smtpHost,
-      port: smtpPort,
-      secure: smtpPort === 465,
-      auth: { user: smtpUser, pass: smtpPass },
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
+      },
     });
 
-    const body = [
-      "Neue Kontaktanfrage über HECARO Digital:",
-      "",
-      `Name:  ${name}`,
-      `Email: ${email}`,
-      "",
-      "Nachricht:",
-      message,
-    ].join("\n");
-
     await transporter.sendMail({
-      from: `"HECARO Digital" <${smtpUser}>`,
+      from: smtpUser,
       to: contactEmail,
       replyTo: email,
       subject: `Neue Anfrage von ${name}`,
-      text: body,
+      text: [
+        "Neue Kontaktanfrage über HECARO Digital:",
+        "",
+        `Name:  ${name}`,
+        `Email: ${email}`,
+        "",
+        "Nachricht:",
+        message,
+      ].join("\n"),
     });
 
     return NextResponse.json({ ok: true });

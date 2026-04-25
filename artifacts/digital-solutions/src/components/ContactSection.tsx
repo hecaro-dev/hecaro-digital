@@ -32,10 +32,19 @@ export default function ContactSection() {
     defaultValues: { name: "", email: "", message: "", gdpr: false },
   });
 
-  async function onSubmit(_data: FormValues) {
+  async function onSubmit(data: FormValues) {
     setStatus("sending");
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          message: data.message,
+        }),
+      });
+      if (!res.ok) throw new Error("send failed");
       setStatus("success");
       reset();
     } catch {

@@ -45,10 +45,14 @@ export default function ContactSection() {
           lang,
         }),
       });
+      const responseData = await res.json();
+      console.log("DEBUG - Status Code:", res.status);
+      console.log("DEBUG - Response Data:", responseData);
       if (!res.ok) throw new Error("send failed");
       setStatus("success");
       reset();
-    } catch {
+    } catch (err) {
+      console.log("DEBUG - Caught error:", err);
       setStatus("error");
     }
   }

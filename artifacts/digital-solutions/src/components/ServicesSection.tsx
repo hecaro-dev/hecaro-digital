@@ -72,9 +72,9 @@ export default function ServicesSection() {
                     </h3>
                   </div>
 
-                  {/* ── Zone B2: Description — fixed 140px on md+ ── */}
-                  <div className="md:h-[140px] md:overflow-hidden">
-                    <p className="text-slate-400 text-sm leading-relaxed">
+                  {/* ── Zone B2: Description — fixed 160px on md+ → divider at 240px ── */}
+                  <div className="md:h-[160px] overflow-hidden">
+                    <p className="text-slate-400 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">
                       {service.description}
                     </p>
                   </div>

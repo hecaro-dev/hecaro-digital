@@ -33,11 +33,8 @@ export default function ContactSection() {
   });
 
   async function onSubmit(data: FormValues) {
-    setStatus("idle");
     setStatus("sending");
-    console.log("DEBUG [1] onSubmit started, lang:", lang);
     try {
-      console.log("DEBUG [2] calling fetch...");
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -48,21 +45,10 @@ export default function ContactSection() {
           lang,
         }),
       });
-      console.log("DEBUG [3] fetch returned — status:", res.status, "ok:", res.ok);
-      const responseData = await res.json();
-      console.log("DEBUG [4] parsed JSON:", responseData);
-      if (!res.ok) {
-        console.log("DEBUG [5a] res.ok is false → throwing");
-        throw new Error("send failed");
-      }
-      console.log("DEBUG [5b] res.ok is true → setting success");
+      if (!res.ok) throw new Error("send failed");
       setStatus("success");
-      console.log("DEBUG [6] success state set, calling reset()");
       reset();
-      console.log("DEBUG [7] reset() done — returning");
-      return;
-    } catch (err) {
-      console.log("DEBUG [CATCH] error caught:", err);
+    } catch {
       setStatus("error");
     }
   }

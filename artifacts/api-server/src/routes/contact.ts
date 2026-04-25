@@ -3,8 +3,44 @@ import nodemailer from "nodemailer";
 
 const router = Router();
 
+const autoResponderSubject: Record<string, string> = {
+  de: "Anfrage erhalten – HECARO Digital",
+  en: "Inquiry received – HECARO Digital",
+  es: "Consulta recibida – HECARO Digital",
+};
+
+const autoResponderBody: Record<string, string> = {
+  de: [
+    "Vielen Dank für Ihre Anfrage.",
+    "",
+    "Ich habe Ihre Nachricht erhalten und werde diese persönlich sichten.",
+    "Sie erhalten innerhalb der nächsten 24 Stunden eine Rückmeldung.",
+    "",
+    "Beste Grüße,",
+    "HECARO Digital",
+  ].join("\n"),
+  en: [
+    "Thank you for your inquiry.",
+    "",
+    "I have received your message and will review it personally.",
+    "You will receive a response within the next 24 hours.",
+    "",
+    "Best regards,",
+    "HECARO Digital",
+  ].join("\n"),
+  es: [
+    "Gracias por su consulta.",
+    "",
+    "He recibido su mensaje y lo revisaré personalmente.",
+    "Recibirá una respuesta en las próximas 24 horas.",
+    "",
+    "Saludos cordiales,",
+    "HECARO Digital",
+  ].join("\n"),
+};
+
 router.post("/contact", async (req, res) => {
-  const { name, email, message } = req.body;
+  const { name, email, message, lang } = req.body;
 
   if (!name || !email || !message) {
     res.status(400).json({ ok: false, error: "Missing required fields" });
@@ -35,6 +71,7 @@ router.post("/contact", async (req, res) => {
       },
     });
 
+    // ── MAIN EMAIL (priority — must succeed) ────────────────────────────
     await transporter.sendMail({
       from: smtpUser,
       to: contactEmail,
@@ -45,11 +82,26 @@ router.post("/contact", async (req, res) => {
         "",
         `Name:  ${name}`,
         `Email: ${email}`,
+        `Sprache: ${lang ?? "—"}`,
         "",
         "Nachricht:",
         message,
       ].join("\n"),
     });
+
+    // ── AUTO-RESPONDER (non-blocking — failure never affects the response)
+    const resolvedLang = lang && autoResponderSubject[lang] ? lang : "de";
+    try {
+      await transporter.sendMail({
+        from: smtpUser,
+        to: email,
+        subject: autoResponderSubject[resolvedLang],
+        text: autoResponderBody[resolvedLang],
+      });
+      console.log("Auto-responder sent to:", email);
+    } catch (autoErr) {
+      console.error("contact: auto-responder failed (non-fatal):", autoErr);
+    }
 
     res.status(200).json({ ok: true });
   } catch (err) {

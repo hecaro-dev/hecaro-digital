@@ -65,22 +65,22 @@ export default function ServicesSection() {
                     </div>
                   </div>
 
-                  {/* ── Zone B1: Title — fixed 80px on md+ ── */}
-                  <div className="md:h-[80px] md:overflow-hidden">
+                  {/* ── Zone B1: Title — fixed 80px globally ── */}
+                  <div className="h-[80px] overflow-hidden">
                     <h3 className="text-xl font-bold text-white mb-3">
                       {service.title}
                     </h3>
                   </div>
 
-                  {/* ── Zone B2: Description — fixed 160px on md+ → divider at 240px ── */}
-                  <div className="md:h-[160px] overflow-hidden">
-                    <p className="text-slate-400 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">
+                  {/* ── Zone B2: Description — fixed 160px globally → divider always at 240px ── */}
+                  <div className="h-[160px] overflow-hidden">
+                    <p className="text-slate-400 text-sm leading-relaxed">
                       {service.description}
                     </p>
                   </div>
 
-                  {/* ── Zone C: Price badge — fixed 100px, badge centred ── */}
-                  <div className="md:h-[100px] flex items-center border-t border-white/[0.06]">
+                  {/* ── Zone C: Price badge — fixed 100px globally, badge centred ── */}
+                  <div className="h-[100px] flex items-center border-t border-white/[0.06]">
                     {price && (
                       <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 text-sm font-bold">
                         {price}

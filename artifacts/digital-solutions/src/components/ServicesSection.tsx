@@ -11,7 +11,9 @@ const DEMO_TARGETS = ["portfolio-card-0", "portfolio-card-1", "portfolio-card-2"
 
 function scrollToCard(id: string) {
   const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.scrollY - 100;
+  window.scrollTo({ top, behavior: "smooth" });
 }
 
 export default function ServicesSection() {

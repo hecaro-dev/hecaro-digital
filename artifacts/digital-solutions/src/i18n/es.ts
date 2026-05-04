@@ -222,7 +222,7 @@ export const es: Translations = {
     emailPlaceholder: "Su correo electrónico",
     messagePlaceholder: "Describa brevemente sus retos actuales en la revisión de consultas...",
     gdpr: "Acepto el tratamiento de mis datos de acuerdo con la política de privacidad.",
-    send: "Enviar solicitud de proyecto",
+    send: "Solicitar consulta gratuita",
     sending: "Enviando...",
     success: "¡Gracias! Me pondré en contacto pronto.",
     error: "Ocurrió un error. Por favor inténtelo de nuevo.",
@@ -319,7 +319,7 @@ export const es: Translations = {
     backHome: "Volver al inicio",
     demoNote: "Esta es una demostración en vivo del sistema automatizado de cualificación — implementable en su sitio web.",
     heroCta: "Probar demo",
-    servicesLink: "Iniciar demo en vivo →",
+    servicesLink: "PROBAR DEMO GRATIS",
     errorMsg: "Error en el análisis. Por favor inténtelo de nuevo.",
   },
   projectCheck: {

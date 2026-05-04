@@ -317,7 +317,7 @@ export const de = {
     backHome: "Zurück zur Startseite",
     demoNote: "Dies ist eine Live-Demo des automatischen Qualifizierungssystems – implementierbar auf Ihrer Website.",
     heroCta: "Demo testen",
-    servicesLink: "Live-Demo starten →",
+    servicesLink: "KOSTENLOSE DEMO STARTEN",
     errorMsg: "Fehler bei der Analyse. Bitte erneut versuchen.",
   },
   projectCheck: {

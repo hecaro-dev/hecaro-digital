@@ -44,6 +44,7 @@ export const es: Translations = {
     aiTitle: "Probar demo del sistema en vivo",
     aiDesc: "Compruebe usted mismo cómo el sistema revisa solicitudes en 4 pasos, antes de mantener una sola conversación.",
     note: "Nota: Muchas empresas notan un alivio significativo ya en la primera semana, al eliminar primeras llamadas innecesarias.",
+    cta: "Probar demo gratuita",
     items: [
       {
         tag: "Paquete 01",

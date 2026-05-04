@@ -44,6 +44,7 @@ export const en: Translations = {
     aiTitle: "Try system demo live",
     aiDesc: "See for yourself how the system reviews enquiries in 4 steps — before you take a single call.",
     note: "Note: Many businesses notice a significant reduction in workload within the first week, simply by eliminating unnecessary first calls.",
+    cta: "Start free demo",
     items: [
       {
         tag: "Package 01",

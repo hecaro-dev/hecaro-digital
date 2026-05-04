@@ -1,0 +1,26 @@
+Handle als erfahrener Full-Stack Entwickler. Überarbeite die Sektion "Lösungen" (Solutions) in der deutschen Version (de). 
+WICHTIGSTE REGEL: Das Design, die Farben, die Icons und das Logo dürfen NICHT verändert werden. Nur Texte, Abstände und die Klick-Logik.
+
+### 1. TEXTE & PREISE (locales/de.json):
+Aktualisiere die Inhalte für die deutsche Sprache:
+- Headline: "Wählen Sie den Hebel gegen Zeitverschwendung."
+- Subheadline: "Transparent kalkuliert. Sofort einsatzbereit. Wählen Sie das System, das zu Ihrer aktuellen Situation passt."
+- Paket 01: "Anfragen-Filter" | Preis: "Ab 1.250 €" | Bullets: "Automatisierte 24/7-Prüfung Ihrer Leads", "Keine nutzlosen Erstgespräche mehr", "Typische Aktivierung: ab 48 h (abhängig vom Setup)"
+- Paket 02: "Lead-Qualifizierer Pro" | Preis: "Ab 2.500 €" | Bullets: "Strukturierte Aufnahme & qualifizierter Daten-Export", "Vorbereitete Briefings für jedes Verkaufsgespräch", "Professionelle Kommunikation im Hintergrund"
+- Paket 03: "Maßgeschneiderte Systemanbindung" | Preis: "Individuelle Projektierung" | Bullets: "Nahtlose Anbindung an CRM/ERP möglich", "Starke Reduktion manueller Datenübertragung", "Maßgeschneiderte Workflows für komplexe Teams"
+
+### 2. GEZIELTE INTERAKTIVITÄT (Targeted Smooth Scroll):
+Mache die drei Paket-Karten komplett klickbar (Cursor: Pointer). Verknüpfe sie logisch mit der Demo-Sektion:
+- Klick auf Paket 01 -> Scrollt sanft (Smooth Scroll) direkt zur ersten Demo-Card ("Simulations-Check: Anfragen-Filter").
+- Klick auf Paket 02 -> Scrollt sanft direkt zur zweiten Demo-Card ("System-Check: Strukturierte Aufnahme").
+- Klick auf Paket 03 -> Scrollt sanft direkt zur dritten Demo-Card ("Ablauf-Check: Automatische Datenübergabe").
+- Alle Buttons innerhalb der Pakete einheitlich beschriften: "KOSTENLOSE DEMO STARTEN".
+
+### 3. HINWEIS-TEXT (Neu):
+- Füge unter die drei Pakete diesen Text ein:
+  "Hinweis: Viele Unternehmen bemerken bereits in der ersten Woche eine spürbare Entlastung durch den Wegfall unnötiger Erstgespräche."
+- Stil: Kursiv, normale Schriftgröße, 40px Abstand nach oben und unten.
+
+### 4. TECHNISCHE REGELN:
+- Die Preis-Labels (Ab 1.250 €) müssen technisch als Text (span oder div) umgesetzt sein, NICHT als klickbare <button> Elemente.
+- Stelle sicher, dass die i18n-Struktur für DE korrekt aktualisiert wird und das Layout auf Mobilgeräten sauber untereinander gestapelt bleibt.

@@ -7,6 +7,12 @@ import { useI18n } from "../i18n";
 import Link from "next/link";
 
 const ICONS = [Shield, Monitor, Zap];
+const DEMO_TARGETS = ["portfolio-card-0", "portfolio-card-1", "portfolio-card-2"];
+
+function scrollToCard(id: string) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 export default function ServicesSection() {
   const { t, lang } = useI18n();
@@ -51,7 +57,11 @@ export default function ServicesSection() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                className="relative group bg-[rgba(255,255,255,0.03)] backdrop-blur-md border border-[rgba(255,255,255,0.08)] rounded-3xl p-8 hover:border-emerald-500/30 transition-all duration-500 overflow-hidden"
+                className="relative group bg-[rgba(255,255,255,0.03)] backdrop-blur-md border border-[rgba(255,255,255,0.08)] rounded-3xl p-8 hover:border-emerald-500/30 transition-all duration-500 overflow-hidden cursor-pointer"
+                onClick={() => scrollToCard(DEMO_TARGETS[i])}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => e.key === "Enter" && scrollToCard(DEMO_TARGETS[i])}
               >
                 <div className="absolute -inset-px bg-gradient-to-br from-emerald-500/10 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-3xl" />
                 <div className="relative z-10 flex flex-col">
@@ -97,6 +107,13 @@ export default function ServicesSection() {
                       </li>
                     ))}
                   </ul>
+
+                  {/* ── Zone E: CTA Button ── */}
+                  <div className="pt-6 mt-4 border-t border-white/[0.06]">
+                    <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500 group-hover:bg-emerald-400 text-black font-bold text-xs tracking-widest uppercase transition-colors duration-300 pointer-events-none">
+                      {t.services.cta}
+                    </span>
+                  </div>
                 </div>
               </motion.article>
             );
@@ -108,7 +125,8 @@ export default function ServicesSection() {
           initial={{ opacity: 0, y: 10 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.38 }}
-          className="mt-8 text-center text-slate-500 text-sm leading-relaxed"
+          className="text-center text-slate-400 text-base leading-relaxed italic"
+          style={{ marginTop: "40px", marginBottom: "40px" }}
         >
           {t.services.note}
         </motion.p>

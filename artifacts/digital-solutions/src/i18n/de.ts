@@ -37,11 +37,12 @@ export const de = {
   ],
   services: {
     label: "Lösungen",
-    headline: "Drei Pakete – klar & direkt",
-    sub: "Wählen Sie das System, das zu Ihrem aktuellen Stand passt.",
+    headline: "Wählen Sie den Hebel gegen Zeitverschwendung.",
+    sub: "Transparent kalkuliert. Sofort einsatzbereit. Wählen Sie das System, das zu Ihrer aktuellen Situation passt.",
     aiTitle: "System-Demo live testen",
     aiDesc: "Erleben Sie selbst, wie das System Anfragen in 4 Schritten bewertet – bevor Sie ein einziges Gespräch führen.",
     note: "Hinweis: Viele Unternehmen bemerken bereits in der ersten Woche eine spürbare Entlastung durch den Wegfall unnötiger Erstgespräche.",
+    cta: "Kostenlose Demo starten",
     items: [
       {
         tag: "Paket 01",
@@ -50,33 +51,33 @@ export const de = {
           "Schluss mit Zeitfressern. Ein System prüft Anfragen automatisch nach Ihren Kriterien – rund um die Uhr, ohne Ihren Aufwand.",
         price: "Ab 1.250 €",
         bullets: [
-          "Automatische Prüfung nach Ihren Kriterien",
-          "Klare Entscheidung statt Bauchgefühl",
-          "Sofort integrierbar in Ihre bestehende Website",
+          "Automatisierte 24/7-Prüfung Ihrer Leads",
+          "Keine nutzlosen Erstgespräche mehr",
+          "Typische Aktivierung: ab 48 h (abhängig vom Setup)",
         ],
       },
       {
         tag: "Paket 02",
-        title: "Lead-System",
+        title: "Lead-Qualifizierer Pro",
         description:
           "Anfragen werden geprüft, professionell beantwortet und strukturiert für Sie aufbereitet – damit Sie vorbereitet ins Gespräch gehen.",
         price: "Ab 2.500 €",
         bullets: [
-          "Strukturierte Aufnahme & automatische Weiterleitung",
+          "Strukturierte Aufnahme & qualifizierter Daten-Export",
+          "Vorbereitete Briefings für jedes Verkaufsgespräch",
           "Professionelle Kommunikation im Hintergrund",
-          "Jedes Gespräch vorbereitet und zielgerichtet",
         ],
       },
       {
         tag: "Paket 03",
-        title: "Individuelle Systemanbindung",
+        title: "Maßgeschneiderte Systemanbindung",
         description:
           "Für Unternehmen mit bestehenden Tools und komplexen Abläufen. Wir verknüpfen Ihre Prozesse so, dass manuelle Arbeit auf ein Minimum reduziert wird.",
         price: "Individuelle Projektierung",
         bullets: [
-          "Inklusive technischer Machbarkeits-Analyse (Audit)",
-          "Nahtlose Verbindung zu bestehenden Systemen",
-          "Automatisierte Ablauf-Logik",
+          "Nahtlose Anbindung an CRM/ERP möglich",
+          "Starke Reduktion manueller Datenübertragung",
+          "Maßgeschneiderte Workflows für komplexe Teams",
         ],
       },
     ],

@@ -88,13 +88,13 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 style={{
                   fontWeight: 800,
                   fontFamily: "'Outfit', var(--font-outfit), system-ui, sans-serif",
-                  lineHeight: 1.35,
-                  paddingBottom: "0.2em",
-                  marginBottom: "1.25rem",
+                  lineHeight: 1.1,
+                  paddingBottom: "0.1em",
+                  marginBottom: "32px",
                 }}
               >
                 {headlineParts.map((line, i) => (
-                  <span key={i} className="block !overflow-visible !leading-[1.5] !pb-2" style={{ whiteSpace: "nowrap" }}>
+                  <span key={i} className="block !overflow-visible" style={{ whiteSpace: "nowrap" }}>
                     {line}
                   </span>
                 ))}
@@ -102,9 +102,10 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             {/* Subline */}
             <motion.p
               {...anim(0.22)}
-              className="text-xl sm:text-2xl text-gray-400 max-w-xl mt-8 leading-relaxed font-normal"
+              className="text-xl sm:text-2xl text-gray-400 max-w-xl leading-relaxed font-normal"
               style={{
                 fontFamily: "'Outfit', var(--font-outfit), system-ui, sans-serif",
+                marginBottom: "40px",
               }}
             >
               {t.hero.sub}
@@ -113,7 +114,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             {/* CTA — single primary action */}
             <motion.div
               {...anim(0.34)}
-              className="mt-12"
+              className=""
             >
               <motion.button
                 ref={ctaRef}

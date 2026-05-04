@@ -20,7 +20,7 @@ export const de = {
   },
   hero: {
     badge: "INTELLIGENTE ANFRAGEN-QUALIFIZIERUNG",
-    headline: "Hör auf, Zeit mit Anfragen\nzu verschwenden, die nicht kaufen.",
+    headline: "Hör auf, Zeit mit Anfragen\nzu verschwenden,\ndie nicht kaufen.",
     sub: "Wir filtern automatisch echte Entscheider heraus – weniger Aufwand, mehr Abschlüsse.",
     cta: "Kostenlose Demo starten",
     cta2: "Methode entdecken",

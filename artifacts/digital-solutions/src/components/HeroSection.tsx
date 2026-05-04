@@ -88,9 +88,9 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 style={{
                   fontWeight: 800,
                   fontFamily: "'Outfit', var(--font-outfit), system-ui, sans-serif",
-                  lineHeight: 1.4,
-                  paddingBottom: "0.4em",
-                  marginBottom: "2rem",
+                  lineHeight: 1.35,
+                  paddingBottom: "0.2em",
+                  marginBottom: "1.25rem",
                 }}
               >
                 {headlineParts.map((line, i) => (

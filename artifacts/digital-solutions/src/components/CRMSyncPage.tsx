@@ -679,7 +679,7 @@ function CRMSyncUI() {
           </Link>
         </motion.div>
 
-        <DemoResultBlock />
+        {phase === "done" && <DemoResultBlock />}
 
         {/* ── Demo note ── */}
         <p className="text-center text-xs text-slate-600 border-t border-white/[0.04] pt-6">

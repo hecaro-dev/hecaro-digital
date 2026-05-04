@@ -233,10 +233,11 @@ function ProjectCheckUI() {
                     <Home className="w-4 h-4" /> {p.backHome}
                   </Link>
                 </div>
+
+                <DemoResultBlock />
               </motion.div>
             )}
           </AnimatePresence>
-          <DemoResultBlock />
         </div>
       </main>
     </div>

@@ -412,6 +412,8 @@ function QualifierUI() {
                   </>
                 )}
 
+                <DemoResultBlock />
+
                 {/* Demo note */}
                 <p className="text-center text-slate-600 text-xs pt-2 leading-relaxed">
                   ✦ {q.demoNote}
@@ -419,8 +421,6 @@ function QualifierUI() {
               </motion.div>
             )}
           </AnimatePresence>
-
-          <DemoResultBlock />
         </div>
       </main>
     </div>

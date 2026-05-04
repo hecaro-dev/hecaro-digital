@@ -298,13 +298,13 @@ function QualifierUI() {
                 className="space-y-4"
               >
                 {result.grade === "A" ? (
-                  /* ── GRADE A: Mini-Audit ── */
+                  /* ── GRADE A: Ampel-Result ── */
                   <>
                     <div className="rounded-3xl border border-emerald-500/30 bg-emerald-950/50 p-8 sm:p-10 space-y-7">
-                      {/* Header */}
+                      {/* Header — traffic light icon */}
                       <div className="flex items-start gap-5">
-                        <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl font-black shrink-0 bg-emerald-500/20 text-emerald-400">
-                          A
+                        <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shrink-0 bg-emerald-500/20">
+                          🟢
                         </div>
                         <div>
                           <p className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-1">
@@ -316,20 +316,12 @@ function QualifierUI() {
                         </div>
                       </div>
 
-                      {/* 3 Bullet Points */}
+                      {/* 3 fixed Bullets: Budget / Entscheider / Dringlichkeit */}
                       <div className="space-y-3">
-                        {[
-                          { label: q.gradeABulletEngpass, value: bottleneck.length > 65 ? bottleneck.slice(0, 65) + "…" : bottleneck },
-                          { label: null, value: q.gradeABulletImpact },
-                          { label: null, value: q.gradeABulletBudget },
-                        ].map((item, i) => (
+                        {[q.gradeABulletEngpass, q.gradeABulletImpact, q.gradeABulletBudget].map((bullet, i) => (
                           <div key={i} className="flex items-start gap-3">
                             <CheckCircle2 className="w-5 h-5 text-emerald-400 mt-0.5 shrink-0" />
-                            <p className="text-slate-200 text-sm leading-relaxed">
-                              {item.label ? (
-                                <><span className="text-slate-400 font-medium">{item.label} </span>{item.value}</>
-                              ) : item.value}
-                            </p>
+                            <p className="text-slate-200 text-sm leading-relaxed">{bullet}</p>
                           </div>
                         ))}
                       </div>
@@ -337,12 +329,12 @@ function QualifierUI() {
                       {/* Divider */}
                       <div className="border-t border-emerald-500/15" />
 
-                      {/* Why ideal fit */}
+                      {/* Recommendation */}
                       <div>
                         <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
                           {q.gradeAFitTitle}
                         </p>
-                        <p className="text-slate-300 text-sm leading-relaxed">{result.recommendation}</p>
+                        <p className="text-slate-300 text-sm leading-relaxed">{q.gradeARecommendation}</p>
                       </div>
                     </div>
 

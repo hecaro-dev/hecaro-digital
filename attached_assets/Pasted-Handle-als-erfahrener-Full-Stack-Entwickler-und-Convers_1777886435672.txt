@@ -1,0 +1,37 @@
+Handle als erfahrener Full-Stack Entwickler und Conversion-Optimierer. 
+WICHTIGSTE REGEL: Verändere NUR den Text-Content und die logische Struktur der Demo-Ergebnisse. Das bestehende CSS, das Design-System, Layout-Verschiebungen, Logos oder Abstände dürfen NICHT verändert werden. Alles bleibt optisch exakt so, wie es jetzt ist.
+
+### 1. Hero-Section (Nur Text-Reset in i18n)
+Tausche die Texte im Hero aus (Layout unberührt lassen):
+- DE Headline: "Hör auf, Zeit mit Anfragen zu verschwenden, die nicht kaufen."
+- DE Subtext: "Wir filtern automatisch echte Entscheider heraus – weniger Aufwand, mehr Abschlüsse."
+- EN Headline: "Stop wasting time on leads that won’t buy."
+- EN Subtext: "We automatically filter real decision-makers – less work, more closes."
+- ES Headline: "Deja de perder tiempo con contactos que no compran."
+- ES Subtext: "Filtramos automáticamente a quienes tienen el poder de decisión – menos trabajo, más cierres."
+- Primärer CTA: "Kostenlose Demo starten" / "Probar demo".
+
+### 2. Demo-System (Logik-Update)
+Überarbeite innerhalb der bestehenden Demo-Komponente NUR das visuelle Ergebnis (Screen 4):
+- Ersetze Noten (A/B) durch ein farbiges Ampel-Icon: 🟢 (Qualifiziert), 🟡 (Potenziell), 🔴 (Nicht qualifiziert).
+- Neuer Status-Text: "Kontakt qualifiziert – hohe Priorität".
+- Nutze 3 kurze Bullets für Budget, Entscheider und Dringlichkeit.
+- Handlungsempfehlung drunter: "Empfehlung: Sofortigen Rückruf vereinbaren".
+- Finaler Button in der Demo: "Das will ich für mein Geschäft".
+
+### 3. KI-Terminologie säubern
+Tausche in i18n alle sichtbaren Begriffe "KI/AI/IA" aus:
+- Ersetze durch: "Intelligenter Filter" oder "Automatisches System".
+- Das Design und die Platzierung der Buttons bleiben identisch.
+
+### 4. Pakete & neutraler Hinweis
+- Preise (1.250€ / 2.500€) bleiben unverändert.
+- Füge unter den Paketen diesen Text ein: "Hinweis: Viele Unternehmen bemerken bereits in der ersten Woche eine spürbare Entlastung durch den Wegfall unnötiger Erstgespräche."
+
+### 5. Neuer Content-Block: Zielgruppe
+Füge einen minimalistischen Abschnitt "Für wen ist das?" ein. Nutze dafür die bestehende Section-Struktur deiner App, damit das Design konsistent bleibt.
+- Text: "Ideal für B2B-Agenturen, Coaches und Dienstleister, die regelmäßig Anfragen erhalten und keine Zeit mehr mit unpassenden Leads verschwenden wollen."
+
+### 6. Technische QA
+- Aktualisiere die i18n-JSON-Dateien.
+- Prüfe, ob das Mobile-Layout durch die neuen (evtl. längeren) Texte nicht verschoben wird. Falls nötig, passe nur die Schriftgröße minimal an, NIEMALS das Layout.

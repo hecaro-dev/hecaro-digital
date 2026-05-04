@@ -7,6 +7,7 @@ import Header from "./Header";
 import HeroSection from "./HeroSection";
 import MarqueeSection from "./MarqueeSection";
 import ServicesSection from "./ServicesSection";
+import TargetGroupSection from "./TargetGroupSection";
 import ValuesSection from "./ValuesSection";
 import PortfolioSection from "./PortfolioSection";
 import AboutSection from "./AboutSection";
@@ -45,6 +46,7 @@ function HomePageInner() {
         <HeroSection onNav={handleNav} />
         <MarqueeSection />
         <ServicesSection />
+        <TargetGroupSection />
         <ValuesSection />
         <PortfolioSection />
         <AboutSection />

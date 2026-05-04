@@ -126,7 +126,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 }}
                 onMouseMove={onCtaMove}
                 onMouseLeave={onCtaLeave}
-                onClick={() => onNav("contact")}
+                onClick={() => onNav("portfolio")}
                 className="group inline-flex items-center justify-center gap-3 px-12 py-6 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs tracking-widest uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
               >
                 {t.hero.cta}

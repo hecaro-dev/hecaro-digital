@@ -22,8 +22,8 @@ export const en: Translations = {
   },
   hero: {
     badge: "SMART INQUIRY QUALIFICATION",
-    headline: "Stop wasting time on leads\nthat won't buy.",
-    sub: "We automatically filter real decision-makers – less work, more closes.",
+    headline: "Stop wasting time with leads\nthat don't buy.",
+    sub: "We automatically filter real decision-makers — less effort, more closed deals.",
     cta: "Start free demo",
     cta2: "Discover Method",
   },

@@ -22,9 +22,9 @@ export const es: Translations = {
   },
   hero: {
     badge: "CUALIFICACIÓN INTELIGENTE DE CONSULTAS",
-    headline: "Deja de perder tiempo con contactos\nque no compran.",
-    sub: "Filtramos automáticamente a quienes tienen el poder de decisión – menos trabajo, más cierres.",
-    cta: "Probar demo",
+    headline: "Deja de perder el tiempo con\nclientes que no van a comprar.",
+    sub: "Filtramos automáticamente a los decisores reales — menos trabajo, más cierres.",
+    cta: "Probar demo gratuita",
     cta2: "Descubrir método",
   },
   marquee: [

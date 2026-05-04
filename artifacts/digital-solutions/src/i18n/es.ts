@@ -43,7 +43,7 @@ export const es: Translations = {
     sub: "Elija el sistema que mejor se adapta a su situación actual.",
     aiTitle: "Probar demo del sistema en vivo",
     aiDesc: "Compruebe usted mismo cómo el sistema revisa solicitudes en 4 pasos, antes de mantener una sola conversación.",
-    note: "Nota: Muchas empresas notan un alivio significativo ya en la primera semana, al eliminar primeras llamadas innecesarias.",
+    note: "Las empresas que filtran consultas automáticamente reportan hasta un 70% menos de reuniones innecesarias — más tiempo para clientes que realmente compran.",
     cta: "Probar demo gratuita",
     items: [
       {

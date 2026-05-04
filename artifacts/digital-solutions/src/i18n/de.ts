@@ -41,7 +41,7 @@ export const de = {
     sub: "Transparent kalkuliert. Sofort einsatzbereit. Wählen Sie das System, das zu Ihrer aktuellen Situation passt.",
     aiTitle: "System-Demo live testen",
     aiDesc: "Erleben Sie selbst, wie das System Anfragen in 4 Schritten bewertet – bevor Sie ein einziges Gespräch führen.",
-    note: "Hinweis: Viele Unternehmen bemerken bereits in der ersten Woche eine spürbare Entlastung durch den Wegfall unnötiger Erstgespräche.",
+    note: "Unternehmen, die Anfragen automatisch filtern, berichten von bis zu 70% weniger nutzlosen Erstgesprächen — mehr Zeit für Kunden, die wirklich kaufen.",
     cta: "Kostenlose Demo starten",
     items: [
       {

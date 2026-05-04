@@ -43,7 +43,7 @@ export const en: Translations = {
     sub: "Choose the system that fits where you are right now.",
     aiTitle: "Try system demo live",
     aiDesc: "See for yourself how the system reviews enquiries in 4 steps — before you take a single call.",
-    note: "Note: Many businesses notice a significant reduction in workload within the first week, simply by eliminating unnecessary first calls.",
+    note: "Businesses that filter enquiries automatically report up to 70% fewer wasted calls — more time for clients who actually buy.",
     cta: "Start free demo",
     items: [
       {

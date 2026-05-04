@@ -91,7 +91,7 @@ export default function PortfolioSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-16 text-center"
         >
           <span className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-3 inline-block">
             {t.portfolio.label}
@@ -99,7 +99,7 @@ export default function PortfolioSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             {t.portfolio.headline}
           </h2>
-          <p className="text-slate-400 text-lg max-w-xl">{t.portfolio.sub}</p>
+          <p className="text-slate-400 text-lg max-w-xl mx-auto">{t.portfolio.sub}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

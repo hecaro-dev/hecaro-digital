@@ -23,7 +23,7 @@ export default function ValuesSection() {
           <span className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-3 inline-block">
             {t.values.label}
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-white">
+          <h2 className="text-3xl md:text-5xl font-bold text-white text-center">
             {t.values.headline}
           </h2>
         </motion.div>

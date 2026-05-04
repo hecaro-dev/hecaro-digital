@@ -122,7 +122,7 @@ export const es: Translations = {
         description:
           "El problema: demasiadas conversaciones con prospectos inadecuados. Esta simulación muestra cómo un sistema revisa las consultas automáticamente según sus criterios, antes de que usted invierta su tiempo.",
         problem: "Demasiadas primeras conversaciones inapropiadas",
-        ctaLabel: "Iniciar simulación →",
+        ctaLabel: "Probar demo gratis",
       },
       {
         tag: "Recepción Estructurada",
@@ -130,7 +130,7 @@ export const es: Translations = {
         description:
           "El problema: los clientes no saben describir su proyecto. Este sistema recoge la solicitud de forma estructurada y prepara toda la información relevante directamente.",
         problem: "Solicitudes de proyecto no estructuradas",
-        ctaLabel: "Probar sistema →",
+        ctaLabel: "Probar demo gratis",
       },
       {
         tag: "Entrega Automática",
@@ -138,7 +138,7 @@ export const es: Translations = {
         description:
           "El problema: las consultas revisadas acaban en la bandeja de entrada en lugar de ser transferidas. Esta demo muestra cómo un proceso estructura las consultas en tiempo real y las reenvía automáticamente.",
         problem: "Seguimiento manual tras la revisión",
-        ctaLabel: "Iniciar proceso →",
+        ctaLabel: "Probar demo gratis",
       },
     ],
     cta: "Ver todas las demos",
@@ -215,7 +215,7 @@ export const es: Translations = {
   },
   contact: {
     label: "Contacto",
-    headline: "Solicitar una verificación del sistema",
+    headline: "¿Dejar de perder el tiempo?",
     cta: "¿Listo para recibir consultas más cualificadas?",
     sub: "Describa su situación — le responderé en 24 horas.",
     namePlaceholder: "Su nombre",
@@ -346,6 +346,10 @@ export const es: Translations = {
     successText: "Analizaré su proyecto personalmente y le responderé en 1–2 días hábiles con propuestas concretas.",
     backHome: "Volver al inicio",
     required: "Obligatorio",
+  },
+  demoResult: {
+    rating: "Su valoración: B (Buen potencial)",
+    cta: "Solicitar consulta gratuita",
   },
   footer: {
     tagline: "Cualificación automatizada de leads y Landing Pages de conversión para B2B",

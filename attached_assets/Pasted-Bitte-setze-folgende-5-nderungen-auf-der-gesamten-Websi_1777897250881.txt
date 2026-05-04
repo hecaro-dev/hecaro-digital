@@ -1,0 +1,34 @@
+Bitte setze folgende 5 Änderungen auf der gesamten Website um – für alle 3 Sprachen (DE, EN, ES) gleichzeitig. Verändere dabei KEINE Farben, kein Logo und kein Design.
+
+1. SCROLLEN REPARIEREN
+Wenn ein Besucher oben auf ein Paket klickt und zur Demo-Sektion springt, wird die Überschrift vom Navigationsmenü verdeckt. Bitte füge bei allen Sprung-Links (Anchor-Links) einen Scroll-Offset von mindestens 80px hinzu, damit die Ziel-Überschrift vollständig sichtbar ist und nicht hinter dem Menü verschwindet. Nutze dafür scroll-margin-top oder eine gleichwertige Lösung.
+
+2. ÜBERSCHRIFTEN ZENTRIEREN
+In den Sektionen "Meine Werte" (DE) / "My Values" (EN) / "Mis Valores" (ES) und "Mein Prozess" (DE) / "My Process" (EN) / "Mi Proceso" (ES): Stelle sicher, dass alle Abschnitts-Überschriften und Unterüberschriften in diesen Sektionen zentriert ausgerichtet sind (text-center).
+
+3. DEMO-ENDE MIT AMPEL UND BUTTON
+Am Ende jeder der 3 Demos soll ein Ergebnis-Block erscheinen mit:
+
+Einer Ampel-Anzeige (grünes Licht = gut, gelbes Licht = mittel, rotes Licht = schlecht) — standardmäßig auf Gelb/Grün gesetzt als Beispiel
+Einer Bewertungszeile:
+DE: „Ihre Bewertung: B (Gutes Potenzial)"
+EN: „Your rating: B (Good potential)"
+ES: „Su valoración: B (Buen potencial)"
+Einem Call-to-Action-Button:
+DE: „Kostenloses Erstgespräch anfragen"
+EN: „Request free consultation"
+ES: „Solicitar consulta gratuita"
+4. ALLE HAUPT-BUTTONS VEREINHEITLICHEN
+Ersetze alle Varianten von Demo-Buttons (wie „Check starten →", „System testen →", „Ablauf starten →", „Live-Demo starten →") durch einheitliche Texte:
+
+DE: „KOSTENLOSE DEMO STARTEN"
+EN: „START FREE DEMO"
+ES: „PROBAR DEMO GRATIS"
+Die Buttons in den Paketen (Paket 01, 02, 03) sollen ebenfalls diesen einheitlichen Text tragen.
+5. KONTAKTFORMULAR-ÜBERSCHRIFT
+Die Überschrift über dem Kontaktformular soll in allen 3 Sprachen lauten:
+
+DE: „Zeitverschwendung beenden?"
+EN: „Stop wasting time?"
+ES: „¿Dejar de perder el tiempo?"
+Falls diese Überschrift in EN oder ES noch anders lautet, bitte entsprechend anpassen.

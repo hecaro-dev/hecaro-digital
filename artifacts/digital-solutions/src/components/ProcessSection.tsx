@@ -21,7 +21,7 @@ export default function ProcessSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-20 max-w-2xl"
+          className="mb-20 max-w-2xl mx-auto text-center"
         >
           <span className="inline-block text-emerald-400 text-xs font-bold tracking-widest uppercase mb-4">
             {t.process.label}

@@ -6,6 +6,7 @@ import { ArrowRight, ArrowLeft, Sparkles, CheckCircle2, AlertCircle, Home } from
 import { I18nProvider, type Lang } from "../i18n";
 import { useI18n } from "../i18n";
 import Link from "next/link";
+import DemoResultBlock from "./DemoResultBlock";
 
 interface QualifyResult {
   grade: "A" | "B";
@@ -410,6 +411,8 @@ function QualifierUI() {
                     </div>
                   </>
                 )}
+
+                <DemoResultBlock />
 
                 {/* Demo note */}
                 <p className="text-center text-slate-600 text-xs pt-2 leading-relaxed">

@@ -122,7 +122,7 @@ export const en: Translations = {
         description:
           "The problem: too many conversations with unsuitable prospects. This check shows how a system automatically reviews enquiries against your criteria — before you invest your time.",
         problem: "Too many unsuitable first conversations",
-        ctaLabel: "Start check →",
+        ctaLabel: "Start free demo",
       },
       {
         tag: "Structured Intake",
@@ -130,7 +130,7 @@ export const en: Translations = {
         description:
           "The problem: prospects don't know how to describe their project. This system collects enquiries in a structured way and processes all relevant information directly.",
         problem: "Unstructured project enquiries",
-        ctaLabel: "Test system →",
+        ctaLabel: "Start free demo",
       },
       {
         tag: "Automatic Handover",
@@ -138,7 +138,7 @@ export const en: Translations = {
         description:
           "The problem: reviewed enquiries end up in the inbox instead of being passed on. This check shows how a process structures enquiries in real time and forwards them automatically.",
         problem: "Manual follow-up after review",
-        ctaLabel: "Start process →",
+        ctaLabel: "Start free demo",
       },
     ],
     cta: "View all demos",
@@ -215,7 +215,7 @@ export const en: Translations = {
   },
   contact: {
     label: "Contact",
-    headline: "Request a System Check",
+    headline: "Stop wasting time?",
     cta: "Ready for more qualified enquiries?",
     sub: "Describe your situation — I will respond within 24 hours.",
     namePlaceholder: "Your Name",
@@ -346,6 +346,10 @@ export const en: Translations = {
     successText: "I'll personally analyse your project and reply within 1–2 business days with concrete suggestions.",
     backHome: "Back to Home",
     required: "Required",
+  },
+  demoResult: {
+    rating: "Your rating: B (Good potential)",
+    cta: "Request free consultation",
   },
   footer: {
     tagline: "Automated Lead Qualification & Conversion Landing Pages for B2B",

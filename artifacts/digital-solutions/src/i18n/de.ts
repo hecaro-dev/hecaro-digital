@@ -120,7 +120,7 @@ export const de = {
         description:
           "Das Problem: Zu viele Gespräche mit ungeeigneten Interessenten. Dieser Check zeigt, wie ein System Anfragen automatisch nach Ihren Kriterien prüft – bevor Sie Ihre Zeit investieren.",
         problem: "Zu viele ungeeignete Erstgespräche",
-        ctaLabel: "Check starten →",
+        ctaLabel: "Kostenlose Demo starten",
       },
       {
         tag: "Strukturierte Aufnahme",
@@ -128,7 +128,7 @@ export const de = {
         description:
           "Das Problem: Interessenten wissen nicht, wie sie ihr Vorhaben beschreiben sollen. Dieses System nimmt die Anfrage strukturiert auf und bereitet alle relevanten Informationen direkt auf.",
         problem: "Unstrukturierte Projektanfragen",
-        ctaLabel: "System testen →",
+        ctaLabel: "Kostenlose Demo starten",
       },
       {
         tag: "Automatische Übergabe",
@@ -136,7 +136,7 @@ export const de = {
         description:
           "Das Problem: Geprüfte Anfragen landen in der Inbox statt direkt im System. Dieser Check zeigt, wie ein Ablauf Anfragen in Echtzeit aufbereitet und automatisch weiterleitet.",
         problem: "Manuelles Nacharbeiten nach der Prüfung",
-        ctaLabel: "Ablauf starten →",
+        ctaLabel: "Kostenlose Demo starten",
       },
     ],
     cta: "Alle Demos ansehen",
@@ -344,6 +344,10 @@ export const de = {
     successText: "Ich analysiere Ihr Projekt persönlich und schreibe Ihnen innerhalb von 1–2 Werktagen mit konkreten Vorschlägen zurück.",
     backHome: "Zurück zur Startseite",
     required: "Pflichtfeld",
+  },
+  demoResult: {
+    rating: "Ihre Bewertung: B (Gutes Potenzial)",
+    cta: "Kostenloses Erstgespräch anfragen",
   },
   footer: {
     tagline: "Automatisierte Lead-Qualifizierung & Conversion Landing Pages für B2B",

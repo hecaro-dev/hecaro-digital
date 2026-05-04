@@ -6,6 +6,7 @@ import { CheckCircle2, ArrowRight, Home, Sparkles } from "lucide-react";
 import { I18nProvider, type Lang } from "../i18n";
 import { useI18n } from "../i18n";
 import Link from "next/link";
+import DemoResultBlock from "./DemoResultBlock";
 
 function ProjectCheckUI() {
   const { t, lang } = useI18n();
@@ -235,6 +236,7 @@ function ProjectCheckUI() {
               </motion.div>
             )}
           </AnimatePresence>
+          <DemoResultBlock />
         </div>
       </main>
     </div>

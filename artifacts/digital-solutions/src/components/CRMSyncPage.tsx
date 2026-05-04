@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { I18nProvider, type Lang, useI18n } from "../i18n";
 import Link from "next/link";
+import DemoResultBlock from "./DemoResultBlock";
 
 type Phase = "idle" | "s1" | "s2" | "done";
 
@@ -677,6 +678,8 @@ function CRMSyncUI() {
             {c.ctaAudit}
           </Link>
         </motion.div>
+
+        <DemoResultBlock />
 
         {/* ── Demo note ── */}
         <p className="text-center text-xs text-slate-600 border-t border-white/[0.04] pt-6">

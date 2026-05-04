@@ -107,6 +107,7 @@ export default function PortfolioSection() {
             <motion.div
               key={i}
               id={`portfolio-card-${i}`}
+              style={{ scrollMarginTop: "100px" }}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.15 }}

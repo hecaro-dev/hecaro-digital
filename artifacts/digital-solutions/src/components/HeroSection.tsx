@@ -2,9 +2,8 @@
 
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { useI18n } from "../i18n";
-import Link from "next/link";
 
 interface HeroSectionProps {
   onNav: (section: string) => void;
@@ -23,14 +22,7 @@ function anim(delay: number) {
 export default function HeroSection({ onNav }: HeroSectionProps) {
   const { t, lang } = useI18n();
 
-  // Split headline by newline, then isolate the last word for the neon highlight
   const headlineParts = t.hero.headline.split("\n");
-  const lastLine = headlineParts[headlineParts.length - 1];
-  const lastSpaceIdx = lastLine.lastIndexOf(" ");
-  const lastLinePrefix =
-    lastSpaceIdx >= 0 ? lastLine.substring(0, lastSpaceIdx + 1) : "";
-  const lastLineKeyword =
-    lastSpaceIdx >= 0 ? lastLine.substring(lastSpaceIdx + 1) : lastLine;
 
   const ctaRef = useRef<HTMLButtonElement>(null);
   const mx = useMotionValue(0);
@@ -89,7 +81,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
               ✦ {t.hero.badge}
             </motion.p>
 
-            {/* H1 — oversized, 800 weight, last word in neon green */}
+            {/* H1 — oversized, 800 weight, uniform white */}
               <motion.h1
                 {...anim(0.1)}
                 className="text-4xl md:text-5xl lg:text-6xl xl:text-6xl tracking-tighter text-white !overflow-visible"
@@ -101,17 +93,11 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                   marginBottom: "2rem",
                 }}
               >
-                {headlineParts.slice(0, -1).map((line, i) => (
+                {headlineParts.map((line, i) => (
                   <span key={i} className="block !overflow-visible !leading-[1.5] !pb-2" style={{ whiteSpace: "nowrap" }}>
                     {line}
                   </span>
                 ))}
-                <span className="block !overflow-visible !leading-[1.5] !pb-2" style={{ whiteSpace: "nowrap" }}>
-                  {lastLinePrefix}
-                  <span style={{ color: "#00ff99", display: "inline-block", paddingBottom: "15px", marginBottom: "-15px" }}>
-                    {lastLineKeyword}
-                  </span>
-                </span>
               </motion.h1>
             {/* Subline */}
             <motion.p
@@ -124,12 +110,11 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
               {t.hero.sub}
             </motion.p>
 
-            {/* CTAs */}
+            {/* CTA — single primary action */}
             <motion.div
               {...anim(0.34)}
-              className="flex flex-col sm:flex-row items-start gap-4 mt-10"
+              className="mt-12"
             >
-              {/* Primary — huge button with neon glow */}
               <motion.button
                 ref={ctaRef}
                 style={{
@@ -141,7 +126,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 onMouseMove={onCtaMove}
                 onMouseLeave={onCtaLeave}
                 onClick={() => onNav("contact")}
-                className="group inline-flex items-center justify-center gap-3 w-full sm:w-auto px-12 py-6 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs tracking-widest uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                className="group inline-flex items-center justify-center gap-3 px-12 py-6 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs tracking-widest uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
               >
                 {t.hero.cta}
                 <ArrowRight
@@ -149,23 +134,6 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                   aria-hidden="true"
                 />
               </motion.button>
-
-              {/* Secondary */}
-              <button
-                onClick={() => onNav("services")}
-                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-6 rounded-full border border-white/20 hover:border-white/40 text-slate-300 hover:text-white font-bold text-xs tracking-widest uppercase transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50"
-              >
-                {t.hero.cta2}
-              </button>
-
-              {/* KI-Demo */}
-              <Link
-                href={`/${lang}/preview/demo-qualifier`}
-                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-6 rounded-full border border-emerald-500/30 hover:border-emerald-500/60 hover:bg-emerald-500/5 text-emerald-400 hover:text-emerald-300 font-bold text-xs tracking-widest uppercase transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50"
-              >
-                <Sparkles className="w-3.5 h-3.5" />
-                {t.qualifier.heroCta}
-              </Link>
             </motion.div>
           </div>
 

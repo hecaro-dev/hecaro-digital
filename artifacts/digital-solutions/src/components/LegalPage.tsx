@@ -12,6 +12,31 @@ function LegalPageInner({ kind }: { kind: LegalKind }) {
 
   const title =
     kind === "imprint" ? t.footer.links.imprint : t.footer.links.privacy;
+  const text = kind === "imprint" ? t.legal.imprintText : t.legal.privacyText;
+  const openAiHeading =
+    lang === "de" ? "Einsatz von OpenAI" : lang === "es" ? "Uso de OpenAI" : "Use of OpenAI";
+
+  const renderLine = (line: string) => {
+    const url = "https://openai.com/policies/privacy-policy";
+    const [before, after] = line.split(url);
+
+    if (after === undefined) return line;
+
+    return (
+      <>
+        {before}
+        <a
+          href={url}
+          target="_blank"
+          rel="noreferrer"
+          className="text-emerald-400 underline decoration-emerald-400/40 underline-offset-4 hover:text-emerald-300"
+        >
+          {url}
+        </a>
+        {after}
+      </>
+    );
+  };
 
   return (
     <div
@@ -51,9 +76,25 @@ function LegalPageInner({ kind }: { kind: LegalKind }) {
           </h1>
 
           <section className="bg-white/[0.03] border border-white/[0.08] rounded-3xl p-8 sm:p-10">
-            <p className="text-slate-300 text-sm uppercase tracking-widest font-semibold">
-              RECHTLICHER TEXT IN BEARBEITUNG
-            </p>
+            <div className="space-y-4">
+              {text.split("\n\n").map((paragraph, index) =>
+                paragraph === openAiHeading ? (
+                  <h2
+                    key={index}
+                    className="pt-6 text-xl sm:text-2xl font-bold text-white tracking-tight"
+                  >
+                    {paragraph}
+                  </h2>
+                ) : (
+                  <p
+                    key={index}
+                    className="whitespace-pre-line text-sm sm:text-base leading-7 text-slate-300"
+                  >
+                    {renderLine(paragraph)}
+                  </p>
+                )
+              )}
+            </div>
           </section>
 
           <div className="mt-10">

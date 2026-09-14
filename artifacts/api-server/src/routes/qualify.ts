@@ -1,5 +1,6 @@
 import { Router } from "express";
 import OpenAI from "openai";
+import { calculateLeadScore, determineLeadGrade } from "@workspace/lead-scoring";
 
 const router = Router();
 
@@ -11,46 +12,14 @@ The lead score and grade have already been calculated deterministically. Do not 
 A good lead has a specific operational bottleneck, loses time to unproductive conversations frequently, and has enough organisational capacity to implement an automation system.
 
 Grade A / green (60-100) = strong, concrete need and high implementation potential.
-Grade B / yellow (45-59) = recognisable need, but urgency or implementation potential is moderate.
-Grade C / red (0-44) = weak or vague need with low current urgency and limited implementation potential.
+Grade B / yellow (35-59) = recognisable need, but urgency or implementation potential is moderate.
+Grade C / red (0-34) = weak or vague need with low current urgency and limited implementation potential.
 
 Respond ONLY with valid JSON in this exact shape:
 {
   "summary": "2-3 sentence summary of the lead situation in the same language as the input",
   "recommendation": "1-2 sentence actionable recommendation in the same language as the input"
 }`;
-
-function calculateScore(
-  bottleneck: string,
-  impact: string,
-  companySize: string,
-): number {
-  const normalizedImpact = impact.toLowerCase();
-  const normalizedCompanySize = companySize.toLowerCase();
-
-  const bottleneckScore =
-    bottleneck.trim().length >= 60 ? 20 : bottleneck.trim().length >= 25 ? 15 : 5;
-
-  const impactScore =
-    normalizedImpact.includes("täglich") ||
-    normalizedImpact.includes("daily") ||
-    normalizedImpact.includes("a diario")
-      ? 45
-      : normalizedImpact.includes("mehrmals") ||
-          normalizedImpact.includes("several") ||
-          normalizedImpact.includes("varias")
-        ? 30
-        : 15;
-
-  const companyScore = normalizedCompanySize.includes("10+")
-    ? 35
-    : normalizedCompanySize.includes("2–10") ||
-        normalizedCompanySize.includes("2-10")
-      ? 25
-      : 10;
-
-  return bottleneckScore + impactScore + companyScore;
-}
 
 router.post("/qualify", async (req, res) => {
   try {
@@ -61,8 +30,8 @@ router.post("/qualify", async (req, res) => {
       return;
     }
 
-    const score = calculateScore(bottleneck, impact, budget);
-    const grade = score >= 60 ? "A" : score >= 45 ? "B" : "C";
+    const score = calculateLeadScore(bottleneck, impact, budget);
+    const grade = determineLeadGrade(score);
 
     const userMessage = `Bottleneck / Engpass: ${bottleneck}
 Impact: ${impact}

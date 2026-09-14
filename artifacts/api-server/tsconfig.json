@@ -3,7 +3,11 @@
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src",
-    "types": ["node"]
+    "types": ["node"],
+    "baseUrl": "../..",
+    "paths": {
+      "@workspace/lead-scoring": ["lib/lead-scoring/src/index.ts"]
+    }
   },
   "include": ["src"],
   "references": [
@@ -12,6 +16,9 @@
     },
     {
       "path": "../../lib/api-zod"
+    },
+    {
+      "path": "../../lib/lead-scoring"
     }
   ]
 }

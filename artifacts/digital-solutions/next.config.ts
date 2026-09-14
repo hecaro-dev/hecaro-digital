@@ -7,6 +7,7 @@ const replitDevOrigins = [
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  transpilePackages: ["@workspace/lead-scoring"],
   allowedDevOrigins: [
     "127.0.0.1",
     "localhost",

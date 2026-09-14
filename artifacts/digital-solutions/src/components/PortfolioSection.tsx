@@ -5,7 +5,7 @@ import { useInView } from "../hooks/useInView";
 import { useI18n } from "../i18n";
 import Link from "next/link";
 
-const DEMO_PATHS = ["demo-qualifier", "crm-sync", "project-check"];
+const DEMO_PATHS = ["demo-qualifier", "anfragen-filter"];
 
 const PLACEHOLDER_GRADIENTS = [
   "from-emerald-950/80 via-emerald-900/40 to-emerald-800/20",
@@ -35,7 +35,7 @@ export default function PortfolioSection() {
           <p className="text-slate-400 text-lg max-w-xl mx-auto">{t.portfolio.sub}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 lg:grid-cols-2">
           {t.portfolio.items.map((item, i) => (
             <motion.div
               key={i}

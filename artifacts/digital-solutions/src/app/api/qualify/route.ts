@@ -9,8 +9,8 @@ The lead score and grade have already been calculated deterministically. Do not 
 A good lead has a specific operational bottleneck, loses time to unproductive conversations frequently, and has enough organisational capacity to implement an automation system.
 
 Grade A / green (60-100) = strong, concrete need and high implementation potential.
-Grade B / yellow (35-59) = recognisable need, but urgency or implementation potential is moderate.
-Grade C / red (0-34) = weak or vague need with low current urgency and limited implementation potential.
+Grade B / yellow (45-59) = recognisable need, but urgency or implementation potential is moderate.
+Grade C / red (0-44) = weak or vague need with low current urgency and limited implementation potential.
 
 Respond ONLY with valid JSON in this exact shape:
 {
@@ -59,7 +59,7 @@ export async function POST(req: NextRequest) {
     }
 
     const score = calculateScore(bottleneck, impact, budget);
-    const grade = score >= 60 ? "A" : score >= 35 ? "B" : "C";
+    const grade = score >= 60 ? "A" : score >= 45 ? "B" : "C";
 
     const userMessage = `Bottleneck / Engpass: ${bottleneck}
 Impact: ${impact}

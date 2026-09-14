@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft, Sparkles, CheckCircle2, AlertCircle, Home } from "lucide-react";
 import { I18nProvider, type Lang } from "../i18n";
 import { useI18n } from "../i18n";
 import Link from "next/link";
@@ -59,23 +58,9 @@ function QualifierUI() {
   const TrafficLightCTA = ({ grade }: { grade: "A" | "B" | "C" }) => (
     <div className="mt-6 pt-6 border-t border-white/[0.06] flex flex-col items-center gap-4 text-center">
       <div className="flex items-center gap-3">
-        <span className="w-5 h-5 rounded-full bg-red-500/20 border border-red-500/15" />
-        {grade === "A" ? (
-          <>
-            <span className="w-5 h-5 rounded-full bg-yellow-400/20 border border-yellow-400/15" />
-            <span className="w-5 h-5 rounded-full bg-emerald-400 border border-emerald-300/50 shadow-[0_0_10px_rgba(52,211,153,0.7)]" />
-          </>
-        ) : grade === "B" ? (
-          <>
-            <span className="w-5 h-5 rounded-full bg-yellow-400 border border-yellow-300/50 shadow-[0_0_10px_rgba(250,204,21,0.6)]" />
-            <span className="w-5 h-5 rounded-full bg-emerald-400/20 border border-emerald-400/15" />
-          </>
-        ) : (
-          <>
-            <span className="w-5 h-5 rounded-full bg-yellow-400/20 border border-yellow-400/15" />
-            <span className="w-5 h-5 rounded-full bg-emerald-400/20 border border-emerald-400/15" />
-          </>
-        )}
+        <span className={`w-5 h-5 rounded-full border ${grade === "C" ? "bg-red-500 border-red-400 shadow-[0_0_10px_rgba(239,68,68,0.7)]" : "bg-red-500/20 border-red-500/15"}`} />
+        <span className={`w-5 h-5 rounded-full border ${grade === "B" ? "bg-yellow-400 border-yellow-300 shadow-[0_0_10px_rgba(250,204,21,0.6)]" : "bg-yellow-400/20 border-yellow-400/15"}`} />
+        <span className={`w-5 h-5 rounded-full border ${grade === "A" ? "bg-emerald-400 border-emerald-300 shadow-[0_0_10px_rgba(52,211,153,0.7)]" : "bg-emerald-400/20 border-emerald-400/15"}`} />
       </div>
       <span className="text-sm font-semibold text-slate-200">
         {grade === "A" ? t.demoResult.ratingA : grade === "B" ? t.demoResult.ratingB : q.gradeC}
@@ -105,8 +90,7 @@ function QualifierUI() {
           <span className="font-bold text-base tracking-wide">HECARO Digital</span>
         </Link>
         <div className="flex items-center gap-3">
-          <span className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-semibold tracking-wider">
-            <Sparkles className="w-3.5 h-3.5" />
+          <span className="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-semibold tracking-wider">
             {q.badge}
           </span>
           <div className="flex items-center gap-1">
@@ -191,7 +175,7 @@ function QualifierUI() {
                     disabled={!canProceed[0]}
                     className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-30 disabled:cursor-not-allowed text-black font-bold text-sm uppercase tracking-widest transition-all"
                   >
-                    {q.next} <ArrowRight className="w-4 h-4" />
+                    {q.next}
                   </button>
                 </div>
               </motion.div>
@@ -230,14 +214,14 @@ function QualifierUI() {
                 </div>
                 <div className="flex justify-between mt-6">
                   <button onClick={() => setStep(0)} className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 text-slate-400 hover:text-white text-sm transition-colors">
-                    <ArrowLeft className="w-4 h-4" /> {q.back}
+                    {q.back}
                   </button>
                   <button
                     onClick={() => setStep(2)}
                     disabled={!canProceed[1]}
                     className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-30 disabled:cursor-not-allowed text-black font-bold text-sm uppercase tracking-widest transition-all"
                   >
-                    {q.next} <ArrowRight className="w-4 h-4" />
+                    {q.next}
                   </button>
                 </div>
               </motion.div>
@@ -277,14 +261,13 @@ function QualifierUI() {
 
                 {errorMsg && (
                   <div className="mt-4 flex items-center gap-2 text-red-400 text-sm">
-                    <AlertCircle className="w-4 h-4 shrink-0" />
                     {errorMsg}
                   </div>
                 )}
 
                 <div className="flex justify-between mt-6">
                   <button onClick={() => setStep(1)} className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 text-slate-400 hover:text-white text-sm transition-colors">
-                    <ArrowLeft className="w-4 h-4" /> {q.back}
+                    {q.back}
                   </button>
                   <button
                     onClick={handleAnalyze}
@@ -297,7 +280,7 @@ function QualifierUI() {
                         {q.analyzing}
                       </>
                     ) : (
-                      <><Sparkles className="w-4 h-4" /> {q.analyze}</>
+                      <>{q.analyze}</>
                     )}
                   </button>
                 </div>
@@ -313,70 +296,58 @@ function QualifierUI() {
                 transition={{ duration: 0.4 }}
                 className="space-y-4"
               >
+                {(() => {
+                  const localGrade = result.score >= 60 ? "A" : result.score >= 45 ? "B" : "C";
+                  return (
                 <div className={`rounded-3xl border p-8 sm:p-10 space-y-7 ${
-                  result.grade === "A"
+                  localGrade === "A"
                     ? "border-emerald-500/30 bg-emerald-950/50"
-                    : result.grade === "B"
+                    : localGrade === "B"
                       ? "border-amber-500/25 bg-amber-950/20"
                       : "border-red-500/25 bg-red-950/20"
                 }`}>
                   {/* Traffic light */}
                   <div className="flex items-center gap-3">
-                    <span className="w-5 h-5 rounded-full bg-red-500/20 border border-red-500/15" />
-                    {result.grade === "A" ? (
-                      <>
-                        <span className="w-5 h-5 rounded-full bg-yellow-400/20 border border-yellow-400/15" />
-                        <span className="w-5 h-5 rounded-full bg-emerald-400 border border-emerald-300/50 shadow-[0_0_10px_rgba(52,211,153,0.7)]" />
-                      </>
-                    ) : result.grade === "B" ? (
-                      <>
-                        <span className="w-5 h-5 rounded-full bg-yellow-400 border border-yellow-300/50 shadow-[0_0_10px_rgba(250,204,21,0.6)]" />
-                        <span className="w-5 h-5 rounded-full bg-emerald-400/20 border border-emerald-400/15" />
-                      </>
-                    ) : (
-                      <>
-                        <span className="w-5 h-5 rounded-full bg-yellow-400/20 border border-yellow-400/15" />
-                        <span className="w-5 h-5 rounded-full bg-emerald-400/20 border border-emerald-400/15" />
-                      </>
-                    )}
+                    <span className={`w-5 h-5 rounded-full border ${localGrade === "C" ? "bg-red-500 border-red-400 shadow-[0_0_10px_rgba(239,68,68,0.7)]" : "bg-red-500/20 border-red-500/15"}`} />
+                    <span className={`w-5 h-5 rounded-full border ${localGrade === "B" ? "bg-yellow-400 border-yellow-300 shadow-[0_0_10px_rgba(250,204,21,0.6)]" : "bg-yellow-400/20 border-yellow-400/15"}`} />
+                    <span className={`w-5 h-5 rounded-full border ${localGrade === "A" ? "bg-emerald-400 border-emerald-300 shadow-[0_0_10px_rgba(52,211,153,0.7)]" : "bg-emerald-400/20 border-emerald-400/15"}`} />
                   </div>
 
                   {/* Label + Headline */}
                   <div>
                     <p className={`text-xs font-bold uppercase tracking-widest mb-2 ${
-                      result.grade === "A" ? "text-emerald-400" : result.grade === "B" ? "text-amber-400" : "text-red-400"
+                      localGrade === "A" ? "text-emerald-400" : localGrade === "B" ? "text-amber-400" : "text-red-400"
                     }`}>
                       {q.resultTitle} · {result.score}/100
                     </p>
                     <h2 className="text-xl sm:text-2xl font-bold text-white leading-snug">
-                      {result.grade === "A" ? q.gradeAHeadline : result.grade === "B" ? q.gradeBHeadline : q.gradeCHeadline}
+                      {localGrade === "A" ? q.gradeAHeadline : localGrade === "B" ? q.gradeBHeadline : q.gradeCHeadline}
                     </h2>
                   </div>
 
                   {/* Divider */}
                   <div className={`border-t ${
-                    result.grade === "A" ? "border-emerald-500/15" : result.grade === "B" ? "border-amber-500/15" : "border-red-500/15"
+                    localGrade === "A" ? "border-emerald-500/15" : localGrade === "B" ? "border-amber-500/15" : "border-red-500/15"
                   }`} />
 
                   {/* 3 checkmark bullets */}
                   <div className="space-y-3">
-                    {(result.grade === "A"
+                    {(localGrade === "A"
                       ? [q.gradeABulletEngpass, q.gradeABulletImpact, q.gradeABulletBudget]
-                      : result.grade === "B"
+                      : localGrade === "B"
                         ? [q.gradeBBullet1, q.gradeBBullet2, q.gradeBBullet3]
                         : [q.gradeCBullet1, q.gradeCBullet2, q.gradeCBullet3]
                     ).map((bullet, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <CheckCircle2 className={`w-5 h-5 mt-0.5 shrink-0 ${
-                          result.grade === "A" ? "text-emerald-400" : result.grade === "B" ? "text-amber-400" : "text-red-400"
-                        }`} />
+                      <div key={i} className={`border-l-2 pl-3 ${
+                        localGrade === "A" ? "border-emerald-500/50" : localGrade === "B" ? "border-amber-500/50" : "border-red-500/50"
+                      }`}>
                         <p className="text-slate-200 text-sm leading-relaxed">{bullet}</p>
                       </div>
                     ))}
                   </div>
 
                   {/* Saving note — only for grade A */}
-                  {result.grade === "A" && (
+                  {localGrade === "A" && (
                     <p className="text-emerald-300 text-sm font-bold leading-relaxed">
                       {q.gradeASavingNote}
                     </p>
@@ -395,9 +366,11 @@ function QualifierUI() {
                     href={`/${lang}/preview#services`}
                     className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-white/15 hover:border-white/30 text-slate-300 hover:text-white font-bold text-sm uppercase tracking-widest transition-all"
                   >
-                    {q.ctaA} <ArrowRight className="w-4 h-4" />
+                    {q.ctaA}
                   </Link>
                 </div>
+                  );
+                })()}
 
                 {/* Back home */}
                 <div className="flex justify-center">
@@ -405,13 +378,11 @@ function QualifierUI() {
                     href={`/${lang}/preview`}
                     className="inline-flex items-center gap-2 px-5 py-3 text-slate-500 hover:text-slate-300 text-sm transition-colors"
                   >
-                    <Home className="w-4 h-4" /> {q.backHome}
+                    {q.backHome}
                   </Link>
                 </div>
 
-                <p className="text-center text-slate-600 text-xs leading-relaxed">
-                  ✦ {q.demoNote}
-                </p>
+                <p className="text-center text-slate-600 text-xs leading-relaxed">{q.demoNote}</p>
               </motion.div>
             )}
           </AnimatePresence>

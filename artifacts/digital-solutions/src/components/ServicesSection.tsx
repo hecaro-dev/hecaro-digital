@@ -3,9 +3,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "../hooks/useInView";
 import { useI18n } from "../i18n";
-import Link from "next/link";
 
-const DEMO_TARGETS = ["portfolio-card-0", "portfolio-card-1", "portfolio-card-2"];
+const DEMO_TARGETS = ["portfolio-card-0", "portfolio-card-1"];
 
 function scrollToCard(id: string) {
   const el = document.getElementById(id);
@@ -24,6 +23,15 @@ export default function ServicesSection() {
     if (!contact) return;
     const top = contact.getBoundingClientRect().top + window.scrollY - 100;
     window.scrollTo({ top, behavior: "smooth" });
+  }
+
+  function handleCardAction(index: number) {
+    const demoTarget = DEMO_TARGETS[index];
+    if (demoTarget) {
+      scrollToCard(demoTarget);
+      return;
+    }
+    requestSystem();
   }
 
   return (
@@ -71,37 +79,36 @@ export default function ServicesSection() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                className="relative group bg-[rgba(255,255,255,0.03)] backdrop-blur-md border border-[rgba(255,255,255,0.08)] rounded-3xl p-8 hover:border-emerald-500/30 transition-all duration-500 overflow-hidden cursor-pointer flex flex-col md:grid md:[grid-row:span_6] md:[grid-template-rows:subgrid]"
-                onClick={() => scrollToCard(DEMO_TARGETS[i])}
+                className={`relative group bg-[rgba(255,255,255,0.03)] backdrop-blur-md border ${service.badge ? 'border-emerald-500/30' : 'border-[rgba(255,255,255,0.08)]'} rounded-3xl p-8 hover:border-emerald-500/50 transition-all duration-500 overflow-hidden cursor-pointer flex flex-col md:grid md:[grid-row:span_6] md:[grid-template-rows:subgrid]`}
+                onClick={() => handleCardAction(i)}
                 role="button"
                 tabIndex={0}
-                onKeyDown={(e) => e.key === "Enter" && scrollToCard(DEMO_TARGETS[i])}
+                onKeyDown={(e) => e.key === "Enter" && handleCardAction(i)}
               >
                 <div className="absolute -inset-px bg-gradient-to-br from-emerald-500/10 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-3xl" />
 
                 {/* Zone A: Tag */}
-                <div className="relative z-10 flex min-h-[30px] items-start justify-between gap-3 mb-6">
-                  <span className="inline-flex px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-slate-300">
-                    {service.tag}
-                  </span>
-                  {service.badge && (
+                <div className="relative z-10 flex min-h-[30px] items-start justify-end gap-3 mb-6">
+                  {service.badge ? (
                     <span className="inline-flex px-3 py-1 rounded-full bg-emerald-500 border border-emerald-400 text-xs font-bold text-black uppercase tracking-wider">
                       {service.badge}
                     </span>
+                  ) : (
+                    <span className="inline-block"></span>
                   )}
                 </div>
 
                 {/* Zone B1: Title */}
-                <div className="relative z-10 mb-3">
-                  <h3 className="text-xl font-bold text-white mb-3">
+                <div className="relative z-10 mb-2">
+                  <h3 className="text-xl font-bold text-white mb-2">
                     {service.title}
                   </h3>
                 </div>
 
-                {/* Zone B2: Description — flex-1 on mobile / 1fr subgrid row on desktop */}
-                <div className="relative z-10 flex-1 mb-3 md:flex-none">
+                {/* Zone B2: Subtitle */}
+                <div className="relative z-10 flex-1 mb-5 min-h-[48px] md:flex-none">
                   <p className="text-slate-400 text-sm leading-relaxed">
-                    {service.description}
+                    {service.subtitle}
                   </p>
                 </div>
 
@@ -117,8 +124,7 @@ export default function ServicesSection() {
                 {/* Zone D: Feature list */}
                 <ul className="relative z-10 grid gap-2.5 pt-6 border-t border-white/[0.06]" aria-label={`Features of ${service.title}`}>
                   {service.bullets.map((bullet, j) => (
-                    <li key={j} className="flex items-start gap-2.5 text-sm">
-                      <span className="font-bold text-emerald-400" aria-hidden="true">✓</span>
+                    <li key={j} className="border-l-2 border-emerald-500/40 pl-3 text-sm">
                       <span className="text-slate-300 leading-snug">{bullet}</span>
                     </li>
                   ))}
@@ -126,8 +132,8 @@ export default function ServicesSection() {
 
                 {/* Zone E: CTA Button */}
                 <div className="relative z-10 pt-6 mt-auto md:mt-0 border-t border-white/[0.06]">
-                  <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500 group-hover:bg-emerald-400 text-black font-bold text-xs tracking-widest uppercase transition-colors duration-300 pointer-events-none">
-                    {t.services.cta}
+                  <span className="flex items-center justify-center w-full rounded-full border border-white/15 bg-white/[0.04] px-6 py-3 text-xs font-bold uppercase tracking-widest text-white transition-colors group-hover:border-emerald-500/50 group-hover:text-emerald-300">
+                    {i < DEMO_TARGETS.length ? t.services.demoCta : t.services.cta}
                   </span>
                 </div>
               </motion.article>
@@ -135,46 +141,17 @@ export default function ServicesSection() {
           })}
         </div>
 
-        {/* Audit Link */}
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.36 }}
-          className="mt-8 flex justify-center"
-        >
-          <Link
-            href={`/${lang}/preview/crm-sync`}
-            className="group inline-flex items-center gap-2 text-slate-400 hover:text-emerald-400 text-sm transition-colors duration-200"
-          >
-            <span className="underline underline-offset-4 decoration-slate-600 group-hover:decoration-emerald-500 transition-colors duration-200">
-              {t.services.auditLink}
-            </span>
-          </Link>
-        </motion.div>
-
-        {/* Services Note */}
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.38 }}
-          className="text-center text-slate-400 text-base leading-relaxed italic"
-          style={{ marginTop: "40px", marginBottom: "40px" }}
-        >
-          {t.services.note}
-        </motion.p>
-
-        {/* Demo Banner */}
+        {/* Call to action below cards */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 p-6 sm:p-8 rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.04]"
+          className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 text-center bg-white/[0.02] border border-white/[0.06] rounded-2xl p-6 sm:p-8"
         >
-          <p className="text-slate-300 text-sm leading-relaxed">{t.services.postCtaText}</p>
+          <p className="text-slate-300 text-base md:text-lg font-medium">{t.services.postCtaText}</p>
           <button
-            type="button"
-            onClick={requestSystem}
-            className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full border border-emerald-500/40 hover:border-emerald-500/70 hover:bg-emerald-500/10 text-emerald-400 hover:text-emerald-300 text-xs font-bold uppercase tracking-widest transition-all duration-200 whitespace-nowrap"
+            onClick={() => requestSystem()}
+            className="shrink-0 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs tracking-widest uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
           >
             {t.services.postCtaButton}
           </button>

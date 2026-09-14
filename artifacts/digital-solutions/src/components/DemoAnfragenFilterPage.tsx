@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Component, type ErrorInfo, type ReactNode, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { I18nProvider, type Lang, useI18n } from "../i18n";
 import Link from "next/link";
@@ -9,6 +9,98 @@ interface FilterResult {
   score: number;
   summary: string;
   nextStep: string;
+}
+
+interface DemoErrorBoundaryProps {
+  children: ReactNode;
+  lang: Lang;
+}
+
+interface DemoErrorBoundaryState {
+  hasError: boolean;
+}
+
+const errorCopy = {
+  de: {
+    title: "Die Demo konnte nicht angezeigt werden.",
+    message: "Bitte starten Sie die Demo erneut. Ihre bisherigen Eingaben müssen dabei neu eingegeben werden.",
+    retry: "Demo neu starten",
+    back: "Zurück zur Startseite",
+  },
+  en: {
+    title: "The demo could not be displayed.",
+    message: "Please restart the demo. You will need to enter your previous answers again.",
+    retry: "Restart demo",
+    back: "Back to home",
+  },
+  es: {
+    title: "No se pudo mostrar la demo.",
+    message: "Reinicie la demo. Deberá introducir de nuevo sus respuestas anteriores.",
+    retry: "Reiniciar demo",
+    back: "Volver al inicio",
+  },
+} satisfies Record<Lang, { title: string; message: string; retry: string; back: string }>;
+
+class DemoErrorBoundary extends Component<DemoErrorBoundaryProps, DemoErrorBoundaryState> {
+  state: DemoErrorBoundaryState = { hasError: false };
+
+  static getDerivedStateFromError(): DemoErrorBoundaryState {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: Error, info: ErrorInfo) {
+    console.error("Anfragen-Filter demo render error:", error, info);
+  }
+
+  render() {
+    if (!this.state.hasError) return this.props.children;
+
+    const copy = errorCopy[this.props.lang];
+
+    return (
+      <main
+        className="min-h-screen flex items-center justify-center px-4 py-12"
+        style={{ background: "linear-gradient(135deg, #020617 0%, #050f1e 60%, #020617 100%)" }}
+      >
+        <section className="w-full max-w-xl rounded-3xl border border-red-500/20 bg-white/[0.03] p-8 text-center sm:p-10">
+          <p className="mb-3 text-xs font-bold uppercase tracking-widest text-red-400">HECARO Digital</p>
+          <h1 className="mb-4 text-2xl font-bold text-white sm:text-3xl">{copy.title}</h1>
+          <p className="mb-8 leading-relaxed text-slate-400">{copy.message}</p>
+          <div className="flex flex-col justify-center gap-3 sm:flex-row">
+            <button
+              type="button"
+              onClick={() => this.setState({ hasError: false })}
+              className="rounded-full bg-emerald-500 px-6 py-3 text-sm font-bold uppercase tracking-widest text-black transition-colors hover:bg-emerald-400"
+            >
+              {copy.retry}
+            </button>
+            <a
+              href={`/${this.props.lang}`}
+              className="rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-slate-300 transition-colors hover:border-white/25 hover:text-white"
+            >
+              {copy.back}
+            </a>
+          </div>
+        </section>
+      </main>
+    );
+  }
+}
+
+function isFilterResult(value: unknown): value is FilterResult {
+  if (!value || typeof value !== "object") return false;
+
+  const candidate = value as Partial<FilterResult>;
+  return (
+    typeof candidate.score === "number" &&
+    Number.isFinite(candidate.score) &&
+    candidate.score >= 0 &&
+    candidate.score <= 100 &&
+    typeof candidate.summary === "string" &&
+    candidate.summary.trim().length > 0 &&
+    typeof candidate.nextStep === "string" &&
+    candidate.nextStep.trim().length > 0
+  );
 }
 
 function AnfragenFilterUI() {
@@ -23,7 +115,10 @@ function AnfragenFilterUI() {
 
   const totalSteps = 5;
 
-  const canProceed = answers[step].trim().length > 0;
+  const canProceed =
+    step < totalSteps &&
+    typeof answers[step] === "string" &&
+    answers[step].trim().length > 0;
 
   function updateAnswer(val: string) {
     const newAnswers = [...answers];
@@ -47,10 +142,12 @@ function AnfragenFilterUI() {
         }),
       });
       if (!res.ok) throw new Error("API error");
-      const data: FilterResult = await res.json();
+      const data: unknown = await res.json();
+      if (!isFilterResult(data)) throw new Error("Invalid API response");
       setResult(data);
       setStep(5);
-    } catch {
+    } catch (error) {
+      console.error("Anfragen-Filter analysis error:", error);
       setErrorMsg(q.errorMsg);
     } finally {
       setLoading(false);
@@ -304,8 +401,10 @@ function AnfragenFilterUI() {
 export default function DemoAnfragenFilterPage({ lang }: { lang: string }) {
   const safeLang = (["de", "en", "es"].includes(lang) ? lang : "de") as Lang;
   return (
-    <I18nProvider lang={safeLang}>
-      <AnfragenFilterUI />
-    </I18nProvider>
+    <DemoErrorBoundary lang={safeLang}>
+      <I18nProvider lang={safeLang}>
+        <AnfragenFilterUI />
+      </I18nProvider>
+    </DemoErrorBoundary>
   );
 }

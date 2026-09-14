@@ -43,7 +43,7 @@ export const de = {
     "ZUVERLÄSSIG",
   ],
   services: {
-    label: "Lösungen",
+    label: "Automatisierung",
     headline: "Weniger Zeitverlust. Mehr Wunschkunden. Automatisch.",
     sub: "Unsere KI-Systeme qualifizieren Ihre Anfragen rund um die Uhr — damit Sie sich auf die Kunden konzentrieren können, die wirklich zu Ihnen passen.",
     aiTitle: "System-Demo live testen",

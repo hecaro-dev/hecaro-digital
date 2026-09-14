@@ -5,7 +5,7 @@ import { useInView } from "../hooks/useInView";
 import { useI18n } from "../i18n";
 import Link from "next/link";
 
-const DEMO_PATHS = ["demo-qualifier", "anfragen-filter"];
+const DEMO_PATHS = ["demo", "demo/anfragen-filter"];
 
 const PLACEHOLDER_GRADIENTS = [
   "from-emerald-950/80 via-emerald-900/40 to-emerald-800/20",
@@ -70,7 +70,7 @@ export default function PortfolioSection() {
                 {/* CTA */}
                 <div className="mt-6 pt-6 border-t border-white/[0.06]">
                   <Link
-                    href={`/${lang}/preview/${DEMO_PATHS[i]}`}
+                    href={`/${lang}/${DEMO_PATHS[i]}`}
                     className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 text-sm font-semibold transition-colors group/link"
                   >
                     {item.ctaLabel}

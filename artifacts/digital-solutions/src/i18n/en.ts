@@ -45,7 +45,7 @@ export const en: Translations = {
     "RELIABLE",
   ],
   services: {
-    label: "Solutions",
+    label: "Automation",
     headline: "Less wasted time. More ideal clients. Automatically.",
     sub: "Our AI systems qualify your enquiries around the clock — so you can focus on clients who truly fit.",
     aiTitle: "Try system demo live",

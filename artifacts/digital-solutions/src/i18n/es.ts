@@ -45,7 +45,7 @@ export const es: Translations = {
     "FIABLE",
   ],
   services: {
-    label: "Soluciones",
+    label: "Automatización",
     headline: "Menos tiempo perdido. Más clientes ideales. De forma automática.",
     sub: "Nuestros sistemas de IA califican sus consultas las 24 horas — para que pueda concentrarse en los clientes que realmente encajan.",
     aiTitle: "Probar demo del sistema en vivo",

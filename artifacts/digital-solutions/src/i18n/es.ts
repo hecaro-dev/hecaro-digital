@@ -238,6 +238,16 @@ export const es: Translations = {
           "Las soluciones de automatización son adecuadas para empresas que reciben consultas con regularidad y desean procesarlas de forma más eficiente. Ya sea un negocio artesanal, proveedor de servicios o restaurante — integramos el sistema directamente en su sitio web existente o nuevo.",
       },
       {
+        question: "¿Cuál es la diferencia entre 'Primera Impresión' y 'Filtro de Consultas'?",
+        answer:
+          "La 'Primera Impresión' es el punto de entrada ideal: un formulario inteligente califica automáticamente cada consulta y reenvía el resultado por correo electrónico. El 'Filtro de Consultas' va más allá: conduce un diálogo de IA en varios pasos con el interesado, responde automáticamente por correo y ofrece un panel para evaluar todas las consultas. Incluye además 30 días de soporte post-lanzamiento.",
+      },
+      {
+        question: "¿También ofrece atención en inglés y español?",
+        answer:
+          "Sí. Gestiono todos los proyectos personalmente en alemán, inglés y español — desde la primera consulta hasta el lanzamiento y más allá. Esa es una de las principales ventajas de HECARO Digital: sin barreras idiomáticas, sin problemas de traducción.",
+      },
+      {
         question: "¿Cómo funciona la integración de la automatización en mi sitio web?",
         answer:
           "El sistema se integra directamente en su sitio web, ya sea en uno nuevo que creemos para usted o en uno existente. Tras una breve fase de configuración, todo funciona automáticamente en segundo plano. No necesita instalar nada ni tener conocimientos técnicos.",
@@ -245,13 +255,13 @@ export const es: Translations = {
       {
         question: "¿Cuánto cuesta la solución de automatización y hay costes continuos?",
         answer:
-          "La configuración comienza desde 1.250 €. Los costes continuos solo surgen de servicios externos como el uso de API o el alojamiento — se comunican de forma transparente. No hay tarifas ocultas.",
+          "El paquete de entrada comienza desde 1.800 € (pago único, paquete: Primera Impresión). El paquete Filtro de Consultas cuesta 3.500 € (pago único). Los costes recurrentes solo provienen de servicios externos como el uso de API o el alojamiento — comunicados de forma transparente. Sin tarifas ocultas.",
       },
     ],
   },
   contact: {
     label: "Contacto",
-    headline: "Deje de perder el tiempo.",
+    headline: "¿Listo para el siguiente paso?",
     cta: "Su primera consulta es completamente gratuita.",
     sub: "Describa brevemente su situación actual – le responderé en 24 horas con un plan concreto.",
     namePlaceholder: "Su nombre",

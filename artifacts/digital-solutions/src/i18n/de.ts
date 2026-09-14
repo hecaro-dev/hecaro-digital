@@ -236,6 +236,16 @@ export const de = {
           "Die Automatisierungslösungen eignen sich für Unternehmen, die regelmäßig Anfragen erhalten und diese effizienter bearbeiten möchten. Ob Handwerksbetrieb, Dienstleister oder Gastronom — wir integrieren das System direkt in Ihre bestehende oder neue Website.",
       },
       {
+        question: "Was ist der Unterschied zwischen 'Erster Eindruck' und 'Anfragen-Filter'?",
+        answer:
+          "Der 'Erster Eindruck' ist der ideale Einstieg: Ein intelligentes Formular qualifiziert jede Anfrage automatisch und leitet das Ergebnis per E-Mail weiter. Der 'Anfragen-Filter' geht weiter — er führt einen mehrstufigen KI-Dialog mit dem Interessenten, antwortet automatisch per E-Mail und bietet ein Dashboard zur Auswertung aller Anfragen. Dazu kommen 30 Tage After-Launch-Support.",
+      },
+      {
+        question: "Bieten Sie die Betreuung auch auf Englisch und Spanisch an?",
+        answer:
+          "Ja. Ich betreue alle Projekte persönlich auf Deutsch, Englisch und Spanisch — von der ersten Anfrage bis zum Launch und darüber hinaus. Das ist einer der Hauptvorteile von HECARO Digital: keine Sprachbarriere, kein Übersetzungsproblem.",
+      },
+      {
         question: "Wie läuft die Integration der Automatisierung in meine Website ab?",
         answer:
           "Das System wird direkt in Ihre Website eingebunden — entweder in eine neue Website die wir für Sie erstellen oder in eine bestehende. Nach einer kurzen Einrichtungsphase läuft alles automatisch im Hintergrund. Sie müssen nichts installieren oder technisch verstehen.",
@@ -243,13 +253,13 @@ export const de = {
       {
         question: "Was kostet die Automatisierungslösung und gibt es laufende Kosten?",
         answer:
-          "Die Einrichtung startet ab 1.250 €. Laufende Kosten entstehen nur durch externe Dienste wie API-Nutzung oder Hosting — diese werden transparent kommuniziert. Es gibt keine versteckten Gebühren.",
+          "Der Einstieg startet ab 1.800 € einmalig (Paket: Erster Eindruck). Das Paket Anfragen-Filter kostet 3.500 € einmalig. Laufende Kosten entstehen nur durch externe Dienste wie API-Nutzung oder Hosting — diese werden transparent kommuniziert. Es gibt keine versteckten Gebühren.",
       },
     ],
   },
   contact: {
     label: "Kontakt",
-    headline: "Beenden Sie die Zeitverschwendung.",
+    headline: "Bereit für den nächsten Schritt?",
     cta: "Ihr erstes Gespräch ist vollständig kostenlos.",
     sub: "Beschreiben Sie kurz Ihre aktuelle Situation – ich melde mich innerhalb von 24 Stunden mit einem konkreten Plan.",
     namePlaceholder: "Ihr Name",

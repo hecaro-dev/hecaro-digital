@@ -238,6 +238,16 @@ export const en: Translations = {
           "The automation solutions are suitable for businesses that regularly receive enquiries and want to process them more efficiently. Whether a trade business, service provider or restaurant — we integrate the system directly into your existing or new website.",
       },
       {
+        question: "What is the difference between 'First Impression' and 'Enquiry Filter'?",
+        answer:
+          "The 'First Impression' is the ideal entry point: an intelligent form automatically qualifies every enquiry and forwards the result by email. The 'Enquiry Filter' goes further — it conducts a multi-step AI dialogue with the prospect, replies automatically by email, and includes a dashboard for evaluating all enquiries. Plus 30 days of after-launch support.",
+      },
+      {
+        question: "Do you also provide support in English and Spanish?",
+        answer:
+          "Yes. I personally support all projects in German, English and Spanish — from the first enquiry through to launch and beyond. That is one of the core advantages of HECARO Digital: no language barrier, no translation issues.",
+      },
+      {
         question: "How does the integration of automation into my website work?",
         answer:
           "The system is integrated directly into your website — either into a new website we create for you or into an existing one. After a short setup phase, everything runs automatically in the background. You do not need to install anything or have any technical knowledge.",
@@ -245,13 +255,13 @@ export const en: Translations = {
       {
         question: "What does the automation solution cost and are there ongoing costs?",
         answer:
-          "Setup starts from 1,250 €. Ongoing costs only arise from external services such as API usage or hosting — these are communicated transparently. There are no hidden fees.",
+          "The entry-level package starts at €1,800 one-time (First Impression). The Enquiry Filter package costs €3,500 one-time. Ongoing costs only arise from external services such as API usage or hosting — communicated transparently. No hidden fees.",
       },
     ],
   },
   contact: {
     label: "Contact",
-    headline: "Stop wasting time.",
+    headline: "Ready for the next step?",
     cta: "Your first consultation is completely free.",
     sub: "Briefly describe your current situation – I'll get back to you within 24 hours with a concrete plan.",
     namePlaceholder: "Your Name",

@@ -81,12 +81,17 @@ export default function Header({ onNav }: HeaderProps) {
           </button>
 
           {/* ── Desktop nav ─────────────────────────────────────────── */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
+          <nav
+            className={`hidden xl:flex items-center ${lang === "es" ? "gap-5" : "gap-8"}`}
+            aria-label="Main navigation"
+          >
             {navItems.map((item) => (
               <button
                 key={item.key}
                 onClick={() => handleNav(item.key)}
-                className="text-sm font-bold tracking-widest uppercase text-slate-400 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded px-1 py-2"
+                className={`font-bold uppercase text-slate-400 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded px-1 py-2 ${
+                  lang === "es" ? "text-xs tracking-[0.16em]" : "text-sm tracking-widest"
+                }`}
               >
                 {item.label}
               </button>
@@ -115,7 +120,7 @@ export default function Header({ onNav }: HeaderProps) {
 
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden text-slate-300 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
+              className="xl:hidden text-slate-300 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
             >
@@ -135,7 +140,7 @@ export default function Header({ onNav }: HeaderProps) {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden bg-[rgba(2,6,23,0.97)] backdrop-blur-xl border-t border-white/[0.06] overflow-hidden"
+            className="xl:hidden bg-[rgba(2,6,23,0.97)] backdrop-blur-xl border-t border-white/[0.06] overflow-hidden"
           >
             <nav className="px-5 py-6 flex flex-col gap-3" aria-label="Mobile navigation">
               {navItems.map((item) => (

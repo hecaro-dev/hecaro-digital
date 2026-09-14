@@ -143,6 +143,7 @@ export const de = {
     items: [
       {
         tag: "Erster Eindruck",
+        previewText: "Erleben Sie live wie unser System eine Anfrage bewertet und in Sekunden qualifiziert.",
         title: "Demo: Erster Eindruck",
         description:
           "Sehen Sie live, wie ein intelligentes Formular die Lead-Qualifizierung übernimmt und jede Anfrage auswertet.",
@@ -151,6 +152,7 @@ export const de = {
       },
       {
         tag: "Anfragen-Filter",
+        previewText: "Testen Sie den mehrstufigen KI-Dialog — und sehen Sie wie Ihr zukünftiges System Anfragen filtert.",
         title: "Demo: Anfragen-Filter",
         description:
           "Erleben Sie einen dynamischen, mehrstufigen Dialog, der den Interessenten vorqualifiziert und detailliert auswertet.",

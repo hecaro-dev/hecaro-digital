@@ -46,8 +46,11 @@ export default function PortfolioSection() {
               transition={{ duration: 0.6, delay: i * 0.15 }}
               className="group bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-3xl overflow-hidden flex flex-col backdrop-blur-md hover:border-emerald-500/20 transition-colors duration-300"
             >
-              <div className={`relative h-28 bg-gradient-to-br ${PLACEHOLDER_GRADIENTS[i]} border-b border-white/5 overflow-hidden`}>
+              <div className={`relative flex min-h-32 items-center justify-center overflow-hidden border-b border-white/5 bg-gradient-to-br px-6 py-5 ${PLACEHOLDER_GRADIENTS[i]}`}>
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(52,211,153,0.08),transparent_70%)]" />
+                <p className="relative z-10 max-w-sm text-center text-sm font-medium leading-relaxed text-slate-100">
+                  {item.previewText}
+                </p>
                 {"statBadge" in item && (
                   <span className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-bold">
                     {(item as typeof item & { statBadge: string }).statBadge}
@@ -61,7 +64,7 @@ export default function PortfolioSection() {
 
                 {/* Problem label */}
                 <div className="mb-4">
-                  <span className="text-xs text-amber-400/80 font-medium">{item.problem}</span>
+                  <span className="text-xs font-medium text-emerald-400">{item.problem}</span>
                 </div>
 
                 <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>

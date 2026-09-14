@@ -145,6 +145,7 @@ export const en: Translations = {
     items: [
       {
         tag: "First Impression",
+        previewText: "Experience live how our system evaluates and qualifies an enquiry in seconds.",
         title: "Demo: First Impression",
         description:
           "See live how an intelligent form handles lead qualification and evaluates every enquiry.",
@@ -153,6 +154,7 @@ export const en: Translations = {
       },
       {
         tag: "Enquiry Filter",
+        previewText: "Test the multi-step AI dialogue — and see how your future system filters enquiries.",
         title: "Demo: Enquiry Filter",
         description:
           "Experience a dynamic, multi-step dialog that pre-qualifies prospects and provides a detailed evaluation.",

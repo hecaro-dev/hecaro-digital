@@ -145,6 +145,7 @@ export const es: Translations = {
     items: [
       {
         tag: "Primera Impresión",
+        previewText: "Experimente en vivo cómo nuestro sistema evalúa y califica una consulta en segundos.",
         title: "Demo: Primera Impresión",
         description:
           "Vea en vivo cómo un formulario inteligente asume la cualificación de leads y evalúa cada consulta.",
@@ -153,6 +154,7 @@ export const es: Translations = {
       },
       {
         tag: "Filtro de Consultas",
+        previewText: "Pruebe el diálogo de IA en varios pasos — y vea cómo su futuro sistema filtra las consultas.",
         title: "Demo: Filtro de Consultas",
         description:
           "Experimente un diálogo interactivo que pre-cualifica al interesado y proporciona una evaluación detallada.",

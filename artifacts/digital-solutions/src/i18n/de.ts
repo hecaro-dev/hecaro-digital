@@ -139,7 +139,7 @@ export const de = {
         description:
           "Das Problem: Zu viele Gespräche mit ungeeigneten Interessenten. Dieser Check zeigt, wie ein System Anfragen automatisch nach Ihren Kriterien prüft – bevor Sie Ihre Zeit investieren.",
         problem: "Zu viele ungeeignete Erstgespräche",
-        ctaLabel: "Unverbindlich anfragen",
+        ctaLabel: "Demo live erleben",
       },
       {
         tag: "System-Audit",
@@ -147,7 +147,7 @@ export const de = {
         description:
           "Finden Sie in 4 Fragen heraus, welches System zu Ihrer aktuellen Situation passt — und wie viel Zeit Sie monatlich verlieren.",
         problem: "Ich weiß nicht welches System ich brauche",
-        ctaLabel: "Unverbindlich anfragen",
+        ctaLabel: "Demo live erleben",
       },
       {
         tag: "Schlüsselfertig",
@@ -155,7 +155,7 @@ export const de = {
         description:
           "Beschreiben Sie Ihre Situation in 3 Schritten — das System zeigt Ihnen live, wie Ihr persönliches Automatisierungssystem aussieht.",
         problem: "Ich will ein System das komplett für mich arbeitet",
-        ctaLabel: "Unverbindlich anfragen",
+        ctaLabel: "Demo live erleben",
         statBadge: "Individuell",
       },
     ],

@@ -141,7 +141,7 @@ export const es: Translations = {
         description:
           "El problema: demasiadas conversaciones con prospectos inadecuados. Esta simulación muestra cómo un sistema revisa las consultas automáticamente según sus criterios, antes de que usted invierta su tiempo.",
         problem: "Demasiadas primeras conversaciones inapropiadas",
-        ctaLabel: "Solicitar sin compromiso",
+        ctaLabel: "Probar demo en vivo",
       },
       {
         tag: "Auditoría del sistema",
@@ -149,7 +149,7 @@ export const es: Translations = {
         description:
           "Descubra en 4 preguntas qué sistema se adapta a su situación actual — y cuánto tiempo pierde cada mes.",
         problem: "No sé qué sistema necesito",
-        ctaLabel: "Solicitar sin compromiso",
+        ctaLabel: "Probar demo en vivo",
       },
       {
         tag: "Listo para usar",
@@ -157,7 +157,7 @@ export const es: Translations = {
         description:
           "Describa su situación en 3 pasos — el sistema le muestra en directo cómo sería su sistema de automatización personal.",
         problem: "Quiero un sistema que trabaje completamente para mí",
-        ctaLabel: "Solicitar sin compromiso",
+        ctaLabel: "Probar demo en vivo",
         statBadge: "Individual",
       },
     ],

@@ -141,7 +141,7 @@ export const en: Translations = {
         description:
           "The problem: too many conversations with unsuitable prospects. This check shows how a system automatically reviews enquiries against your criteria — before you invest your time.",
         problem: "Too many unsuitable first conversations",
-        ctaLabel: "Request without obligation",
+        ctaLabel: "Experience demo live",
       },
       {
         tag: "System Audit",
@@ -149,7 +149,7 @@ export const en: Translations = {
         description:
           "Find out in 4 questions which system fits your current situation — and how much time you are losing every month.",
         problem: "I don't know which system I need",
-        ctaLabel: "Request without obligation",
+        ctaLabel: "Experience demo live",
       },
       {
         tag: "Ready to Use",
@@ -157,7 +157,7 @@ export const en: Translations = {
         description:
           "Describe your situation in 3 steps — the system shows you live what your personal automation system looks like.",
         problem: "I want a system that works completely for me",
-        ctaLabel: "Request without obligation",
+        ctaLabel: "Experience demo live",
         statBadge: "Individual",
       },
     ],

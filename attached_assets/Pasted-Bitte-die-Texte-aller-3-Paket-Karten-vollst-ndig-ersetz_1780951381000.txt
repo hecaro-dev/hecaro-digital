@@ -1,0 +1,62 @@
+Bitte die Texte aller 3 Paket-Karten vollständig ersetzen. Kein Design verändern.
+
+PAKET 01 — Anfragen-Filter:
+
+Titel:
+
+DE: „Anfragen-Filter"
+EN: „Enquiry Filter"
+ES: „Filtro de Consultas"
+Beschreibung:
+
+DE: „Sie bekommen Anfragen — aber die meisten kaufen nie. Dieses System prüft automatisch jede Anfrage nach Ihren Kriterien und sortiert schlechte Kontakte aus. Sie sehen nur noch Menschen die wirklich kaufen wollen. Kein manuelles Nachfragen. Keine Zeitverschwendung mehr."
+EN: „You receive enquiries — but most never buy. This system automatically screens every enquiry against your criteria and filters out poor contacts. You only see people who genuinely want to buy. No manual follow-up. No more wasted time."
+ES: „Recibe consultas — pero la mayoría nunca compra. Este sistema revisa automáticamente cada consulta según sus criterios y descarta los contactos no cualificados. Solo ve personas que realmente quieren comprar. Sin seguimiento manual. Sin pérdida de tiempo."
+Features:
+
+DE: „Automatische Prüfung jeder Anfrage | Nur qualifizierte Kontakte erreichen Sie | Sofort in Ihre Website integrierbar"
+EN: „Automatic screening of every enquiry | Only qualified contacts reach you | Immediately integrable into your website"
+ES: „Revisión automática de cada consulta | Solo contactos cualificados le llegan | Integrable de inmediato en su sitio web"
+Preis: DE: „Ab 1.250 €" / EN: „From 1.250 €" / ES: „Desde 1.250 €"
+
+PAKET 02 — Anfragen-Filter + Gesprächs-Vorbereitung:
+
+Titel:
+
+DE: „Anfragen-Filter + Gesprächs-Vorbereitung"
+EN: „Enquiry Filter + Conversation Preparation"
+ES: „Filtro de Consultas + Preparación de Conversaciones"
+Beschreibung:
+
+DE: „Alles aus Paket 01 — plus: Bevor jedes Gespräch stattfindet beantwortet Ihr Interessent automatisch 4 gezielte Fragen. Sie erhalten ein fertiges Briefing mit Name, Budget, Bedarf und Entscheidungsbereitschaft. Sie gehen vorbereitet in jedes Gespräch — keine Überraschungen, keine verlorene Zeit mehr."
+EN: „Everything from Package 01 — plus: Before every conversation your prospect automatically answers 4 targeted questions. You receive a ready briefing with name, budget, need and decision readiness. You go prepared into every conversation — no surprises, no more lost time."
+ES: „Todo del Paquete 01 — más: Antes de cada conversación su interesado responde automáticamente 4 preguntas específicas. Recibe un briefing completo con nombre, presupuesto, necesidad y disposición de decisión. Va preparado a cada conversación — sin sorpresas, sin más tiempo perdido."
+Features:
+
+DE: „Alles aus Paket 01 inklusive | Automatisches Briefing vor jedem Gespräch | Sie wissen immer wer vor Ihnen sitzt und ob er kaufen will"
+EN: „Everything from Package 01 included | Automatic briefing before every conversation | You always know who you are speaking to and whether they want to buy"
+ES: „Todo del Paquete 01 incluido | Briefing automático antes de cada conversación | Siempre sabe con quién habla y si quiere comprar"
+Preis: DE: „Ab 2.500 €" / EN: „From 2.500 €" / ES: „Desde 2.500 €"
+
+PAKET 03 — Individuelle Beratung:
+
+Titel:
+
+DE: „Ihr Individual-System"
+EN: „Your Individual System"
+ES: „Su Sistema Individual"
+Beschreibung:
+
+DE: „Sie haben spezifische Tools, Abläufe und Anforderungen — und brauchen keine Standardlösung. Wir schauen uns gemeinsam Ihre Situation an und sagen Ihnen ehrlich was möglich ist. Erst dann machen wir Ihnen ein konkretes Angebot. Kein leeres Versprechen — nur was wirklich funktioniert."
+EN: „You have specific tools, processes and requirements — and need no standard solution. We look at your situation together and tell you honestly what is possible. Only then do we make you a concrete offer. No empty promises — only what truly works."
+ES: „Tiene herramientas, procesos y requisitos específicos — y no necesita una solución estándar. Analizamos juntos su situación y le decimos honestamente qué es posible. Solo entonces le hacemos una oferta concreta. Sin promesas vacías — solo lo que realmente funciona."
+Features:
+
+DE: „Persönliche Analyse Ihrer Situation | Ehrliche Einschätzung was möglich ist | Konkretes Angebot erst nach dem Erstgespräch"
+EN: „Personal analysis of your situation | Honest assessment of what is possible | Concrete offer only after the initial consultation"
+ES: „Análisis personal de su situación | Evaluación honesta de lo que es posible | Oferta concreta solo después de la consulta inicial"
+Preis: DE: „Auf Anfrage" / EN: „On Request" / ES: „Presupuesto a medida"
+
+Button bleibt überall: DE: „Dieses System anfragen" / EN: „Enquire about this system" / ES: „Solicitar este sistema"
+
+Alle 3 Sprachen DE / EN / ES. Kein Design verändern.

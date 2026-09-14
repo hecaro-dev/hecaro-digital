@@ -1,0 +1,120 @@
+Bitte führe folgende Korrekturen an der HECARO Digital Website durch. Alle Änderungen in DE, EN und ES (i18n). Keine Icons, keine Emojis im UI. Nur das hier Genannte anfassen.
+
+---
+
+## AUFGABE 1: HERO — OVERLINE ANPASSEN
+
+Ersetze die aktuelle Overline in der Hero-Sektion durch:
+DE: "WEBSITES & DIGITALE LÖSUNGEN FÜR UNTERNEHMEN"
+EN: "WEBSITES & DIGITAL SOLUTIONS FOR BUSINESSES"
+ES: "SITIOS WEB Y SOLUCIONES DIGITALES PARA EMPRESAS"
+
+---
+
+## AUFGABE 2: WEBSITE-PAKETE — "BIS ZU 3 SPRACHEN" TEXT ERSETZEN
+
+In allen Website-Paketen (Starter, Professional, Premium) den Text "Bis zu 3 Sprachen (Deutsch, Englisch, Spanisch)" oder ähnliche Formulierungen ersetzen durch:
+DE: "Mehrsprachig — damit Sie Kunden in ihrer Muttersprache erreichen"
+EN: "Multilingual — so you can reach customers in their native language"
+ES: "Multilingüe — para llegar a sus clientes en su lengua materna"
+
+---
+
+## AUFGABE 3: HOVER-EFFEKT WARTUNGSKARTEN FIXEN
+
+Die linke Wartungskarte (Basic) hat keinen Hover-Effekt. Bitte denselben Hover-Effekt (Beleuchtung/Hervorhebung beim Drüberfahren mit der Maus) wie bei den Website-Paketen und der Pro-Wartungskarte implementieren. Alle Karten auf der gesamten Website müssen einen einheitlichen Hover-Effekt haben.
+
+---
+
+## AUFGABE 4: AUTOMATISIERUNGS-PAKETE — BADGE & UMBENENNUNG
+
+### 4a: "Empfohlen"-Badge auf mittlere Karte (Komplett)
+Die mittlere Automatisierungskarte ("Komplett") bekommt denselben "Empfohlen"-Badge wie bei den Website-Paketen und Wartungsverträgen:
+DE: "Empfohlen"
+EN: "Recommended"
+ES: "Recomendado"
+
+### 4b: Dritte Karte umbenennen
+Die dritte Automatisierungskarte ("Ihr schlüsselfertiges System" oder ähnlich) umbenennen in:
+DE: "Individuelle Beratung & Konzeption"
+EN: "Individual Consulting & Conception"
+ES: "Consultoría y concepción individual"
+
+Den Badge-Text dieser dritten Karte ersetzen durch:
+DE: "Auf Ihre Situation zugeschnitten"
+EN: "Tailored to your situation"
+ES: "Adaptado a su situación"
+
+---
+
+## AUFGABE 5: 70%-AUSSAGE ENTFERNEN
+
+Den Satz "Unternehmen, die Anfragen automatisch filtern, berichten von bis zu 70% weniger nutzlosen Erstgesprächen — mehr Zeit für Kunden, die wirklich kaufen" ersetzen durch:
+
+DE: "Weniger ungeeignete Erstgespräche — mehr Zeit für Kunden, die wirklich kaufen wollen."
+EN: "Fewer unsuitable initial consultations — more time for clients who genuinely want to buy."
+ES: "Menos primeras conversaciones inadecuadas — más tiempo para clientes que realmente quieren comprar."
+
+---
+
+## AUFGABE 6: "95% WENIGER ZEITVERLUST" ENTFERNEN
+
+Den Badge-Text "95% weniger Zeitverlust" (oder ähnlich) auf der dritten Automatisierungskarte vollständig entfernen. Er wird durch den neuen Badge aus Aufgabe 4b ersetzt. Keine Prozentzahlen oder nicht belegbare Statistiken auf der gesamten Website verwenden.
+
+---
+
+## AUFGABE 7: SEITENREIHENFOLGE — REFERENZEN VOR FAQ VERSCHIEBEN
+
+Neue Reihenfolge der Sektionen:
+1. Hero
+2. Scrolling Banner
+3. Websites
+4. Wartungsverträge
+5. Automatisierung / Demos
+6. Referenzen (id="referenzen")
+7. FAQ
+8. Kontakt
+
+---
+
+## AUFGABE 8: FAQ AUS HAUPTNAVIGATION ENTFERNEN — IN FOOTER VERSCHIEBEN
+
+FAQ-Punkt aus der Hauptnavigation (Header) entfernen.
+FAQ-Link in den Footer unter "Navigation" hinzufügen.
+
+Neue Hauptnavigation:
+DE: Websites · Wartung · Automatisierung · Referenzen · Kontakt
+EN: Websites · Maintenance · Automation · References · Contact
+ES: Sitios web · Mantenimiento · Automatización · Referencias · Contacto
+
+---
+
+## AUFGABE 9: FOOTER KOMPLETT KORRIGIEREN
+
+### 9a: Logo
+Das Logo im Footer muss vollständig angezeigt werden — inklusive dem "H" aus dem Logo. Bitte sicherstellen dass das Logo identisch mit dem Header-Logo ist.
+
+### 9b: Beschreibungstext ersetzen
+Den alten Text "Automatisierungssysteme für Berater, Coaches & B2B-Dienstleister" (oder ähnlich) ersetzen durch:
+DE: "Professionelle Websites. Persönlich betreut. In Ihrer Sprache."
+EN: "Professional websites. Personal support. In your language."
+ES: "Sitios web profesionales. Atención personal. En su idioma."
+
+### 9c: Footer-Navigation korrigieren
+Die Navigation im Footer auf folgende Punkte aktualisieren:
+DE: Websites · Wartung · Automatisierung · Referenzen · FAQ · Kontakt
+EN: Websites · Maintenance · Automation · References · FAQ · Contact
+ES: Sitios web · Mantenimiento · Automatización · Referencias · FAQ · Contacto
+
+Alle alten Einträge wie "Lösungen", "Demos" oder "B2B" aus dem Footer entfernen.
+
+---
+
+## TECHNISCHE ANFORDERUNGEN
+
+- Alle Texte vollständig in i18n-Dateien für DE, EN und ES pflegen
+- Keine Icons, keine Emojis im gesamten UI
+- Bestehende Styles, Schriften, Farben und Layout unverändert lassen
+- Hover-Effekte auf allen Karten der gesamten Website einheitlich sicherstellen
+- Nach allen Änderungen vollständigen Build-Test durchführen
+- Alle Anchor-Links und Navigationspunkte testen

@@ -1,0 +1,43 @@
+Bitte folgende Texte in der englischen (EN) und spanischen (ES) Version anpassen. Nur die Texte ändern, kein Design verändern:
+
+ENGLISCH (EN):
+
+Hero-Untertext:
+Neu: „I automatically filter out real decision-makers – less effort, more deals for you."
+
+Paket 03 Beschreibung:
+Neu: „For companies with existing tools and complex workflows. I connect your processes so that manual work is reduced to a minimum."
+
+Zielgruppe-Abschnitt:
+Neu: „Are you a consultant who has meetings every week that lead nowhere? Are you a coach who gets enquiries from people who can't afford your offer? Are you a service provider who spends more time explaining than working? Then this is for you."
+
+Prozess Schritt 02:
+Neu: „Based on the analysis, I define which criteria your system should check — so that only the right enquiries reach you."
+
+FAQ Frage 2 — „How much time do I save through automation?":
+Neu: „The system handles the initial screening automatically. Conversations that don't fit never happen in the first place — saving several hours per week depending on your situation."
+
+FAQ Frage 4 — „How is the system integrated into my existing website?":
+Neu: „Simple. The system is integrated as a standalone page or embedded form — without changing your existing website. No additional software, no complex setup. Typically ready within 24–48 hours."
+
+SPANISCH (ES):
+
+Hero-Untertext:
+Neu: „Filtro automáticamente a los verdaderos decisores – menos esfuerzo, más cierres para usted."
+
+Paket 03 Beschreibung:
+Neu: „Para empresas con herramientas existentes y flujos de trabajo complejos. Conecto sus procesos para que el trabajo manual se reduzca al mínimo."
+
+Zielgruppe-Abschnitt:
+Neu: „¿Es usted consultor y tiene reuniones cada semana que no llevan a ningún lado? ¿Es coach y recibe consultas de personas que no pueden pagar su oferta? ¿Es proveedor de servicios y pasa más tiempo explicando que trabajando? Entonces esto es para usted."
+
+Prozess Schritt 02:
+Neu: „A partir del análisis, defino qué criterios debe verificar su sistema — para que solo las consultas adecuadas lleguen a usted."
+
+FAQ Frage 2 — „¿Cuánto tiempo ahorro con la automatización?":
+Neu: „El sistema se encarga del primer filtro automáticamente. Las conversaciones que no encajan simplemente no ocurren — lo que ahorra varias horas a la semana según su situación."
+
+FAQ Frage 4 — „¿Cómo se integra el sistema en mi sitio web existente?":
+Neu: „Sencillo. El sistema se integra como página independiente o formulario incrustado — sin modificar su sitio web existente. Sin software adicional, sin configuración compleja. Normalmente listo en 24–48 horas."
+
+Verändere dabei keine Farben, kein Logo und kein Design.

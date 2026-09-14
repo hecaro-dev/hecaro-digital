@@ -1,0 +1,82 @@
+Bitte Demo 3 (project-check) komplett neu bauen. Gleicher Stil wie Demo 1 und Demo 2. Kein Design verändern.
+
+Demo 3 heißt: „Ihr schlüsselfertiges System"
+
+Badge oben rechts: „Demo · Schlüsselfertig"
+
+AUFBAU — 3 Schritte + Ergebnis:
+
+Schritt 1 — Auswahl:
+
+DE: „Was beschreibt Sie am besten?"
+EN: „What describes you best?"
+ES: „¿Qué le describe mejor?"
+
+Optionen:
+
+DE: „Coach oder Trainer" / EN: „Coach or Trainer" / ES: „Coach o Formador"
+DE: „Berater oder Consultant" / EN: „Consultant or Advisor" / ES: „Consultor o Asesor"
+DE: „Agentur oder Dienstleister" / EN: „Agency or Service Provider" / ES: „Agencia o Proveedor de servicios"
+DE: „Anderes" / EN: „Other" / ES: „Otro"
+Schritt 2 — Freitext:
+
+DE: „Was läuft bei Ihnen aktuell noch manuell und kostet Sie täglich Zeit?"
+EN: „What are you still doing manually that costs you time every day?"
+ES: „¿Qué hace todavía manualmente y le cuesta tiempo cada día?"
+
+Placeholder:
+
+DE: „Z.B. Anfragen beantworten, Termine koordinieren, Daten übertragen..."
+EN: „E.g. answering enquiries, coordinating appointments, transferring data..."
+ES: „P.ej. responder consultas, coordinar citas, transferir datos..."
+Schritt 3 — Auswahl:
+
+DE: „Was soll nach der Automatisierung anders sein?"
+EN: „What should be different after automation?"
+ES: „¿Qué debería ser diferente después de la automatización?"
+
+Optionen:
+
+DE: „Ich will nur noch mit kaufbereiten Interessenten sprechen" / EN: „I only want to speak with ready-to-buy prospects" / ES: „Solo quiero hablar con personas listas para comprar"
+DE: „Ich will vorbereitet in jedes Gespräch gehen" / EN: „I want to be prepared for every conversation" / ES: „Quiero estar preparado para cada conversación"
+DE: „Ich will dass alles automatisch läuft ohne mein Zutun" / EN: „I want everything to run automatically without my involvement" / ES: „Quiero que todo funcione automáticamente sin mi intervención"
+DE: „Ich will mehr Kunden betreuen ohne mehr zu arbeiten" / EN: „I want to serve more clients without working more" / ES: „Quiero atender más clientes sin trabajar más"
+ERGEBNIS — OpenAI generiert personalisierten Text:
+
+Nach Schritt 3 wird ein API-Call an OpenAI gemacht mit folgendem System-Prompt:
+
+Du bist ein Automatisierungsexperte. Der Besucher hat folgende Angaben gemacht:
+- Beruf: [Auswahl aus Schritt 1]
+- Manuelles Problem: [Freitext aus Schritt 2]
+- Ziel: [Auswahl aus Schritt 3]
+
+Erstelle eine kurze, persönliche System-Beschreibung in 4 nummerierten Schritten. 
+Verwende die eigenen Worte des Besuchers aus seinem Problem. 
+Schreibe auf Deutsch, professionell aber verständlich, direkt angesprochen mit "Sie".
+Maximal 80 Wörter. Kein Intro, kein Outro — nur die 4 Schritte.
+Format: ① ... ② ... ③ ... ④ ...
+Darunter steht fest — nicht von KI generiert:
+
+DE: „Das baue ich komplett für Sie — schlüsselfertig, in 5–7 Werktagen."
+EN: „I build this completely for you — ready to use, in 5–7 working days."
+ES: „Lo construyo completamente para usted — listo para usar, en 5–7 días laborables."
+BUTTONS — gleich wie Demo 1 und Demo 2:
+
+Button 1 (grün, primär):
+
+DE: „JETZT KOSTENLOSES ERSTGESPRÄCH SICHERN"
+EN: „SECURE YOUR FREE CONSULTATION NOW"
+ES: „ASEGURAR CONSULTA GRATUITA AHORA"
+Ziel: #contact
+Button 2 (dunkel, sekundär):
+
+DE: „MEHR ÜBER DIESES PAKET ERFAHREN →"
+EN: „LEARN MORE ABOUT THIS PACKAGE →"
+ES: „MÁS INFORMACIÓN SOBRE ESTE PAQUETE →"
+Ziel: #services
+WICHTIG:
+
+Der OpenAI Prompt soll die Sprache des Besuchers erkennen und in derselben Sprache antworten — DE, EN oder ES
+Gleicher Stil, gleiche Animationen, gleiche Progress-Bar wie Demo 1 und Demo 2
+Kein Design verändern
+Alle 3 Sprachen DE / EN / ES

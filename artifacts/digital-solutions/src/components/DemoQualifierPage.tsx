@@ -6,7 +6,6 @@ import { ArrowRight, ArrowLeft, Sparkles, CheckCircle2, AlertCircle, Home } from
 import { I18nProvider, type Lang } from "../i18n";
 import { useI18n } from "../i18n";
 import Link from "next/link";
-import DemoResultBlock from "./DemoResultBlock";
 
 interface QualifyResult {
   grade: "A" | "B";
@@ -15,11 +14,10 @@ interface QualifyResult {
 }
 
 function QualifierUI() {
-  const { t, lang } = useI18n();
+  const { t, lang, setLang } = useI18n();
   const q = t.qualifier;
 
   const [step, setStep] = useState(0);
-  const [name, setName] = useState("");
   const [bottleneck, setBottleneck] = useState("");
   const [impact, setImpact] = useState("");
   const [budget, setBudget] = useState("");
@@ -27,10 +25,9 @@ function QualifierUI() {
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
-  const totalSteps = 4;
+  const totalSteps = 3;
 
   const canProceed = [
-    name.trim().length > 1,
     bottleneck.trim().length > 8,
     impact !== "",
     budget !== "",
@@ -43,12 +40,12 @@ function QualifierUI() {
       const res = await fetch("/api/qualify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, bottleneck, impact, budget, lang }),
+        body: JSON.stringify({ bottleneck, impact, budget, lang }),
       });
       if (!res.ok) throw new Error("API error");
       const data: QualifyResult = await res.json();
       setResult(data);
-      setStep(4);
+      setStep(3);
     } catch {
       setErrorMsg(q.errorMsg);
     } finally {
@@ -57,6 +54,34 @@ function QualifierUI() {
   }
 
   const steps = q.steps as Array<{ label: string; question: string; placeholder?: string; options?: string[] }>;
+
+  const TrafficLightCTA = ({ grade }: { grade: "A" | "B" }) => (
+    <div className="mt-6 pt-6 border-t border-white/[0.06] flex flex-col items-center gap-4 text-center">
+      <div className="flex items-center gap-3">
+        <span className="w-5 h-5 rounded-full bg-red-500/20 border border-red-500/15" />
+        {grade === "A" ? (
+          <>
+            <span className="w-5 h-5 rounded-full bg-yellow-400/20 border border-yellow-400/15" />
+            <span className="w-5 h-5 rounded-full bg-emerald-400 border border-emerald-300/50 shadow-[0_0_10px_rgba(52,211,153,0.7)]" />
+          </>
+        ) : (
+          <>
+            <span className="w-5 h-5 rounded-full bg-yellow-400 border border-yellow-300/50 shadow-[0_0_10px_rgba(250,204,21,0.6)]" />
+            <span className="w-5 h-5 rounded-full bg-emerald-400/20 border border-emerald-400/15" />
+          </>
+        )}
+      </div>
+      <span className="text-sm font-semibold text-slate-200">
+        {grade === "A" ? t.demoResult.ratingA : t.demoResult.ratingB}
+      </span>
+      <Link
+        href={`/${lang}/preview#contact`}
+        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs tracking-widest uppercase transition-colors duration-200"
+      >
+        {t.demoResult.cta}
+      </Link>
+    </div>
+  );
 
   return (
     <div
@@ -73,10 +98,25 @@ function QualifierUI() {
           />
           <span className="font-bold text-base tracking-wide">HECARO Digital</span>
         </Link>
-        <span className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-semibold tracking-wider">
-          <Sparkles className="w-3.5 h-3.5" />
-          {q.badge}
-        </span>
+        <div className="flex items-center gap-3">
+          <span className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-semibold tracking-wider">
+            <Sparkles className="w-3.5 h-3.5" />
+            {q.badge}
+          </span>
+          <div className="flex items-center gap-1">
+            {(["de", "en", "es"] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`text-xs font-bold uppercase px-2 py-1 rounded transition-colors ${
+                  lang === l ? "text-white bg-white/10" : "text-slate-500 hover:text-slate-300"
+                }`}
+              >
+                {l}
+              </button>
+            ))}
+          </div>
+        </div>
       </header>
 
       {/* Main */}
@@ -84,7 +124,7 @@ function QualifierUI() {
         <div className="w-full max-w-2xl">
 
           {/* Hero text */}
-          {step < 4 && (
+          {step < 3 && (
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -100,7 +140,7 @@ function QualifierUI() {
           )}
 
           {/* Progress bar */}
-          {step < 4 && (
+          {step < 3 && (
             <div className="mb-8">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs text-slate-500 font-medium">{steps[step]?.label}</span>
@@ -120,7 +160,7 @@ function QualifierUI() {
           {/* Step cards */}
           <AnimatePresence mode="wait">
 
-            {/* Step 0: Name */}
+            {/* Step 0: Bottleneck */}
             {step === 0 && (
               <motion.div
                 key="step-0"
@@ -131,13 +171,12 @@ function QualifierUI() {
                 className="bg-white/[0.03] border border-white/[0.08] rounded-3xl p-8 sm:p-10"
               >
                 <h2 className="text-xl font-bold text-white mb-6">{steps[0].question}</h2>
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                <textarea
+                  value={bottleneck}
+                  onChange={(e) => setBottleneck(e.target.value)}
                   placeholder={steps[0].placeholder}
-                  onKeyDown={(e) => e.key === "Enter" && canProceed[0] && setStep(1)}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/30 transition-all text-base"
+                  rows={4}
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/30 transition-all text-base resize-none"
                   autoFocus
                 />
                 <div className="flex justify-end mt-6">
@@ -152,7 +191,7 @@ function QualifierUI() {
               </motion.div>
             )}
 
-            {/* Step 1: Bottleneck */}
+            {/* Step 1: Impact */}
             {step === 1 && (
               <motion.div
                 key="step-1"
@@ -162,44 +201,9 @@ function QualifierUI() {
                 transition={{ duration: 0.3 }}
                 className="bg-white/[0.03] border border-white/[0.08] rounded-3xl p-8 sm:p-10"
               >
-                <h2 className="text-xl font-bold text-white mb-2">{steps[1].question}</h2>
-                <p className="text-slate-500 text-sm mb-6">{name ? `Hallo ${name} 👋` : ""}</p>
-                <textarea
-                  value={bottleneck}
-                  onChange={(e) => setBottleneck(e.target.value)}
-                  placeholder={steps[1].placeholder}
-                  rows={4}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/30 transition-all text-base resize-none"
-                  autoFocus
-                />
-                <div className="flex justify-between mt-6">
-                  <button onClick={() => setStep(0)} className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 text-slate-400 hover:text-white text-sm transition-colors">
-                    <ArrowLeft className="w-4 h-4" /> {q.back}
-                  </button>
-                  <button
-                    onClick={() => setStep(2)}
-                    disabled={!canProceed[1]}
-                    className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-30 disabled:cursor-not-allowed text-black font-bold text-sm uppercase tracking-widest transition-all"
-                  >
-                    {q.next} <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </motion.div>
-            )}
-
-            {/* Step 2: Impact */}
-            {step === 2 && (
-              <motion.div
-                key="step-2"
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -30 }}
-                transition={{ duration: 0.3 }}
-                className="bg-white/[0.03] border border-white/[0.08] rounded-3xl p-8 sm:p-10"
-              >
-                <h2 className="text-xl font-bold text-white mb-6">{steps[2].question}</h2>
+                <h2 className="text-xl font-bold text-white mb-6">{steps[1].question}</h2>
                 <div className="space-y-3">
-                  {steps[2].options!.map((opt) => (
+                  {steps[1].options!.map((opt) => (
                     <button
                       key={opt}
                       onClick={() => setImpact(opt)}
@@ -219,12 +223,12 @@ function QualifierUI() {
                   ))}
                 </div>
                 <div className="flex justify-between mt-6">
-                  <button onClick={() => setStep(1)} className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 text-slate-400 hover:text-white text-sm transition-colors">
+                  <button onClick={() => setStep(0)} className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 text-slate-400 hover:text-white text-sm transition-colors">
                     <ArrowLeft className="w-4 h-4" /> {q.back}
                   </button>
                   <button
-                    onClick={() => setStep(3)}
-                    disabled={!canProceed[2]}
+                    onClick={() => setStep(2)}
+                    disabled={!canProceed[1]}
                     className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-30 disabled:cursor-not-allowed text-black font-bold text-sm uppercase tracking-widest transition-all"
                   >
                     {q.next} <ArrowRight className="w-4 h-4" />
@@ -233,29 +237,34 @@ function QualifierUI() {
               </motion.div>
             )}
 
-            {/* Step 3: Budget */}
-            {step === 3 && (
+            {/* Step 2: Budget */}
+            {step === 2 && (
               <motion.div
-                key="step-3"
+                key="step-2"
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -30 }}
                 transition={{ duration: 0.3 }}
                 className="bg-white/[0.03] border border-white/[0.08] rounded-3xl p-8 sm:p-10"
               >
-                <h2 className="text-xl font-bold text-white mb-6">{steps[3].question}</h2>
-                <div className="grid grid-cols-2 gap-3">
-                  {steps[3].options!.map((opt) => (
+                <h2 className="text-xl font-bold text-white mb-6">{steps[2].question}</h2>
+                <div className="space-y-3">
+                  {steps[2].options!.map((opt) => (
                     <button
                       key={opt}
                       onClick={() => setBudget(opt)}
-                      className={`text-center px-4 py-4 rounded-xl border transition-all duration-200 ${
+                      className={`w-full text-left px-5 py-4 rounded-xl border transition-all duration-200 ${
                         budget === opt
                           ? "bg-emerald-500/15 border-emerald-500/50 text-emerald-300"
                           : "bg-white/[0.02] border-white/[0.07] text-slate-300 hover:border-white/20 hover:text-white"
                       }`}
                     >
-                      <span className="text-sm font-semibold">{opt}</span>
+                      <div className="flex items-center gap-3">
+                        <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${budget === opt ? "border-emerald-500" : "border-slate-600"}`}>
+                          {budget === opt && <div className="w-2 h-2 rounded-full bg-emerald-500" />}
+                        </div>
+                        <span className="text-sm font-medium">{opt}</span>
+                      </div>
                     </button>
                   ))}
                 </div>
@@ -268,12 +277,12 @@ function QualifierUI() {
                 )}
 
                 <div className="flex justify-between mt-6">
-                  <button onClick={() => setStep(2)} className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 text-slate-400 hover:text-white text-sm transition-colors">
+                  <button onClick={() => setStep(1)} className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 text-slate-400 hover:text-white text-sm transition-colors">
                     <ArrowLeft className="w-4 h-4" /> {q.back}
                   </button>
                   <button
                     onClick={handleAnalyze}
-                    disabled={!canProceed[3] || loading}
+                    disabled={!canProceed[2] || loading}
                     className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-40 disabled:cursor-not-allowed text-black font-bold text-sm uppercase tracking-widest transition-all"
                   >
                     {loading ? (
@@ -289,133 +298,97 @@ function QualifierUI() {
               </motion.div>
             )}
 
-            {/* Step 4: Result */}
-            {step === 4 && result && (
+            {/* Step 3: Result */}
+            {step === 3 && result && (
               <motion.div
-                key="step-4"
+                key="step-3"
                 initial={{ opacity: 0, scale: 0.97 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
                 className="space-y-4"
               >
-                {result.grade === "A" ? (
-                  /* ── GRADE A: Ampel-Result ── */
-                  <>
-                    <div className="rounded-3xl border border-emerald-500/30 bg-emerald-950/50 p-8 sm:p-10 space-y-7">
-                      {/* Header — traffic light icon */}
-                      <div className="flex items-start gap-5">
-                        <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shrink-0 bg-emerald-500/20">
-                          🟢
-                        </div>
-                        <div>
-                          <p className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-1">
-                            {q.resultTitle}
-                          </p>
-                          <h2 className="text-lg sm:text-xl font-bold text-white leading-snug">
-                            {q.gradeAHeadline}
-                          </h2>
-                        </div>
+                <div className={`rounded-3xl border p-8 sm:p-10 space-y-7 ${
+                  result.grade === "A"
+                    ? "border-emerald-500/30 bg-emerald-950/50"
+                    : "border-amber-500/25 bg-amber-950/20"
+                }`}>
+                  {/* Traffic light */}
+                  <div className="flex items-center gap-3">
+                    <span className="w-5 h-5 rounded-full bg-red-500/20 border border-red-500/15" />
+                    {result.grade === "A" ? (
+                      <>
+                        <span className="w-5 h-5 rounded-full bg-yellow-400/20 border border-yellow-400/15" />
+                        <span className="w-5 h-5 rounded-full bg-emerald-400 border border-emerald-300/50 shadow-[0_0_10px_rgba(52,211,153,0.7)]" />
+                      </>
+                    ) : (
+                      <>
+                        <span className="w-5 h-5 rounded-full bg-yellow-400 border border-yellow-300/50 shadow-[0_0_10px_rgba(250,204,21,0.6)]" />
+                        <span className="w-5 h-5 rounded-full bg-emerald-400/20 border border-emerald-400/15" />
+                      </>
+                    )}
+                  </div>
+
+                  {/* Label + Headline */}
+                  <div>
+                    <p className={`text-xs font-bold uppercase tracking-widest mb-2 ${result.grade === "A" ? "text-emerald-400" : "text-amber-400"}`}>
+                      {q.resultTitle}
+                    </p>
+                    <h2 className="text-xl sm:text-2xl font-bold text-white leading-snug">
+                      {result.grade === "A" ? q.gradeAHeadline : q.gradeBHeadline}
+                    </h2>
+                  </div>
+
+                  {/* Divider */}
+                  <div className={`border-t ${result.grade === "A" ? "border-emerald-500/15" : "border-amber-500/15"}`} />
+
+                  {/* 3 checkmark bullets */}
+                  <div className="space-y-3">
+                    {(result.grade === "A"
+                      ? [q.gradeABulletEngpass, q.gradeABulletImpact, q.gradeABulletBudget]
+                      : [q.gradeBBullet1, q.gradeBBullet2, q.gradeBBullet3]
+                    ).map((bullet, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <CheckCircle2 className={`w-5 h-5 mt-0.5 shrink-0 ${result.grade === "A" ? "text-emerald-400" : "text-amber-400"}`} />
+                        <p className="text-slate-200 text-sm leading-relaxed">{bullet}</p>
                       </div>
+                    ))}
+                  </div>
 
-                      {/* 3 fixed Bullets: Budget / Entscheider / Dringlichkeit */}
-                      <div className="space-y-3">
-                        {[q.gradeABulletEngpass, q.gradeABulletImpact, q.gradeABulletBudget].map((bullet, i) => (
-                          <div key={i} className="flex items-start gap-3">
-                            <CheckCircle2 className="w-5 h-5 text-emerald-400 mt-0.5 shrink-0" />
-                            <p className="text-slate-200 text-sm leading-relaxed">{bullet}</p>
-                          </div>
-                        ))}
-                      </div>
+                  {/* Saving note — only for grade A */}
+                  {result.grade === "A" && (
+                    <p className="text-emerald-300 text-sm font-bold leading-relaxed">
+                      {q.gradeASavingNote}
+                    </p>
+                  )}
 
-                      {/* Divider */}
-                      <div className="border-t border-emerald-500/15" />
+                  {/* Primary CTA */}
+                  <Link
+                    href={`/${lang}/preview#contact`}
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm uppercase tracking-widest transition-all"
+                  >
+                    {t.demoResult.cta}
+                  </Link>
 
-                      {/* Recommendation */}
-                      <div>
-                        <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
-                          {q.gradeAFitTitle}
-                        </p>
-                        <p className="text-slate-300 text-sm leading-relaxed">{q.gradeARecommendation}</p>
-                      </div>
-                    </div>
+                  {/* Secondary CTA */}
+                  <Link
+                    href={`/${lang}/preview#services`}
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-white/15 hover:border-white/30 text-slate-300 hover:text-white font-bold text-sm uppercase tracking-widest transition-all"
+                  >
+                    {q.ctaA} <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
 
-                    {/* CTAs */}
-                    <div className="flex flex-col sm:flex-row gap-3">
-                      <Link
-                        href={`/${lang}/preview/project-check`}
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm uppercase tracking-widest transition-all"
-                      >
-                        {q.ctaA} <ArrowRight className="w-4 h-4" />
-                      </Link>
-                      <Link
-                        href={`/${lang}/preview`}
-                        className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-white/15 hover:border-white/30 text-slate-300 hover:text-white text-sm font-semibold transition-all"
-                      >
-                        <Home className="w-4 h-4" /> {q.backHome}
-                      </Link>
-                    </div>
-                  </>
-                ) : (
-                  /* ── GRADE B: Ehrliche Einschätzung ── */
-                  <>
-                    <div className="rounded-3xl border border-amber-500/25 bg-amber-950/20 p-8 sm:p-10 space-y-7">
-                      {/* Header */}
-                      <div className="flex items-start gap-5">
-                        <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl font-black shrink-0 bg-amber-500/15 text-amber-400">
-                          B
-                        </div>
-                        <div>
-                          <p className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-1">
-                            {q.resultTitle}
-                          </p>
-                          <h2 className="text-lg sm:text-xl font-bold text-white leading-snug">
-                            {q.gradeBHeadline}
-                          </h2>
-                        </div>
-                      </div>
+                {/* Back home */}
+                <div className="flex justify-center">
+                  <Link
+                    href={`/${lang}/preview`}
+                    className="inline-flex items-center gap-2 px-5 py-3 text-slate-500 hover:text-slate-300 text-sm transition-colors"
+                  >
+                    <Home className="w-4 h-4" /> {q.backHome}
+                  </Link>
+                </div>
 
-                      {/* AI Summary */}
-                      <div>
-                        <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
-                          {q.summary}
-                        </p>
-                        <p className="text-slate-300 text-sm leading-relaxed">{result.summary}</p>
-                      </div>
-
-                      {/* Divider */}
-                      <div className="border-t border-amber-500/15" />
-
-                      {/* Honest explanation */}
-                      <div>
-                        <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
-                          {q.gradeBExplanationTitle}
-                        </p>
-                        <p className="text-slate-300 text-sm leading-relaxed">{q.gradeBExplanation}</p>
-                      </div>
-                    </div>
-
-                    {/* CTAs */}
-                    <div className="flex flex-col sm:flex-row gap-3">
-                      <Link
-                        href={`/${lang}#contact`}
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-amber-500/30 hover:border-amber-500/50 hover:bg-amber-500/5 text-amber-300 hover:text-amber-200 font-semibold text-sm transition-all"
-                      >
-                        {q.ctaB}
-                      </Link>
-                      <Link
-                        href={`/${lang}/preview`}
-                        className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-white/15 hover:border-white/30 text-slate-300 hover:text-white text-sm font-semibold transition-all"
-                      >
-                        <Home className="w-4 h-4" /> {q.backHome}
-                      </Link>
-                    </div>
-                  </>
-                )}
-
-                <DemoResultBlock />
-
-                {/* Demo note */}
-                <p className="text-center text-slate-600 text-xs pt-2 leading-relaxed">
+                <p className="text-center text-slate-600 text-xs leading-relaxed">
                   ✦ {q.demoNote}
                 </p>
               </motion.div>
@@ -435,4 +408,3 @@ export default function DemoQualifierPage({ lang }: { lang: string }) {
     </I18nProvider>
   );
 }
- 

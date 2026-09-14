@@ -16,14 +16,26 @@ export default function Footer({ onNav = () => {} }: FooterProps) {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
           <div className="md:col-span-4 lg:col-span-5">
-            <div className="mb-5">
+            <div className="mb-5 flex items-center gap-3">
+              <img
+                src="/hecaro-h-logo.png"
+                alt=""
+                aria-hidden="true"
+                style={{
+                  height: 44,
+                  width: "auto",
+                  display: "block",
+                  flexShrink: 0,
+                  filter: "invert(1) brightness(1.8)",
+                  mixBlendMode: "screen",
+                }}
+              />
               <span
                 style={{
                   fontWeight: 700,
                   fontSize: 20,
                   letterSpacing: "0.05em",
                   color: "#ffffff",
-                  display: "block",
                   lineHeight: 1,
                 }}
               >
@@ -36,16 +48,18 @@ export default function Footer({ onNav = () => {} }: FooterProps) {
           <div className="md:col-span-4 lg:col-span-3">
             <h4 className="text-white font-semibold mb-6">{t.footer.navTitle}</h4>
             <ul className="space-y-4 text-sm text-slate-400">
+              <li><button onClick={() => onNav("websites")} className="hover:text-white transition-colors">{t.footer.links.websites}</button></li>
+              <li><button onClick={() => onNav("wartung")} className="hover:text-white transition-colors">{t.footer.links.maintenance}</button></li>
               <li><button onClick={() => onNav("services")} className="hover:text-white transition-colors">{t.footer.links.services}</button></li>
-              <li><button onClick={() => onNav("portfolio")} className="hover:text-white transition-colors">{t.footer.links.portfolio}</button></li>
+              <li><button onClick={() => onNav("referenzen")} className="hover:text-white transition-colors">{t.footer.links.references}</button></li>
+              <li><button onClick={() => onNav("faq")} className="hover:text-white transition-colors">{t.footer.links.faq}</button></li>
               <li><button onClick={() => onNav("contact")} className="hover:text-white transition-colors">{t.footer.links.contact}</button></li>
             </ul>
           </div>
 
           <div className="md:col-span-4 lg:col-span-4">
-            <h4 className="text-white font-semibold mb-6">Legal & FAQ</h4>
+            <h4 className="text-white font-semibold mb-6">Legal</h4>
             <ul className="space-y-4 text-sm text-slate-400">
-              <li><button onClick={() => onNav("faq")} className="hover:text-white transition-colors">{t.footer.links.faq}</button></li>
               <li><Link href={`/${lang}/preview/impressum`} className="hover:text-white transition-colors">{t.footer.links.imprint}</Link></li>
               <li><Link href={`/${lang}/preview/datenschutz`} className="hover:text-white transition-colors">{t.footer.links.privacy}</Link></li>
             </ul>

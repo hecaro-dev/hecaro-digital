@@ -1,0 +1,107 @@
+Bitte führe folgende Korrekturen und Optimierungen an der HECARO Digital Website durch. Alle Änderungen müssen in DE, EN und ES (i18n) umgesetzt werden. Keine Icons, keine Emojis im UI.
+
+---
+
+## AUFGABE 1: HERO-SEKTION
+
+### Button 2 ändern:
+Alt: "DEMO STARTEN"
+Neu:
+DE: "REFERENZ ANSEHEN"
+EN: "VIEW REFERENCE"
+ES: "VER REFERENCIA"
+→ Scrollt zu id="referenzen"
+
+### Unterzeile anpassen (B2B-Dienstleister entfernen):
+DE: "Professionelle Websites und digitale Lösungen für lokale Unternehmen."
+EN: "Professional websites and digital solutions for local businesses."
+ES: "Sitios web profesionales y soluciones digitales para empresas locales."
+
+---
+
+## AUFGABE 2: SCROLLING BANNER
+
+Alle aktuellen Begriffe ersetzen. Neue Begriffe (gleiche Formatierung wie bisher, kein Icon, kein Emoji, nur Text mit Trennzeichen):
+
+DE: MEHR ANFRAGEN · SCHNELL ONLINE · RECHTLICH ABGESICHERT · GOOGLE-OPTIMIERT · PERSÖNLICHER KONTAKT · FERTIG IN 2 WOCHEN · DSGVO-KONFORM · MEHRSPRACHIG · PROFESSIONELL · ZUVERLÄSSIG
+
+EN: MORE INQUIRIES · ONLINE FAST · LEGALLY COMPLIANT · GOOGLE OPTIMIZED · PERSONAL CONTACT · READY IN 2 WEEKS · GDPR COMPLIANT · MULTILINGUAL · PROFESSIONAL · RELIABLE
+
+ES: MÁS CONSULTAS · ONLINE RÁPIDO · LEGALMENTE SEGURO · OPTIMIZADO PARA GOOGLE · CONTACTO PERSONAL · LISTO EN 2 SEMANAS · CONFORME AL RGPD · MULTILINGÜE · PROFESIONAL · FIABLE
+
+---
+
+## AUFGABE 3: REFERENZ-SEKTION
+
+Im Referenz-Block (AJK Kölsch) den Tech-Stack-Hinweis entfernen. Ersetze alle Erwähnungen von "Next.js", "React", "TypeScript", "Tailwind" oder anderen Technologienamen durch:
+
+DE: "Professionell entwickelt, vollständig DSGVO-konform und in 3 Sprachen verfügbar."
+EN: "Professionally developed, fully GDPR-compliant and available in 3 languages."
+ES: "Desarrollado profesionalmente, totalmente conforme al RGPD y disponible en 3 idiomas."
+
+---
+
+## AUFGABE 4: FAQ-SEKTION
+
+Mindestens 3 bestehende Fragen die sich auf Automatisierung beziehen entfernen oder ersetzen. Folgende neue Fragen hinzufügen (Website-fokussiert):
+
+### Frage 1:
+DE: "Was ist im Website-Paket alles enthalten?"
+EN: "What is included in the website package?"
+ES: "¿Qué incluye el paquete de sitio web?"
+
+Antwort DE: "Je nach Paket erhalten Sie eine professionell gestaltete, mobiloptimierte Website mit Kontaktformular, DSGVO-konformem Cookie-Banner, Google Analytics, lokalem SEO und mehr. Eine genaue Übersicht finden Sie in der Websites-Sektion."
+Antwort EN: "Depending on the package, you receive a professionally designed, mobile-optimised website with contact form, GDPR-compliant cookie banner, Google Analytics, local SEO and more. A detailed overview can be found in the Websites section."
+Antwort ES: "Según el paquete, recibirá un sitio web diseñado profesionalmente y optimizado para móviles, con formulario de contacto, banner de cookies conforme al RGPD, Google Analytics, SEO local y más. Encontrará una descripción detallada en la sección Sitios web."
+
+### Frage 2:
+DE: "Wie lange dauert es bis meine Website live ist?"
+EN: "How long does it take until my website is live?"
+ES: "¿Cuánto tiempo tarda en estar mi sitio web en línea?"
+
+Antwort DE: "In der Regel ist Ihre Website innerhalb von 2 Wochen nach Auftragserteilung und vollständiger Materiallieferung (Texte, Bilder, Logo) live. Bei komplexeren Projekten besprechen wir den Zeitplan gemeinsam."
+Antwort EN: "As a rule, your website goes live within 2 weeks of placing the order and delivering all materials (texts, images, logo). For more complex projects, we discuss the timeline together."
+Antwort ES: "Por lo general, su sitio web estará en línea en un plazo de 2 semanas tras la confirmación del pedido y la entrega de todos los materiales (textos, imágenes, logotipo). Para proyectos más complejos, acordamos el plazo juntos."
+
+### Frage 3:
+DE: "Kann ich die Website später selbst bearbeiten?"
+EN: "Can I edit the website myself later?"
+ES: "¿Puedo editar el sitio web yo mismo más adelante?"
+
+Antwort DE: "Kleinere Anpassungen wie Texte oder Bilder sind über den Wartungsvertrag abgedeckt — ich erledige das für Sie, schnell und zuverlässig. So bleibt Ihre Website immer aktuell, ohne dass Sie technische Kenntnisse benötigen."
+Antwort EN: "Minor adjustments such as texts or images are covered by the maintenance contract — I take care of that for you, quickly and reliably. This keeps your website always up to date without you needing any technical knowledge."
+Antwort ES: "Los pequeños ajustes, como textos o imágenes, están cubiertos por el contrato de mantenimiento — yo me encargo por usted, de forma rápida y fiable. Así su sitio web se mantiene siempre actualizado sin necesidad de conocimientos técnicos."
+
+### Frage 4:
+DE: "Was passiert wenn ich keinen Wartungsvertrag abschließe?"
+EN: "What happens if I don't sign a maintenance contract?"
+ES: "¿Qué ocurre si no suscribo un contrato de mantenimiento?"
+
+Antwort DE: "Die Website funktioniert selbstverständlich auch ohne Wartungsvertrag. Allerdings übernehme ich ohne Vertrag keine laufende Verantwortung für Ausfälle, Sicherheitslücken oder nötige Aktualisierungen. Änderungen werden dann zum Stundensatz von 85 €/Std. abgerechnet."
+Antwort EN: "The website works perfectly fine without a maintenance contract. However, without a contract I do not assume ongoing responsibility for outages, security vulnerabilities or necessary updates. Changes are then billed at an hourly rate of 85 €/hr."
+Antwort ES: "El sitio web funciona perfectamente sin contrato de mantenimiento. Sin embargo, sin contrato no asumo responsabilidad continua por caídas, vulnerabilidades de seguridad o actualizaciones necesarias. Los cambios se facturarán a 85 €/hora."
+
+---
+
+## AUFGABE 5: LÖSUNGEN-SEKTION — HEADLINE ANPASSEN
+
+Die aktuelle Headline der Lösungen/Demos-Sektion ersetzen durch:
+
+DE: "Automatisierung als nächster Schritt — für Unternehmen, die mehr wollen."
+EN: "Automation as the next step — for businesses that want more."
+ES: "La automatización como siguiente paso — para empresas que quieren más."
+
+Unterzeile (falls vorhanden) anpassen:
+DE: "Intelligente Systeme, die Anfragen filtern, qualifizieren und direkt weiterleiten — nahtlos in Ihre Website integriert."
+EN: "Intelligent systems that filter, qualify and forward enquiries directly — seamlessly integrated into your website."
+ES: "Sistemas inteligentes que filtran, califican y reenvían consultas directamente, integrados sin problemas en su sitio web."
+
+---
+
+## TECHNISCHE ANFORDERUNGEN
+
+- Alle Texte vollständig in i18n-Dateien für DE, EN und ES pflegen
+- Keine Icons, keine Emojis im gesamten UI
+- Bestehende Styles, Schriften, Farben und Layout beibehalten
+- Nach allen Änderungen vollständigen Build-Test durchführen und sicherstellen, dass keine Fehler vorliegen
+- Alle internen Links und Anchor-Navigationen testen

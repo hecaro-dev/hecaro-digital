@@ -10,7 +10,7 @@ export default function AboutSection() {
   const lines = t.quality.headline.split("\n");
 
   return (
-    <section className="py-32 px-4 bg-black border-y border-white/[0.04]" ref={ref}>
+    <section className="py-24 px-4 bg-black border-y border-white/[0.04]" ref={ref}>
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col gap-16">
 

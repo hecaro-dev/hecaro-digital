@@ -1,18 +1,16 @@
 "use client";
 
 import { useCallback, useEffect } from "react";
-import { I18nProvider, LANGS, type Lang } from "../i18n";
+import { I18nProvider, LANGS, type Lang, useI18n } from "../i18n";
 import CustomCursor from "./CustomCursor";
 import Header from "./Header";
 import HeroSection from "./HeroSection";
 import MarqueeSection from "./MarqueeSection";
 import ServicesSection from "./ServicesSection";
-import TargetGroupSection from "./TargetGroupSection";
-import ValuesSection from "./ValuesSection";
+import WebsitesSection from "./WebsitesSection";
+import MaintenanceSection from "./MaintenanceSection";
+import ReferenceSection from "./ReferenceSection";
 import PortfolioSection from "./PortfolioSection";
-import AboutSection from "./AboutSection";
-import ProcessSection from "./ProcessSection";
-import TechStackSection from "./TechStackSection";
 import FAQSection from "./FAQSection";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
@@ -42,13 +40,11 @@ function HomePageInner() {
       <main id="main-content">
         <HeroSection onNav={handleNav} />
         <MarqueeSection />
+        <WebsitesSection />
+        <MaintenanceSection />
         <ServicesSection />
-        <TargetGroupSection />
-        <ValuesSection />
         <PortfolioSection />
-        <AboutSection />
-        <ProcessSection />
-        <TechStackSection />
+        <ReferenceSection />
         <FAQSection />
         <ContactSection />
       </main>

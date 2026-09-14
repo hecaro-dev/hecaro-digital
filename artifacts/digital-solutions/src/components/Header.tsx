@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
 import { useI18n } from "../i18n";
 
 interface HeaderProps {
@@ -21,9 +20,10 @@ export default function Header({ onNav }: HeaderProps) {
   }, []);
 
   const navItems = [
+    { key: "websites", label: t.nav.websites },
+    { key: "wartung", label: t.nav.maintenance },
     { key: "services", label: t.nav.services },
-    { key: "portfolio", label: t.nav.portfolio },
-    { key: "faq", label: t.nav.faq },
+    { key: "referenzen", label: t.nav.references },
     { key: "contact", label: t.nav.contact },
   ];
 
@@ -119,7 +119,9 @@ export default function Header({ onNav }: HeaderProps) {
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
             >
-              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <span className="text-[10px] font-bold uppercase tracking-widest">
+                {menuOpen ? t.nav.close : t.nav.menu}
+              </span>
             </button>
           </div>
         </div>

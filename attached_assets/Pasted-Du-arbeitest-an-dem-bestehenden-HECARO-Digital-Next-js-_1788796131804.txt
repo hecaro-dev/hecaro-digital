@@ -1,0 +1,151 @@
+Du arbeitest an dem bestehenden HECARO Digital Next.js 14 Projekt.
+Mache NUR die folgenden 3 Korrekturen. Alles andere bleibt unverändert.
+
+---
+
+## KORREKTUR 1: REIHENFOLGE DER SEKTIONEN
+
+Ändere die Reihenfolge der Sektionen auf der Hauptseite wie folgt:
+
+1. Hero
+2. Scrolling Banner (Lauftext)
+3. Website-Pakete Sektion (id="websites")
+4. Referenz AJK Kölsch Sektion (id="referenzen")
+5. Automatisierung-Pakete Sektion (bestehende Lösungen)
+6. Demos Sektion
+7. Prozess Sektion
+8. Moderne Standards Sektion
+9. FAQ Sektion
+10. Kontakt Sektion
+11. Footer
+
+Verändere dabei NICHTS am Inhalt oder Design der Sektionen — nur die Reihenfolge.
+
+---
+
+## KORREKTUR 2: SCROLLING BANNER — TEXTE ERSETZEN
+
+Ersetze alle bestehenden Begriffe im Scrolling Banner (der Lauftext zwischen Hero und der ersten Sektion) durch folgende neue Begriffe:
+
+WEBSITES · LOKALE UNTERNEHMEN · DSGVO-KONFORM · MEHRSPRACHIG · SEO-OPTIMIERT · SCHNELL LIVE · ANFRAGEN-FILTER · AUTOMATISIERUNG · 3 SPRACHEN · PERSÖNLICHER SUPPORT · HAMBURG · MADRID
+
+Die Begriffe laufen in einer Endlosschleife — genauso wie bisher, nur mit diesen neuen Texten.
+Keine Übersetzung nötig — diese Begriffe bleiben in allen 3 Sprachen gleich.
+
+---
+
+## KORREKTUR 3: TECHNISCHE BEGRIFFE ENTFERNEN
+
+### 3a — Website-Pakete Sektion: Feature-Texte ersetzen
+
+Ersetze in den 3 Website-Paket-Karten alle technischen Begriffe durch Kundennutzen-Sprache:
+
+KARTE 1 — Starter:
+✓ 1 Sprache
+✓ Saubers & modernes Design (Mobile & Desktop)
+✓ Bei Google auffindbar
+✓ Kontaktformular mit direkter Weiterleitung
+✓ Rechtlich abgesichert (Impressum & Datenschutz)
+✓ Launch auf Ihrer Wunsch-Domain
+✓ Fertig in ca. 1 Woche
+
+EN:
+✓ 1 language
+✓ Clean & modern design (mobile & desktop)
+✓ Findable on Google
+✓ Contact form with direct forwarding
+✓ Legally compliant (imprint & privacy policy)
+✓ Launch on your domain
+✓ Ready in approx. 1 week
+
+ES:
+✓ 1 idioma
+✓ Diseño limpio y moderno (móvil y escritorio)
+✓ Visible en Google
+✓ Formulario de contacto con reenvío directo
+✓ Legalmente conforme (aviso legal y privacidad)
+✓ Lanzamiento en su dominio
+✓ Listo en aprox. 1 semana
+
+---
+
+KARTE 2 — Professional:
+✓ Bis zu 3 Sprachen (Deutsch, Englisch, Spanisch)
+✓ Besucher-Analyse datenschutzkonform eingerichtet
+✓ Cookie-Einwilligung rechtssicher integriert
+✓ Professionelle Bildergalerie
+✓ WhatsApp-Button für direkten Kundenkontakt
+✓ Optimiert für maximale Google-Sichtbarkeit
+✓ Vollständig datenschutzkonform
+✓ Alles aus Starter inklusive
+
+EN:
+✓ Up to 3 languages (German, English, Spanish)
+✓ Visitor analytics set up in a privacy-compliant way
+✓ Cookie consent legally integrated
+✓ Professional image gallery
+✓ WhatsApp button for direct client contact
+✓ Optimized for maximum Google visibility
+✓ Fully privacy-compliant
+✓ Everything from Starter included
+
+ES:
+✓ Hasta 3 idiomas (alemán, inglés, español)
+✓ Análisis de visitantes conforme a la privacidad
+✓ Consentimiento de cookies integrado legalmente
+✓ Galería de imágenes profesional
+✓ Botón de WhatsApp para contacto directo
+✓ Optimizado para máxima visibilidad en Google
+✓ Totalmente conforme a la privacidad
+✓ Todo de Starter incluido
+
+---
+
+KARTE 3 — Premium:
+✓ Alles aus Professional inklusive
+✓ Automatische Vorqualifizierung von Anfragen
+✓ Nur noch kaufbereite Interessenten erreichen Sie
+✓ Automatische Bestätigungs-E-Mails an Ihre Kunden
+✓ Individuelle Sonderwünsche möglich
+✓ Priorisierter Support nach dem Launch
+✓ Gemeinsame Strategie-Session zum Start
+
+EN:
+✓ Everything from Professional included
+✓ Automatic pre-qualification of inquiries
+✓ Only purchase-ready leads reach you
+✓ Automatic confirmation emails to your clients
+✓ Individual special requests possible
+✓ Priority support after launch
+✓ Joint strategy session at the start
+
+ES:
+✓ Todo de Professional incluido
+✓ Precalificación automática de solicitudes
+✓ Solo los prospectos listos para comprar le contactan
+✓ Correos de confirmación automáticos a sus clientes
+✓ Solicitudes especiales individuales posibles
+✓ Soporte prioritario tras el lanzamiento
+✓ Sesión de estrategia conjunta al inicio
+
+---
+
+### 3b — Referenz-Karte AJK Kölsch: Tech-Tags komplett entfernen
+
+Entferne auf der AJK Kölsch Referenz-Karte ALLE technischen Tags/Badges
+(Next.js 14, TypeScript, JSON-LD, Lightbox, GA4 usw.).
+
+Ersetze sie durch folgende einfache Vorteils-Tags:
+
+✓ Mehrsprachig · ✓ DSGVO-konform · ✓ SEO-optimiert · ✓ Mobile-first · ✓ Live in 1 Woche
+
+EN: ✓ Multilingual · ✓ GDPR-compliant · ✓ SEO-optimized · ✓ Mobile-first · ✓ Live in 1 week
+ES: ✓ Multilingüe · ✓ Conforme al RGPD · ✓ Optimizado para SEO · ✓ Mobile-first · ✓ En línea en 1 semana
+
+---
+
+WICHTIG:
+- Verändere NICHTS am Design, Farben oder Layout
+- Alle Änderungen in DE, EN und ES umsetzen
+- Nach den Änderungen: .next Ordner löschen (rm -rf .next) und neu starten
+- Sicherstellen dass kein TypeScript-Fehler vorhanden ist

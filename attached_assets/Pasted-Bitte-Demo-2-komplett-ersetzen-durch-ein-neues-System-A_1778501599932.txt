@@ -1,0 +1,75 @@
+Bitte Demo 2 komplett ersetzen durch ein neues System-Audit. Hier sind alle Details:
+
+Name der Demo: „System-Audit"
+
+Aufbau: 4 Schritte + Ergebnis
+
+SCHRITT 1:
+
+DE: „Wie viele Anfragen bekommen Sie durchschnittlich pro Woche?"
+EN: „How many enquiries do you receive on average per week?"
+ES: „¿Cuántas consultas recibe de media por semana?"
+Optionen:
+
+DE: „1–3 Anfragen" / „4–10 Anfragen" / „10+ Anfragen" / „Kaum oder keine"
+EN: „1–3 enquiries" / „4–10 enquiries" / „10+ enquiries" / „Hardly any or none"
+ES: „1–3 consultas" / „4–10 consultas" / „10+ consultas" / „Casi ninguna o ninguna"
+SCHRITT 2:
+
+DE: „Was passiert aktuell nach einer Anfrage?"
+EN: „What currently happens after an enquiry comes in?"
+ES: „¿Qué ocurre actualmente después de recibir una consulta?"
+Optionen:
+
+DE: „Ich antworte manuell" / „Ich habe ein Formular" / „Nichts — sie warten"
+EN: „I reply manually" / „I have a form" / „Nothing — they wait"
+ES: „Respondo manualmente" / „Tengo un formulario" / „Nada — esperan"
+SCHRITT 3:
+
+DE: „Was kostet Sie heute am meisten Zeit?"
+EN: „What is currently taking up most of your time?"
+ES: „¿Qué le quita más tiempo actualmente?"
+Optionen:
+
+DE: „Erstgespräche ohne Ergebnis" / „Nachfassen per E-Mail" / „Angebote schreiben"
+EN: „Intro calls that lead nowhere" / „Following up by email" / „Writing proposals"
+ES: „Llamadas iniciales sin resultado" / „Seguimiento por correo" / „Redactar propuestas"
+SCHRITT 4:
+
+DE: „Was ist Ihr Ziel in den nächsten 90 Tagen?"
+EN: „What is your goal for the next 90 days?"
+ES: „¿Cuál es su objetivo para los próximos 90 días?"
+Optionen:
+
+DE: „Weniger Zeitverlust" / „Mehr Abschlüsse" / „Alles automatisieren"
+EN: „Less time wasted" / „More closed deals" / „Automate everything"
+ES: „Menos tiempo perdido" / „Más cierres" / „Automatizar todo"
+ERGEBNIS — 3 Profile:
+
+Profil 🔴 Kritisch (wird angezeigt wenn: kaum Anfragen ODER alles manuell ODER Erstgespräche ohne Ergebnis):
+
+DE: „Ihr Profil: Hoher Zeitverlust — sofortiger Handlungsbedarf. Empfehlung: Anfragen-Filter (Paket 01)"
+EN: „Your profile: High time loss — immediate action needed. Recommendation: Enquiry Filter (Package 01)"
+ES: „Su perfil: Alta pérdida de tiempo — acción inmediata necesaria. Recomendación: Filtro de consultas (Paquete 01)"
+Profil 🟡 Ausbaufähig (wird angezeigt wenn: 4–10 Anfragen UND Formular vorhanden):
+
+DE: „Ihr Profil: Gute Basis — aber Potenzial wird verschenkt. Empfehlung: Anfragen-System Pro (Paket 02)"
+EN: „Your profile: Good foundation — but potential is being wasted. Recommendation: Enquiry System Pro (Package 02)"
+ES: „Su perfil: Buena base — pero se está desperdiciando potencial. Recomendación: Sistema Pro (Paquete 02)"
+Profil 🟢 Bereit zu skalieren (wird angezeigt wenn: 10+ Anfragen UND Ziel „Alles automatisieren"):
+
+DE: „Ihr Profil: Bereit für das nächste Level. Empfehlung: Maßgeschneiderte Systemanbindung (Paket 03)"
+EN: „Your profile: Ready for the next level. Recommendation: Custom System Integration (Package 03)"
+ES: „Su perfil: Listo para el siguiente nivel. Recomendación: Integración de sistema personalizada (Paquete 03)"
+SONDERFALL — „Kaum oder keine Anfragen":
+
+Wenn Schritt 1 mit „Kaum oder keine" beantwortet wird → sofort Ergebnis anzeigen ohne weitere Fragen:
+
+DE: „Unser System ist für Unternehmer die bereits Anfragen erhalten. Ihr aktuelles Ziel sollte zunächst Sichtbarkeit sein — dafür sind wir nicht die richtige Lösung."
+EN: „Our system is for business owners who are already receiving enquiries. Your current goal should be visibility first — we are not the right solution for that."
+ES: „Nuestro sistema es para empresarios que ya reciben consultas. Su objetivo actual debería ser la visibilidad — no somos la solución adecuada para eso."
+BUTTONS AM ENDE (bei allen 3 Profilen):
+
+Button 1 (grün, primär): DE „KOSTENLOSES ERSTGESPRÄCH ANFRAGEN" / EN „REQUEST FREE CONSULTATION" / ES „SOLICITAR CONSULTA GRATUITA"
+Button 2 (dunkel, sekundär): DE „DAS WILL ICH FÜR MEIN GESCHÄFT →" / EN „I WANT THIS FOR MY BUSINESS →" / ES „QUIERO ESTO PARA MI NEGOCIO →"
+Beide Buttons verlinken zum Kontaktformular auf der Hauptseite. Kein Design verändern. Gleicher Stil wie Demo 1.

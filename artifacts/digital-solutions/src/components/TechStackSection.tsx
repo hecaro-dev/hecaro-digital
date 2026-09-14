@@ -1,19 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Zap, Shield, CheckCircle2, Sparkles, Filter, Bell } from "lucide-react";
 import { useInView } from "../hooks/useInView";
 import { useI18n } from "../i18n";
 
-const TECH_META: Record<string, { icon: string; tag?: string }> = {
-  "Next.js":             { icon: "▲", tag: "Speed" },
-  "React":               { icon: "⚛" },
-  "TypeScript":          { icon: "TS" },
-  "Tailwind CSS":        { icon: "✦" },
-  "OpenAI":              { icon: "◈", tag: "Intelligence" },
-  "Nodemailer":          { icon: "✉", tag: "Reliability" },
-  "Figma":               { icon: "✏" },
-  "Performance Hosting": { icon: "⚡" },
-};
+const ICONS = [Zap, Shield, CheckCircle2, Sparkles, Filter, Bell];
 
 export default function TechStackSection() {
   const { t } = useI18n();
@@ -38,7 +30,7 @@ export default function TechStackSection() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {t.techstack.items.map((tech, i) => {
-            const meta = TECH_META[tech];
+            const Icon = ICONS[i];
             return (
               <motion.div
                 key={i}
@@ -47,17 +39,12 @@ export default function TechStackSection() {
                 transition={{ duration: 0.4, delay: i * 0.07 }}
                 className="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.07)] hover:border-emerald-500/30 hover:bg-[rgba(255,255,255,0.05)] transition-all duration-300 backdrop-blur-md"
               >
-                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-lg group-hover:bg-emerald-500/15 transition-colors duration-300">
-                  {meta?.icon ?? "◆"}
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500/15 transition-colors duration-300">
+                  {Icon && <Icon className="w-6 h-6" />}
                 </div>
                 <span className="text-slate-300 font-medium text-sm text-center leading-tight tracking-wide">
                   {tech}
                 </span>
-                {meta?.tag && (
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-500/60 group-hover:text-emerald-400/80 transition-colors duration-300">
-                    {meta.tag}
-                  </span>
-                )}
               </motion.div>
             );
           })}

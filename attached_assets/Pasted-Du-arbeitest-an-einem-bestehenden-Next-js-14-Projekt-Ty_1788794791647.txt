@@ -1,0 +1,317 @@
+Du arbeitest an einem bestehenden Next.js 14 Projekt (TypeScript, Tailwind CSS, i18n mit DE/EN/ES).  
+Das Design-System (Dark Theme, Farben, Fonts, Abstände, Komponenten) bleibt zu 100% unverändert.  
+Verändere AUSSCHLIESSLICH das was hier beschrieben wird. Alles andere bleibt exakt wie es ist.  
+  
+Alle Änderungen müssen vollständig in allen 3 Sprachen umgesetzt werden: DE, EN, ES.  
+Übersetze alle Texte sinngemäß und professionell — kein wörtliches Übersetzen.  
+  
+---  
+  
+## 1. NAVIGATION  
+  
+Füge einen neuen Menüpunkt zwischen "LÖSUNGEN" und "DEMOS" ein:  
+- DE: WEBSITES  
+- EN: WEBSITES    
+- ES: SITIOS WEB  
+  
+Der neue Menüpunkt scrollt zur neuen Website-Sektion (Abschnitt 4 unten).  
+Die Reihenfolge der Navigation ist dann:  
+LÖSUNGEN → WEBSITES → DEMOS → FAQ → KONTAKT  
+  
+---  
+  
+## 2. HERO SEKTION — TEXTE ERSETZEN  
+  
+Ersetze nur die Texte. Layout, Animationen und Buttons bleiben strukturell gleich.  
+  
+### DE:  
+- Badge: ✦ DIGITALE SYSTEME & WEBSITES FÜR UNTERNEHMEN  
+- Headline Zeile 1 (weiß): „Sichtbar."  
+- Headline Zeile 2 (grün): „Strukturiert."  
+- Headline Zeile 3 (grün): „Verkaufsbereit."  
+- Subtext: „Ich baue professionelle Websites und digitale Anfragen-Systeme für lokale Unternehmen und B2B-Dienstleister — damit du online gefunden wirst und nur noch mit den richtigen Kunden sprichst."  
+- Button 1 (primär, grün): „Website anfragen →" → scrollt zur Website-Sektion  
+- Button 2 (sekundär, transparent): „Demo starten" → scrollt zur Demo-Sektion  
+  
+### EN:  
+- Badge: ✦ DIGITAL SYSTEMS & WEBSITES FOR BUSINESSES  
+- Headline Zeile 1 (weiß): „Visible."  
+- Headline Zeile 2 (grün): „Structured."  
+- Headline Zeile 3 (grün): „Sales-Ready."  
+- Subtext: „I build professional websites and digital inquiry systems for local businesses and B2B service providers — so you get found online and only talk to the right clients."  
+- Button 1: „Request a Website →"  
+- Button 2: „Start Demo"  
+  
+### ES:  
+- Badge: ✦ SISTEMAS DIGITALES Y SITIOS WEB PARA EMPRESAS  
+- Headline Zeile 1 (weiß): „Visible."  
+- Headline Zeile 2 (grün): „Estructurado."  
+- Headline Zeile 3 (grün): „Listo para vender."  
+- Subtext: „Construyo sitios web profesionales y sistemas de solicitudes digitales para empresas locales y proveedores B2B — para que te encuentren en línea y solo hables con los clientes adecuados."  
+- Button 1: „Solicitar sitio web →"  
+- Button 2: „Ver demo"  
+  
+---  
+  
+## 3. PROZESS SEKTION — TEXTE ANPASSEN  
+  
+Die bestehende "Mein Prozess" Sektion (01–04) bleibt im Layout identisch.  
+Passe nur die Texte an, damit sie für BEIDE Dienstleistungen gelten (Websites + Automatisierung):  
+  
+### DE:  
+- Overline: PROZESS  
+- Headline: „Mein Prozess"  
+- Subtext: „Transparent, strukturiert und effizient — ob Website oder digitales System."  
+  
+- 01 Analyse  
+  Text: „Ich verstehe Ihre Ziele, Ihre Zielgruppe und Ihren Markt — bevor ich eine einzige Zeile plane."  
+  
+- 02 Konzept & Strategie  
+  Text: „Gemeinsam legen wir fest, was Ihre Website oder Ihr System leisten muss — klar, messbar und auf Sie zugeschnitten."  
+  
+- 03 Aufbau & Umsetzung  
+  Text: „Ich baue Ihre Lösung präzise und sauber — mit modernem Tech-Stack, DSGVO-konform und mobiloptimiert."  
+  
+- 04 Launch & Support  
+  Text: „Pünktliche Lieferung, reibungsloser Launch und persönlicher Support nach dem Go-live — Sie sind nie allein."  
+  
+### EN:  
+- Overline: PROCESS  
+- Headline: „My Process"  
+- Subtext: „Transparent, structured and efficient — whether website or digital system."  
+  
+- 01 Analysis: „I understand your goals, your target audience and your market — before planning a single line."  
+- 02 Concept & Strategy: „Together we define what your website or system needs to achieve — clearly and measurably."  
+- 03 Build & Execution: „I build your solution precisely and cleanly — modern tech stack, GDPR-compliant and mobile-optimized."  
+- 04 Launch & Support: „On-time delivery, smooth launch and personal support after go-live — you're never alone."  
+  
+### ES:  
+- Overline: PROCESO  
+- Headline: „Mi Proceso"  
+- Subtext: „Transparente, estructurado y eficiente — ya sea un sitio web o un sistema digital."  
+  
+- 01 Análisis: „Entiendo sus objetivos, su audiencia y su mercado — antes de planificar una sola línea."  
+- 02 Concepto y estrategia: „Juntos definimos lo que su sitio web o sistema debe lograr — de forma clara y medible."  
+- 03 Construcción: „Construyo su solución con precisión — stack tecnológico moderno, conforme al RGPD y optimizado para móvil."  
+- 04 Lanzamiento y soporte: „Entrega puntual, lanzamiento fluido y soporte personal después del go-live."  
+  
+---  
+  
+## 4. NEUE SEKTION: WEBSITES FÜR LOKALE UNTERNEHMEN  
+  
+Füge diese NEUE Sektion direkt NACH den bestehenden Automatisierungs-Paketen ein.  
+Verwende exakt dasselbe Karten-Layout und Design wie die bestehenden Paket-Karten.  
+Gib dieser Sektion die Anker-ID: id="websites"  
+  
+### Sektion-Header:  
+- DE → Overline: WEBSITES | Headline: „Professionelle Websites für lokale Unternehmen" | Subtext: „Von der ersten Idee bis zum Launch — komplett, mehrsprachig, DSGVO-konform und SEO-optimiert."  
+- EN → Overline: WEBSITES | Headline: „Professional Websites for Local Businesses" | Subtext: „From the first idea to launch — complete, multilingual, GDPR-compliant and SEO-optimized."  
+- ES → Overline: SITIOS WEB | Headline: „Sitios Web Profesionales para Empresas Locales" | Subtext: „Desde la primera idea hasta el lanzamiento — completo, multilingüe, conforme al RGPD y optimizado para SEO."  
+  
+---  
+  
+### KARTE 1 — Starter  
+  
+**DE:**  
+- Titel: Starter  
+- Preis: ab 1.500 €  
+- Kein Badge  
+- Features:  
+  ✓ 1 Sprache  
+  ✓ Responsive Design (Mobile-first)  
+  ✓ SEO-Grundoptimierung  
+  ✓ Kontaktformular mit Weiterleitung  
+  ✓ Impressum & Datenschutzerklärung  
+  ✓ Launch auf Ihrer Wunsch-Domain  
+  ✓ Lieferung in ca. 1 Woche  
+  
+**EN:**  
+- Titel: Starter  
+- Preis: from €1,500  
+- Features:  
+  ✓ 1 language  
+  ✓ Responsive design (mobile-first)  
+  ✓ Basic SEO optimization  
+  ✓ Contact form with forwarding  
+  ✓ Legal notice & privacy policy  
+  ✓ Launch on your domain  
+  ✓ Delivery in approx. 1 week  
+  
+**ES:**  
+- Título: Starter  
+- Precio: desde 1.500 €  
+- Características:  
+  ✓ 1 idioma  
+  ✓ Diseño responsivo (mobile-first)  
+  ✓ Optimización SEO básica  
+  ✓ Formulario de contacto  
+  ✓ Aviso legal y política de privacidad  
+  ✓ Lanzamiento en su dominio  
+  ✓ Entrega en aprox. 1 semana  
+  
+---  
+  
+### KARTE 2 — Professional (MIT "Beliebt" Badge — gleiche Positionierung wie bei den Automatisierungs-Paketen)  
+  
+**DE:**  
+- Titel: Professional  
+- Preis: ab 3.000 €  
+- Badge: „Beliebt" (grün, oben rechts)  
+- Features:  
+  ✓ Bis zu 3 Sprachen (DE / EN / ES)  
+  ✓ Google Analytics 4 (DSGVO-konform)  
+  ✓ Cookie Banner (Akzeptieren/Ablehnen)  
+  ✓ Bildergalerie mit Lightbox  
+  ✓ WhatsApp Button (sticky/floating)  
+  ✓ JSON-LD Strukturdaten (SEO)  
+  ✓ Google Fonts lokal gehostet  
+  ✓ Favicon & Meta-Tags  
+  ✓ Alles aus Starter inklusive  
+  
+**EN:**  
+- Title: Professional  
+- Price: from €3,000  
+- Badge: „Popular"  
+- Features:  
+  ✓ Up to 3 languages (DE / EN / ES)  
+  ✓ Google Analytics 4 (GDPR-compliant)  
+  ✓ Cookie banner (accept/reject)  
+  ✓ Image gallery with lightbox  
+  ✓ WhatsApp button (sticky/floating)  
+  ✓ JSON-LD structured data (SEO)  
+  ✓ Google Fonts hosted locally  
+  ✓ Favicon & meta tags  
+  ✓ Everything from Starter included  
+  
+**ES:**  
+- Título: Professional  
+- Precio: desde 3.000 €  
+- Badge: „Popular"  
+- Características:  
+  ✓ Hasta 3 idiomas (DE / EN / ES)  
+  ✓ Google Analytics 4 (conforme al RGPD)  
+  ✓ Banner de cookies  
+  ✓ Galería de imágenes con lightbox  
+  ✓ Botón de WhatsApp (flotante)  
+  ✓ Datos estructurados JSON-LD (SEO)  
+  ✓ Google Fonts alojadas localmente  
+  ✓ Favicon y meta etiquetas  
+  ✓ Todo de Starter incluido  
+  
+---  
+  
+### KARTE 3 — Premium  
+  
+**DE:**  
+- Titel: Premium  
+- Preis: auf Anfrage  
+- Kein Badge  
+- Features:  
+  ✓ Alles aus Professional inklusive  
+  ✓ Anfragen-Filter Integration  
+  ✓ Automatische Qualifizierung von Interessenten  
+  ✓ E-Mail Autoreply System  
+  ✓ Individuelle Sonderanforderungen  
+  ✓ Priorisierter Support nach Launch  
+  ✓ Gemeinsame Strategie-Session  
+  
+**EN:**  
+- Title: Premium  
+- Price: on request  
+- Features:  
+  ✓ Everything from Professional included  
+  ✓ Inquiry filter integration  
+  ✓ Automatic lead qualification  
+  ✓ Email autoreply system  
+  ✓ Individual special requirements  
+  ✓ Priority support after launch  
+  ✓ Joint strategy session  
+  
+**ES:**  
+- Título: Premium  
+- Precio: bajo consulta  
+- Características:  
+  ✓ Todo de Professional incluido  
+  ✓ Integración de filtro de solicitudes  
+  ✓ Calificación automática de prospectos  
+  ✓ Sistema de autorrespuesta por email  
+  ✓ Requisitos especiales individuales  
+  ✓ Soporte prioritario tras el lanzamiento  
+  ✓ Sesión de estrategia conjunta  
+  
+---  
+  
+### CTA unter den 3 Website-Karten:  
+  
+- DE: „Noch nicht sicher welches Paket zu Ihnen passt? Sprechen Sie kostenlos mit mir." → Button: „Kostenloses Erstgespräch →" → scrollt zur Kontakt-Sektion  
+- EN: „Not sure which package fits your needs? Talk to me for free." → Button: „Free Consultation →"  
+- ES: „¿No estás seguro qué paquete te conviene? Habla conmigo sin coste." → Button: „Consulta gratuita →"  
+  
+---  
+  
+## 5. NEUE SEKTION: REFERENZ AJK KÖLSCH  
+  
+Füge diese Sektion DIREKT NACH den Website-Paketen ein.  
+Nutze ein sauberes, dunkles Karten-Layout — konsistent mit dem bestehenden Design.  
+  
+### Sektion-Header:  
+- DE → Overline: REFERENZ | Headline: „Echte Projekte. Echte Ergebnisse." | Subtext: „Ein Beispiel für eine Website die ich für einen echten Kunden gebaut und live gebracht habe."  
+- EN → Overline: REFERENCE | Headline: „Real Projects. Real Results." | Subtext: „An example of a website I built and launched for a real client."  
+- ES → Overline: REFERENCIA | Headline: „Proyectos reales. Resultados reales." | Subtext: „Un ejemplo de un sitio web que construí y lancé para un cliente real."  
+  
+### Referenz-Karte:  
+  
+Unternehmensname: AJK Kölsch — Glas- & Fensterreinigung  
+Standort: Hamburg, Deutschland  
+  
+Tech-Tags (als kleine Badges nebeneinander):  
+Next.js 14 | TypeScript | 3 Sprachen | Google Analytics 4 | DSGVO-konform | SEO | Kontaktformular | WhatsApp Button | Lightbox-Galerie  
+  
+**DE Beschreibung:**  
+„Mehrsprachige Business-Website für ein lokales Reinigungsunternehmen in Hamburg. Gebaut mit Next.js 14, vollständig DSGVO-konform und in 3 Sprachen verfügbar. Inklusive Leistungsübersicht, Bildergalerie, 3 Preispakete, FAQ und Kontaktformular mit automatischer Antwort."  
+  
+**EN Beschreibung:**  
+„Multilingual business website for a local cleaning company in Hamburg. Built with Next.js 14, fully GDPR-compliant and available in 3 languages. Includes service overview, image gallery, 3 pricing packages, FAQ and contact form with auto-reply."  
+  
+**ES Descripción:**  
+„Sitio web empresarial multilingüe para una empresa local de limpieza en Hamburgo. Construido con Next.js 14, totalmente conforme al RGPD y disponible en 3 idiomas. Incluye descripción de servicios, galería de imágenes, 3 paquetes de precios, FAQ y formulario de contacto con respuesta automática."  
+  
+Link-Button:  
+- DE: „Website live ansehen →"  
+- EN: „View live website →"  
+- ES: „Ver sitio web en vivo →"  
+- URL: https://www.ajk-koelsch.de/de  
+- Öffnet in neuem Tab: target="_blank" rel="noopener noreferrer"  
+  
+---  
+  
+
+6. FAQ — 2 NEUE FRAGEN AM ANFANG EINFÜGEN
+Füge diese 2 Fragen als ERSTE Einträge in die bestehende FAQ-Liste ein (vor allen anderen):
+Frage 1:
+* DE Frage: „Baut ihr auch normale Websites ohne Automatisierung?"
+* DE Antwort: „Ja — ich biete professionelle Websites für lokale Unternehmen ab 1.500 € an. Komplett, mehrsprachig, SEO-optimiert und DSGVO-konform. Die Automatisierung ist ein optionales Premium-Add-on das jederzeit ergänzt werden kann."
+* EN Frage: „Do you also build regular websites without automation?"
+* EN Antwort: „Yes — I offer professional websites for local businesses starting at €1,500. Complete, multilingual, SEO-optimized and GDPR-compliant. Automation is an optional premium add-on that can be added at any time."
+* ES Frage: „¿También construyen sitios web normales sin automatización?"
+* ES Antwort: „Sí — ofrezco sitios web profesionales para empresas locales desde 1.500 €. Completos, multilingües, optimizados para SEO y conformes al RGPD. La automatización es un complemento premium opcional que se puede agregar en cualquier momento."
+Frage 2:
+* DE Frage: „Wie lange dauert es bis meine Website live ist?"
+* DE Antwort: „Beim Starter-Paket in der Regel 1 Woche. Beim Professional-Paket ca. 2 Wochen. Der genaue Zeitplan hängt davon ab wie schnell wir gemeinsam Inhalte und Bilder zusammenstellen. Ich begleite Sie durch den gesamten Prozess."
+* EN Frage: „How long does it take until my website is live?"
+* EN Antwort: „For the Starter package, typically 1 week. For the Professional package, approximately 2 weeks. The exact timeline depends on how quickly we gather content and images together. I guide you through the entire process."
+* ES Frage: „¿Cuánto tiempo tarda en estar mi sitio web en línea?"
+* ES Antwort: „Para el paquete Starter, normalmente 1 semana. Para el paquete Professional, aproximadamente 2 semanas. El plazo exacto depende de la rapidez con que recopilemos contenido e imágenes. Le guío durante todo el proceso."
+
+ABSCHLIESSENDE TECHNISCHE ANFORDERUNGEN
+1. Alle neuen Sektionen bekommen korrekte Anker-IDs für die Navigation:
+    * Website-Sektion: id="websites"
+    * Referenz-Sektion: id="referenzen"
+2. Der neue Navigationspunkt "WEBSITES" / "SITIOS WEB" scrollt zu id="websites"
+3. Hero Button 1 scrollt zu id="websites" Hero Button 2 scrollt zur bestehenden Demo-Sektion
+4. Alle externen Links (ajk-koelsch.de) öffnen mit target="_blank" rel="noopener noreferrer"
+5. Alle Kontakt-CTAs scrollen zur bestehenden Kontakt-Sektion (id="kontakt" oder wie sie im Code heißt)
+6. Responsive: Alle neuen Sektionen müssen auf Mobile genauso sauber aussehen wie auf Desktop
+7. i18n: Alle neuen Texte müssen in die bestehende i18n-Struktur eingebunden werden — keine hardgecodeten Texte
+8. Keine neuen Abhängigkeiten (npm packages) installieren — nur bestehende verwenden
+9. Nach den Änderungen: Stelle sicher dass kein TypeScript-Fehler vorhanden ist und das Projekt fehlerfrei baut

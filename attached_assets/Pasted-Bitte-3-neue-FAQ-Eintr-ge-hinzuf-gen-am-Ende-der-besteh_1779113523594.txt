@@ -1,0 +1,45 @@
+Bitte 3 neue FAQ-Einträge hinzufügen — am Ende der bestehenden FAQ-Sektion. Gleicher Stil wie die bestehenden Einträge. Kein Design verändern.
+
+Frage 5:
+
+DE:
+
+Frage: „Was bekomme ich konkret mit Paket 02?"
+Antwort: „Vor jedem Gespräch beantwortet Ihr Interessent automatisch 4 gezielte Fragen. Sie erhalten ein fertiges Briefing — damit wissen Sie vor dem ersten Wort wer vor Ihnen sitzt, was er will und ob er bereit ist zu investieren."
+EN:
+
+Frage: „What do I get exactly with Package 02?"
+Antwort: „Before every conversation, your prospect automatically answers 4 targeted questions. You receive a ready-made briefing — so you know before the first word who you are talking to, what they want and whether they are ready to invest."
+ES:
+
+Frage: „¿Qué obtengo exactamente con el Paquete 02?"
+Antwort: „Antes de cada conversación, su interesado responde automáticamente 4 preguntas específicas. Usted recibe un briefing listo — para saber antes de la primera palabra quién tiene enfrente, qué quiere y si está listo para invertir."
+Frage 6:
+
+DE:
+
+Frage: „Ist Paket 03 auch für kleinere Unternehmen geeignet?"
+Antwort: „Paket 03 ist für Unternehmen die bereits Tools und Abläufe haben — egal ob klein oder groß. Wir schauen uns gemeinsam Ihre Situation an und ich sage Ihnen ehrlich ob und was möglich ist. Kein leeres Versprechen."
+EN:
+
+Frage: „Is Package 03 suitable for smaller businesses too?"
+Antwort: „Package 03 is for businesses that already have tools and processes — regardless of size. We look at your situation together and I tell you honestly what is possible. No empty promises."
+ES:
+
+Frage: „¿El Paquete 03 también es adecuado para empresas más pequeñas?"
+Antwort: „El Paquete 03 es para empresas que ya tienen herramientas y procesos — independientemente del tamaño. Analizamos juntos su situación y le digo honestamente qué es posible. Sin promesas vacías."
+Frage 7:
+
+DE:
+
+Frage: „Was passiert nach meiner Anfrage?"
+Antwort: „Sie erhalten innerhalb von 24 Stunden eine persönliche Rückmeldung. Kein automatisierter Sales-Funnel — ich melde mich persönlich mit einem konkreten nächsten Schritt."
+EN:
+
+Frage: „What happens after I submit my enquiry?"
+Antwort: „You will receive a personal response within 24 hours. No automated sales funnel — I get back to you personally with a concrete next step."
+ES:
+
+Frage: „¿Qué pasa después de enviar mi consulta?"
+Antwort: „Recibirá una respuesta personal en un plazo de 24 horas. Sin embudo de ventas automatizado — me pongo en contacto personalmente con un siguiente paso concreto."
+Alle 3 Sprachen DE / EN / ES. Gleicher Accordion-Stil wie bestehende FAQ-Einträge. Kein Design verändern.

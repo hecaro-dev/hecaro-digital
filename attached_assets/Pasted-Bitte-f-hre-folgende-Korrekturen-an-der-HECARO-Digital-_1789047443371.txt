@@ -1,0 +1,97 @@
+Bitte führe folgende Korrekturen an der HECARO Digital Website durch. Alle Änderungen in DE, EN und ES (i18n). Keine Icons, keine Emojis im UI. Nichts anderes anfassen als das hier Genannte.
+
+---
+
+## AUFGABE 1: NAVIGATION — "LÖSUNGEN" UMBENENNEN
+
+Ersetze den Nav-Punkt "Lösungen" in allen Sprachen:
+DE: "Automatisierung"
+EN: "Automation"
+ES: "Automatización"
+→ Anchor-Link bleibt derselbe, nur das Label ändert sich
+
+---
+
+## AUFGABE 2: HERO — UNTERZEILE ERSETZEN
+
+DE: "Professionelle Websites. Persönlich betreut. In Ihrer Sprache."
+EN: "Professional websites. Personal support. In your language."
+ES: "Sitios web profesionales. Atención personal. En su idioma."
+
+Falls kein "Über mich"- oder Vertrauensbereich existiert, füge direkt unterhalb der Hero-Sektion einen einzelnen, zentrierten Satz ein:
+DE: "Ich berate und betreue Kunden auf Deutsch, Englisch und Spanisch — persönlich, ohne Sprachbarriere."
+EN: "I advise and support clients in German, English and Spanish — personally, without any language barrier."
+ES: "Asesoro y acompaño a mis clientes en alemán, inglés y español — de forma personal, sin barreras lingüísticas."
+
+---
+
+## AUFGABE 3: WEBSITE-PAKETE — PREMIUM KARTE ANPASSEN
+
+In der Premium/Dritten Website-Karte den Text "Automatische Vorqualifizierung von Anfragen" (oder ähnlich lautende Automatisierungssprache) entfernen und ersetzen durch:
+
+DE: "Persönliches Strategie- und Beratungsgespräch zum Projektstart"
+EN: "Personal strategy and consulting session at the start of the project"
+ES: "Sesión personal de estrategia y consultoría al inicio del proyecto"
+
+---
+
+## AUFGABE 4: CTA-BUTTON "KOSTENLOS" ERSETZEN
+
+Alle Vorkommen von "Kostenloses Erstgespräch" oder "kostenlos" in CTA-Buttons ersetzen durch:
+
+DE: "Unverbindlich anfragen"
+EN: "Request without obligation"
+ES: "Solicitar sin compromiso"
+
+---
+
+## AUFGABE 5: AUTOMATISIERUNGS-PAKETE — LABELS UMBENENNEN
+
+Die aktuellen Paket-Labels "Paket 01 / Paket 02 / Paket 03" ersetzen durch:
+
+Paket 01 → DE: "Einstieg" / EN: "Starter" / ES: "Inicio"
+Paket 02 → DE: "Komplett" / EN: "Complete" / ES: "Completo"
+Paket 03 → DE: "Individual" / EN: "Individual" / ES: "Individual"
+
+---
+
+## AUFGABE 6: FAQ — FRAGEN ZUR AUTOMATISIERUNG ERGÄNZEN
+
+Folgende 3 neue FAQ-Einträge zur Automatisierungs-/Demo-Sektion hinzufügen:
+
+### Frage 1:
+DE: "Für wen ist die Automatisierung geeignet?"
+EN: "Who is automation suitable for?"
+ES: "¿Para quién es adecuada la automatización?"
+
+Antwort DE: "Die Automatisierungslösungen eignen sich für Unternehmen, die regelmäßig Anfragen erhalten und diese effizienter bearbeiten möchten. Ob Handwerksbetrieb, Dienstleister oder Gastronom — wir integrieren das System direkt in Ihre bestehende oder neue Website."
+Antwort EN: "The automation solutions are suitable for businesses that regularly receive enquiries and want to process them more efficiently. Whether a trade business, service provider or restaurant — we integrate the system directly into your existing or new website."
+Antwort ES: "Las soluciones de automatización son adecuadas para empresas que reciben consultas con regularidad y desean procesarlas de forma más eficiente. Ya sea un negocio artesanal, proveedor de servicios o restaurante — integramos el sistema directamente en su sitio web existente o nuevo."
+
+### Frage 2:
+DE: "Wie läuft die Integration der Automatisierung in meine Website ab?"
+EN: "How does the integration of automation into my website work?"
+ES: "¿Cómo funciona la integración de la automatización en mi sitio web?"
+
+Antwort DE: "Das System wird direkt in Ihre Website eingebunden — entweder in eine neue Website die wir für Sie erstellen oder in eine bestehende. Nach einer kurzen Einrichtungsphase läuft alles automatisch im Hintergrund. Sie müssen nichts installieren oder technisch verstehen."
+Antwort EN: "The system is integrated directly into your website — either into a new website we create for you or into an existing one. After a short setup phase, everything runs automatically in the background. You do not need to install anything or have any technical knowledge."
+Antwort ES: "El sistema se integra directamente en su sitio web, ya sea en uno nuevo que creemos para usted o en uno existente. Tras una breve fase de configuración, todo funciona automáticamente en segundo plano. No necesita instalar nada ni tener conocimientos técnicos."
+
+### Frage 3:
+DE: "Was kostet die Automatisierungslösung und gibt es laufende Kosten?"
+EN: "What does the automation solution cost and are there ongoing costs?"
+ES: "¿Cuánto cuesta la solución de automatización y hay costes continuos?"
+
+Antwort DE: "Die Einrichtung startet ab 1.250 €. Laufende Kosten entstehen nur durch externe Dienste wie API-Nutzung oder Hosting — diese werden transparent kommuniziert. Es gibt keine versteckten Gebühren."
+Antwort EN: "Setup starts from 1,250 €. Ongoing costs only arise from external services such as API usage or hosting — these are communicated transparently. There are no hidden fees."
+Antwort ES: "La configuración comienza desde 1.250 €. Los costes continuos solo surgen de servicios externos como el uso de API o el alojamiento — se comunican de forma transparente. No hay tarifas ocultas."
+
+---
+
+## TECHNISCHE ANFORDERUNGEN
+
+- Alle Texte vollständig in i18n-Dateien für DE, EN und ES pflegen
+- Keine Icons, keine Emojis im gesamten UI
+- Bestehende Styles, Schriften, Farben und Layout unverändert lassen
+- Nach allen Änderungen vollständigen Build-Test durchführen
+- Alle Anchor-Links und Navigation testen

@@ -1,0 +1,154 @@
+Bitte führe folgende Änderungen an der HECARO Digital Website durch. Alle Änderungen müssen in DE, EN und ES (i18n) umgesetzt werden. Verwende keine Icons oder Emojis im UI.
+
+---
+
+## AUFGABE 1: NAVIGATION UMSTRUKTURIEREN
+
+Neue Reihenfolge der Nav-Punkte:
+1. Websites
+2. Wartung (NEU — scrollt zu id="wartung")
+3. Lösungen
+4. Referenzen (NEU — scrollt zu id="referenzen")
+5. Kontakt
+
+Labels in allen Sprachen:
+- Websites / Websites / Sitios web
+- Wartung / Maintenance / Mantenimiento
+- Lösungen / Solutions / Soluciones
+- Referenzen / References / Referencias
+- Kontakt / Contact / Contacto
+
+---
+
+## AUFGABE 2: REFERENZ-SEKTION VERSCHIEBEN
+
+Die bestehende Referenz/Referenzen-Sektion (AJK Kölsch) aus ihrer aktuellen Position herausnehmen und neu positionieren:
+
+Neue Reihenfolge der Sektionen auf der Seite:
+1. Hero
+2. Scrolling Banner
+3. Websites (Pakete & Preise)
+4. Wartungsverträge (NEU, siehe Aufgabe 3)
+5. Lösungen / Demos
+6. FAQ
+7. Referenzen
+8. Kontakt
+
+Die Referenz-Sektion bekommt die Anchor-ID: id="referenzen"
+
+---
+
+## AUFGABE 3: NEUE SEKTION "WARTUNGSVERTRÄGE" EINFÜGEN
+
+Position: direkt nach der Websites-Sektion (vor Lösungen/Demos)
+Anchor-ID: id="wartung"
+Komponente: /components/MaintenanceSection.tsx (oder äquivalent im bestehenden Aufbau)
+Design: gleicher Stil wie restliche Website, kein Icon-Grid, keine Emojis, klare Listenstruktur mit Checkmarks (✓), dunkler oder neutral abgesetzter Hintergrund
+
+### ÜBERSCHRIFT
+DE: "Website-Wartung & Betreuung"
+EN: "Website Maintenance & Care"
+ES: "Mantenimiento y cuidado del sitio web"
+
+### UNTERZEILE
+DE: "Damit Ihre Website immer läuft — zuverlässig, sicher und aktuell."
+EN: "So your website always runs — reliably, securely and up to date."
+ES: "Para que su sitio web funcione siempre — de forma fiable, segura y actualizada."
+
+---
+
+### KARTE 1 — BASIC
+
+Preis: 59 € / Monat
+Mindestlaufzeit: 12 Monate | Kündigung: 4 Wochen zum Monatsende
+
+DE:
+✓ Monatlicher Funktionscheck (Formular, Links, Ladezeit)
+✓ 30 Min. Inhaltsänderungen pro Monat (Texte, Bilder)
+✓ Automatisches Backup durch den Hosting-Anbieter
+✓ Uptime-Monitoring (Benachrichtigung bei Ausfall)
+✓ Monatlicher Aktivitätsbericht per E-Mail
+✓ E-Mail-Support Mo–Fr, Antwort innerhalb 48 Stunden
+
+EN:
+✓ Monthly function check (form, links, load time)
+✓ 30 min. content changes per month (texts, images)
+✓ Automatic backup by hosting provider
+✓ Uptime monitoring (notification in case of downtime)
+✓ Monthly activity report via email
+✓ Email support Mon–Fri, response within 48 hours
+
+ES:
+✓ Revisión funcional mensual (formulario, enlaces, tiempo de carga)
+✓ 30 min. de cambios de contenido al mes (textos, imágenes)
+✓ Copia de seguridad automática por el proveedor de alojamiento
+✓ Monitoreo de disponibilidad (notificación en caso de caída)
+✓ Informe de actividad mensual por correo electrónico
+✓ Soporte por correo electrónico Lu–Vi, respuesta en 48 horas
+
+CTA Button:
+DE: "Basic anfragen"
+EN: "Request Basic"
+ES: "Solicitar Basic"
+→ Link zu #kontakt mit vorausgefülltem Betreff "Anfrage: Basic Wartungsvertrag"
+
+---
+
+### KARTE 2 — PRO (visuell hervorgehoben, Badge ohne Icon)
+
+Badge-Text: "Empfohlen" / "Recommended" / "Recomendado"
+
+Preis: 99 € / Monat
+Mindestlaufzeit: 12 Monate | Kündigung: 4 Wochen zum Monatsende
+
+DE:
+✓ Alles aus dem Basic-Paket
+✓ 60 Min. Inhaltsänderungen pro Monat
+✓ Prioritäts-Support Mo–Fr, Antwort innerhalb 24 Stunden
+✓ 1x jährlicher Technik- & Sicherheitscheck
+✓ Zusätzliche Änderungen auf Anfrage: 85 €/Std.
+
+EN:
+✓ Everything from the Basic package
+✓ 60 min. content changes per month
+✓ Priority support Mon–Fri, response within 24 hours
+✓ 1x annual tech & security check
+✓ Additional changes on request: 85 €/hr
+
+ES:
+✓ Todo lo incluido en el paquete Basic
+✓ 60 min. de cambios de contenido al mes
+✓ Soporte prioritario Lu–Vi, respuesta en 24 horas
+✓ 1x revisión técnica y de seguridad anual
+✓ Cambios adicionales bajo pedido: 85 €/hora
+
+CTA Button:
+DE: "Pro anfragen"
+EN: "Request Pro"
+ES: "Solicitar Pro"
+→ Link zu #kontakt mit vorausgefülltem Betreff "Anfrage: Pro Wartungsvertrag"
+
+---
+
+### AUSSCHLUSS-HINWEIS (klein, zentriert, unterhalb beider Karten, gedämpfte Schriftfarbe)
+
+DE: "Nicht enthalten: komplette Redesigns, neue Sektionen oder Funktionen sowie Leistungen über das monatliche Zeitbudget hinaus. Diese werden separat angeboten."
+EN: "Not included: complete redesigns, new sections or features, and services exceeding the monthly time budget. These are offered separately."
+ES: "No incluido: rediseños completos, nuevas secciones o funciones y servicios que superen el presupuesto de tiempo mensual. Estos se ofrecen por separado."
+
+### PERSÖNLICHER HINWEIS (etwas größer, zentriert, darunter)
+
+DE: "Kein Ticketsystem. Kein anonymer Support. Sie schreiben mir direkt — und ich antworte persönlich."
+EN: "No ticket system. No anonymous support. You write to me directly — and I respond personally."
+ES: "Sin sistema de tickets. Sin soporte anónimo. Me escribe directamente — y le respondo personalmente."
+
+---
+
+## TECHNISCHE ANFORDERUNGEN (alle Aufgaben)
+
+- Alle neuen Texte in die bestehenden i18n-Sprachdateien für DE, EN und ES eintragen
+- Keine Icons, keine Emojis im gesamten UI
+- Mobile-first: Wartungskarten untereinander auf kleinen Bildschirmen, nebeneinander ab md:
+- Bestehende Styles, Schriften und Farben der Website beibehalten
+- Alle Anchor-Links in der Navigation testen (Websites, Wartung, Lösungen, Referenzen, Kontakt)
+- Nach den Änderungen einen vollständigen Build-Test durchführen und sicherstellen dass keine Fehler vorliegen

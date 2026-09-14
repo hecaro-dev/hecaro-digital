@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
 import { useI18n } from "../i18n";
 
 interface HeroSectionProps {
@@ -78,7 +77,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
               {...anim(0)}
               className="text-sm tracking-[0.3em] text-gray-500 uppercase mb-6"
             >
-              ✦ {t.hero.badge}
+              {t.hero.badge}
             </motion.p>
 
             {/* H1 — oversized, 800 weight, uniform white */}
@@ -94,7 +93,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 }}
               >
                 {headlineParts.map((line, i) => (
-                  <span key={i} className="block !overflow-visible" style={{ whiteSpace: "nowrap" }}>
+                  <span key={i} className={`block !overflow-visible ${i > 0 ? "text-emerald-400" : ""}`} style={{ whiteSpace: "nowrap" }}>
                     {line}
                   </span>
                 ))}
@@ -114,7 +113,7 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
             {/* CTA — single primary action */}
             <motion.div
               {...anim(0.34)}
-              className=""
+              className="flex flex-wrap gap-4"
             >
               <motion.button
                 ref={ctaRef}
@@ -126,14 +125,16 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
                 }}
                 onMouseMove={onCtaMove}
                 onMouseLeave={onCtaLeave}
-                onClick={() => onNav("portfolio")}
-                className="group inline-flex items-center justify-center gap-3 px-12 py-6 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs tracking-widest uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                onClick={() => onNav("websites")}
+                className="group inline-flex items-center justify-center gap-3 px-8 md:px-12 py-5 md:py-6 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs tracking-widest uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
               >
                 {t.hero.cta}
-                <ArrowRight
-                  className="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                  aria-hidden="true"
-                />
+              </motion.button>
+              <motion.button
+                onClick={() => onNav("referenzen")}
+                className="group inline-flex items-center justify-center gap-3 px-8 md:px-12 py-5 md:py-6 rounded-full bg-transparent hover:bg-white/5 border border-white/20 text-white font-bold text-xs tracking-widest uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+              >
+                {t.hero.cta2}
               </motion.button>
             </motion.div>
           </div>
@@ -184,16 +185,6 @@ export default function HeroSection({ onNav }: HeroSectionProps) {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.button
-        onClick={() => onNav("services")}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-slate-600 hover:text-white transition-colors focus:outline-none"
-        aria-label="Scroll down"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <ChevronDown className="w-7 h-7" aria-hidden="true" />
-      </motion.button>
     </section>
   );
 }

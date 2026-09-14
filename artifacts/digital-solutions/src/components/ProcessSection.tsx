@@ -13,7 +13,7 @@ export default function ProcessSection() {
     <section
       id="process"
       ref={ref}
-      className="py-32 px-4"
+      className="pt-24 pb-8 px-4"
       aria-labelledby="process-heading"
     >
       <div className="max-w-6xl mx-auto">

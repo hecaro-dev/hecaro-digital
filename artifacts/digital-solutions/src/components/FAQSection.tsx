@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import { useInView } from "../hooks/useInView";
 import { useI18n } from "../i18n";
 
@@ -24,7 +23,7 @@ export default function FAQSection() {
   }
 
   return (
-    <section id="faq" className="py-32 px-4" ref={ref}>
+    <section id="faq" className="py-24 px-4" ref={ref}>
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -63,13 +62,6 @@ export default function FAQSection() {
                   <span className="text-base md:text-lg font-semibold text-white pr-6 leading-snug">
                     {item.question}
                   </span>
-                  <div className={`w-9 h-9 rounded-full border flex items-center justify-center shrink-0 transition-all duration-200 ${
-                    isOpen
-                      ? "bg-emerald-500 border-emerald-500 text-black shadow-lg shadow-emerald-500/30"
-                      : "border-white/10 text-slate-400 hover:border-white/30 hover:text-white"
-                  }`}>
-                    <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
-                  </div>
                 </button>
                 <AnimatePresence initial={false}>
                   {isOpen && (

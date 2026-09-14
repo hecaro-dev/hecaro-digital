@@ -1,0 +1,200 @@
+Bitte führe folgende Korrekturen an der HECARO Digital Website durch. Alle Änderungen in DE, EN und ES (i18n). Keine Icons, keine Emojis im UI. Nur das hier Genannte anfassen.
+
+---
+
+## AUFGABE 1: SPRACHBARRIERE-SATZ ENTFERNEN
+
+Den Satz "Ich berate und betreue Kunden auf Deutsch, Englisch und Spanisch — persönlich, ohne Sprachbarriere." sowie den zugehörigen Wrapper/Container komplett aus dem DOM entfernen. Der Bereich zwischen Hero und Scrolling Banner soll sauber und leer sein.
+
+---
+
+## AUFGABE 2: WEBSITE-PAKETE KOMPLETT ÜBERARBEITEN
+
+Die drei Website-Pakete müssen sich klar voneinander unterscheiden. Keine Dopplungen, kein WhatsApp-Button in den Paketlisten. Mehrsprachigkeit ist ein gestaffeltes Feature — nicht auf allen Karten gleich.
+
+### STARTER — 1.500 €
+Unterzeile:
+DE: "Ihr professioneller Start im Internet."
+EN: "Your professional start online."
+ES: "Su inicio profesional en internet."
+
+Leistungen:
+DE:
+✓ Bis zu 5 Unterseiten
+✓ Mobile-optimiertes Design
+✓ Kontaktformular mit E-Mail-Weiterleitung
+✓ 1 Sprache nach Wahl
+✓ Rechtlich abgesichert (Impressum & Datenschutzerklärung)
+✓ DSGVO-konformes Cookie-Banner
+✓ Google Analytics eingebunden
+✓ Fertig in ca. 2 Wochen
+
+EN:
+✓ Up to 5 subpages
+✓ Mobile-optimised design
+✓ Contact form with email forwarding
+✓ 1 language of your choice
+✓ Legally compliant (imprint & privacy policy)
+✓ GDPR-compliant cookie banner
+✓ Google Analytics integrated
+✓ Ready in approx. 2 weeks
+
+ES:
+✓ Hasta 5 subpáginas
+✓ Diseño optimizado para móviles
+✓ Formulario de contacto con reenvío de correo electrónico
+✓ 1 idioma a elegir
+✓ Legalmente seguro (aviso legal y política de privacidad)
+✓ Banner de cookies conforme al RGPD
+✓ Google Analytics integrado
+✓ Listo en aprox. 2 semanas
+
+CTA:
+DE: "Starter anfragen" EN: "Request Starter" ES: "Solicitar Starter"
+
+---
+
+### PROFESSIONAL — 3.000 € (Badge: "Beliebt" / "Popular" / "Popular")
+
+Unterzeile:
+DE: "Mehr Sichtbarkeit. Mehr Vertrauen. Mehr Anfragen."
+EN: "More visibility. More trust. More enquiries."
+ES: "Más visibilidad. Más confianza. Más consultas."
+
+Leistungen:
+DE:
+✓ Alles aus dem Starter-Paket
+✓ Mehrsprachig (DE, EN oder ES — 2 Sprachen)
+✓ Professionelle Bildergalerie mit Lightbox
+✓ Automatische Bestätigungs-E-Mail an Ihre Kunden
+✓ Erweiterte Google-Sichtbarkeit (Local SEO + strukturierte Daten)
+✓ Google Business Profile Einrichtung
+✓ Fertig in ca. 2–3 Wochen
+
+EN:
+✓ Everything from the Starter package
+✓ Multilingual (DE, EN or ES — 2 languages)
+✓ Professional image gallery with lightbox
+✓ Automatic confirmation email to your customers
+✓ Enhanced Google visibility (Local SEO + structured data)
+✓ Google Business Profile setup
+✓ Ready in approx. 2–3 weeks
+
+ES:
+✓ Todo lo incluido en el paquete Starter
+✓ Multilingüe (DE, EN o ES — 2 idiomas)
+✓ Galería de imágenes profesional con lightbox
+✓ Correo electrónico de confirmación automático para sus clientes
+✓ Mayor visibilidad en Google (SEO local + datos estructurados)
+✓ Configuración de Google Business Profile
+✓ Listo en aprox. 2–3 semanas
+
+CTA:
+DE: "Professional anfragen" EN: "Request Professional" ES: "Solicitar Professional"
+
+---
+
+### PREMIUM — Auf Anfrage / On request / A consultar
+
+Unterzeile:
+DE: "Ihre Website. Vollständig. Ohne Kompromisse."
+EN: "Your website. Complete. Without compromise."
+ES: "Su sitio web. Completo. Sin compromisos."
+
+Leistungen:
+DE:
+✓ Alles aus dem Professional-Paket
+✓ Vollständig mehrsprachig (DE, EN & ES — 3 Sprachen)
+✓ Individuelle Sonderfunktionen nach Ihren Anforderungen
+✓ Maximale SEO-Strategie & technische Optimierung
+✓ Persönliches Beratungsgespräch vor Projektstart
+✓ Zeitplan individuell nach Absprache
+
+EN:
+✓ Everything from the Professional package
+✓ Fully multilingual (DE, EN & ES — 3 languages)
+✓ Individual special features tailored to your requirements
+✓ Maximum SEO strategy & technical optimisation
+✓ Personal consultation before project start
+✓ Timeline individually agreed
+
+ES:
+✓ Todo lo incluido en el paquete Professional
+✓ Totalmente multilingüe (DE, EN y ES — 3 idiomas)
+✓ Funciones especiales individuales según sus requisitos
+✓ Estrategia SEO máxima y optimización técnica
+✓ Consulta personal antes del inicio del proyecto
+✓ Plazo acordado individualmente
+
+CTA:
+DE: "Premium anfragen" EN: "Request Premium" ES: "Solicitar Premium"
+
+---
+
+## AUFGABE 3: CTA UNTER WEBSITES-SEKTION KORRIGIEREN
+
+Den Text des CTA-Banners direkt unterhalb der Website-Pakete ersetzen durch:
+
+DE: "Noch nicht sicher welches Website-Paket zu Ihnen passt? Ich berate Sie persönlich — unverbindlich."
+EN: "Not sure which website package suits you? I will advise you personally — without obligation."
+ES: "¿No está seguro de qué paquete de sitio web le conviene? Le asesoro personalmente — sin compromiso."
+
+Button:
+DE: "UNVERBINDLICH ANFRAGEN" EN: "REQUEST WITHOUT OBLIGATION" ES: "SOLICITAR SIN COMPROMISO"
+→ Scrollt zu id="kontakt"
+
+---
+
+## AUFGABE 4: BADGE DRITTE AUTOMATISIERUNGSKARTE KÜRZEN
+
+Den Badge-Text "AUF IHRE SITUATION ZUGESCHNITTEN" auf der dritten Automatisierungskarte ersetzen durch:
+DE: "INDIVIDUELL"
+EN: "INDIVIDUAL"
+ES: "INDIVIDUAL"
+
+---
+
+## AUFGABE 5: CTA NACH AUTOMATISIERUNGS-SEKTION ANPASSEN
+
+Den CTA-Bereich nach der Automatisierungs-/Lösungssektion ersetzen durch:
+
+Text:
+DE: "Passt ein Automatisierungssystem zu Ihrem Unternehmen? Finden wir es gemeinsam heraus."
+EN: "Does an automation system suit your business? Let us find out together."
+ES: "¿Encaja un sistema de automatización en su empresa? Descubrámoslo juntos."
+
+Button:
+DE: "SYSTEM ANFRAGEN" EN: "REQUEST SYSTEM" ES: "SOLICITAR SISTEMA"
+→ Scrollt zu id="kontakt" mit vorausgefülltem Betreff "Anfrage: Automatisierungssystem"
+
+---
+
+## AUFGABE 6: REFERENZ-SEKTION — SCREENSHOT/MOCKUP EINBINDEN
+
+Die Referenz-Sektion für AJK Kölsch komplett neu gestalten. Statt reinem Text eine große, elegante Showcase-Karte mit folgendem Aufbau:
+
+Layout: Eine einzelne, breite Karte (keine Raster-Galerie)
+
+Inhalt der Karte:
+- Oben: Großes Website-Vorschaubild — lade das Bild von der Live-URL: https://www.ajk-koelsch.de/de und zeige einen Screenshot-Mockup oder verwende ein <img>-Tag das auf die Live-URL verweist. Falls ein automatischer Screenshot nicht möglich ist, erstelle einen eleganten Platzhalter-Bereich mit dem Text "ajk-koelsch.de" der später durch ein Bild ersetzt werden kann.
+- Projektname: "AJK Kölsch"
+- Ort: "Hamburg, Deutschland"
+- Beschreibung:
+  DE: "Professionelle Unternehmenswebsite für einen Reinigungsbetrieb im Großraum Hamburg. Vollständig mehrsprachig, DSGVO-konform und für lokale Google-Suchen optimiert."
+  EN: "Professional business website for a cleaning company in the greater Hamburg area. Fully multilingual, GDPR-compliant and optimised for local Google searches."
+  ES: "Sitio web empresarial profesional para una empresa de limpieza en el área metropolitana de Hamburgo. Totalmente multilingüe, conforme al RGPD y optimizado para búsquedas locales de Google."
+- Tags (als schlichte Text-Badges, kein Icon):
+  DE: Mehrsprachig · DSGVO-konform · Local SEO · Kontaktformular · Mobiloptimiert
+  EN: Multilingual · GDPR-compliant · Local SEO · Contact form · Mobile-optimised
+  ES: Multilingüe · Conforme al RGPD · SEO local · Formulario de contacto · Optimizado para móviles
+- Button: "WEBSITE BESUCHEN" / "VISIT WEBSITE" / "VISITAR SITIO WEB" → https://www.ajk-koelsch.de/de (öffnet in neuem Tab)
+
+---
+
+## TECHNISCHE ANFORDERUNGEN
+
+- Alle Texte vollständig in i18n-Dateien für DE, EN und ES pflegen
+- Keine Icons, keine Emojis im gesamten UI
+- Bestehende Styles, Schriften, Farben und Layout unverändert lassen
+- Nach allen Änderungen vollständigen Build-Test durchführen
+- Alle Anchor-Links und Navigationspunkte testen

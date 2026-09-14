@@ -1,0 +1,91 @@
+Bitte folgende Änderungen auf der gesamten Website vornehmen. Kein Design verändern.
+
+1. PAKET 02 — Karte in der Lösungen-Sektion anpassen:
+
+DE:
+
+Name: „Gesprächs-Vorbereitung"
+Beschreibung: „Jeder Interessent beantwortet automatisch 4 Fragen vorab — du bekommst ein fertiges Briefing und gehst vorbereitet in jedes Gespräch. Kein Nachfragen, kein Zeitverlust."
+3 Häkchen-Punkte:
+„Jeder Interessent beantwortet automatisch 4 Fragen vorab"
+„Du bekommst ein fertiges Briefing vor jedem Gespräch"
+„Kein Nachfragen — du weißt alles bevor du den Hörer abnimmst"
+EN:
+
+Name: „Conversation Preparation"
+Beschreibung: „Every prospect automatically answers 4 questions in advance — you receive a ready-made briefing and enter every conversation fully prepared. No follow-up questions, no wasted time."
+3 Häkchen-Punkte:
+„Every prospect automatically answers 4 questions in advance"
+„You receive a ready-made briefing before every conversation"
+„No follow-up questions — you know everything before you pick up the phone"
+ES:
+
+Name: „Preparación de conversaciones"
+Beschreibung: „Cada interesado responde automáticamente 4 preguntas de antemano — recibes un briefing listo y entras preparado en cada conversación. Sin preguntas adicionales, sin pérdida de tiempo."
+3 Häkchen-Punkte:
+„Cada interesado responde automáticamente 4 preguntas de antemano"
+„Recibes un briefing listo antes de cada conversación"
+„Sin preguntas adicionales — sabes todo antes de descolgar el teléfono"
+2. PAKET 03 — Karte in der Lösungen-Sektion anpassen:
+
+DE:
+
+Name: „Maßgeschneiderte Systemanbindung" (bleibt)
+Beschreibung: „Sie haben spezifische Tools und Abläufe? Beschreiben Sie mir Ihre Situation — ich prüfe was möglich ist und melde mich mit einem konkreten Vorschlag."
+3 Häkchen-Punkte:
+„Individuelle Prüfung Ihrer bestehenden Tools und Abläufe"
+„Konkreter Vorschlag nach persönlicher Analyse"
+„Nur machbare Lösungen — keine leeren Versprechen"
+EN:
+
+Name: „Custom System Integration" (bleibt)
+Beschreibung: „Do you have specific tools and processes? Describe your situation — I will assess what is possible and get back to you with a concrete proposal."
+3 Häkchen-Punkte:
+„Individual review of your existing tools and processes"
+„Concrete proposal after personal analysis"
+„Only feasible solutions — no empty promises"
+ES:
+
+Name: „Integración de sistema personalizada" (bleibt)
+Beschreibung: „¿Tiene herramientas y procesos específicos? Descríbame su situación — evaluaré lo que es posible y le responderé con una propuesta concreta."
+3 Häkchen-Punkte:
+„Revisión individual de sus herramientas y procesos existentes"
+„Propuesta concreta tras análisis personal"
+„Solo soluciones viables — sin promesas vacías"
+3. BUTTONS — in Demo 2 (System-Audit) UND Demo 1 (Anfragen-Filter) anpassen:
+
+Beide Demos sollen am Ende dieselben zwei Buttons haben:
+
+Button 1 (grün, primär):
+
+DE: „JETZT KOSTENLOSES ERSTGESPRÄCH SICHERN"
+EN: „SECURE YOUR FREE CONSULTATION NOW"
+ES: „ASEGURAR CONSULTA GRATUITA AHORA"
+Ziel: Kontaktformular auf der Hauptseite (#contact)
+Button 2 (dunkel, sekundär):
+
+DE: „MEHR ÜBER DIESES PAKET ERFAHREN →"
+EN: „LEARN MORE ABOUT THIS PACKAGE →"
+ES: „MÁS INFORMACIÓN SOBRE ESTE PAQUETE →"
+Ziel: Lösungen-Sektion auf der Hauptseite (#solutions oder #lösungen)
+4. DEMO-KARTE 2 auf der Hauptseite anpassen:
+
+DE:
+
+Badge: „System-Audit"
+Schmerzpunkt: „Ich weiß nicht welches System ich brauche"
+Titel: „Ihr persönlicher System-Check"
+Text: „Finden Sie in 4 Fragen heraus, welches System zu Ihrer aktuellen Situation passt — und was Sie monatlich an Zeit verlieren."
+EN:
+
+Badge: „System Audit"
+Schmerzpunkt: „I don't know which system I need"
+Titel: „Your personal system check"
+Text: „Find out in 4 questions which system fits your current situation — and how much time you are losing every month."
+ES:
+
+Badge: „Auditoría del sistema"
+Schmerzpunkt: „No sé qué sistema necesito"
+Titel: „Su verificación personal del sistema"
+Text: „Descubra en 4 preguntas qué sistema se adapta a su situación actual — y cuánto tiempo pierde cada mes."
+Kein Design verändern. Gleicher Stil wie bisher. Alle 3 Sprachen DE / EN / ES.

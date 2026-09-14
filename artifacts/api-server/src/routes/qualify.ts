@@ -5,16 +5,15 @@ const router = Router();
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-const SYSTEM_PROMPT = `You are a lead qualification expert for a premium web design & SEO agency.
-Based on the prospect's name, bottleneck, impact level and budget, classify them as grade A or B.
+const SYSTEM_PROMPT = `You are a lead qualification expert for a digital automation agency.
+Based on the prospect's main time drain, how often they have unproductive conversations, and their company size, classify them as grade A or B.
 
 Grade A = High-value lead ready for immediate consultation:
-- Budget >= 1500 € AND
-- Impact is "very high" or "high" AND
-- Bottleneck is specific (not generic)
+- Unproductive conversations happen daily or several times per week AND
+- Company has at least 2 employees OR is a focused solo consultant with a specific problem
 
-Grade B = Needs nurturing first:
-- Low budget (< 500 €) OR vague bottleneck OR low impact
+Grade B = Lower priority for now:
+- Only occasional unproductive conversations OR very vague problem description
 
 Respond ONLY with valid JSON in this exact shape:
 {
@@ -25,15 +24,14 @@ Respond ONLY with valid JSON in this exact shape:
 
 router.post("/qualify", async (req, res) => {
   try {
-    const { name, bottleneck, impact, budget, lang } = req.body;
+    const { bottleneck, impact, budget, lang } = req.body;
 
-    if (!name || !bottleneck || !impact || !budget) {
+    if (!bottleneck || !impact || !budget) {
       res.status(400).json({ error: "Missing fields" });
       return;
     }
 
-    const userMessage = `Name: ${name}
-Bottleneck / Engpass: ${bottleneck}
+    const userMessage = `Bottleneck / Engpass: ${bottleneck}
 Impact: ${impact}
 Budget: ${budget}
 Language of response: ${lang === "en" ? "English" : lang === "es" ? "Spanish" : "German"}`;

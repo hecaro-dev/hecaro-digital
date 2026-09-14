@@ -1,0 +1,1 @@
+- [Next.js preview compiler](next-preview-compiler.md) — Use Turbopack for local preview; Webpack chunks failed intermittently through the Replit proxy.

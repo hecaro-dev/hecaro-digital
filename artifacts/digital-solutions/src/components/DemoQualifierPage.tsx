@@ -8,7 +8,8 @@ import { useI18n } from "../i18n";
 import Link from "next/link";
 
 interface QualifyResult {
-  grade: "A" | "B";
+  grade: "A" | "B" | "C";
+  score: number;
   summary: string;
   recommendation: string;
 }
@@ -55,7 +56,7 @@ function QualifierUI() {
 
   const steps = q.steps as Array<{ label: string; question: string; placeholder?: string; options?: string[] }>;
 
-  const TrafficLightCTA = ({ grade }: { grade: "A" | "B" }) => (
+  const TrafficLightCTA = ({ grade }: { grade: "A" | "B" | "C" }) => (
     <div className="mt-6 pt-6 border-t border-white/[0.06] flex flex-col items-center gap-4 text-center">
       <div className="flex items-center gap-3">
         <span className="w-5 h-5 rounded-full bg-red-500/20 border border-red-500/15" />
@@ -64,15 +65,20 @@ function QualifierUI() {
             <span className="w-5 h-5 rounded-full bg-yellow-400/20 border border-yellow-400/15" />
             <span className="w-5 h-5 rounded-full bg-emerald-400 border border-emerald-300/50 shadow-[0_0_10px_rgba(52,211,153,0.7)]" />
           </>
-        ) : (
+        ) : grade === "B" ? (
           <>
             <span className="w-5 h-5 rounded-full bg-yellow-400 border border-yellow-300/50 shadow-[0_0_10px_rgba(250,204,21,0.6)]" />
+            <span className="w-5 h-5 rounded-full bg-emerald-400/20 border border-emerald-400/15" />
+          </>
+        ) : (
+          <>
+            <span className="w-5 h-5 rounded-full bg-yellow-400/20 border border-yellow-400/15" />
             <span className="w-5 h-5 rounded-full bg-emerald-400/20 border border-emerald-400/15" />
           </>
         )}
       </div>
       <span className="text-sm font-semibold text-slate-200">
-        {grade === "A" ? t.demoResult.ratingA : t.demoResult.ratingB}
+        {grade === "A" ? t.demoResult.ratingA : grade === "B" ? t.demoResult.ratingB : q.gradeC}
       </span>
       <Link
         href={`/${lang}/preview#contact`}
@@ -310,7 +316,9 @@ function QualifierUI() {
                 <div className={`rounded-3xl border p-8 sm:p-10 space-y-7 ${
                   result.grade === "A"
                     ? "border-emerald-500/30 bg-emerald-950/50"
-                    : "border-amber-500/25 bg-amber-950/20"
+                    : result.grade === "B"
+                      ? "border-amber-500/25 bg-amber-950/20"
+                      : "border-red-500/25 bg-red-950/20"
                 }`}>
                   {/* Traffic light */}
                   <div className="flex items-center gap-3">
@@ -320,9 +328,14 @@ function QualifierUI() {
                         <span className="w-5 h-5 rounded-full bg-yellow-400/20 border border-yellow-400/15" />
                         <span className="w-5 h-5 rounded-full bg-emerald-400 border border-emerald-300/50 shadow-[0_0_10px_rgba(52,211,153,0.7)]" />
                       </>
-                    ) : (
+                    ) : result.grade === "B" ? (
                       <>
                         <span className="w-5 h-5 rounded-full bg-yellow-400 border border-yellow-300/50 shadow-[0_0_10px_rgba(250,204,21,0.6)]" />
+                        <span className="w-5 h-5 rounded-full bg-emerald-400/20 border border-emerald-400/15" />
+                      </>
+                    ) : (
+                      <>
+                        <span className="w-5 h-5 rounded-full bg-yellow-400/20 border border-yellow-400/15" />
                         <span className="w-5 h-5 rounded-full bg-emerald-400/20 border border-emerald-400/15" />
                       </>
                     )}
@@ -330,25 +343,33 @@ function QualifierUI() {
 
                   {/* Label + Headline */}
                   <div>
-                    <p className={`text-xs font-bold uppercase tracking-widest mb-2 ${result.grade === "A" ? "text-emerald-400" : "text-amber-400"}`}>
-                      {q.resultTitle}
+                    <p className={`text-xs font-bold uppercase tracking-widest mb-2 ${
+                      result.grade === "A" ? "text-emerald-400" : result.grade === "B" ? "text-amber-400" : "text-red-400"
+                    }`}>
+                      {q.resultTitle} · {result.score}/100
                     </p>
                     <h2 className="text-xl sm:text-2xl font-bold text-white leading-snug">
-                      {result.grade === "A" ? q.gradeAHeadline : q.gradeBHeadline}
+                      {result.grade === "A" ? q.gradeAHeadline : result.grade === "B" ? q.gradeBHeadline : q.gradeCHeadline}
                     </h2>
                   </div>
 
                   {/* Divider */}
-                  <div className={`border-t ${result.grade === "A" ? "border-emerald-500/15" : "border-amber-500/15"}`} />
+                  <div className={`border-t ${
+                    result.grade === "A" ? "border-emerald-500/15" : result.grade === "B" ? "border-amber-500/15" : "border-red-500/15"
+                  }`} />
 
                   {/* 3 checkmark bullets */}
                   <div className="space-y-3">
                     {(result.grade === "A"
                       ? [q.gradeABulletEngpass, q.gradeABulletImpact, q.gradeABulletBudget]
-                      : [q.gradeBBullet1, q.gradeBBullet2, q.gradeBBullet3]
+                      : result.grade === "B"
+                        ? [q.gradeBBullet1, q.gradeBBullet2, q.gradeBBullet3]
+                        : [q.gradeCBullet1, q.gradeCBullet2, q.gradeCBullet3]
                     ).map((bullet, i) => (
                       <div key={i} className="flex items-start gap-3">
-                        <CheckCircle2 className={`w-5 h-5 mt-0.5 shrink-0 ${result.grade === "A" ? "text-emerald-400" : "text-amber-400"}`} />
+                        <CheckCircle2 className={`w-5 h-5 mt-0.5 shrink-0 ${
+                          result.grade === "A" ? "text-emerald-400" : result.grade === "B" ? "text-amber-400" : "text-red-400"
+                        }`} />
                         <p className="text-slate-200 text-sm leading-relaxed">{bullet}</p>
                       </div>
                     ))}

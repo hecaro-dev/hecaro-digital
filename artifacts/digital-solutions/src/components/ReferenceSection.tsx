@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "../hooks/useInView";
 import { useI18n } from "../i18n";
+import ajkKoelschShowcase from "../../public/ajk-koelsch-showcase.png";
 
 export default function ReferenceSection() {
   const { t } = useI18n();
@@ -47,7 +48,7 @@ export default function ReferenceSection() {
 
           <div className="relative z-10 overflow-hidden border-b border-white/[0.08] bg-white">
             <img
-              src="/ajk-koelsch-showcase.png"
+              src={ajkKoelschShowcase.src}
               alt={t.reference.card.imageAlt}
               className="block aspect-[16/9] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.01]"
             />

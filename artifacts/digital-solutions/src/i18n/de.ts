@@ -476,6 +476,16 @@ export const de = {
     demoNote: "Dies ist eine Live-Demo des Automatischen Erstkontakts – implementierbar auf Ihrer Website.",
     errorMsg: "Fehler bei der Analyse. Bitte erneut versuchen."
   },
+  demoEmail: {
+    title: "Möchten Sie sehen, wie diese Auswertung in Ihrem Postfach ankommt?",
+    description: "Tragen Sie Ihre E-Mail-Adresse ein — die KI schickt Ihnen das Ergebnis in wenigen Sekunden als formatierte Test-Mail zu.",
+    placeholder: "Ihre E-Mail-Adresse",
+    consent: "Ich stimme zu, dass meine E-Mail-Adresse für diese Demo-Zustellung verwendet wird.",
+    button: "Test-Mail senden",
+    sending: "Wird gesendet...",
+    success: "E-Mail wurde gesendet — prüfen Sie Ihren Posteingang.",
+    error: "E-Mail konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+  },
   demoResult: {
     rating: "Ihre Bewertung: B (Gutes Potenzial)",
     ratingA: "Ihre Bewertung: A – Hohe Priorität",

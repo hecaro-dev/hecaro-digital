@@ -478,6 +478,16 @@ export const es: Translations = {
     demoNote: "Esta es una demo en vivo del filtro de consultas interactivo – implementable en su sitio web.",
     errorMsg: "Error de análisis. Por favor inténtelo de nuevo."
   },
+  demoEmail: {
+    title: "¿Le gustaría ver cómo llega este resultado a su bandeja de entrada?",
+    description: "Introduzca su dirección de correo — la IA le enviará el resultado como un email de prueba en segundos.",
+    placeholder: "Su dirección de correo",
+    consent: "Acepto que mi dirección de correo sea utilizada para este envío de demostración.",
+    button: "Enviar email de prueba",
+    sending: "Enviando...",
+    success: "Email enviado — revise su bandeja de entrada.",
+    error: "No se pudo enviar el email. Inténtelo de nuevo.",
+  },
   demoResult: {
     rating: "Su valoración: B (Buen potencial)",
     ratingA: "Su evaluación: A – Alta prioridad",

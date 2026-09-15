@@ -4,6 +4,7 @@ import { Component, type ErrorInfo, type ReactNode, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { I18nProvider, type Lang, useI18n } from "../i18n";
 import Link from "next/link";
+import DemoEmailUpgrade from "./DemoEmailUpgrade";
 
 interface FilterResult {
   score: number;
@@ -368,6 +369,8 @@ function AnfragenFilterUI() {
                         }`}>{q.nextStepLabel}</h3>
                         <p className="text-slate-200 text-sm leading-relaxed">{result.nextStep}</p>
                       </div>
+
+                      <DemoEmailUpgrade demo="firstContact" score={result.score} />
 
                       {/* Primary CTA */}
                       <Link

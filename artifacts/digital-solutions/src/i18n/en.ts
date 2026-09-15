@@ -478,6 +478,16 @@ export const en: Translations = {
     demoNote: "This is a live demo of the multi-step enquiry filter – implementable on your website.",
     errorMsg: "Analysis error. Please try again."
   },
+  demoEmail: {
+    title: "Would you like to see how this result arrives in your inbox?",
+    description: "Enter your email address — the AI will send you the result as a formatted test email within seconds.",
+    placeholder: "Your email address",
+    consent: "I agree that my email address is used for this demo delivery.",
+    button: "Send test email",
+    sending: "Sending...",
+    success: "Email sent — please check your inbox.",
+    error: "The email could not be sent. Please try again.",
+  },
   demoResult: {
     rating: "Your rating: B (Good potential)",
     ratingA: "Your Assessment: A – High Priority",

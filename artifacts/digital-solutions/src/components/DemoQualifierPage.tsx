@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { I18nProvider, type Lang } from "../i18n";
 import { useI18n } from "../i18n";
 import Link from "next/link";
+import DemoEmailUpgrade from "./DemoEmailUpgrade";
 
 interface QualifyResult {
   grade: "A" | "B" | "C";
@@ -364,6 +365,8 @@ function QualifierUI() {
                       {q.gradeASavingNote}
                     </p>
                   )}
+
+                  <DemoEmailUpgrade demo="qualifier" score={result.score} />
 
                   {/* Primary CTA */}
                   <Link

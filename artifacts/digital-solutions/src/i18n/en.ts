@@ -57,6 +57,7 @@ export const en: Translations = {
     postCtaText: "Not sure which system suits you? Let's talk — free of charge.",
     postCtaButton: "Free Consultation",
     postCtaSubject: "Inquiry: Automation System",
+    supportLine: "Support in German, English or Spanish included",
     items: [
       {
         tag: "",
@@ -70,7 +71,7 @@ export const en: Translations = {
           "Automatic evaluation of every enquiry with score and summary",
           "Result forwarded to you immediately by email",
           "One-time setup – external API costs are covered directly by the client",
-          "Support in German, English or Spanish"
+          "Ready to use within 2 weeks"
         ],
       },
       {
@@ -84,10 +85,8 @@ export const en: Translations = {
           "Everything from the Enquiry Check",
           "Multi-step AI dialogue with the prospect (up to 8 questions)",
           "Automatic, personalised email response to the prospect",
-          "Your own management dashboard — all enquiries at a glance, with score and summary",
-          "Unqualified enquiries are filtered out automatically — you only speak with genuine prospects",
-          "30 days after-launch support included",
-          "Support in German, English or Spanish"
+          "Your own management dashboard — all enquiries at a glance",
+          "Unqualified enquiries are filtered out automatically"
         ],
       },
       {
@@ -101,7 +100,7 @@ export const en: Translations = {
           "Process analysis of your business",
           "Individual automation strategy",
           "CRM connection, calendar integration, workflow automation",
-          "Suitable for businesses with existing systems and higher requirements",
+          "Suitable for businesses with existing systems",
           "Personal initial consultation free of charge"
         ],
       },

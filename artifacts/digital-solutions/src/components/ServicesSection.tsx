@@ -63,14 +63,7 @@ export default function ServicesSection() {
           </p>
         </motion.div>
 
-        {/*
-          CSS Subgrid: outer grid defines 6 named row tracks (A, B1, B2, C, D, E).
-          Each card spans all 6 rows via grid-row:span 6 and inherits those tracks
-          via grid-template-rows:subgrid — guaranteeing pixel-perfect zone alignment
-          across all 3 cards regardless of content length.
-          Mobile: single-column flex-col, subgrid not applied.
-        */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-x-6 md:gap-y-0 md:[grid-template-rows:auto_auto_1fr_auto_auto_auto]">
+        <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
           {t.services.items.map((service, i) => {
             const price = service.price;
             return (
@@ -79,7 +72,7 @@ export default function ServicesSection() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                className={`relative group bg-[rgba(255,255,255,0.03)] backdrop-blur-md border ${service.badge ? 'border-emerald-500/30' : 'border-[rgba(255,255,255,0.08)]'} rounded-3xl p-8 hover:border-emerald-500/50 transition-all duration-500 overflow-hidden cursor-pointer flex flex-col md:grid md:[grid-row:span_6] md:[grid-template-rows:subgrid]`}
+                className={`relative group h-full bg-[rgba(255,255,255,0.03)] backdrop-blur-md border ${service.badge ? 'border-emerald-500/30' : 'border-[rgba(255,255,255,0.08)]'} rounded-3xl p-8 hover:border-emerald-500/50 transition-all duration-500 overflow-hidden cursor-pointer flex flex-col justify-start`}
                 onClick={() => handleCardAction(i)}
                 role="button"
                 tabIndex={0}
@@ -106,7 +99,7 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Zone B2: Subtitle */}
-                <div className="relative z-10 flex-1 mb-5 min-h-[48px] md:flex-none">
+                <div className="relative z-10 mb-5 min-h-[72px]">
                   <p className="text-slate-400 text-sm leading-relaxed">
                     {service.subtitle}
                   </p>
@@ -131,7 +124,7 @@ export default function ServicesSection() {
                 </ul>
 
                 {/* Zone E: CTA Button */}
-                <div className="relative z-10 pt-6 mt-auto md:mt-0 border-t border-white/[0.06]">
+                <div className="relative z-10 pt-6 mt-auto border-t border-white/[0.06]">
                   <span className="flex items-center justify-center w-full rounded-full border border-white/15 bg-white/[0.04] px-6 py-3 text-xs font-bold uppercase tracking-widest text-white transition-colors group-hover:border-emerald-500/50 group-hover:text-emerald-300">
                     {i < DEMO_TARGETS.length ? t.services.demoCta : t.services.cta}
                   </span>
@@ -140,6 +133,10 @@ export default function ServicesSection() {
             );
           })}
         </div>
+
+        <p className="mt-6 text-center text-sm font-medium text-slate-400">
+          {t.services.supportLine}
+        </p>
 
         {/* Call to action below cards */}
         <motion.div

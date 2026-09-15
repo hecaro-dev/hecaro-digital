@@ -55,6 +55,7 @@ export const de = {
     postCtaText: "Noch nicht sicher welches System zu Ihnen passt? Sprechen Sie kostenlos mit mir.",
     postCtaButton: "Kostenloses Gespräch",
     postCtaSubject: "Anfrage: Automatisierungssystem",
+    supportLine: "Betreuung auf Deutsch, Englisch oder Spanisch inklusive",
     items: [
       {
         tag: "",
@@ -68,7 +69,7 @@ export const de = {
           "Automatische Bewertung jeder Anfrage mit Score und Zusammenfassung",
           "Ergebnis wird sofort per E-Mail an Sie weitergeleitet",
           "Einmalige Einrichtung – externe API-Kosten werden direkt vom Kunden getragen",
-          "Betreuung auf Deutsch, Englisch oder Spanisch"
+          "Innerhalb von 2 Wochen einsatzbereit"
         ],
       },
       {
@@ -82,10 +83,8 @@ export const de = {
           "Alles aus dem Anfragen-Check",
           "Mehrstufiger KI-Dialog mit dem Interessenten (bis zu 8 Fragen)",
           "Automatische, personalisierte E-Mail-Antwort an den Interessenten",
-          "Eigenes Management-Dashboard — alle Anfragen auf einen Blick, mit Score und Zusammenfassung",
-          "Unqualifizierte Anfragen werden automatisch aussortiert — Sie sprechen nur noch mit echten Interessenten",
-          "30 Tage After-Launch-Support inklusive",
-          "Betreuung auf Deutsch, Englisch oder Spanisch"
+          "Eigenes Management-Dashboard — alle Anfragen auf einen Blick",
+          "Unqualifizierte Anfragen werden automatisch aussortiert"
         ],
       },
       {
@@ -99,7 +98,7 @@ export const de = {
           "Prozessanalyse Ihres Unternehmens",
           "Individuelle Automatisierungsstrategie",
           "CRM-Anbindung, Kalender-Integration, Workflow-Automatisierung",
-          "Geeignet für Unternehmen mit bestehenden Systemen und höheren Anforderungen",
+          "Geeignet für Unternehmen mit bestehenden Systemen",
           "Persönliches Erstgespräch kostenlos"
         ],
       },

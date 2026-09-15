@@ -57,6 +57,7 @@ export const es: Translations = {
     postCtaText: "¿No está seguro qué sistema le conviene? Hablemos sin compromiso.",
     postCtaButton: "Consulta gratuita",
     postCtaSubject: "Consulta: Sistema de Automatización",
+    supportLine: "Atención en alemán, inglés o español incluida",
     items: [
       {
         tag: "",
@@ -70,7 +71,7 @@ export const es: Translations = {
           "Evaluación automática de cada consulta con puntuación y resumen",
           "Resultado enviado inmediatamente por correo electrónico",
           "Configuración única – los costes externos de API son asumidos directamente por el cliente",
-          "Atención en alemán, inglés o español"
+          "Listo para usar en un plazo de 2 semanas"
         ],
       },
       {
@@ -84,10 +85,8 @@ export const es: Translations = {
           "Todo lo incluido en la Verificación de Consultas",
           "Diálogo de IA en varios pasos con el interesado (hasta 8 preguntas)",
           "Respuesta automática y personalizada por correo al interesado",
-          "Panel de gestión propio — todas las solicitudes de un vistazo, con puntuación y resumen",
-          "Las solicitudes no cualificadas se descartan automáticamente — usted solo habla con interesados reales",
-          "30 días de soporte post-lanzamiento incluidos",
-          "Atención en alemán, inglés o español"
+          "Panel de gestión propio — todas las solicitudes de un vistazo",
+          "Las solicitudes no cualificadas se descartan automáticamente"
         ],
       },
       {
@@ -101,7 +100,7 @@ export const es: Translations = {
           "Análisis de procesos de su empresa",
           "Estrategia de automatización individual",
           "Conexión CRM, integración de calendario, automatización de flujos",
-          "Adecuado para empresas con sistemas existentes y mayores requisitos",
+          "Adecuado para empresas con sistemas existentes",
           "Primera consulta personal gratuita"
         ],
       },

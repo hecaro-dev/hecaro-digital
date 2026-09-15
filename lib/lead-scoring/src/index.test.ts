@@ -13,30 +13,45 @@ describe("determineLeadGrade", () => {
 });
 
 describe("calculateLeadScore", () => {
-  const detailedBottleneck =
-    "Our team repeatedly spends hours qualifying conversations that lead nowhere.";
-
-  it("scores equivalent German, English, and Spanish daily options equally", () => {
+  it("scores high-volume unqualified calls as green in every language", () => {
     const options = [
-      ["Täglich – kostet mich enorm viel Zeit", "10+ Mitarbeiter"],
-      ["Daily – it costs me a lot of time", "10+ employees"],
-      ["A diario – me cuesta mucho tiempo", "10+ empleados"],
+      ["Mehr als 15", "Unqualifizierte Erstgespräche"],
+      ["More than 15", "Unqualified initial calls"],
+      ["Más de 15", "Primeras conversaciones no cualificadas"],
     ] as const;
 
-    for (const [impact, companySize] of options) {
-      assert.equal(calculateLeadScore(detailedBottleneck, impact, companySize), 100);
+    for (const [volume, problem] of options) {
+      const score = calculateLeadScore("Service business", volume, problem);
+      assert.equal(score, 90);
+      assert.equal(determineLeadGrade(score), "A");
     }
   });
 
-  it("scores equivalent German, English, and Spanish several-times options equally", () => {
+  it("scores medium combinations as yellow in every language", () => {
     const options = [
-      ["Mehrmals pro Woche – ist ein echtes Problem", "2–10 Mitarbeiter"],
-      ["Several times a week – it's a real problem", "2–10 employees"],
-      ["Varias veces a la semana – es un problema real", "2–10 empleados"],
+      ["5 bis 15", "Manuelles Nachfassen"],
+      ["5 to 15", "Manual follow-ups"],
+      ["5 a 15", "Seguimiento manual"],
     ] as const;
 
-    for (const [impact, companySize] of options) {
-      assert.equal(calculateLeadScore("A sufficiently specific issue", impact, companySize), 70);
+    for (const [volume, problem] of options) {
+      const score = calculateLeadScore("Service business", volume, problem);
+      assert.equal(score, 50);
+      assert.equal(determineLeadGrade(score), "B");
+    }
+  });
+
+  it("scores low-volume weak problems as red in every language", () => {
+    const options = [
+      ["Weniger als 5", "Zu langsame Rückmeldungen"],
+      ["Fewer than 5", "Slow response times"],
+      ["Menos de 5", "Respuestas demasiado lentas"],
+    ] as const;
+
+    for (const [volume, problem] of options) {
+      const score = calculateLeadScore("Service business", volume, problem);
+      assert.equal(score, 30);
+      assert.equal(determineLeadGrade(score), "C");
     }
   });
 });

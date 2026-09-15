@@ -47,7 +47,7 @@ export const es: Translations = {
   services: {
     label: "Automatización",
     headline: "Menos tiempo perdido. Más clientes ideales. De forma automática.",
-    sub: "Nuestros sistemas de IA califican sus consultas las 24 horas — para que pueda concentrarse en los clientes que realmente encajan.",
+    sub: "¿Cuántas horas pierde esta semana con interesados que nunca comprarán? Nuestro sistema filtra automáticamente — para que solo hable con personas que realmente quieren lo que usted ofrece.",
     aiTitle: "Probar demo del sistema en vivo",
     aiDesc: "Tres sistemas reales — elija el demo que se adapta a su situación.",
     note: "Menos primeras conversaciones inadecuadas — más tiempo para clientes que realmente quieren comprar.",
@@ -57,42 +57,43 @@ export const es: Translations = {
     postCtaText: "¿No está seguro qué sistema le conviene? Hablemos sin compromiso.",
     postCtaButton: "Consulta gratuita",
     postCtaSubject: "Consulta: Sistema de Automatización",
-    supportNote: "Todos los paquetes son atendidos personalmente en alemán, inglés o español.",
     items: [
       {
         tag: "",
         badge: "",
-        title: "Primera Impresión",
-        subtitle: "Para empresas que quieren consultas cualificadas en lugar de perder el tiempo.",
+        title: "Verificación de Consultas",
+        subtitle: "Vea de inmediato qué consultas merecen su tiempo — y cuáles no.",
         description: "",
         price: "1.800 € pago único",
         bullets: [
-          "Formulario de cualificación de leads basado en IA (integrado en su sitio web)",
-          "Evaluación automática de cada consulta (Puntuación + Resumen)",
-          "Reenvío de leads cualificados por correo electrónico",
-          "Configuración única, sin costes mensuales"
+          "Formulario con IA integrado directamente en su sitio web",
+          "Evaluación automática de cada consulta con puntuación y resumen",
+          "Resultado enviado inmediatamente por correo electrónico",
+          "Configuración única — sin costes mensuales",
+          "Atención en alemán, inglés o español"
         ],
       },
       {
         tag: "",
         badge: "Recomendado",
-        title: "Filtro de Consultas",
-        subtitle: "Su sistema inteligente que pre-cualifica por usted las 24 horas.",
+        title: "Primer Contacto Automático",
+        subtitle: "Cada interesado es precalificado automáticamente y recibe una respuesta personal — incluso cuando usted está con otro cliente.",
         description: "",
         price: "3.500 € pago único",
         bullets: [
-          "Todo lo de \"Primera Impresión\"",
-          "Diálogo interactivo con IA (hasta 8 preguntas, ajustadas dinámicamente)",
-          "Respuesta automática por correo al interesado (personalizada, multilingüe si se desea)",
-          "Panel de control (Dashboard) para evaluar todas las consultas",
-          "30 días de soporte post-lanzamiento incluidos"
+          "Todo lo incluido en la Verificación de Consultas",
+          "Diálogo de IA en varios pasos con el interesado (hasta 8 preguntas)",
+          "Respuesta automática y personalizada por correo al interesado",
+          "Panel para evaluar todas las consultas",
+          "30 días de soporte post-lanzamiento incluidos",
+          "Atención en alemán, inglés o español"
         ],
       },
       {
         tag: "",
         badge: "",
         title: "Individual",
-        subtitle: "Procesos complejos. Solución a medida. Calculado personalmente.",
+        subtitle: "Procesos más complejos. Solución a medida. Calculado personalmente.",
         description: "",
         price: "A consultar",
         bullets: [
@@ -140,21 +141,21 @@ export const es: Translations = {
   portfolio: {
     label: "Demos",
     headline: "Sistemas en vivo para explorar",
-    sub: "Sin maquetas — sistemas reales y completamente funcionales que puede probar directamente.",
+    sub: "Las siguientes demos le muestran cómo vive un interesado su futuro sistema. Solo usted como empresario ve la evaluación final — no sus clientes.",
     items: [
       {
-        tag: "Primera Impresión",
+        tag: "Verificación de Consultas",
         previewText: "Experimente en vivo cómo nuestro sistema evalúa y califica una consulta en segundos.",
-        title: "Demo: Primera Impresión",
+        title: "Demo: Verificación de Consultas",
         description:
           "Vea en vivo cómo un formulario inteligente asume la cualificación de leads y evalúa cada consulta.",
         problem: "Demasiadas primeras conversaciones inapropiadas",
         ctaLabel: "Ver demo en vivo",
       },
       {
-        tag: "Filtro de Consultas",
+        tag: "Primer Contacto Automático",
         previewText: "Pruebe el diálogo de IA en varios pasos — y vea cómo su futuro sistema filtra las consultas.",
-        title: "Demo: Filtro de Consultas",
+        title: "Demo: Primer Contacto Automático",
         description:
           "Experimente un diálogo interactivo que pre-cualifica al interesado y proporciona una evaluación detallada.",
         problem: "Evaluación y seguimiento manual",
@@ -234,12 +235,12 @@ export const es: Translations = {
       {
         question: "¿Para quién es adecuada la automatización?",
         answer:
-          "Las soluciones de automatización son adecuadas para empresas que reciben consultas con regularidad y desean procesarlas de forma más eficiente. Ya sea un negocio artesanal, proveedor de servicios o restaurante — integramos el sistema directamente en su sitio web existente o nuevo.",
+          "Para cualquier empresario que recibe consultas regularmente y pierde demasiado tiempo con interesados inadecuados. Ya sea autónomo, agente inmobiliario, coach o proveedor de servicios — nuestro sistema funciona en todos los sectores.",
       },
       {
-        question: "¿Cuál es la diferencia entre 'Primera Impresión' y 'Filtro de Consultas'?",
+        question: "¿Cuál es la diferencia entre los paquetes?",
         answer:
-          "La 'Primera Impresión' es el punto de entrada ideal: un formulario inteligente califica automáticamente cada consulta y reenvía el resultado por correo electrónico. El 'Filtro de Consultas' va más allá: conduce un diálogo de IA en varios pasos con el interesado, responde automáticamente por correo y ofrece un panel para evaluar todas las consultas. Incluye además 30 días de soporte post-lanzamiento.",
+          "El 'Verificación de Consultas' evalúa automáticamente cada consulta y le envía el resultado por correo. El 'Primer Contacto Automático' va más allá: conduce un diálogo en varios pasos con el interesado, le responde automáticamente por correo y le ofrece un panel completo de evaluación.",
       },
       {
         question: "¿También ofrece atención en inglés y español?",
@@ -254,7 +255,7 @@ export const es: Translations = {
       {
         question: "¿Cuánto cuesta la solución de automatización?",
         answer:
-          "El paquete de entrada comienza desde 1.800 € (pago único, paquete: Primera Impresión). El paquete Filtro de Consultas cuesta 3.500 € (pago único).",
+          "La Verificación de Consultas cuesta 1.800 € como pago único. El Primer Contacto Automático cuesta 3.500 € como pago único.",
       },
       {
         question: "¿Hay costes recurrentes después de la configuración?",
@@ -352,7 +353,7 @@ export const es: Translations = {
     rejectionTitle: "No es lo adecuado para usted",
     rejectionText: "Nuestro sistema es para empresarios que ya reciben consultas. Su objetivo actual debería ser la visibilidad — no somos la solución adecuada para eso.",
     profileRedTitle: "Alta pérdida de tiempo — acción inmediata necesaria",
-    profileRedText: "Recomendación: Filtro de consultas (Paquete 01)",
+    profileRedText: "Recomendación: Verificación de Consultas",
     profileYellowTitle: "Buena base — pero se está desperdiciando potencial",
     profileYellowText: "Recomendación: Sistema Pro (Paquete 02)",
     profileGreenTitle: "Listo para el siguiente nivel",
@@ -367,13 +368,13 @@ export const es: Translations = {
     servicesLink: "INICIAR AUDITORÍA",
   },
   qualifier: {
-    badge: "Demo · Ejemplo en vivo",
-    headline: "Hablar automáticamente solo con solicitudes cualificadas",
-    sub: "Cualifique solicitudes de forma automática en 3 pasos — y ahorre tiempo valioso.",
+    badge: "Demo · Verificación de Consultas",
+    headline: "Pruebe la Verificación de Consultas",
+    sub: "Vea en tres breves pasos cómo se evalúan automáticamente las consultas entrantes.",
     steps: [
-      { label: "Paso 1 / 3", question: "¿Qué le quita más tiempo en su negocio actualmente?", placeholder: "p. ej. Demasiadas solicitudes no cualificadas, llamadas iniciales interminables, seguimiento manual ..." },
-      { label: "Paso 2 / 3", question: "¿Con qué frecuencia tiene conversaciones que no llevan a ningún lado?", options: ["A diario – me cuesta mucho tiempo", "Varias veces a la semana – es un problema real", "De vez en cuando – pero me molesta"] },
-      { label: "Paso 3 / 3", question: "¿Cuál es el tamaño de su empresa?", options: ["Autónomo / Solo", "2–10 empleados", "10+ empleados"] },
+      { label: "Paso 1 / 3", question: "¿Qué describe mejor su negocio?", options: ["Oficios / Servicios", "Inmobiliaria / Consultoría", "Hostelería / Comercio", "Coaching / Formación"] },
+      { label: "Paso 2 / 3", question: "¿Cuántas consultas recibe por semana?", options: ["Menos de 5", "5 a 15", "Más de 15"] },
+      { label: "Paso 3 / 3", question: "¿Qué le cuesta más tiempo actualmente?", options: ["Primeras conversaciones no cualificadas", "Respuestas demasiado lentas", "Seguimiento manual"] },
     ],
     back: "Atrás",
     next: "Siguiente",
@@ -381,27 +382,27 @@ export const es: Translations = {
     analyzing: "El sistema está analizando su solicitud ...",
     resultTitle: "Su evaluación",
     gradeA: "Cualificado",
-    gradeAHeadline: "Contacto cualificado – alta prioridad",
-    gradeABulletEngpass: "No se necesita llamada inicial — este contacto ya está cualificado",
-    gradeABulletImpact: "Se ahorra la llamada de aclaramiento de necesidades por completo",
-    gradeABulletBudget: "Antes de la conversación ya sabe: presupuesto, necesidad y competencia de decisión están presentes",
+    gradeAHeadline: "Perfil sólido — puede empezar de inmediato.",
+    gradeABulletEngpass: "Su volumen de consultas ofrece un gran potencial de precalificación automática",
+    gradeABulletImpact: "Las primeras conversaciones no cualificadas le causan una clara pérdida de tiempo",
+    gradeABulletBudget: "La Verificación de Consultas puede ordenar inmediatamente los contactos por prioridad",
     gradeASavingNote: "Contactos como este le ahorran un promedio de 3–5 horas a la semana.",
     gradeAFitTitle: "Recomendación",
     gradeARecommendation: "Recomendación: Programar una llamada inmediata",
     ctaA: "MÁS INFORMACIÓN SOBRE ESTE PAQUETE",
     gradeB: "Buen potencial",
-    gradeBHeadline: "Buen potencial – vale la pena una conversación",
-    gradeBBullet1: "Muestra un interés genuino",
-    gradeBBullet2: "La necesidad es evidente",
-    gradeBBullet3: "Una breve conversación aportará claridad",
+    gradeBHeadline: "Buen potencial — una breve conversación aclarará el mejor camino.",
+    gradeBBullet1: "Su volumen de consultas ya ofrece potencial de automatización",
+    gradeBBullet2: "La pérdida de tiempo actual es claramente reconocible",
+    gradeBBullet3: "Una breve conversación aclarará el nivel de solución adecuado",
     gradeBExplanationTitle: "Lo que esto significa",
     gradeBExplanation: "Un proyecto profesional ofrece su máximo valor cuando el presupuesto, la urgencia y los objetivos están claramente alineados. Actualmente hay brechas que harían la colaboración menos efectiva — eso no significa que no funcione más adelante. Solo que ahora no es el momento adecuado.",
     ctaB: "Contactar de todas formas",
     gradeC: "Su evaluación: C – Prioridad baja",
-    gradeCHeadline: "Prioridad baja actualmente",
-    gradeCBullet1: "La necesidad aún no es suficientemente concreta",
-    gradeCBullet2: "La presión de tiempo actual es baja",
-    gradeCBullet3: "La automatización puede ser útil más adelante",
+    gradeCHeadline: "Aún no es el momento ideal — pero estaremos encantados de asesorarle personalmente.",
+    gradeCBullet1: "Su volumen actual de consultas todavía es manejable",
+    gradeCBullet2: "La presión de tiempo inmediata es actualmente baja",
+    gradeCBullet3: "La automatización puede resultar útil más adelante",
     summary: "Resumen",
     recommendation: "Recomendación",
     cta: "Contactar ahora",
@@ -444,7 +445,7 @@ export const es: Translations = {
     demoNote: "Resultado demo basado en sus respuestas — implementable en su sitio web.",
   },
   anfragenFilter: {
-    badge: "Demo · Filtro de Consultas",
+    badge: "Demo · Primer Contacto Automático",
     headline: "Su sistema de pre-cualificación inteligente",
     sub: "Responda 5 preguntas para ver cómo el sistema evalúa consultas de forma dinámica.",
     steps: [

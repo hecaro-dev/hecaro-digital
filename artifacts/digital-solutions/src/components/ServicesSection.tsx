@@ -141,21 +141,12 @@ export default function ServicesSection() {
           })}
         </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.36 }}
-          className="mx-auto mt-10 max-w-3xl border-t border-white/[0.08] pt-8 text-center text-sm font-medium leading-relaxed text-slate-200 sm:text-base"
-        >
-          {t.services.supportNote}
-        </motion.p>
-
         {/* Call to action below cards */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 text-center bg-white/[0.02] border border-white/[0.06] rounded-2xl p-6 sm:p-8"
+          className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 text-center bg-white/[0.02] border border-white/[0.06] rounded-2xl p-6 sm:p-8"
         >
           <p className="text-slate-300 text-base md:text-lg font-medium">{t.services.postCtaText}</p>
           <button

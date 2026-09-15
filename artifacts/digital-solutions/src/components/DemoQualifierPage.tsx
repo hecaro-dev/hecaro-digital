@@ -18,9 +18,9 @@ function QualifierUI() {
   const q = t.qualifier;
 
   const [step, setStep] = useState(0);
-  const [bottleneck, setBottleneck] = useState("");
-  const [impact, setImpact] = useState("");
-  const [budget, setBudget] = useState("");
+  const [businessType, setBusinessType] = useState("");
+  const [enquiryVolume, setEnquiryVolume] = useState("");
+  const [timeCost, setTimeCost] = useState("");
   const [result, setResult] = useState<QualifyResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
@@ -28,9 +28,9 @@ function QualifierUI() {
   const totalSteps = 3;
 
   const canProceed = [
-    bottleneck.trim().length > 8,
-    impact !== "",
-    budget !== "",
+    businessType !== "",
+    enquiryVolume !== "",
+    timeCost !== "",
   ];
 
   async function handleAnalyze() {
@@ -40,7 +40,7 @@ function QualifierUI() {
       const res = await fetch("/api/qualify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ bottleneck, impact, budget, lang }),
+        body: JSON.stringify({ businessType, enquiryVolume, timeCost, lang }),
       });
       if (!res.ok) throw new Error("API error");
       const data: QualifyResult = await res.json();
@@ -53,7 +53,7 @@ function QualifierUI() {
     }
   }
 
-  const steps = q.steps as Array<{ label: string; question: string; placeholder?: string; options?: string[] }>;
+  const steps = q.steps as Array<{ label: string; question: string; options: string[] }>;
 
   const TrafficLightCTA = ({ grade }: { grade: "A" | "B" | "C" }) => (
     <div className="mt-6 pt-6 border-t border-white/[0.06] flex flex-col items-center gap-4 text-center">
@@ -150,7 +150,7 @@ function QualifierUI() {
           {/* Step cards */}
           <AnimatePresence mode="wait">
 
-            {/* Step 0: Bottleneck */}
+            {/* Step 0: Business type */}
             {step === 0 && (
               <motion.div
                 key="step-0"
@@ -161,14 +161,26 @@ function QualifierUI() {
                 className="bg-white/[0.03] border border-white/[0.08] rounded-3xl p-8 sm:p-10"
               >
                 <h2 className="text-xl font-bold text-white mb-6">{steps[0].question}</h2>
-                <textarea
-                  value={bottleneck}
-                  onChange={(e) => setBottleneck(e.target.value)}
-                  placeholder={steps[0].placeholder}
-                  rows={4}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/30 transition-all text-base resize-none"
-                  autoFocus
-                />
+                <div className="space-y-3">
+                  {steps[0].options.map((opt) => (
+                    <button
+                      key={opt}
+                      onClick={() => setBusinessType(opt)}
+                      className={`w-full text-left px-5 py-4 rounded-xl border transition-all duration-200 ${
+                        businessType === opt
+                          ? "bg-emerald-500/15 border-emerald-500/50 text-emerald-300"
+                          : "bg-white/[0.02] border-white/[0.07] text-slate-300 hover:border-white/20 hover:text-white"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${businessType === opt ? "border-emerald-500" : "border-slate-600"}`}>
+                          {businessType === opt && <div className="w-2 h-2 rounded-full bg-emerald-500" />}
+                        </div>
+                        <span className="text-sm font-medium">{opt}</span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
                 <div className="flex justify-end mt-6">
                   <button
                     onClick={() => setStep(1)}
@@ -181,7 +193,7 @@ function QualifierUI() {
               </motion.div>
             )}
 
-            {/* Step 1: Impact */}
+            {/* Step 1: Enquiry volume */}
             {step === 1 && (
               <motion.div
                 key="step-1"
@@ -196,16 +208,16 @@ function QualifierUI() {
                   {steps[1].options!.map((opt) => (
                     <button
                       key={opt}
-                      onClick={() => setImpact(opt)}
+                      onClick={() => setEnquiryVolume(opt)}
                       className={`w-full text-left px-5 py-4 rounded-xl border transition-all duration-200 ${
-                        impact === opt
+                        enquiryVolume === opt
                           ? "bg-emerald-500/15 border-emerald-500/50 text-emerald-300"
                           : "bg-white/[0.02] border-white/[0.07] text-slate-300 hover:border-white/20 hover:text-white"
                       }`}
                     >
                       <div className="flex items-center gap-3">
-                        <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${impact === opt ? "border-emerald-500" : "border-slate-600"}`}>
-                          {impact === opt && <div className="w-2 h-2 rounded-full bg-emerald-500" />}
+                        <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${enquiryVolume === opt ? "border-emerald-500" : "border-slate-600"}`}>
+                          {enquiryVolume === opt && <div className="w-2 h-2 rounded-full bg-emerald-500" />}
                         </div>
                         <span className="text-sm font-medium">{opt}</span>
                       </div>
@@ -227,7 +239,7 @@ function QualifierUI() {
               </motion.div>
             )}
 
-            {/* Step 2: Budget */}
+            {/* Step 2: Time cost */}
             {step === 2 && (
               <motion.div
                 key="step-2"
@@ -242,16 +254,16 @@ function QualifierUI() {
                   {steps[2].options!.map((opt) => (
                     <button
                       key={opt}
-                      onClick={() => setBudget(opt)}
+                      onClick={() => setTimeCost(opt)}
                       className={`w-full text-left px-5 py-4 rounded-xl border transition-all duration-200 ${
-                        budget === opt
+                        timeCost === opt
                           ? "bg-emerald-500/15 border-emerald-500/50 text-emerald-300"
                           : "bg-white/[0.02] border-white/[0.07] text-slate-300 hover:border-white/20 hover:text-white"
                       }`}
                     >
                       <div className="flex items-center gap-3">
-                        <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${budget === opt ? "border-emerald-500" : "border-slate-600"}`}>
-                          {budget === opt && <div className="w-2 h-2 rounded-full bg-emerald-500" />}
+                        <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${timeCost === opt ? "border-emerald-500" : "border-slate-600"}`}>
+                          {timeCost === opt && <div className="w-2 h-2 rounded-full bg-emerald-500" />}
                         </div>
                         <span className="text-sm font-medium">{opt}</span>
                       </div>
@@ -297,7 +309,7 @@ function QualifierUI() {
                 className="space-y-4"
               >
                 {(() => {
-                  const localGrade = result.score >= 60 ? "A" : result.score >= 45 ? "B" : "C";
+                  const localGrade = result.grade;
                   return (
                 <div className={`rounded-3xl border p-8 sm:p-10 space-y-7 ${
                   localGrade === "A"

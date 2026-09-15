@@ -1,35 +1,36 @@
 export type LeadGrade = "A" | "B" | "C";
 
 export function calculateLeadScore(
-  bottleneck: string,
-  impact: string,
-  companySize: string,
+  _businessType: string,
+  enquiryVolume: string,
+  timeCost: string,
 ): number {
-  const normalizedImpact = impact.toLocaleLowerCase();
-  const normalizedCompanySize = companySize.toLocaleLowerCase();
+  const normalizedVolume = enquiryVolume.toLocaleLowerCase();
+  const normalizedTimeCost = timeCost.toLocaleLowerCase();
 
-  const bottleneckScore =
-    bottleneck.trim().length >= 60 ? 20 : bottleneck.trim().length >= 25 ? 15 : 5;
+  const volumeScore =
+    normalizedVolume.includes("mehr als 15") ||
+    normalizedVolume.includes("more than 15") ||
+    normalizedVolume.includes("más de 15")
+      ? 50
+      : normalizedVolume.includes("5 bis 15") ||
+          normalizedVolume.includes("5 to 15") ||
+          normalizedVolume.includes("5 a 15")
+        ? 25
+        : 10;
 
-  const impactScore =
-    normalizedImpact.includes("täglich") ||
-    normalizedImpact.includes("daily") ||
-    normalizedImpact.includes("a diario")
-      ? 45
-      : normalizedImpact.includes("mehrmals") ||
-          normalizedImpact.includes("several") ||
-          normalizedImpact.includes("varias")
-        ? 30
-        : 15;
+  const problemScore =
+    normalizedTimeCost.includes("unqualifizierte") ||
+    normalizedTimeCost.includes("unqualified") ||
+    normalizedTimeCost.includes("no cualificadas")
+      ? 40
+      : normalizedTimeCost.includes("nachfassen") ||
+          normalizedTimeCost.includes("follow-up") ||
+          normalizedTimeCost.includes("seguimiento")
+        ? 25
+        : 20;
 
-  const companyScore = normalizedCompanySize.includes("10+")
-    ? 35
-    : normalizedCompanySize.includes("2–10") ||
-        normalizedCompanySize.includes("2-10")
-      ? 25
-      : 10;
-
-  return bottleneckScore + impactScore + companyScore;
+  return volumeScore + problemScore;
 }
 
 export function determineLeadGrade(score: number): LeadGrade {

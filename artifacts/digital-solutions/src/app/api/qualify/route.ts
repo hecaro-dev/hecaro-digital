@@ -7,7 +7,7 @@ const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 const SYSTEM_PROMPT = `You are a lead qualification expert for a digital automation agency.
 The lead score and grade have already been calculated deterministically. Do not change them.
 
-A good lead has a specific operational bottleneck, loses time to unproductive conversations frequently, and has enough organisational capacity to implement an automation system.
+A strong profile receives many weekly enquiries and loses substantial time to unqualified initial calls. A medium profile has moderate enquiry volume or a less urgent time problem. A weak profile receives few enquiries and mainly reports a low-urgency response-time problem.
 
 Grade A / green (60-100) = strong, concrete need and high implementation potential.
 Grade B / yellow (35-59) = recognisable need, but urgency or implementation potential is moderate.
@@ -21,18 +21,18 @@ Respond ONLY with valid JSON in this exact shape:
 
 export async function POST(req: NextRequest) {
   try {
-    const { bottleneck, impact, budget, lang } = await req.json();
+    const { businessType, enquiryVolume, timeCost, lang } = await req.json();
 
-    if (!bottleneck || !impact || !budget) {
+    if (!businessType || !enquiryVolume || !timeCost || !["de", "en", "es"].includes(lang)) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
 
-    const score = calculateLeadScore(bottleneck, impact, budget);
+    const score = calculateLeadScore(businessType, enquiryVolume, timeCost);
     const grade = determineLeadGrade(score);
 
-    const userMessage = `Bottleneck / Engpass: ${bottleneck}
-Impact: ${impact}
-Company size: ${budget}
+    const userMessage = `Business type: ${businessType}
+Weekly enquiry volume: ${enquiryVolume}
+Main time cost: ${timeCost}
 Calculated score: ${score}/100
 Fixed grade: ${grade}
 Language of response: ${lang === "en" ? "English" : lang === "es" ? "Spanish" : "German"}`;

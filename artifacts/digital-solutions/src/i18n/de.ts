@@ -45,7 +45,7 @@ export const de = {
   services: {
     label: "Automatisierung",
     headline: "Weniger Zeitverlust. Mehr Wunschkunden. Automatisch.",
-    sub: "Unsere KI-Systeme qualifizieren Ihre Anfragen rund um die Uhr — damit Sie sich auf die Kunden konzentrieren können, die wirklich zu Ihnen passen.",
+    sub: "Wie viele Stunden verlieren Sie diese Woche mit Interessenten, die nie kaufen werden? Unser System filtert automatisch — damit Sie nur noch mit Menschen sprechen, die wirklich wollen was Sie anbieten.",
     aiTitle: "System-Demo live testen",
     aiDesc: "Drei echte Systeme — wählen Sie das Demo das zu Ihrer Situation passt.",
     note: "Weniger ungeeignete Erstgespräche — mehr Zeit für Kunden, die wirklich kaufen wollen.",
@@ -55,42 +55,43 @@ export const de = {
     postCtaText: "Noch nicht sicher welches System zu Ihnen passt? Sprechen Sie kostenlos mit mir.",
     postCtaButton: "Kostenloses Gespräch",
     postCtaSubject: "Anfrage: Automatisierungssystem",
-    supportNote: "Alle Pakete werden persönlich auf Deutsch, Englisch oder Spanisch betreut.",
     items: [
       {
         tag: "",
         badge: "",
-        title: "Erster Eindruck",
-        subtitle: "Für Unternehmen, die qualifizierte Anfragen statt Zeitverschwendung wollen.",
+        title: "Anfragen-Check",
+        subtitle: "Sehen Sie sofort welche Anfragen Ihre Zeit wert sind — und welche nicht.",
         description: "",
         price: "1.800 € einmalig",
         bullets: [
-          "KI-gestütztes Lead-Qualifizierungsformular (eingebettet auf Ihrer Website)",
-          "Automatische Auswertung jeder Anfrage (Score + Zusammenfassung)",
-          "Weiterleitung qualifizierter Leads per E-Mail",
-          "Einmalige Einrichtung, keine monatlichen Kosten"
+          "KI-gestütztes Formular direkt auf Ihrer Website eingebettet",
+          "Automatische Bewertung jeder Anfrage mit Score und Zusammenfassung",
+          "Ergebnis wird sofort per E-Mail an Sie weitergeleitet",
+          "Einmalige Einrichtung — keine monatlichen Kosten",
+          "Betreuung auf Deutsch, Englisch oder Spanisch"
         ],
       },
       {
         tag: "",
         badge: "Empfohlen",
-        title: "Anfragen-Filter",
-        subtitle: "Ihr intelligentes System, das rund um die Uhr für Sie vorqualifiziert.",
+        title: "Automatischer Erstkontakt",
+        subtitle: "Jeder Interessent wird automatisch vorqualifiziert und bekommt eine persönliche Antwort — auch wenn Sie gerade beim Kunden sind.",
         description: "",
         price: "3.500 € einmalig",
         bullets: [
-          "Alles aus \"Erster Eindruck\"",
-          "Mehrstufiger KI-Dialog (bis zu 8 Fragen, dynamisch angepasst)",
-          "Automatische E-Mail-Antwort an den Interessenten (personalisiert, auf Wunsch mehrsprachig)",
+          "Alles aus dem Anfragen-Check",
+          "Mehrstufiger KI-Dialog mit dem Interessenten (bis zu 8 Fragen)",
+          "Automatische, personalisierte E-Mail-Antwort an den Interessenten",
           "Dashboard zur Auswertung aller Anfragen",
-          "30 Tage After-Launch-Support inklusive"
+          "30 Tage After-Launch-Support inklusive",
+          "Betreuung auf Deutsch, Englisch oder Spanisch"
         ],
       },
       {
         tag: "",
         badge: "",
         title: "Individuell",
-        subtitle: "Komplexe Prozesse. Maßgeschneiderte Lösung. Persönlich kalkuliert.",
+        subtitle: "Komplexere Prozesse. Maßgeschneiderte Lösung. Persönlich kalkuliert.",
         description: "",
         price: "Auf Anfrage",
         bullets: [
@@ -138,21 +139,21 @@ export const de = {
   portfolio: {
     label: "Demos",
     headline: "System-Beispiele live erleben",
-    sub: "Keine Mockups – echte, funktionsfähige Systeme, die Sie direkt testen können.",
+    sub: "Die folgenden Demos zeigen Ihnen wie ein Interessent Ihr zukünftiges System erlebt. Die Auswertung am Ende sehen nur Sie als Unternehmer — nicht Ihre Kunden.",
     items: [
       {
-        tag: "Erster Eindruck",
+        tag: "Anfragen-Check",
         previewText: "Erleben Sie live wie unser System eine Anfrage bewertet und in Sekunden qualifiziert.",
-        title: "Demo: Erster Eindruck",
+        title: "Demo: Anfragen-Check",
         description:
           "Sehen Sie live, wie ein intelligentes Formular die Lead-Qualifizierung übernimmt und jede Anfrage auswertet.",
         problem: "Zu viele ungeeignete Erstgespräche",
         ctaLabel: "Demo live erleben",
       },
       {
-        tag: "Anfragen-Filter",
+        tag: "Automatischer Erstkontakt",
         previewText: "Testen Sie den mehrstufigen KI-Dialog — und sehen Sie wie Ihr zukünftiges System Anfragen filtert.",
-        title: "Demo: Anfragen-Filter",
+        title: "Demo: Automatischer Erstkontakt",
         description:
           "Erleben Sie einen dynamischen, mehrstufigen Dialog, der den Interessenten vorqualifiziert und detailliert auswertet.",
         problem: "Manuelles Prüfen und Nachfassen",
@@ -232,12 +233,12 @@ export const de = {
       {
         question: "Für wen ist die Automatisierung geeignet?",
         answer:
-          "Die Automatisierungslösungen eignen sich für Unternehmen, die regelmäßig Anfragen erhalten und diese effizienter bearbeiten möchten. Ob Handwerksbetrieb, Dienstleister oder Gastronom — wir integrieren das System direkt in Ihre bestehende oder neue Website.",
+          "Für jeden Unternehmer der regelmäßig Anfragen bekommt und zu viel Zeit mit ungeeigneten Interessenten verliert. Egal ob Handwerker, Immobilienmakler, Coach oder Dienstleister — unser System arbeitet branchenunabhängig.",
       },
       {
-        question: "Was ist der Unterschied zwischen 'Erster Eindruck' und 'Anfragen-Filter'?",
+        question: "Was ist der Unterschied zwischen den Paketen?",
         answer:
-          "Der 'Erster Eindruck' ist der ideale Einstieg: Ein intelligentes Formular qualifiziert jede Anfrage automatisch und leitet das Ergebnis per E-Mail weiter. Der 'Anfragen-Filter' geht weiter — er führt einen mehrstufigen KI-Dialog mit dem Interessenten, antwortet automatisch per E-Mail und bietet ein Dashboard zur Auswertung aller Anfragen. Dazu kommen 30 Tage After-Launch-Support.",
+          "Der 'Anfragen-Check' bewertet jede Anfrage automatisch und schickt Ihnen das Ergebnis per E-Mail. Der 'Automatische Erstkontakt' geht weiter: Er führt einen mehrstufigen Dialog mit dem Interessenten, antwortet ihm automatisch per E-Mail und gibt Ihnen ein vollständiges Dashboard zur Auswertung.",
       },
       {
         question: "Bieten Sie die Betreuung auch auf Englisch und Spanisch an?",
@@ -252,7 +253,7 @@ export const de = {
       {
         question: "Was kostet die Automatisierungslösung?",
         answer:
-          "Der Einstieg startet ab 1.800 € einmalig (Paket: Erster Eindruck). Das Paket Anfragen-Filter kostet 3.500 € einmalig.",
+          "Der Anfragen-Check kostet 1.800 € einmalig. Der Automatische Erstkontakt kostet 3.500 € einmalig.",
       },
       {
         question: "Gibt es laufende Kosten nach der Einrichtung?",
@@ -350,7 +351,7 @@ export const de = {
     rejectionTitle: "Nicht das Richtige für Sie",
     rejectionText: "Unser System ist für Unternehmer, die bereits Anfragen erhalten. Ihr aktuelles Ziel sollte zunächst Sichtbarkeit sein — dafür sind wir nicht die richtige Lösung.",
     profileRedTitle: "Hoher Zeitverlust — sofortiger Handlungsbedarf",
-    profileRedText: "Empfehlung: Anfragen-Filter (Paket 01)",
+    profileRedText: "Empfehlung: Anfragen-Check",
     profileYellowTitle: "Gute Basis — aber Potenzial wird verschenkt",
     profileYellowText: "Empfehlung: Anfragen-System Pro (Paket 02)",
     profileGreenTitle: "Bereit für das nächste Level",
@@ -365,13 +366,13 @@ export const de = {
     servicesLink: "SYSTEM-AUDIT STARTEN",
   },
   qualifier: {
-    badge: "Demo · Live-Beispiel",
-    headline: "Simulieren Sie Ihren neuen Anfragen-Filter",
-    sub: "Sehen Sie live, wie wir unqualifizierte Anfragen sofort aussortieren.",
+    badge: "Demo · Anfragen-Check",
+    headline: "Testen Sie den Anfragen-Check",
+    sub: "Sehen Sie in drei kurzen Schritten, wie eingehende Anfragen automatisch bewertet werden.",
     steps: [
-      { label: "Schritt 1 / 3", question: "Was kostet Sie aktuell am meisten Zeit?", placeholder: "z.B. Zu viele ungeeignete Anfragen, endlose Erstgespräche, manuelles Nachfragen ..." },
-      { label: "Schritt 2 / 3", question: "Wie oft führen Sie Gespräche, die nirgendwo hinführen?", options: ["Täglich – kostet mich enorm viel Zeit", "Mehrmals pro Woche – ist ein echtes Problem", "Gelegentlich – aber es nervt mich"] },
-      { label: "Schritt 3 / 3", question: "Wie groß ist Ihr Unternehmen?", options: ["Selbstständig / Solo", "2–10 Mitarbeiter", "10+ Mitarbeiter"] },
+      { label: "Schritt 1 / 3", question: "Was beschreibt Ihr Unternehmen am besten?", options: ["Handwerk / Dienstleistung", "Immobilien / Beratung", "Gastronomie / Einzelhandel", "Coaching / Training"] },
+      { label: "Schritt 2 / 3", question: "Wie viele Anfragen erhalten Sie pro Woche?", options: ["Weniger als 5", "5 bis 15", "Mehr als 15"] },
+      { label: "Schritt 3 / 3", question: "Was kostet Sie aktuell am meisten Zeit?", options: ["Unqualifizierte Erstgespräche", "Zu langsame Rückmeldungen", "Manuelles Nachfassen"] },
     ],
     back: "Zurück",
     next: "Weiter",
@@ -379,27 +380,27 @@ export const de = {
     analyzing: "System analysiert Ihre Anfrage ...",
     resultTitle: "Ihre Bewertung",
     gradeA: "Qualifiziert",
-    gradeAHeadline: "Kontakt qualifiziert – hohe Priorität",
-    gradeABulletEngpass: "Kein Vorgespräch nötig — dieser Kontakt ist bereits qualifiziert",
-    gradeABulletImpact: "Sie sparen das Erstgespräch zur Bedarfsklärung komplett",
-    gradeABulletBudget: "Sie wissen vor dem Gespräch: Budget, Bedarf und Entscheidungskompetenz sind vorhanden",
+    gradeAHeadline: "Starkes Profil — Sie können sofort loslegen.",
+    gradeABulletEngpass: "Ihr Anfragevolumen bietet starkes Potenzial für automatische Vorqualifizierung",
+    gradeABulletImpact: "Unqualifizierte Erstgespräche verursachen bei Ihnen einen klaren Zeitverlust",
+    gradeABulletBudget: "Der Anfragen-Check kann eingehende Kontakte sofort nach Priorität ordnen",
     gradeASavingNote: "Solche Kontakte sparen Ihnen durchschnittlich 3–5 Stunden pro Woche.",
     gradeAFitTitle: "Handlungsempfehlung",
     gradeARecommendation: "Empfehlung: Sofortigen Rückruf vereinbaren",
     ctaA: "MEHR ÜBER DIESES PAKET ERFAHREN",
     gradeB: "Gutes Potenzial",
-    gradeBHeadline: "Gutes Potenzial – ein Gespräch lohnt sich",
-    gradeBBullet1: "Sie zeigen echtes Interesse",
-    gradeBBullet2: "Der Bedarf ist erkennbar",
-    gradeBBullet3: "Ein kurzes Gespräch bringt Klarheit",
+    gradeBHeadline: "Gutes Potenzial — ein kurzes Gespräch klärt den besten Weg.",
+    gradeBBullet1: "Ihr Anfragevolumen bietet bereits Potenzial für Automatisierung",
+    gradeBBullet2: "Der aktuelle Zeitverlust ist klar erkennbar",
+    gradeBBullet3: "Ein kurzes Gespräch klärt die passende Ausbaustufe",
     gradeBExplanationTitle: "Was das bedeutet",
     gradeBExplanation: "Ein professionelles Projekt entfaltet seinen vollen Wert, wenn Budget, Dringlichkeit und Ziele klar ausgerichtet sind. Aktuell gibt es noch Lücken, die eine Zusammenarbeit weniger effektiv machen würden – das heißt nicht, dass es nie passt. Nur, dass jetzt nicht der richtige Moment ist.",
     ctaB: "Trotzdem in Kontakt treten",
     gradeC: "Ihre Bewertung: C – Niedrige Priorität",
-    gradeCHeadline: "Aktuell geringe Priorität",
-    gradeCBullet1: "Der Bedarf ist noch nicht konkret genug",
-    gradeCBullet2: "Der aktuelle Zeitdruck ist gering",
-    gradeCBullet3: "Eine Automatisierung lohnt sich zu einem späteren Zeitpunkt",
+    gradeCHeadline: "Aktuell noch nicht der ideale Moment — aber wir beraten Sie gerne persönlich.",
+    gradeCBullet1: "Ihr aktuelles Anfragevolumen ist noch überschaubar",
+    gradeCBullet2: "Der unmittelbare Zeitdruck ist derzeit gering",
+    gradeCBullet3: "Eine Automatisierung kann zu einem späteren Zeitpunkt sinnvoll werden",
     summary: "Zusammenfassung",
     recommendation: "Empfehlung",
     cta: "Jetzt unverbindlich anfragen",
@@ -442,7 +443,7 @@ export const de = {
     demoNote: "Demo-Auswertung basierend auf Ihren Antworten — implementierbar auf Ihrer Website.",
   },
   anfragenFilter: {
-    badge: "Demo · Anfragen-Filter",
+    badge: "Demo · Automatischer Erstkontakt",
     headline: "Ihr intelligentes Vorqualifizierungssystem",
     sub: "Beantworten Sie 5 Fragen, um zu sehen, wie das System Anfragen dynamisch auswertet.",
     steps: [
@@ -468,7 +469,7 @@ export const de = {
     nextStepLabel: "Nächster Schritt",
     cta: "Demo live erleben",
     backHome: "Zurück zur Startseite",
-    demoNote: "Dies ist eine Live-Demo des mehrstufigen Anfragen-Filters – implementierbar auf Ihrer Website.",
+    demoNote: "Dies ist eine Live-Demo des Automatischen Erstkontakts – implementierbar auf Ihrer Website.",
     errorMsg: "Fehler bei der Analyse. Bitte erneut versuchen."
   },
   demoResult: {

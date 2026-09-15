@@ -373,13 +373,6 @@ function QualifierUI() {
                     {t.demoResult.cta}
                   </Link>
 
-                  {/* Secondary CTA */}
-                  <Link
-                    href={`/${lang}/preview#services`}
-                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-white/15 hover:border-white/30 text-slate-300 hover:text-white font-bold text-sm uppercase tracking-widest transition-all"
-                  >
-                    {q.ctaA}
-                  </Link>
                 </div>
                   );
                 })()}

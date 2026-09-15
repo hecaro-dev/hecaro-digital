@@ -346,6 +346,9 @@ function AnfragenFilterUI() {
                         <h2 className="text-3xl sm:text-4xl font-bold text-white leading-snug">
                           {q.scoreLabel}: {result.score} / 100
                         </h2>
+                        <p className="mt-4 text-xl font-bold leading-snug text-white sm:text-2xl">
+                          {localGrade === "A" ? q.gradeAHeadline : localGrade === "B" ? q.gradeBHeadline : q.gradeCHeadline}
+                        </p>
                       </div>
 
                       <div className={`border-t ${
@@ -371,7 +374,7 @@ function AnfragenFilterUI() {
                         href={`/${lang}/preview#contact`}
                         className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm uppercase tracking-widest transition-all"
                       >
-                        {q.cta}
+                        {t.demoResult.cta}
                       </Link>
 
                     </div>

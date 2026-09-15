@@ -504,7 +504,7 @@ export const es: Translations = {
       {
         tag: "",
         title: "Starter",
-        price: "desde 1.500 €",
+        price: "desde 1.800 €",
         subtitle: "Su inicio profesional en internet.",
         bullets: [
           "Hasta 5 subpáginas",

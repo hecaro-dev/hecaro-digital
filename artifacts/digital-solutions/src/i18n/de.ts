@@ -502,7 +502,7 @@ export const de = {
       {
         tag: "",
         title: "Starter",
-        price: "ab 1.500 €",
+        price: "ab 1.800 €",
         subtitle: "Ihr professioneller Start im Internet.",
         bullets: [
           "Bis zu 5 Unterseiten",

@@ -504,7 +504,7 @@ export const en: Translations = {
       {
         tag: "",
         title: "Starter",
-        price: "from €1,500",
+        price: "from €1,800",
         subtitle: "Your professional start online.",
         bullets: [
           "Up to 5 subpages",

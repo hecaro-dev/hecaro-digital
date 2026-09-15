@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { consumeDemoEmailLimits } from "@workspace/db";
 import nodemailer from "nodemailer";
 
 type Lang = "de" | "en" | "es";
@@ -7,6 +6,11 @@ type DemoType = "qualifier" | "firstContact";
 type Grade = "A" | "B" | "C";
 
 const CONTACT_URL_BASE = "https://hecaro-digital.vercel.app";
+const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
+const MAX_SENDS_PER_WINDOW = 3;
+const RECIPIENT_COOLDOWN_MS = 60 * 1000;
+const attemptsByIp = new Map<string, number[]>();
+const lastSendByRecipient = new Map<string, number>();
 const copy = {
   de: {
     subject: "Ihre Anfrage-Auswertung von HECARO Digital",
@@ -164,6 +168,36 @@ async function verifyBotChallenge(token: unknown, ip: string, hostname: string) 
     ? "passed" as const
     : "failed" as const;
 }
+
+function consumeInMemoryDemoEmailLimits(ip: string, email: string) {
+  const now = Date.now();
+  const recentAttempts = (attemptsByIp.get(ip) ?? []).filter(
+    (timestamp) => now - timestamp < RATE_LIMIT_WINDOW_MS,
+  );
+  const lastRecipientSend = lastSendByRecipient.get(email) ?? 0;
+
+  if (
+    recentAttempts.length >= MAX_SENDS_PER_WINDOW ||
+    now - lastRecipientSend < RECIPIENT_COOLDOWN_MS
+  ) {
+    attemptsByIp.set(ip, recentAttempts);
+    return { allowed: false as const };
+  }
+
+  attemptsByIp.set(ip, [...recentAttempts, now]);
+  lastSendByRecipient.set(email, now);
+  return { allowed: true as const };
+}
+
+async function consumeRuntimeDemoEmailLimits(ip: string, email: string) {
+  if (!process.env.DATABASE_URL) {
+    return consumeInMemoryDemoEmailLimits(ip, email);
+  }
+
+  const { consumeDemoEmailLimits } = await import("@workspace/db");
+  return consumeDemoEmailLimits(ip, email);
+}
+
 function smtpErrorDetails(error: unknown) {
   if (!error || typeof error !== "object") return { type: typeof error };
   const value = error as {
@@ -221,9 +255,9 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Challenge failed" }, { status: 403 });
     }
 
-    let limit: Awaited<ReturnType<typeof consumeDemoEmailLimits>>;
+    let limit: Awaited<ReturnType<typeof consumeRuntimeDemoEmailLimits>>;
     try {
-      limit = await consumeDemoEmailLimits(ip, normalizedEmail);
+      limit = await consumeRuntimeDemoEmailLimits(ip, normalizedEmail);
     } catch (error) {
       console.error("demo-email: persistent rate limit unavailable", error);
       return NextResponse.json({ error: "Service unavailable" }, { status: 503 });

@@ -72,7 +72,7 @@ export default function ServicesSection() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                className={`relative group h-full bg-[rgba(255,255,255,0.03)] backdrop-blur-md border ${service.badge ? 'border-emerald-500/30' : 'border-[rgba(255,255,255,0.08)]'} rounded-3xl p-8 hover:border-emerald-500/50 transition-all duration-500 overflow-hidden cursor-pointer flex flex-col justify-start`}
+                className={`relative group h-full bg-[rgba(255,255,255,0.03)] backdrop-blur-md border ${service.badge ? 'border-emerald-500/30' : 'border-[rgba(255,255,255,0.08)]'} rounded-3xl p-8 hover:border-emerald-500/50 transition-all duration-500 overflow-hidden cursor-pointer flex flex-col justify-between`}
                 onClick={() => handleCardAction(i)}
                 role="button"
                 tabIndex={0}
@@ -81,32 +81,30 @@ export default function ServicesSection() {
                 <div className="absolute -inset-px bg-gradient-to-br from-emerald-500/10 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-3xl" />
 
                 {/* Zone A: Tag */}
-                <div className="relative z-10 flex min-h-[30px] items-start justify-end gap-3 mb-6">
-                  {service.badge ? (
+                <div className="relative z-10 flex h-8 shrink-0 items-start justify-end mb-6">
+                  {service.badge && (
                     <span className="inline-flex px-3 py-1 rounded-full bg-emerald-500 border border-emerald-400 text-xs font-bold text-black uppercase tracking-wider">
                       {service.badge}
                     </span>
-                  ) : (
-                    <span className="inline-block"></span>
                   )}
                 </div>
 
                 {/* Zone B1: Title */}
-                <div className="relative z-10 mb-2">
-                  <h3 className="text-xl font-bold text-white mb-2">
+                <div className="relative z-10 min-h-8 shrink-0 mb-2">
+                  <h3 className="text-xl font-bold text-white">
                     {service.title}
                   </h3>
                 </div>
 
                 {/* Zone B2: Subtitle */}
-                <div className="relative z-10 mb-5 min-h-[72px]">
+                <div className="relative z-10 h-20 shrink-0 mb-5">
                   <p className="text-slate-400 text-sm leading-relaxed">
                     {service.subtitle}
                   </p>
                 </div>
 
                 {/* Zone C: Price badge */}
-                <div className="relative z-10 h-[100px] flex items-center border-t border-white/[0.06]">
+                <div className="relative z-10 flex h-[100px] shrink-0 items-center border-t border-white/[0.06]">
                   {price && (
                     <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 text-sm font-bold">
                       {price}
@@ -115,7 +113,7 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Zone D: Feature list */}
-                <ul className="relative z-10 grid gap-2.5 pt-6 border-t border-white/[0.06]" aria-label={`Features of ${service.title}`}>
+                <ul className="relative z-10 flex-1 grid content-start gap-2.5 pt-6 border-t border-white/[0.06]" aria-label={`Features of ${service.title}`}>
                   {service.bullets.map((bullet, j) => (
                     <li key={j} className="border-l-2 border-emerald-500/40 pl-3 text-sm">
                       <span className="text-slate-300 leading-snug">{bullet}</span>

@@ -1,9 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import Script from "next/script";
+import { useEffect, useId, useState } from "react";
 import { useI18n } from "../i18n";
 
 type DemoType = "qualifier" | "firstContact";
+
+const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
+declare global {
+  interface Window {
+    turnstile?: { reset: (widget?: string | HTMLElement) => void };
+    [key: `demoEmailTurnstile${string}`]:
+      | ((token: string) => void)
+      | undefined;
+  }
+}
 
 export default function DemoEmailUpgrade({
   demo,
@@ -19,10 +31,30 @@ export default function DemoEmailUpgrade({
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
+  const [challengeToken, setChallengeToken] = useState("");
+  const callbackId = useId().replace(/[^a-zA-Z0-9]/g, "");
+  const callbackName = `demoEmailTurnstile${callbackId}` as const;
+  const expiredCallbackName = `demoEmailTurnstileExpired${callbackId}` as const;
+
+  useEffect(() => {
+    if (!turnstileSiteKey) return;
+    window[callbackName] = setChallengeToken;
+    window[expiredCallbackName] = () => setChallengeToken("");
+    return () => {
+      delete window[callbackName];
+      delete window[expiredCallbackName];
+    };
+  }, [callbackName, expiredCallbackName]);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!email.trim() || !consent || sending || sent) return;
+    if (
+      !email.trim() ||
+      !consent ||
+      sending ||
+      sent ||
+      (turnstileSiteKey && !challengeToken)
+    ) return;
 
     setSending(true);
     setError("");
@@ -37,6 +69,7 @@ export default function DemoEmailUpgrade({
           demo,
           score,
           lang,
+          challengeToken,
         }),
       });
 
@@ -56,6 +89,10 @@ export default function DemoEmailUpgrade({
     } catch (submitError) {
       console.error("Demo email submission failed", submitError);
       setError(copy.error);
+      if (turnstileSiteKey) {
+        setChallengeToken("");
+        window.turnstile?.reset(document.getElementById(`turnstile-${callbackId}`) ?? undefined);
+      }
     } finally {
       setSending(false);
     }
@@ -88,7 +125,13 @@ export default function DemoEmailUpgrade({
         />
         <button
           type="submit"
-          disabled={!email.trim() || !consent || sending || sent}
+          disabled={
+            !email.trim() ||
+            !consent ||
+            sending ||
+            sent ||
+            Boolean(turnstileSiteKey && !challengeToken)
+          }
           className="rounded-xl bg-white/10 px-5 py-3 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white/15 disabled:cursor-not-allowed disabled:opacity-35"
         >
           {sending ? copy.sending : copy.button}
@@ -109,6 +152,24 @@ export default function DemoEmailUpgrade({
         <span>{copy.consent}</span>
       </label>
 
+      {turnstileSiteKey && (
+        <>
+          <Script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            strategy="afterInteractive"
+          />
+          <div
+            id={`turnstile-${callbackId}`}
+            className="cf-turnstile mt-4"
+            data-sitekey={turnstileSiteKey}
+            data-action="demo-email"
+            data-callback={callbackName}
+            data-expired-callback={expiredCallbackName}
+            data-error-callback={expiredCallbackName}
+          />
+        </>
+      )}
+
       {sent && (
         <p className="mt-4 text-sm font-semibold text-emerald-400" role="status">
           {copy.success}
@@ -122,3 +183,10 @@ export default function DemoEmailUpgrade({
     </form>
   );
 }
+
+  interface Window {
+    turnstile?: { reset: (widget?: string | HTMLElement) => void };
+    [key: `demoEmailTurnstile${string}`]:
+      | ((token: string) => void)
+      | undefined;
+  }

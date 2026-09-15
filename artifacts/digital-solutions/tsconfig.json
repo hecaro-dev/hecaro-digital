@@ -16,6 +16,7 @@
     "plugins": [{ "name": "next" }],
     "paths": {
       "@/*": ["./src/*"],
+      "@workspace/db": ["../../lib/db/src/index.ts"],
       "@workspace/lead-scoring": ["../../lib/lead-scoring/src/index.ts"]
     }
   },

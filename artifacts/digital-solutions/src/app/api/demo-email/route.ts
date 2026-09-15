@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { consumeDemoEmailLimits } from "@workspace/db";
 import nodemailer from "nodemailer";
 
 type Lang = "de" | "en" | "es";
@@ -6,12 +7,6 @@ type DemoType = "qualifier" | "firstContact";
 type Grade = "A" | "B" | "C";
 
 const CONTACT_URL_BASE = "https://hecaro-digital.vercel.app";
-const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
-const MAX_SENDS_PER_WINDOW = 3;
-const RECIPIENT_COOLDOWN_MS = 60 * 1000;
-const attemptsByIp = new Map<string, number[]>();
-const lastSendByRecipient = new Map<string, number>();
-
 const copy = {
   de: {
     subject: "Ihre Anfrage-Auswertung von HECARO Digital",
@@ -141,29 +136,34 @@ function isSameOrigin(req: NextRequest) {
   }
 }
 
-function isRateLimited(ip: string, email: string) {
-  const now = Date.now();
-  const recentAttempts = (attemptsByIp.get(ip) ?? []).filter(
-    (timestamp) => now - timestamp < RATE_LIMIT_WINDOW_MS,
+async function verifyBotChallenge(token: unknown, ip: string, hostname: string) {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+  if (Boolean(secret) !== Boolean(siteKey)) return "misconfigured" as const;
+  if (!secret) return "passed" as const;
+  if (typeof token !== "string" || !token) return "failed" as const;
+
+  const response = await fetch(
+    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ secret, response: token, remoteip: ip }),
+      signal: AbortSignal.timeout(5000),
+    },
   );
-  const lastRecipientSend = lastSendByRecipient.get(email) ?? 0;
-
-  if (
-    recentAttempts.length >= MAX_SENDS_PER_WINDOW ||
-    now - lastRecipientSend < RECIPIENT_COOLDOWN_MS
-  ) {
-    attemptsByIp.set(ip, recentAttempts);
-    return true;
-  }
-
-  attemptsByIp.set(ip, recentAttempts);
-  return false;
+  if (!response.ok) return "failed" as const;
+  const result = (await response.json()) as {
+    success?: boolean;
+    action?: string;
+    hostname?: string;
+  };
+  return result.success === true &&
+    result.action === "demo-email" &&
+    result.hostname === hostname
+    ? "passed" as const
+    : "failed" as const;
 }
-
-function recordAttempt(ip: string) {
-  attemptsByIp.set(ip, [...(attemptsByIp.get(ip) ?? []), Date.now()]);
-}
-
 function smtpErrorDetails(error: unknown) {
   if (!error || typeof error !== "object") return { type: typeof error };
   const value = error as {
@@ -191,7 +191,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid request" }, { status: 400 });
     }
 
-    const { email, consent, demo, score, lang } = body as Record<string, unknown>;
+    const { email, consent, demo, score, lang, challengeToken } = body as Record<string, unknown>;
 
     if (
       !isEmail(email) ||
@@ -204,13 +204,33 @@ export async function POST(req: NextRequest) {
     }
 
     const normalizedEmail = email.trim().toLowerCase();
-    const forwardedFor = req.headers.get("x-forwarded-for");
+    const forwardedFor =
+      req.headers.get("x-vercel-forwarded-for") ??
+      req.headers.get("x-forwarded-for");
     const ip = forwardedFor?.split(",")[0]?.trim() || "unknown";
-    if (isRateLimited(ip, normalizedEmail)) {
+    const challenge = await verifyBotChallenge(
+      challengeToken,
+      ip,
+      req.nextUrl.hostname,
+    );
+    if (challenge === "misconfigured") {
+      console.error("demo-email: Turnstile configuration is incomplete");
+      return NextResponse.json({ error: "Service unavailable" }, { status: 503 });
+    }
+    if (challenge === "failed") {
+      return NextResponse.json({ error: "Challenge failed" }, { status: 403 });
+    }
+
+    let limit: Awaited<ReturnType<typeof consumeDemoEmailLimits>>;
+    try {
+      limit = await consumeDemoEmailLimits(ip, normalizedEmail);
+    } catch (error) {
+      console.error("demo-email: persistent rate limit unavailable", error);
+      return NextResponse.json({ error: "Service unavailable" }, { status: 503 });
+    }
+    if (!limit.allowed) {
       return NextResponse.json({ error: "Too many requests" }, { status: 429 });
     }
-    recordAttempt(ip);
-
     const smtpUser = process.env.SMTP_USER;
     const smtpPass = process.env.SMTP_PASS;
     const smtpHost = process.env.SMTP_HOST ?? "smtp.gmail.com";
@@ -238,7 +258,6 @@ export async function POST(req: NextRequest) {
         html: createEmailHtml(lang, grade, score, contactUrl),
         text: createEmailText(lang, grade, score, contactUrl),
       });
-      lastSendByRecipient.set(normalizedEmail, Date.now());
     } catch (smtpError) {
       console.error("demo-email: SMTP delivery failed", smtpErrorDetails(smtpError));
       return NextResponse.json({ error: "SMTP delivery failed" }, { status: 502 });

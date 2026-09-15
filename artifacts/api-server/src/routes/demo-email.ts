@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { consumeDemoEmailLimits } from "@workspace/db";
 import nodemailer from "nodemailer";
 
 type Lang = "de" | "en" | "es";
@@ -8,11 +9,6 @@ type Grade = "A" | "B" | "C";
 const router = Router();
 
 const CONTACT_URL_BASE = "https://hecaro-digital.vercel.app";
-const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
-const MAX_SENDS_PER_WINDOW = 3;
-const RECIPIENT_COOLDOWN_MS = 60 * 1000;
-const attemptsByIp = new Map<string, number[]>();
-const lastSendByRecipient = new Map<string, number>();
 
 const copy = {
   de: {
@@ -142,27 +138,33 @@ function isSameOrigin(origin: string | undefined, host: string | undefined) {
   }
 }
 
-function isRateLimited(ip: string, email: string) {
-  const now = Date.now();
-  const recentAttempts = (attemptsByIp.get(ip) ?? []).filter(
-    (timestamp) => now - timestamp < RATE_LIMIT_WINDOW_MS,
+async function verifyBotChallenge(token: unknown, ip: string, hostname: string) {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+  if (Boolean(secret) !== Boolean(siteKey)) return "misconfigured" as const;
+  if (!secret) return "passed" as const;
+  if (typeof token !== "string" || !token) return "failed" as const;
+
+  const response = await fetch(
+    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ secret, response: token, remoteip: ip }),
+      signal: AbortSignal.timeout(5000),
+    },
   );
-  const lastRecipientSend = lastSendByRecipient.get(email) ?? 0;
-
-  if (
-    recentAttempts.length >= MAX_SENDS_PER_WINDOW ||
-    now - lastRecipientSend < RECIPIENT_COOLDOWN_MS
-  ) {
-    attemptsByIp.set(ip, recentAttempts);
-    return true;
-  }
-
-  attemptsByIp.set(ip, recentAttempts);
-  return false;
-}
-
-function recordAttempt(ip: string) {
-  attemptsByIp.set(ip, [...(attemptsByIp.get(ip) ?? []), Date.now()]);
+  if (!response.ok) return "failed" as const;
+  const result = (await response.json()) as {
+    success?: boolean;
+    action?: string;
+    hostname?: string;
+  };
+  return result.success === true &&
+    result.action === "demo-email" &&
+    result.hostname === hostname
+    ? "passed" as const
+    : "failed" as const;
 }
 
 function smtpErrorDetails(error: unknown) {
@@ -181,7 +183,7 @@ function smtpErrorDetails(error: unknown) {
   };
 }
 
-router.post("/demo-email", async (req, res) => {
+router.post("/demo-email", async (req, res): Promise<void> => {
   try {
     if (!isSameOrigin(req.header("origin"), req.get("host"))) {
       res.status(403).json({ error: "Invalid origin" });
@@ -193,7 +195,7 @@ router.post("/demo-email", async (req, res) => {
       return;
     }
 
-    const { email, consent, demo, score, lang } = req.body;
+    const { email, consent, demo, score, lang, challengeToken } = req.body;
 
     if (
       !isEmail(email) ||
@@ -207,12 +209,31 @@ router.post("/demo-email", async (req, res) => {
     }
 
     const normalizedEmail = email.trim().toLowerCase();
-    if (isRateLimited(req.ip || "unknown", normalizedEmail)) {
+    const ip = req.ip || "unknown";
+    const hostname = new URL(req.header("origin") as string).hostname;
+    const challenge = await verifyBotChallenge(challengeToken, ip, hostname);
+    if (challenge === "misconfigured") {
+      req.log.error("demo-email Turnstile configuration is incomplete");
+      res.status(503).json({ error: "Service unavailable" });
+      return;
+    }
+    if (challenge === "failed") {
+      res.status(403).json({ error: "Challenge failed" });
+      return;
+    }
+
+    let limit: Awaited<ReturnType<typeof consumeDemoEmailLimits>>;
+    try {
+      limit = await consumeDemoEmailLimits(ip, normalizedEmail);
+    } catch (error) {
+      req.log.error({ error }, "demo-email persistent rate limit unavailable");
+      res.status(503).json({ error: "Service unavailable" });
+      return;
+    }
+    if (!limit.allowed) {
       res.status(429).json({ error: "Too many requests" });
       return;
     }
-    recordAttempt(req.ip || "unknown");
-
     const smtpUser = process.env.SMTP_USER;
     const smtpPass = process.env.SMTP_PASS;
     const smtpHost = process.env.SMTP_HOST ?? "smtp.gmail.com";
@@ -241,7 +262,6 @@ router.post("/demo-email", async (req, res) => {
         html: createEmailHtml(lang, grade, score, contactUrl),
         text: createEmailText(lang, grade, score, contactUrl),
       });
-      lastSendByRecipient.set(normalizedEmail, Date.now());
     } catch (smtpError) {
       req.log.error(smtpErrorDetails(smtpError), "demo-email SMTP delivery failed");
       res.status(502).json({ error: "SMTP delivery failed" });

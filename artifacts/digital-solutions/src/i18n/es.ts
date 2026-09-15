@@ -57,6 +57,7 @@ export const es: Translations = {
     postCtaText: "¿No está seguro qué sistema le conviene? Hablemos sin compromiso.",
     postCtaButton: "Consulta gratuita",
     postCtaSubject: "Consulta: Sistema de Automatización",
+    supportNote: "Todos los paquetes son atendidos personalmente en alemán, inglés o español.",
     items: [
       {
         tag: "",
@@ -69,8 +70,7 @@ export const es: Translations = {
           "Formulario de cualificación de leads basado en IA (integrado en su sitio web)",
           "Evaluación automática de cada consulta (Puntuación + Resumen)",
           "Reenvío de leads cualificados por correo electrónico",
-          "Configuración única, sin costes mensuales",
-          "Soporte en español, inglés o alemán"
+          "Configuración única, sin costes mensuales"
         ],
       },
       {
@@ -85,8 +85,7 @@ export const es: Translations = {
           "Diálogo interactivo con IA (hasta 8 preguntas, ajustadas dinámicamente)",
           "Respuesta automática por correo al interesado (personalizada, multilingüe si se desea)",
           "Panel de control (Dashboard) para evaluar todas las consultas",
-          "30 días de soporte post-lanzamiento incluidos",
-          "Soporte en español, inglés o alemán"
+          "30 días de soporte post-lanzamiento incluidos"
         ],
       },
       {
@@ -253,9 +252,14 @@ export const es: Translations = {
           "El sistema se integra directamente en su sitio web, ya sea en uno nuevo que creemos para usted o en uno existente. Tras una breve fase de configuración, todo funciona automáticamente en segundo plano. No necesita instalar nada ni tener conocimientos técnicos.",
       },
       {
-        question: "¿Cuánto cuesta la solución de automatización y hay costes continuos?",
+        question: "¿Cuánto cuesta la solución de automatización?",
         answer:
-          "El paquete de entrada comienza desde 1.800 € (pago único, paquete: Primera Impresión). El paquete Filtro de Consultas cuesta 3.500 € (pago único). Los costes recurrentes solo provienen de servicios externos como el uso de API o el alojamiento — comunicados de forma transparente. Sin tarifas ocultas.",
+          "El paquete de entrada comienza desde 1.800 € (pago único, paquete: Primera Impresión). El paquete Filtro de Consultas cuesta 3.500 € (pago único).",
+      },
+      {
+        question: "¿Hay costes recurrentes después de la configuración?",
+        answer:
+          "La tarifa de configuración es un pago único — no hay cargos mensuales por parte de HECARO Digital. Los servicios externos como el uso de la API de OpenAI (aprox. 5–20 € al mes según el volumen) y el alojamiento se comunican de forma transparente y son asumidos directamente por el cliente o repercutidos a tanto alzado.",
       },
     ],
   },

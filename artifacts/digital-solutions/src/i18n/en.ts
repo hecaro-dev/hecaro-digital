@@ -57,6 +57,7 @@ export const en: Translations = {
     postCtaText: "Not sure which system suits you? Let's talk — free of charge.",
     postCtaButton: "Free Consultation",
     postCtaSubject: "Inquiry: Automation System",
+    supportNote: "All packages are personally supported in German, English or Spanish.",
     items: [
       {
         tag: "",
@@ -69,8 +70,7 @@ export const en: Translations = {
           "AI-powered lead qualification form (embedded on your website)",
           "Automatic evaluation of every enquiry (Score + Summary)",
           "Forwarding of qualified leads via email",
-          "One-time setup, no monthly costs",
-          "Support in English, German or Spanish"
+          "One-time setup, no monthly costs"
         ],
       },
       {
@@ -85,8 +85,7 @@ export const en: Translations = {
           "Multi-step AI dialog (up to 8 questions, dynamically adjusted)",
           "Automatic email response to the prospect (personalised, multilingual if desired)",
           "Dashboard to evaluate all enquiries",
-          "30 days after-launch support included",
-          "Support in English, German or Spanish"
+          "30 days after-launch support included"
         ],
       },
       {
@@ -253,9 +252,14 @@ export const en: Translations = {
           "The system is integrated directly into your website — either into a new website we create for you or into an existing one. After a short setup phase, everything runs automatically in the background. You do not need to install anything or have any technical knowledge.",
       },
       {
-        question: "What does the automation solution cost and are there ongoing costs?",
+        question: "What does the automation solution cost?",
         answer:
-          "The entry-level package starts at €1,800 one-time (First Impression). The Enquiry Filter package costs €3,500 one-time. Ongoing costs only arise from external services such as API usage or hosting — communicated transparently. No hidden fees.",
+          "The entry-level package starts at €1,800 one-time (First Impression). The Enquiry Filter package costs €3,500 one-time.",
+      },
+      {
+        question: "Are there ongoing costs after setup?",
+        answer:
+          "The setup fee is a one-time payment — there are no monthly charges from HECARO Digital. External services such as OpenAI API usage (approx. €5–20 per month depending on volume) and hosting are communicated transparently and either covered directly by the client or charged at a flat rate.",
       },
     ],
   },

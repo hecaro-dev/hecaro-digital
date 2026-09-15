@@ -55,6 +55,7 @@ export const de = {
     postCtaText: "Noch nicht sicher welches System zu Ihnen passt? Sprechen Sie kostenlos mit mir.",
     postCtaButton: "Kostenloses Gespräch",
     postCtaSubject: "Anfrage: Automatisierungssystem",
+    supportNote: "Alle Pakete werden persönlich auf Deutsch, Englisch oder Spanisch betreut.",
     items: [
       {
         tag: "",
@@ -67,8 +68,7 @@ export const de = {
           "KI-gestütztes Lead-Qualifizierungsformular (eingebettet auf Ihrer Website)",
           "Automatische Auswertung jeder Anfrage (Score + Zusammenfassung)",
           "Weiterleitung qualifizierter Leads per E-Mail",
-          "Einmalige Einrichtung, keine monatlichen Kosten",
-          "Betreuung auf Deutsch, Englisch oder Spanisch"
+          "Einmalige Einrichtung, keine monatlichen Kosten"
         ],
       },
       {
@@ -83,8 +83,7 @@ export const de = {
           "Mehrstufiger KI-Dialog (bis zu 8 Fragen, dynamisch angepasst)",
           "Automatische E-Mail-Antwort an den Interessenten (personalisiert, auf Wunsch mehrsprachig)",
           "Dashboard zur Auswertung aller Anfragen",
-          "30 Tage After-Launch-Support inklusive",
-          "Betreuung auf Deutsch, Englisch oder Spanisch"
+          "30 Tage After-Launch-Support inklusive"
         ],
       },
       {
@@ -251,9 +250,14 @@ export const de = {
           "Das System wird direkt in Ihre Website eingebunden — entweder in eine neue Website die wir für Sie erstellen oder in eine bestehende. Nach einer kurzen Einrichtungsphase läuft alles automatisch im Hintergrund. Sie müssen nichts installieren oder technisch verstehen.",
       },
       {
-        question: "Was kostet die Automatisierungslösung und gibt es laufende Kosten?",
+        question: "Was kostet die Automatisierungslösung?",
         answer:
-          "Der Einstieg startet ab 1.800 € einmalig (Paket: Erster Eindruck). Das Paket Anfragen-Filter kostet 3.500 € einmalig. Laufende Kosten entstehen nur durch externe Dienste wie API-Nutzung oder Hosting — diese werden transparent kommuniziert. Es gibt keine versteckten Gebühren.",
+          "Der Einstieg startet ab 1.800 € einmalig (Paket: Erster Eindruck). Das Paket Anfragen-Filter kostet 3.500 € einmalig.",
+      },
+      {
+        question: "Gibt es laufende Kosten nach der Einrichtung?",
+        answer:
+          "Die Einrichtungsgebühr ist einmalig — es gibt keine monatliche Gebühr von HECARO Digital. Externe Dienste wie die OpenAI API-Nutzung (ca. 5–20 € pro Monat je nach Anfragevolumen) sowie das Hosting werden transparent kommuniziert und entweder direkt vom Kunden getragen oder pauschal weiterberechnet.",
       },
     ],
   },

@@ -69,7 +69,7 @@ export const es: Translations = {
           "Formulario con IA integrado directamente en su sitio web",
           "Evaluación automática de cada consulta con puntuación y resumen",
           "Resultado enviado inmediatamente por correo electrónico",
-          "Configuración única — sin costes mensuales",
+          "Configuración única – los costes externos de API son asumidos directamente por el cliente",
           "Atención en alemán, inglés o español"
         ],
       },
@@ -84,7 +84,8 @@ export const es: Translations = {
           "Todo lo incluido en la Verificación de Consultas",
           "Diálogo de IA en varios pasos con el interesado (hasta 8 preguntas)",
           "Respuesta automática y personalizada por correo al interesado",
-          "Panel para evaluar todas las consultas",
+          "Panel de gestión propio — todas las solicitudes de un vistazo, con puntuación y resumen",
+          "Las solicitudes no cualificadas se descartan automáticamente — usted solo habla con interesados reales",
           "30 días de soporte post-lanzamiento incluidos",
           "Atención en alemán, inglés o español"
         ],

@@ -69,7 +69,7 @@ export const en: Translations = {
           "AI-powered form embedded directly on your website",
           "Automatic evaluation of every enquiry with score and summary",
           "Result forwarded to you immediately by email",
-          "One-time setup — no monthly costs",
+          "One-time setup – external API costs are covered directly by the client",
           "Support in German, English or Spanish"
         ],
       },
@@ -84,7 +84,8 @@ export const en: Translations = {
           "Everything from the Enquiry Check",
           "Multi-step AI dialogue with the prospect (up to 8 questions)",
           "Automatic, personalised email response to the prospect",
-          "Dashboard for evaluating all enquiries",
+          "Your own management dashboard — all enquiries at a glance, with score and summary",
+          "Unqualified enquiries are filtered out automatically — you only speak with genuine prospects",
           "30 days after-launch support included",
           "Support in German, English or Spanish"
         ],

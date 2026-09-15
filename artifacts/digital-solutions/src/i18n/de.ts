@@ -67,7 +67,7 @@ export const de = {
           "KI-gestütztes Formular direkt auf Ihrer Website eingebettet",
           "Automatische Bewertung jeder Anfrage mit Score und Zusammenfassung",
           "Ergebnis wird sofort per E-Mail an Sie weitergeleitet",
-          "Einmalige Einrichtung — keine monatlichen Kosten",
+          "Einmalige Einrichtung – externe API-Kosten werden direkt vom Kunden getragen",
           "Betreuung auf Deutsch, Englisch oder Spanisch"
         ],
       },
@@ -82,7 +82,8 @@ export const de = {
           "Alles aus dem Anfragen-Check",
           "Mehrstufiger KI-Dialog mit dem Interessenten (bis zu 8 Fragen)",
           "Automatische, personalisierte E-Mail-Antwort an den Interessenten",
-          "Dashboard zur Auswertung aller Anfragen",
+          "Eigenes Management-Dashboard — alle Anfragen auf einen Blick, mit Score und Zusammenfassung",
+          "Unqualifizierte Anfragen werden automatisch aussortiert — Sie sprechen nur noch mit echten Interessenten",
           "30 Tage After-Launch-Support inklusive",
           "Betreuung auf Deutsch, Englisch oder Spanisch"
         ],

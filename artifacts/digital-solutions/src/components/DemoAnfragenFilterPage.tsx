@@ -156,12 +156,7 @@ function AnfragenFilterUI() {
   }
 
   const baseSteps = q.steps as Array<{ label: string; question: string; placeholder?: string; options?: string[] }>;
-  const processIndex = baseSteps[3].options?.indexOf(answers[3]) ?? -1;
-  const steps = baseSteps.map((stepConfig, index) =>
-    index === 4 && processIndex >= 0
-      ? { ...stepConfig, question: q.dynamicProblemQuestions[processIndex] }
-      : stepConfig
-  );
+  const steps = baseSteps;
 
   return (
     <div

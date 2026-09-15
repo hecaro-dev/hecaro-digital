@@ -451,13 +451,7 @@ export const de = {
       { label: "Frage 2 / 5", question: "Wie viele Anfragen erhalten Sie ca. pro Monat?", options: ["Weniger als 10", "10 bis 50", "50 bis 100", "Mehr als 100"] },
       { label: "Frage 3 / 5", question: "Welches Ziel hat bei der Automatisierung höchste Priorität?", options: ["Zeitersparnis bei der Vorqualifizierung", "Mehr erfolgreiche Abschlüsse", "Bessere Datenqualität der Leads", "Skalierung des Systems"] },
       { label: "Frage 4 / 5", question: "Wie bearbeiten Sie Anfragen aktuell?", options: ["Manuell (E-Mail/Telefon)", "Einfaches Kontaktformular", "CRM mit Teil-Automatisierung", "Gar nicht strukturiert"] },
-      { label: "Frage 5 / 5", question: "Beschreiben Sie kurz Ihr größtes Problem bei der aktuellen Anfragenbearbeitung:", placeholder: "z.B. Ich verbringe zu viel Zeit mit Leads, die am Ende nicht kaufen..." }
-    ],
-    dynamicProblemQuestions: [
-      "Welche manuelle Aufgabe kostet Sie bei der Bearbeitung aktuell am meisten Zeit?",
-      "Welche Informationen fehlen Ihnen im bestehenden Kontaktformular am häufigsten?",
-      "Welcher Teil Ihres teilautomatisierten CRM-Prozesses benötigt noch manuelle Arbeit?",
-      "Wo entstehen ohne festen Prozess aktuell die meisten Verzögerungen?"
+      { label: "Frage 5 / 5", question: "Was kostet Sie aktuell am meisten Zeit?", options: ["Anfragen manuell lesen und bewerten", "Interessenten einzeln zurückschreiben", "Termine koordinieren und abstimmen", "Unqualifizierte Leads herausfiltern", "Nachfassen bei Interessenten die sich nicht melden"] }
     ],
     back: "Zurück",
     next: "Weiter",

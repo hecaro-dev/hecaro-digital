@@ -453,13 +453,7 @@ export const es: Translations = {
       { label: "Pregunta 2 / 5", question: "¿Cuántas consultas recibe aproximadamente al mes?", options: ["Menos de 10", "10 a 50", "50 a 100", "Más de 100"] },
       { label: "Pregunta 3 / 5", question: "¿Cuál es su principal prioridad para la automatización?", options: ["Ahorro de tiempo en pre-cualificación", "Más cierres de ventas", "Mejor calidad de datos de leads", "Escalar el sistema"] },
       { label: "Pregunta 4 / 5", question: "¿Cómo maneja las consultas actualmente?", options: ["Manualmente (Correo/Teléfono)", "Formulario de contacto simple", "CRM con automatización parcial", "Nada estructurado"] },
-      { label: "Pregunta 5 / 5", question: "Describa brevemente su mayor problema con el manejo actual de consultas:", placeholder: "p.ej. Pierdo demasiado tiempo con leads que al final no compran..." }
-    ],
-    dynamicProblemQuestions: [
-      "¿Qué tarea manual le quita actualmente más tiempo al procesar consultas?",
-      "¿Qué información falta con mayor frecuencia en su formulario de contacto actual?",
-      "¿Qué parte de su proceso de CRM parcialmente automatizado aún requiere trabajo manual?",
-      "¿Dónde se producen actualmente los mayores retrasos por no tener un proceso definido?"
+      { label: "Pregunta 5 / 5", question: "¿Qué le consume más tiempo actualmente?", options: ["Leer y evaluar solicitudes manualmente", "Responder individualmente a cada interesado", "Coordinar y agendar citas", "Filtrar solicitudes no cualificadas", "Hacer seguimiento a interesados que no responden"] }
     ],
     back: "Atrás",
     next: "Siguiente",

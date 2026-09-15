@@ -157,9 +157,28 @@ function isRateLimited(ip: string, email: string) {
     return true;
   }
 
-  attemptsByIp.set(ip, [...recentAttempts, now]);
-  lastSendByRecipient.set(email, now);
+  attemptsByIp.set(ip, recentAttempts);
   return false;
+}
+
+function recordAttempt(ip: string) {
+  attemptsByIp.set(ip, [...(attemptsByIp.get(ip) ?? []), Date.now()]);
+}
+
+function smtpErrorDetails(error: unknown) {
+  if (!error || typeof error !== "object") return { type: typeof error };
+  const value = error as {
+    name?: unknown;
+    code?: unknown;
+    command?: unknown;
+    responseCode?: unknown;
+  };
+  return {
+    name: typeof value.name === "string" ? value.name : undefined,
+    code: typeof value.code === "string" ? value.code : undefined,
+    command: typeof value.command === "string" ? value.command : undefined,
+    responseCode: typeof value.responseCode === "number" ? value.responseCode : undefined,
+  };
 }
 
 router.post("/demo-email", async (req, res) => {
@@ -192,6 +211,7 @@ router.post("/demo-email", async (req, res) => {
       res.status(429).json({ error: "Too many requests" });
       return;
     }
+    recordAttempt(req.ip || "unknown");
 
     const smtpUser = process.env.SMTP_USER;
     const smtpPass = process.env.SMTP_PASS;
@@ -213,13 +233,20 @@ router.post("/demo-email", async (req, res) => {
       auth: { user: smtpUser, pass: smtpPass },
     });
 
-    await transporter.sendMail({
-      from: `"HECARO Digital" <${smtpUser}>`,
-      to: normalizedEmail,
-      subject: copy[lang].subject,
-      html: createEmailHtml(lang, grade, score, contactUrl),
-      text: createEmailText(lang, grade, score, contactUrl),
-    });
+    try {
+      await transporter.sendMail({
+        from: `"HECARO Digital" <${smtpUser}>`,
+        to: normalizedEmail,
+        subject: copy[lang].subject,
+        html: createEmailHtml(lang, grade, score, contactUrl),
+        text: createEmailText(lang, grade, score, contactUrl),
+      });
+      lastSendByRecipient.set(normalizedEmail, Date.now());
+    } catch (smtpError) {
+      req.log.error(smtpErrorDetails(smtpError), "demo-email SMTP delivery failed");
+      res.status(502).json({ error: "SMTP delivery failed" });
+      return;
+    }
 
     res.json({ ok: true });
   } catch (error) {

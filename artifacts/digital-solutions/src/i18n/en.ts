@@ -453,13 +453,7 @@ export const en: Translations = {
       { label: "Question 2 / 5", question: "How many enquiries do you receive per month?", options: ["Less than 10", "10 to 50", "50 to 100", "More than 100"] },
       { label: "Question 3 / 5", question: "What is your highest priority for automation?", options: ["Saving time on pre-qualification", "More successful deals", "Better data quality of leads", "Scaling the system"] },
       { label: "Question 4 / 5", question: "How do you handle enquiries currently?", options: ["Manually (Email/Phone)", "Simple contact form", "CRM with partial automation", "Not structured at all"] },
-      { label: "Question 5 / 5", question: "Briefly describe your biggest problem with current enquiry handling:", placeholder: "e.g. I spend too much time with leads who don't buy in the end..." }
-    ],
-    dynamicProblemQuestions: [
-      "Which manual task currently takes the most time when processing enquiries?",
-      "Which information is most often missing from your existing contact form?",
-      "Which part of your partially automated CRM process still requires manual work?",
-      "Where do the biggest delays currently occur without a defined process?"
+      { label: "Question 5 / 5", question: "What currently takes up most of your time?", options: ["Manually reading and evaluating enquiries", "Writing individual replies to prospects", "Coordinating and scheduling appointments", "Filtering out unqualified leads", "Following up with prospects who do not respond"] }
     ],
     back: "Back",
     next: "Next",

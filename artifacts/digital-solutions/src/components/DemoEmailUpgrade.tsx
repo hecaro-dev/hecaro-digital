@@ -40,9 +40,21 @@ export default function DemoEmailUpgrade({
         }),
       });
 
-      if (!response.ok) throw new Error("Email delivery failed");
+      if (!response.ok) {
+        const payload: unknown = await response.json().catch(() => null);
+        const apiError =
+          payload && typeof payload === "object" && "error" in payload
+            ? String((payload as { error: unknown }).error)
+            : "Unknown API error";
+        console.error("Demo email delivery failed", {
+          status: response.status,
+          error: apiError,
+        });
+        throw new Error(apiError);
+      }
       setSent(true);
-    } catch {
+    } catch (submitError) {
+      console.error("Demo email submission failed", submitError);
       setError(copy.error);
     } finally {
       setSending(false);

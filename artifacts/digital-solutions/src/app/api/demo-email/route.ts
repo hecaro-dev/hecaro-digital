@@ -156,9 +156,28 @@ function isRateLimited(ip: string, email: string) {
     return true;
   }
 
-  attemptsByIp.set(ip, [...recentAttempts, now]);
-  lastSendByRecipient.set(email, now);
+  attemptsByIp.set(ip, recentAttempts);
   return false;
+}
+
+function recordAttempt(ip: string) {
+  attemptsByIp.set(ip, [...(attemptsByIp.get(ip) ?? []), Date.now()]);
+}
+
+function smtpErrorDetails(error: unknown) {
+  if (!error || typeof error !== "object") return { type: typeof error };
+  const value = error as {
+    name?: unknown;
+    code?: unknown;
+    command?: unknown;
+    responseCode?: unknown;
+  };
+  return {
+    name: typeof value.name === "string" ? value.name : undefined,
+    code: typeof value.code === "string" ? value.code : undefined,
+    command: typeof value.command === "string" ? value.command : undefined,
+    responseCode: typeof value.responseCode === "number" ? value.responseCode : undefined,
+  };
 }
 
 export async function POST(req: NextRequest) {
@@ -190,6 +209,7 @@ export async function POST(req: NextRequest) {
     if (isRateLimited(ip, normalizedEmail)) {
       return NextResponse.json({ error: "Too many requests" }, { status: 429 });
     }
+    recordAttempt(ip);
 
     const smtpUser = process.env.SMTP_USER;
     const smtpPass = process.env.SMTP_PASS;
@@ -210,13 +230,19 @@ export async function POST(req: NextRequest) {
       auth: { user: smtpUser, pass: smtpPass },
     });
 
-    await transporter.sendMail({
-      from: `"HECARO Digital" <${smtpUser}>`,
-      to: normalizedEmail,
-      subject: copy[lang].subject,
-      html: createEmailHtml(lang, grade, score, contactUrl),
-      text: createEmailText(lang, grade, score, contactUrl),
-    });
+    try {
+      await transporter.sendMail({
+        from: `"HECARO Digital" <${smtpUser}>`,
+        to: normalizedEmail,
+        subject: copy[lang].subject,
+        html: createEmailHtml(lang, grade, score, contactUrl),
+        text: createEmailText(lang, grade, score, contactUrl),
+      });
+      lastSendByRecipient.set(normalizedEmail, Date.now());
+    } catch (smtpError) {
+      console.error("demo-email: SMTP delivery failed", smtpErrorDetails(smtpError));
+      return NextResponse.json({ error: "SMTP delivery failed" }, { status: 502 });
+    }
 
     return NextResponse.json({ ok: true });
   } catch (error) {
